@@ -158,7 +158,11 @@ p  { margin: 0 0 1em; }
   background: none; border: 0; color: inherit; opacity: 0.7; font-size: 1.1rem; line-height: 1; padding: 4px 8px;
 }
 .announce__close:hover { opacity: 1; }
-@media (max-width: 620px) { .announce__close { display: none; } }
+/* Keep the bar dismissable on phones. Hiding the close button left a sticky
+   element the visitor could never get rid of, which contradicts the
+   documented behaviour. Reserve room on the right so the absolutely
+   positioned button cannot overlap wrapped text instead. */
+@media (max-width: 620px) { .announce { padding-right: 42px; } }
 
 /* ---------- 7. Nav (sticky) ---------------------------------------------- */
 .nav {
