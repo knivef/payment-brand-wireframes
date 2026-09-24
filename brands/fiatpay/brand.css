@@ -1,0 +1,26 @@
+/* ==========================================================================
+   FiatPay - token overrides only.
+   Do not add layout rules here. Layout lives in /assets/base.css.
+
+   Accent chosen on measured contrast and measured hue separation:
+     #a78bfa on --bg #0a0b0d          = 7.23:1  (AA and AAA)
+     --accent-fg #0a0b0d on #a78bfa   = 7.23:1  (AA and AAA)
+
+   Hue 255deg. Separation from the sibling brand and from the three semantic
+   tokens the shared stylesheet reserves for meaning:
+     Swipe Wire Pay #17b9a0  171deg   84deg apart
+     --positive     #23c16b  147deg
+     --warn         #ffb02e   37deg
+     --negative     #ff5a5a    0deg
+   Warm accents were tested and rejected: orange sits 10deg from --warn, and
+   coral and rose land within 20deg of --negative, which would make the
+   comparison table's "No" cells read as brand colour.
+
+   Open: Pure Labs Pay's hex was not available when this was chosen, so
+   separation from that brand is unverified. It is a one-value change here.
+   ========================================================================== */
+:root {
+  --accent:      #a78bfa;
+  --accent-fg:   #0a0b0d;
+  --accent-soft: rgba(167, 139, 250, 0.12);
+}
