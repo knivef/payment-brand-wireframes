@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Template Brand - token overrides only.
+   Copy this file into every new brand folder and change the values.
+   Do not add layout rules here. Layout lives in /assets/base.css.
+   ========================================================================== */
+:root {
+  --accent:      #2f6bff;
+  --accent-fg:   #ffffff;
+  --accent-soft: rgba(47, 107, 255, 0.12);
+
+  /* Optional per-brand surface shift. Delete if the defaults are fine. */
+  --bg:        #0a0b0d;
+  --surface:   #131519;
+  --surface-2: #1b1e24;
+
+  /* Optional per-brand type. Load the font in <head> if you change this. */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius:    10px;
+  --radius-lg: 18px;
+}

@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO block. The research prompt fills every value here. -->
+<title>[BRAND] | [PRIMARY KEYWORD, 55-60 CHARS TOTAL]</title>
+<meta name="description" content="[META DESCRIPTION, 150-158 CHARS, CONTAINS PRIMARY KEYWORD AND THE PRIMARY CTA VERB]">
+<link rel="canonical" href="https://[DOMAIN]/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="[BRAND] | [PRIMARY KEYWORD]">
+<meta property="og:description" content="[META DESCRIPTION]">
+<meta property="og:url" content="https://[DOMAIN]/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex, nofollow"><!-- wireframe stage, remove at launch -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="brand.css">
+<script defer src="/assets/conversion.js"></script>
+</head>
+
+<body>
+
+<!-- ======================= 01. ANNOUNCEMENT BAR (urgency) ================= -->
+<div class="announce" data-announce data-key="tpl-v1">
+  <span>[TIME-BOUND OFFER, ONE LINE]</span>
+  <span class="announce__timer" data-countdown data-key="tpl" data-hours="72">00:00:00</span>
+  <a href="#apply" data-cta="announce">[CTA VERB]</a>
+  <button class="announce__close" data-announce-close aria-label="Dismiss">&times;</button>
+</div>
+
+<!-- ======================= 02. NAV (sticky) ============================== -->
+<nav class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="nav__brand" href="/brands/_template/">
+      <span class="nav__mark">TB</span> [BRAND]
+    </a>
+    <div class="nav__links">
+      <a href="#product">[NAV 1]</a>
+      <a href="#how">[NAV 2]</a>
+      <a href="#industries">[NAV 3]</a>
+      <a href="#pricing">[NAV 4]</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="#compare">[SECONDARY CTA]</a>
+      <a class="btn btn--primary" href="#apply" data-cta="nav">[PRIMARY CTA]</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= 03. HERO ====================================== -->
+<header class="hero" data-stickybar-after>
+  <div class="container split">
+    <div>
+      <p class="eyebrow">[CATEGORY LINE, WHO THIS IS FOR]</p>
+      <h1>[H1: THE OUTCOME, NOT THE FEATURE. UNDER 12 WORDS.]</h1>
+      <p class="lede">[SUBHEAD: WHO IT IS FOR, WHAT IT DOES, WHAT MAKES IT
+        DIFFERENT. TWO SENTENCES MAXIMUM.]</p>
+      <div class="cta-row">
+        <a class="btn btn--primary btn--lg" href="#apply" data-cta="hero-primary">[PRIMARY CTA]</a>
+        <a class="btn btn--ghost btn--lg" href="#how" data-cta="hero-secondary">[SECONDARY CTA]</a>
+      </div>
+      <p class="cta-note">[RISK REVERSAL MICROCOPY: WHAT IT COSTS TO START, HOW
+        FAST THEY HEAR BACK, WHAT THEY ARE NOT COMMITTING TO.]</p>
+    </div>
+
+    <div class="hero__visual reveal">
+      <div class="mock__head">
+        <span>[MOCK UI TITLE]</span>
+        <span>[STATUS LABEL]</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">[ROW 1 LABEL]<span class="mock__sub">[ROW 1 SUBLINE]</span></span>
+        <span class="mock__amt">[VALUE]</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">[ROW 2 LABEL]<span class="mock__sub">[ROW 2 SUBLINE]</span></span>
+        <span class="mock__amt">[VALUE]</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">[ROW 3 LABEL]<span class="mock__sub">[ROW 3 SUBLINE]</span></span>
+        <span class="mock__amt yes">[VALUE]</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= 04. TRUST BAR ================================= -->
+<section class="trustbar">
+  <div class="container trustbar__inner">
+    <span class="trustbar__label">[TRUST LABEL]</span>
+    <span class="chip">[SEGMENT 1]</span>
+    <span class="chip">[SEGMENT 2]</span>
+    <span class="chip">[SEGMENT 3]</span>
+    <span class="chip">[SEGMENT 4]</span>
+    <span class="chip">[SEGMENT 5]</span>
+  </div>
+</section>
+
+<!-- ======================= 05. PROBLEM =================================== -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[PROBLEM EYEBROW]</p>
+      <h2>[PROBLEM H2: NAME THE PAIN THE CATEGORY IGNORES]</h2>
+      <p class="lede">[TWO TO FOUR SENTENCES. CONCRETE, NOT ABSTRACT. USE THE
+        BUYER'S OWN LANGUAGE FROM THE RESEARCH STAGE.]</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__icon">1</div><h3>[PAIN 1]</h3><p>[ONE TO TWO SENTENCES WITH A SPECIFIC NUMBER OR SCENARIO.]</p></div>
+      <div class="card"><div class="card__icon">2</div><h3>[PAIN 2]</h3><p>[ONE TO TWO SENTENCES.]</p></div>
+      <div class="card"><div class="card__icon">3</div><h3>[PAIN 3]</h3><p>[ONE TO TWO SENTENCES.]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 06. WHAT YOU GET ============================== -->
+<section class="section section--tint" id="product">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[PRODUCT EYEBROW]</p>
+      <h2>[PRODUCT H2: THE MECHANISM, IN PLAIN WORDS]</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      <div class="card">
+        <h3>[PILLAR 1 NAME]</h3>
+        <p>[WHAT IT IS AND WHY IT MATTERS. THREE SENTENCES MAX.]</p>
+        <ul class="ticklist">
+          <li>[FEATURE 1]</li><li>[FEATURE 2]</li><li>[FEATURE 3]</li><li>[FEATURE 4]</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>[PILLAR 2 NAME]</h3>
+        <p>[WHAT IT IS AND WHY IT MATTERS.]</p>
+        <ul class="ticklist">
+          <li>[FEATURE 1]</li><li>[FEATURE 2]</li><li>[FEATURE 3]</li><li>[FEATURE 4]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-row reveal" style="margin-top:28px">
+      <a class="btn btn--primary" href="#apply" data-cta="product">[MID-PAGE CTA]</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 07. HOW IT WORKS ============================== -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[PROCESS EYEBROW]</p>
+      <h2>[PROCESS H2: FROM X TO Y]</h2>
+    </div>
+    <div class="steps reveal">
+      <div><div class="step__num">1</div><h3>[STEP 1 TITLE]</h3><p class="muted">[WHAT HAPPENS, HOW LONG IT TAKES, WHAT THEY NEED TO PROVIDE.]</p></div>
+      <div><div class="step__num">2</div><h3>[STEP 2 TITLE]</h3><p class="muted">[WHAT HAPPENS.]</p></div>
+      <div><div class="step__num">3</div><h3>[STEP 3 TITLE]</h3><p class="muted">[WHAT HAPPENS.]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 08. DEEP DIVE / USP =========================== -->
+<section class="section section--tint" id="usp">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[USP EYEBROW]</p>
+      <h2>[USP H2: THE ONE THING COMPETITORS CANNOT COPY]</h2>
+      <p class="lede">[EXPLAIN THE MECHANISM BEHIND THE CLAIM. A CLAIM WITHOUT A
+        MECHANISM READS AS MARKETING.]</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card"><h3>[PROOF POINT 1]</h3><p class="muted">[ONE SENTENCE.]</p></div>
+      <div class="card"><h3>[PROOF POINT 2]</h3><p class="muted">[ONE SENTENCE.]</p></div>
+      <div class="card"><h3>[PROOF POINT 3]</h3><p class="muted">[ONE SENTENCE.]</p></div>
+      <div class="card"><h3>[PROOF POINT 4]</h3><p class="muted">[ONE SENTENCE.]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 09. INDUSTRIES ================================ -->
+<section class="section" id="industries">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[SEGMENTS EYEBROW]</p>
+      <h2>[SEGMENTS H2]</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      <div class="card"><div class="card__icon">A</div><h3>[SEGMENT 1]</h3><p class="muted">[WHY THIS SEGMENT IS UNDERSERVED AND WHAT THEY GET.]</p></div>
+      <div class="card"><div class="card__icon">B</div><h3>[SEGMENT 2]</h3><p class="muted">[SAME.]</p></div>
+      <div class="card"><div class="card__icon">C</div><h3>[SEGMENT 3]</h3><p class="muted">[SAME.]</p></div>
+      <div class="card"><div class="card__icon">D</div><h3>[SEGMENT 4]</h3><p class="muted">[SAME.]</p></div>
+    </div>
+    <p class="muted reveal" style="margin-top:22px">[CATCH-ALL LINE FOR BUYERS NOT LISTED ABOVE.]</p>
+  </div>
+</section>
+
+<!-- ======================= 10. COMPARISON ================================ -->
+<section class="section section--tint" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[COMPARISON EYEBROW]</p>
+      <h2>[COMPARISON H2: WHAT YOU ARE ACTUALLY CHOOSING BETWEEN]</h2>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">[COMPETITOR A]</th>
+            <th scope="col">[COMPETITOR B]</th>
+            <th scope="col">[COMPETITOR C]</th>
+            <th scope="col" class="col-us">[BRAND]</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>[CRITERION 1]</td><td class="no">No</td><td>Sometimes</td><td class="yes">Yes</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>[CRITERION 2]</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>[CRITERION 3]</td><td>[VALUE]</td><td>[VALUE]</td><td>[VALUE]</td><td class="col-us">[VALUE]</td></tr>
+          <tr><td>[CRITERION 4]</td><td>[VALUE]</td><td>[VALUE]</td><td>[VALUE]</td><td class="col-us">[VALUE]</td></tr>
+          <tr><td>[CRITERION 5]</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="col-us yes">Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- mobile fallback, same data, stacked -->
+    <div class="compare-cards reveal">
+      <div class="card card--accent">
+        <h3>[BRAND]</h3>
+        <dl>
+          <dt>[CRITERION 1]</dt><dd class="yes">Yes</dd>
+          <dt>[CRITERION 2]</dt><dd class="yes">Yes</dd>
+          <dt>[CRITERION 3]</dt><dd>[VALUE]</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>[COMPETITOR A]</h3>
+        <dl>
+          <dt>[CRITERION 1]</dt><dd class="no">No</dd>
+          <dt>[CRITERION 2]</dt><dd class="yes">Yes</dd>
+          <dt>[CRITERION 3]</dt><dd>[VALUE]</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. PRICING =================================== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">[PRICING EYEBROW]</p>
+      <h2>[PRICING H2]</h2>
+      <p class="lede">[WHAT IS AND IS NOT INCLUDED. NAME THE FEES THE CATEGORY
+        USUALLY HIDES.]</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card">
+        <h3>[PLAN 1]</h3>
+        <p class="price">[RATE]<small> [UNIT]</small></p>
+        <p class="muted">[WHO IT IS FOR.]</p>
+        <ul class="ticklist"><li>[INCLUDED 1]</li><li>[INCLUDED 2]</li><li>[INCLUDED 3]</li></ul>
+      </div>
+      <div class="card card--accent">
+        <span class="badge">[MOST POPULAR]</span>
+        <h3>[PLAN 2]</h3>
+        <p class="price">[RATE]<small> [UNIT]</small></p>
+        <p class="muted">[WHO IT IS FOR.]</p>
+        <ul class="ticklist"><li>[INCLUDED 1]</li><li>[INCLUDED 2]</li><li>[INCLUDED 3]</li></ul>
+      </div>
+      <div class="card">
+        <h3>[PLAN 3]</h3>
+        <p class="price">[RATE]<small> [UNIT]</small></p>
+        <p class="muted">[WHO IT IS FOR.]</p>
+        <ul class="ticklist"><li>[INCLUDED 1]</li><li>[INCLUDED 2]</li><li>[INCLUDED 3]</li></ul>
+      </div>
+    </div>
+    <p class="cta-note reveal">[WHAT IS NOT CHARGED. SETUP, MONTHLY MINIMUM, EXIT FEE.]</p>
+  </div>
+</section>
+
+<!-- ======================= 12. PROOF ===================================== -->
+<!-- Delete this whole section rather than publish invented figures. -->
+<section class="section section--tint" id="proof">
+  <div class="container center">
+    <div class="section-head reveal">
+      <h2>[PROOF H2]</h2>
+      <p class="lede">[PLACEHOLDER: REPLACE WITH REAL NUMBERS OR REMOVE THE SECTION.]</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card"><p class="price">[REAL NUMBER]</p><p class="muted">[LABEL]</p></div>
+      <div class="card"><p class="price">[REAL NUMBER]</p><p class="muted">[LABEL]</p></div>
+      <div class="card"><p class="price">[REAL NUMBER]</p><p class="muted">[LABEL]</p></div>
+      <div class="card"><p class="price">[REAL NUMBER]</p><p class="muted">[LABEL]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 13. LEAD FORM ================================= -->
+<section class="section" id="apply">
+  <div class="container split">
+    <div class="reveal">
+      <p class="eyebrow">[FORM EYEBROW]</p>
+      <h2>[FORM H2]</h2>
+      <p class="lede">[WHAT HAPPENS AFTER THEY SUBMIT AND HOW FAST.]</p>
+      <ul class="ticklist">
+        <li>[OBJECTION HANDLER 1]</li>
+        <li>[OBJECTION HANDLER 2]</li>
+        <li>[OBJECTION HANDLER 3]</li>
+      </ul>
+    </div>
+    <form class="card form reveal"
+          data-lead-form
+          data-block-free-email
+          data-endpoint=""
+          data-success="Got it. You will hear from us within 48 hours.">
+      <input class="hp" type="text" name="company_website_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-grid">
+        <label>Business name <input type="text" name="business" required placeholder="[PLACEHOLDER]"></label>
+        <label>Website <input type="url" name="website" placeholder="https://"></label>
+      </div>
+      <div class="form-grid">
+        <label>Work email <input type="email" name="email" required placeholder="you@company.com"></label>
+        <label>[SEGMENT FIELD]
+          <select name="segment" required>
+            <option value="">Select</option>
+            <option>[OPTION 1]</option>
+            <option>[OPTION 2]</option>
+            <option>[OPTION 3]</option>
+            <option>Other</option>
+          </select>
+        </label>
+      </div>
+      <label>[QUALIFYING FIELD, USUALLY MONTHLY VOLUME]
+        <select name="volume" required>
+          <option value="">Select</option>
+          <option>[BAND 1]</option>
+          <option>[BAND 2]</option>
+          <option>[BAND 3]</option>
+          <option>[BAND 4]</option>
+        </select>
+      </label>
+      <label>Anything we should know <textarea name="notes" rows="3" placeholder="[PROMPT THEM FOR THE DISQUALIFYING DETAIL EARLY]"></textarea></label>
+      <button class="btn btn--primary btn--block btn--lg" type="submit" data-cta="form-submit">[SUBMIT CTA]</button>
+      <p class="form-note" data-form-status>[WHAT YOU WILL NOT DO WITH THEIR DATA.]</p>
+    </form>
+  </div>
+</section>
+
+<!-- ======================= 14. FAQ ======================================= -->
+<section class="section section--tint" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <h2>[FAQ H2]</h2>
+      <p class="lede">[ANSWER THE OBJECTIONS SALES HEARS, NOT THE ONES MARKETING INVENTS.]</p>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>[QUESTION 1, PHRASED AS THE BUYER WOULD SEARCH IT]</summary><div>[ANSWER, TWO TO FOUR SENTENCES.]</div></details>
+      <details><summary>[QUESTION 2]</summary><div>[ANSWER.]</div></details>
+      <details><summary>[QUESTION 3]</summary><div>[ANSWER.]</div></details>
+      <details><summary>[QUESTION 4]</summary><div>[ANSWER.]</div></details>
+      <details><summary>[QUESTION 5]</summary><div>[ANSWER.]</div></details>
+      <details><summary>[QUESTION 6]</summary><div>[ANSWER.]</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 15. FINAL CTA ================================= -->
+<section class="section section--flush">
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>[FINAL CTA H2]</h2>
+      <p class="lede center">[RESTATE THE OFFER AND THE TIME COST OF ACTING.]</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--primary btn--lg" href="#apply" data-cta="final-primary">[PRIMARY CTA]</a>
+        <a class="btn btn--ghost btn--lg" href="#" data-cta="final-secondary">[SECONDARY CTA]</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 16. FOOTER ==================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__cols">
+      <div>
+        <div class="nav__brand" style="margin-bottom:10px"><span class="nav__mark">TB</span> [BRAND]</div>
+        <p class="muted" style="font-size:.86rem">[ONE LINE POSITIONING STATEMENT.]</p>
+      </div>
+      <div><h4>Product</h4><ul><li><a href="#product">[LINK]</a></li><li><a href="#pricing">[LINK]</a></li><li><a href="#how">[LINK]</a></li></ul></div>
+      <div><h4>Industries</h4><ul><li><a href="#industries">[LINK]</a></li><li><a href="#industries">[LINK]</a></li><li><a href="#industries">[LINK]</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">AML policy</a></li></ul></div>
+    </div>
+    <div class="footer__legal">
+      [REGULATORY DISCLOSURE LINE. STATE THE ACTUAL LICENSING STRUCTURE. THIS
+      LINE NEEDS LEGAL REVIEW BEFORE LAUNCH.]
+      <br>&copy; <span id="yr"></span> [BRAND]. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= 17. STICKY MOBILE CTA BAR ===================== -->
+<div class="stickybar" data-stickybar>
+  <div class="stickybar__copy">
+    <strong>[STICKY HEADLINE]</strong>
+    <span class="muted">[STICKY SUBLINE]</span>
+  </div>
+  <a class="btn btn--primary" href="#apply" data-cta="sticky">[SHORT CTA]</a>
+</div>
+
+<!-- ======================= 18. EXIT INTENT MODAL ========================= -->
+<div class="modal" id="exit-modal" data-modal data-exit-intent data-key="tpl-v1" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Before you go">
+  <div class="modal__panel">
+    <button class="modal__close" data-modal-close aria-label="Close">&times;</button>
+    <p class="eyebrow">[MODAL EYEBROW]</p>
+    <h3>[MODAL HEADLINE: OFFER SOMETHING SMALLER THAN THE MAIN CTA]</h3>
+    <p class="muted">[ONE SENTENCE ON WHAT THEY GET AND THAT IT TAKES NO COMMITMENT.]</p>
+    <form class="form" data-lead-form data-endpoint="" data-success="On its way. Check your inbox.">
+      <input class="hp" type="text" name="company_website_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Work email <input type="email" name="email" required placeholder="you@company.com"></label>
+      <button class="btn btn--primary btn--block" type="submit" data-cta="exit-modal">[MODAL CTA]</button>
+      <p class="form-note" data-form-status>[NO SPAM LINE.]</p>
+    </form>
+  </div>
+</div>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>

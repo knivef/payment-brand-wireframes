@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Payment Brand Wireframes</title>
+<meta name="description" content="Index of conversion-focused wireframe sites for each payment brand.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/base.css">
+</head>
+<body class="hub">
+
+<!-- ==========================================================================
+     BRAND REGISTRY - single source of truth for this index.
+     Every build prompt appends one object here. Keep it valid JSON.
+     status: "live" | "draft" | "planned"
+     ========================================================================== -->
+<script id="brand-registry" type="application/json">
+[
+  {
+    "slug": "_template",
+    "name": "Template Brand",
+    "tagline": "The reference wireframe every new brand is forked from.",
+    "accent": "#2f6bff",
+    "verticals": [
+      "Reference",
+      "Do not ship"
+    ],
+    "status": "draft",
+    "updated": "2026-09-25"
+  },
+  {
+    "slug": "swipe-wire-pay",
+    "name": "Swipe Wire Pay",
+    "tagline": "High-risk card acquiring and crypto offramp in one stack, with the reserve terms published before you apply.",
+    "accent": "#17b9a0",
+    "verticals": [
+      "iGaming",
+      "Adult",
+      "Peptides",
+      "Nutra"
+    ],
+    "status": "draft",
+    "updated": "2026-09-25"
+  }
+]
+</script>
+
+<header class="hub__head">
+  <div class="container">
+    <p class="eyebrow">Internal index</p>
+    <h1>Payment brand wireframes</h1>
+    <p class="lede">Every brand below is a standalone conversion wireframe built from the same
+      prompt chain and the same shared stylesheet. Click through to review layout, narrative and
+      CTA placement before any of it goes to design.</p>
+  </div>
+</header>
+
+<main class="container" style="flex:1; padding-bottom:80px;">
+  <div class="hub__grid" id="hub-grid"></div>
+  <p class="muted" id="hub-empty" style="display:none; margin-top:24px;">
+    No brands registered yet. Run the build prompt chain to add one.
+  </p>
+</main>
+
+<footer class="footer">
+  <div class="container footer__legal">
+    Wireframes only. Copy, figures and claims on every brand page are drafts pending legal review.
+  </div>
+</footer>
+
+<script>
+(function () {
+  var data = [];
+  try {
+    data = JSON.parse(document.getElementById("brand-registry").textContent);
+  } catch (e) {
+    console.error("Brand registry is not valid JSON", e);
+  }
+
+  var grid = document.getElementById("hub-grid");
+  var empty = document.getElementById("hub-empty");
+  var order = { live: 0, draft: 1, planned: 2 };
+
+  data.sort(function (a, b) {
+    var d = (order[a.status] || 9) - (order[b.status] || 9);
+    return d !== 0 ? d : a.name.localeCompare(b.name);
+  });
+
+  if (!data.length) { empty.style.display = "block"; return; }
+
+  data.forEach(function (b) {
+    var a = document.createElement("a");
+    a.className = "hub__card";
+    a.href = "/brands/" + b.slug + "/";
+
+    var tags = (b.verticals || []).map(function (v) {
+      return '<span class="hub__tag">' + v + "</span>";
+    }).join("");
+
+    a.innerHTML =
+      '<span class="hub__swatch" style="background:' + (b.accent || "var(--accent)") + '"></span>' +
+      '<span class="hub__status" data-status="' + b.status + '">' + b.status + "</span>" +
+      "<h3>" + b.name + "</h3>" +
+      "<p>" + (b.tagline || "") + "</p>" +
+      '<span class="hub__meta">' + tags + "</span>" +
+      '<span class="muted" style="font-size:.75rem">Updated ' + (b.updated || "") + "</span>";
+
+    grid.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>

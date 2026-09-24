@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Swipe Wire Pay - token overrides only.
+   Do not add layout rules here. Layout lives in /assets/base.css.
+
+   Accent chosen on measured contrast, not on taste:
+     #17b9a0 on --bg #0a0b0d          = 7.95:1  (AA and AAA for body text)
+     --accent-fg #0a0b0d on #17b9a0   = 7.95:1  (AA and AAA for button text)
+   The scaffold default #2f6bff scores 4.38:1 on --bg, which fails AA for the
+   .eyebrow text, so it was not reused. Teal also avoids colliding with
+   --positive #23c16b and --warn #ffb02e, which the comparison table and the
+   hub status badges reserve for meaning.
+   ========================================================================== */
+:root {
+  --accent:      #17b9a0;
+  --accent-fg:   #0a0b0d;
+  --accent-soft: rgba(23, 185, 160, 0.12);
+}
