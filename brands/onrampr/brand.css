@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Onrampr - token overrides only.
+   Do not add layout rules here. Layout lives in /assets/base.css.
+
+   Accent chosen on measured contrast and measured hue separation:
+     #62cbf5 on --bg #0a0b0d          = 10.67:1  (AA and AAA)
+     --accent-fg #0a0b0d on #62cbf5   = 10.67:1  (AA and AAA)
+
+   Hue 197, saturation 60, value 96. Separation from four sibling brands and
+   the tokens the shared stylesheet reserves for meaning:
+     Swipe Wire Pay #17b9a0  171deg    26deg apart, the nearest
+     base blue      #2f6bff  223deg    26deg apart
+     --positive     #23c16b  147deg    50deg apart
+     FiatPay        #a78bfa  255deg    58deg apart
+     CardPayz       #84cc16   84deg    67deg apart
+     Sepa Mint      #f26de0  308deg    69deg apart
+     --warn         #ffb02e   37deg   160deg apart
+     --negative     #ff5a5a    0deg   163deg apart
+
+   The palette is exhausted. The widest remaining gap on the wheel is 31.5deg
+   at hue 116, and it was rejected: it sits between CardPayz's lime at 84 and
+   --positive at 147, which would put two of five brands in the green family
+   and blur the comparison table, where .yes cells render in --positive.
+   197 was taken at 26deg instead because hue is not the only separator:
+   against Swipe Wire Pay's deep teal at saturation 88 and value 73, this sits
+   at saturation 60 and value 96, so they differ by 28 points of saturation and
+   23 of value as well as 26 of hue.
+
+   A sixth brand has no gap above 26deg anywhere. The portfolio needs a
+   differentiation system beyond hue before the next one.
+
+   Open: Pure Labs Pay's hex is still unknown, so separation from that brand is
+   unverified across all five.
+   ========================================================================== */
+:root {
+  --accent:      #62cbf5;
+  --accent-fg:   #0a0b0d;
+  --accent-soft: rgba(98, 203, 245, 0.12);
+}
