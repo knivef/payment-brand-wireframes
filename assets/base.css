@@ -106,11 +106,11 @@ p  { margin: 0 0 1em; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.split { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+.split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 44px; align-items: center; }
 
 @media (max-width: 900px) {
   .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .split { grid-template-columns: 1fr; gap: 32px; }
+  .split { grid-template-columns: minmax(0, 1fr); gap: 32px; }
 }
 @media (max-width: 620px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
@@ -140,6 +140,10 @@ p  { margin: 0 0 1em; }
 @media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
 
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+/* CTA labels in this repo are full phrases, and .btn sets white-space:nowrap,
+   so a long label cannot shrink and overflows narrow viewports. Inside a CTA
+   row, let buttons wrap and cap them at the container width. */
+.cta-row .btn { max-width: 100%; white-space: normal; text-align: center; }
 .cta-note { font-size: 0.85rem; color: var(--fg-muted); margin-top: 14px; }
 
 /* ---------- 6. Announcement bar (urgency, sticky top) -------------------- */
@@ -300,8 +304,13 @@ p  { margin: 0 0 1em; }
 }
 .form input::placeholder, .form textarea::placeholder { color: var(--fg-muted); }
 .form .hp { position: absolute; left: -9999px; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-@media (max-width: 620px) { .form-grid { grid-template-columns: 1fr; } }
+.form-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+@media (max-width: 620px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }
+/* A <select> cannot shrink below its widest <option>, and an <input> carries an
+   intrinsic size. Without min-width:0 those minimums push a grid track wider
+   than the viewport. .grid already used minmax(0,1fr); .split and .form-grid
+   did not, which is the inconsistency this fixes. */
+.form input, .form select, .form textarea { min-width: 0; }
 .form-note { font-size: 0.8rem; color: var(--fg-muted); }
 
 /* ---------- 16. Final CTA ------------------------------------------------ */

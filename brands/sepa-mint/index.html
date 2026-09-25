@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO block. Values from brief.md section 7. -->
+<title>Stablecoin Payments Platform, Euro Settlement | Sepa Mint</title>
+<meta name="description" content="A stablecoin payments platform built for the euro leg. Settlement lands in your own company name over SEPA Instant, weekends included. See what arrives.">
+<link rel="canonical" href="https://sepamint.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stablecoin Payments Platform, Euro Settlement | Sepa Mint">
+<meta property="og:description" content="A stablecoin payments platform built for the euro leg. Settlement lands in your own company name over SEPA Instant, weekends included. See what arrives.">
+<meta property="og:url" content="https://sepamint.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex, nofollow"><!-- wireframe stage, remove at launch -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="brand.css">
+<script defer src="/assets/conversion.js"></script>
+</head>
+
+<body>
+
+<!-- 01. ANNOUNCEMENT BAR and countdown both deleted. Nothing expires, and the
+     9 October 2025 payee-check fact is already load-bearing in the hero and the
+     problem section, so a bar would only repeat it. -->
+
+<!-- ======================= 02. NAV (sticky) ============================== -->
+<nav class="nav" data-nav>
+  <div class="container nav__inner">
+    <a class="nav__brand" href="/brands/sepa-mint/">
+      <span class="nav__mark">SM</span> Sepa Mint
+    </a>
+    <div class="nav__links">
+      <a href="#product">What you get</a>
+      <a href="#how">How it works</a>
+      <a href="#industries">Who it is for</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav__actions">
+      <a class="btn btn--ghost" href="#compare">Compare</a>
+      <a class="btn btn--primary" href="#apply" data-cta="nav">Check my IBAN</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ======================= 03. HERO ====================================== -->
+<header class="hero" data-stickybar-after>
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Euro settlement for EU companies paid in stablecoin</p>
+      <h1>The euro arrived. Your bank sent it back.</h1>
+      <p class="lede">Sepa Mint settles stablecoin revenue into an account in your own company's
+        name, over SEPA Instant, on any day of the week. The payee check passes and the origin
+        record is already attached.</p>
+      <div class="cta-row">
+        <a class="btn btn--primary btn--lg" href="#apply" data-cta="hero-primary">See what would arrive</a>
+        <a class="btn btn--ghost btn--lg" href="#usp" data-cta="hero-secondary">Why payments come back</a>
+      </div>
+      <p class="cta-note">Tell us the IBAN it needs to land in and we will show you the exact euro
+        figure, the arrival time, and the name it will arrive from, before you move anything.</p>
+    </div>
+
+    <div class="hero__visual reveal">
+      <div class="mock__head">
+        <span>Payout</span>
+        <span>Confirmed</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">You send<span class="mock__sub">[CHAIN AND ASSET]</span></span>
+        <span class="mock__amt">[AMOUNT]</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">You receive<span class="mock__sub">rate locked [TIMESTAMP]</span></span>
+        <span class="mock__amt">[AMOUNT] EUR</span>
+      </div>
+      <div class="mock__row">
+        <span class="mock__label">Arrives from<span class="mock__sub">SEPA Instant, [DAY] [TIME]</span></span>
+        <span class="mock__amt">[YOUR COMPANY NAME]</span>
+      </div>
+      <p class="cta-note" style="margin-top:14px">The name on the last row is why the payment
+        does not come back.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ======================= 04. TRUST BAR ================================= -->
+<section class="trustbar">
+  <div class="container trustbar__inner">
+    <span class="trustbar__label">Built for</span>
+    <span class="chip">EU-registered companies</span>
+    <span class="chip">Stablecoin revenue</span>
+    <span class="chip">SEPA Instant</span>
+    <span class="chip">Euro area</span>
+  </div>
+</section>
+
+<!-- ======================= 05. PROBLEM =================================== -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Why it bounced</p>
+      <h2>Stablecoin payments fail at the last step, not the first</h2>
+      <p class="lede">The conversion is rarely the problem. The problem is the euro landing at
+        your own bank under a name it has never seen, and being sent straight back.</p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card"><div class="card__icon" aria-hidden="true">1</div><h3>The payee check is now mandatory</h3><p>Since 9 October 2025, every SEPA payment in the euro area is checked against the payee's name before it executes. A mismatch gets flagged and can stop the transfer.</p></div>
+      <div class="card"><div class="card__icon" aria-hidden="true">2</div><h3>Pooled accounts fail that check by design</h3><p>The account most providers pay from runs in the name of a settlement company or a partner bank in another member state. That is a name your bank has never seen and cannot match.</p></div>
+      <div class="card"><div class="card__icon" aria-hidden="true">3</div><h3>A bounce is not instant</h3><p>A returned transfer takes 1 to 5 business days to come back, travels back through the chain, and arrives as euro rather than what you sent.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 06. WHAT YOU GET ============================== -->
+<section class="section section--tint" id="product">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">What you get</p>
+      <h2>A stablecoin payments platform judged on what lands, not what converts</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      <div class="card">
+        <h3>An account with your company's name on it</h3>
+        <p>Settlement lands in a dedicated account carrying your registered company name, not a
+          virtual IBAN alias pointing at a pooled balance. That is the difference between a payee
+          check that passes and a payment your bank returns.</p>
+        <ul class="ticklist">
+          <li>[ACCOUNT TYPE AND ISSUING ARRANGEMENT]</li>
+          <li>Dedicated, not pooled</li>
+          <li>Your registered company name</li>
+          <li>[SUPPORTED EEA COUNTRIES]</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Arrival you can put in a calendar</h3>
+        <p>SEPA Instant moves 24 hours a day, every day, including weekends and bank holidays.
+          Standard SEPA Credit Transfer does not. We tell you which rail your payout uses and what
+          happens if you start it at six on a Friday.</p>
+        <ul class="ticklist">
+          <li>SEPA Instant</li>
+          <li>[CUT-OFF TIMES]</li>
+          <li>[WEEKEND AND BANK HOLIDAY BEHAVIOUR]</li>
+          <li>[FALLBACK WHEN INSTANT IS UNAVAILABLE]</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-row reveal" style="margin-top:28px">
+      <a class="btn btn--primary" href="#apply" data-cta="product">See what would arrive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 07. HOW IT WORKS ============================== -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The process</p>
+      <h2>From destination IBAN to euro in the account</h2>
+    </div>
+    <div class="steps reveal">
+      <div><div class="step__num">1</div><h3>Give us the destination</h3><p class="muted">Your company IBAN and the name it is registered under. We check the name will match before anything moves.</p></div>
+      <div><div class="step__num">2</div><h3>See the figure, then confirm</h3><p class="muted">The euro amount, the rail, and the arrival window, locked before you send. [RATE LOCK DURATION.]</p></div>
+      <div><div class="step__num">3</div><h3>It lands, with its paperwork</h3><p class="muted">Euro arrives from your named account, and the origin record goes with it. [WHAT THE RECORD CONTAINS.]</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 08. DEEP DIVE / USP =========================== -->
+<section class="section section--tint" id="usp">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The mechanism</p>
+      <h2>Why payments come back, and what stops it</h2>
+      <p class="lede">A returned SEPA payment is almost never about the money. It is about the
+        name. Since October 2025 the receiving bank checks the payee name against the IBAN before
+        it executes, and most stablecoin payments infrastructure pays out of a pooled account held
+        in a settlement company's name, which is a name your bank has no reason to recognise. We
+        settle from an account carrying your company's own registered name, so there is nothing to
+        mismatch. Then we attach the origin record, because the second thing your bank asks about
+        euro with a crypto history is where it came from, and a compliance team that already has
+        the answer does not open a case.</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card"><h3>Your company's name</h3><p class="muted">On the account the money arrives from, so there is nothing to mismatch.</p></div>
+      <div class="card"><h3>Dedicated, never pooled</h3><p class="muted">Not an alias pointing at a shared balance held by someone else.</p></div>
+      <div class="card"><h3>Weekends included</h3><p class="muted">SEPA Instant runs 24/7. Standard Credit Transfer only moves on business days.</p></div>
+      <div class="card"><h3>Origin record attached</h3><p class="muted">Your bank's compliance team gets its answer before it asks the question.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 09. SEGMENTS ================================== -->
+<section class="section" id="industries">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Who this is for</p>
+      <h2>Cross border stablecoin payments, and the four ways they go wrong</h2>
+    </div>
+    <div class="grid grid-2 reveal">
+      <div class="card"><div class="card__icon" aria-hidden="true">A</div><h3>Your bank returned a payment</h3><p class="muted">It came back 1 to 5 business days later and nobody told you why. The reason is almost always the name on the sending account.</p></div>
+      <div class="card"><div class="card__icon" aria-hidden="true">B</div><h3>Your bank is asking where it came from</h3><p class="muted">A source-of-funds questionnaire on every payout, answered manually, each one holding up the money.</p></div>
+      <div class="card"><div class="card__icon" aria-hidden="true">C</div><h3>You are being quietly de-risked</h3><p class="muted">Not accused of anything. Just slower every month, with more manual review, which is how it starts.</p></div>
+      <div class="card"><div class="card__icon" aria-hidden="true">D</div><h3>You need it to land on a Saturday</h3><p class="muted">Payroll on the 28th, a supplier on terms, and a rail that only moves on business days.</p></div>
+    </div>
+    <p class="muted reveal" style="margin-top:22px">If your company is registered in the euro area
+      and your revenue arrives in stablecoin, this is built for you. The rest of the EEA follows
+      the payee-check timetable in January 2027.</p>
+  </div>
+</section>
+
+<!-- ======================= 10. COMPARISON ================================ -->
+<section class="section section--tint" id="compare">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Honest comparison</p>
+      <h2>Built from what each provider actually publishes</h2>
+      <p class="lede">Every row here is something a provider states or does not state on its own
+        pages. The last two go against us and the one above them is a difference rather than a
+        win.</p>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">BVNK</th>
+            <th scope="col">Mercuryo</th>
+            <th scope="col">Merge</th>
+            <th scope="col" class="col-us">Sepa Mint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>States whose name the account is in</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>Dedicated rather than pooled</td><td>"branded virtual IBANs"</td><td>Not stated</td><td class="yes">Yes</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>SEPA Instant</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>States weekend and bank holiday behaviour</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>Conversion cost published</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="col-us yes">[RATE]</td></tr>
+          <tr><td>Rate shown before you confirm</td><td>Not stated</td><td>Not stated</td><td>Not stated</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>Origin record attached to payout</td><td>Not stated</td><td>Not stated</td><td>Not stated</td><td class="col-us yes">Yes</td></tr>
+          <tr><td>Names its regulated entity in the footer</td><td class="no">Trademark line only</td><td class="no">"&copy; 2026 Mercuryo"</td><td>Not on that page</td><td class="col-us">[PENDING LEGAL REVIEW]</td></tr>
+          <tr><td>Sold to operating companies or to platforms</td><td>Both</td><td>Both</td><td>Platforms</td><td class="col-us">Operating companies</td></tr>
+          <tr><td>Years operating</td><td>[N]</td><td>[N]</td><td>[N]</td><td class="col-us no">[N], the newest here</td></tr>
+          <tr><td>Published customer references</td><td class="yes">Named logos and testimonials</td><td class="yes">Named logos</td><td>[N]</td><td class="col-us no">None yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- mobile fallback, same eleven criteria, same values, one card per column -->
+    <div class="compare-cards reveal">
+      <div class="card card--accent">
+        <h3>Sepa Mint</h3>
+        <dl>
+          <dt>States whose name the account is in</dt><dd class="yes">Yes</dd>
+          <dt>Dedicated rather than pooled</dt><dd class="yes">Yes</dd>
+          <dt>SEPA Instant</dt><dd class="yes">Yes</dd>
+          <dt>States weekend and bank holiday behaviour</dt><dd class="yes">Yes</dd>
+          <dt>Conversion cost published</dt><dd class="yes">[RATE]</dd>
+          <dt>Rate shown before you confirm</dt><dd class="yes">Yes</dd>
+          <dt>Origin record attached to payout</dt><dd class="yes">Yes</dd>
+          <dt>Names its regulated entity in the footer</dt><dd>[PENDING LEGAL REVIEW]</dd>
+          <dt>Sold to operating companies or to platforms</dt><dd>Operating companies</dd>
+          <dt>Years operating</dt><dd class="no">[N], the newest here</dd>
+          <dt>Published customer references</dt><dd class="no">None yet</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>BVNK</h3>
+        <dl>
+          <dt>States whose name the account is in</dt><dd class="no">No</dd>
+          <dt>Dedicated rather than pooled</dt><dd>"branded virtual IBANs"</dd>
+          <dt>SEPA Instant</dt><dd class="yes">Yes</dd>
+          <dt>States weekend and bank holiday behaviour</dt><dd class="no">No</dd>
+          <dt>Conversion cost published</dt><dd class="no">No</dd>
+          <dt>Rate shown before you confirm</dt><dd>Not stated</dd>
+          <dt>Origin record attached to payout</dt><dd>Not stated</dd>
+          <dt>Names its regulated entity in the footer</dt><dd class="no">Trademark line only</dd>
+          <dt>Sold to operating companies or to platforms</dt><dd>Both</dd>
+          <dt>Years operating</dt><dd>[N]</dd>
+          <dt>Published customer references</dt><dd class="yes">Named logos and testimonials</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>Mercuryo</h3>
+        <dl>
+          <dt>States whose name the account is in</dt><dd class="no">No</dd>
+          <dt>Dedicated rather than pooled</dt><dd>Not stated</dd>
+          <dt>SEPA Instant</dt><dd class="yes">Yes</dd>
+          <dt>States weekend and bank holiday behaviour</dt><dd class="no">No</dd>
+          <dt>Conversion cost published</dt><dd class="no">No</dd>
+          <dt>Rate shown before you confirm</dt><dd>Not stated</dd>
+          <dt>Origin record attached to payout</dt><dd>Not stated</dd>
+          <dt>Names its regulated entity in the footer</dt><dd class="no">"&copy; 2026 Mercuryo"</dd>
+          <dt>Sold to operating companies or to platforms</dt><dd>Both</dd>
+          <dt>Years operating</dt><dd>[N]</dd>
+          <dt>Published customer references</dt><dd class="yes">Named logos</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>Merge</h3>
+        <dl>
+          <dt>States whose name the account is in</dt><dd class="yes">Yes</dd>
+          <dt>Dedicated rather than pooled</dt><dd class="yes">Yes</dd>
+          <dt>SEPA Instant</dt><dd class="yes">Yes</dd>
+          <dt>States weekend and bank holiday behaviour</dt><dd class="no">No</dd>
+          <dt>Conversion cost published</dt><dd class="no">No</dd>
+          <dt>Rate shown before you confirm</dt><dd>Not stated</dd>
+          <dt>Origin record attached to payout</dt><dd>Not stated</dd>
+          <dt>Names its regulated entity in the footer</dt><dd>Not on that page</dd>
+          <dt>Sold to operating companies or to platforms</dt><dd>Platforms</dd>
+          <dt>Years operating</dt><dd>[N]</dd>
+          <dt>Published customer references</dt><dd>[N]</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. PRICING =================================== -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Pricing</p>
+      <h2>One number, not a headline rate with a spread underneath</h2>
+      <p class="lede">The cost that matters is the euro figure you actually receive, which is why
+        you see it before you confirm rather than working it out from a statement afterwards.</p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card card--accent"><p class="price">[RATE]</p><p class="muted">Conversion, spread included</p></div>
+      <div class="card"><p class="price">[FIXED FEE]</p><p class="muted">Per SEPA Instant payout</p></div>
+      <div class="card"><p class="price">[MINIMUM PAYOUT]</p><p class="muted">Minimum</p></div>
+      <div class="card"><p class="price">[MONTHLY FEE POSITION]</p><p class="muted">Monthly</p></div>
+    </div>
+    <p class="cta-note reveal">For context, published rates across this category run from 0.1
+      percent to 3.95 percent, and at least one provider states there is an additional spread on
+      the conversion rate on top of its headline fee.</p>
+  </div>
+</section>
+
+<!-- 12. PROOF section deleted. Nothing verified. House rule is to delete
+     rather than publish placeholder figures. -->
+
+<!-- ======================= 13. LEAD FORM ================================= -->
+<section class="section section--tint" id="apply">
+  <div class="container split">
+    <div class="reveal">
+      <p class="eyebrow">Check the destination</p>
+      <h2>See what arrives, when, and from what name</h2>
+      <p class="lede">Give us the destination IBAN and the registered company name. We will tell
+        you whether the payee check will match and what would arrive.</p>
+      <ul class="ticklist">
+        <li>We check the name will match before anything moves.</li>
+        <li>You see the euro figure and the arrival window before you confirm.</li>
+        <li>If we cannot settle into your country yet, we will say so today.</li>
+      </ul>
+    </div>
+    <form class="card form reveal"
+          data-lead-form
+          data-block-free-email
+          data-endpoint=""
+          data-success="Got it. We will come back with the payee check result and what would arrive.">
+      <input class="hp" type="text" name="company_website_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-grid">
+        <label>Company legal name <input type="text" name="business" required placeholder="As registered"></label>
+        <label>Country of registration <input type="text" name="country" required placeholder="e.g. Estonia"></label>
+      </div>
+      <div class="form-grid">
+        <label>Work email <input type="email" name="email" required placeholder="you@company.com"></label>
+        <label>Destination IBAN <input type="text" name="iban" required placeholder="The account it should land in"></label>
+      </div>
+      <div class="form-grid">
+        <label>Monthly stablecoin revenue
+          <select name="volume" required>
+            <option value="">Select</option>
+            <option>Under 50k a month</option>
+            <option>50k to 250k a month</option>
+            <option>250k to 1m a month</option>
+            <option>Over 1m a month</option>
+          </select>
+        </label>
+        <label>What has gone wrong so far
+          <select name="segment" required>
+            <option value="">Select</option>
+            <option>A payment was returned</option>
+            <option>Source-of-funds questions</option>
+            <option>Account restricted or closing</option>
+            <option>Nothing yet, planning ahead</option>
+          </select>
+        </label>
+      </div>
+      <label>Anything we should know <textarea name="notes" rows="3" placeholder="Which bank, what they said, and what you send from"></textarea></label>
+      <button class="btn btn--primary btn--block btn--lg" type="submit" data-cta="form-submit">See what would arrive</button>
+      <p class="form-note" data-form-status>We use this to run the payee check and quote you. We do not sell it.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ======================= 14. FAQ ======================================= -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <h2>What finance leads ask before moving a euro</h2>
+      <p class="lede">Including the one we cannot answer yet, left visibly unanswered rather than
+        filled in.</p>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Why did my bank send my euro payment back?</summary><div>Almost always the name. Since 9 October 2025 the receiving bank checks the payee name against the IBAN before it executes the transfer, and most providers pay out of a pooled account held in a settlement company's or a partner bank's name. Your bank has no reason to recognise that name, so the check fails. The money then takes 1 to 5 business days to travel back through the chain, and it comes back as euro rather than what you originally sent.</div></details>
+      <details><summary>Whose name does the money arrive from?</summary><div>Your own registered company name. The account is dedicated to you rather than a virtual IBAN alias pointing at a pooled balance shared with other customers. That is the single thing that decides whether the payee check passes, and it is the reason this page exists.</div></details>
+      <details><summary>What is Verification of Payee and when did it start?</summary><div>It is a check required under the EU Instant Payments Regulation, mandatory since 9 October 2025, requiring payment providers to verify that the payee's name matches the IBAN before a SEPA Credit Transfer or Instant transfer goes through. Mismatches get flagged and can stop the payment. It applies across the euro area now and extends to the rest of the EEA on 1 January 2027.</div></details>
+      <details><summary>Do you pay out at weekends and on bank holidays?</summary><div>[WEEKEND AND BANK HOLIDAY BEHAVIOUR.] SEPA Instant is designed to run 24 hours a day, every day. Standard SEPA Credit Transfer only moves on business days, which is why a payout started on a Friday evening can sit until Tuesday with providers that do not support Instant. Four of the nine providers we compared do not support it at all.</div></details>
+      <details><summary>What happens if SEPA Instant is unavailable for my bank?</summary><div>[FALLBACK WHEN INSTANT IS UNAVAILABLE.] Not every receiving institution is reachable over SEPA Instant, and where that is the case the payout falls back to standard Credit Transfer with the business-day timing that implies. We tell you which rail your destination supports before you send, not afterwards.</div></details>
+      <details><summary>What is your conversion rate, and is there a spread on top?</summary><div>[RATE], and no. It is one number, and you see the euro figure you will actually receive before you confirm. For context, published headline rates in this category run from 0.1 percent to 3.95 percent, and at least one provider states there is an additional spread on the stablecoin to fiat rate on top of its headline fee.</div></details>
+      <details><summary>My bank keeps asking where the crypto came from. What do you send them?</summary><div>[WHAT THE RECORD CONTAINS.] Every payout carries an origin record, so your bank's compliance team has the answer before it opens a case. This matters because de-risking is rarely about wrongdoing: accounts get restricted because a bank perceives unmanaged risk, and that increasingly affects regulated, transparent companies operating legally within the EU.</div></details>
+      <details><summary>Do I need to send from a self-hosted wallet, and does that change anything?</summary><div>It changes the checks. Under the EU Transfer of Funds Regulation there is no minimum threshold for originator and beneficiary information between regulated providers, unlike the United States or the FATF baseline. Transfers from a self-hosted wallet above 1,000 euro trigger additional verification steps. We would rather you know that before you start than discover it mid-transfer.</div></details>
+      <details><summary>Which countries can you settle into?</summary><div>[SUPPORTED EEA COUNTRIES.] The euro area is the starting scope, because that is where the payee check is already mandatory. The rest of the EEA follows on 1 January 2027.</div></details>
+      <details><summary>Are you licensed?</summary><div>[THIS ANSWER IS DELIBERATELY UNWRITTEN. Converting crypto to euro and paying it out over SEPA are two separate regulated activities in the EEA, and the honest answer names the legal entity, the authorisation held, the competent authority and the register reference, and states whether Sepa Mint acts on its own authorisation or as an agent of a licensed institution. Section 8 of the brief sets out the six questions that must be answered in writing before this paragraph can be drafted. It will not be filled in with a plausible sentence in the meantime.]</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 15. FINAL CTA ================================= -->
+<section class="section section--flush">
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>See what arrives, when, and from what name</h2>
+      <p class="lede center">Give us the destination IBAN and we will show you the euro figure,
+        the rail, the arrival window and the sending name before you move anything.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn btn--primary btn--lg" href="#apply" data-cta="final-primary">See what would arrive</a>
+        <a class="btn btn--ghost btn--lg" href="#compare" data-cta="final-secondary">See the comparison first</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 16. FOOTER ==================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__cols">
+      <div>
+        <div class="nav__brand" style="margin-bottom:10px"><span class="nav__mark">SM</span> Sepa Mint</div>
+        <p class="muted" style="font-size:.86rem">Euro settlement for EU companies paid in stablecoin, into an account in your own company's name.</p>
+      </div>
+      <div><h3>Product</h3><ul><li><a href="#product">Settlement</a></li><li><a href="#how">How it works</a></li><li><a href="#pricing">Pricing</a></li></ul></div>
+      <div><h3>Who it is for</h3><ul><li><a href="#industries">Returned payments</a></li><li><a href="#industries">Source-of-funds requests</a></li><li><a href="#compare">Compare</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h3>Legal</h3><ul><li><a href="#">Terms</a></li><li><a href="#">Privacy</a></li><li><a href="#">AML policy</a></li></ul></div>
+    </div>
+    <div class="footer__legal">
+      [REGULATORY DISCLOSURE LINE, PENDING. DO NOT DRAFT. THIS LINE MUST NAME THE
+      LEGAL ENTITY, THE AUTHORISATION ACTUALLY HELD, THE COMPETENT AUTHORITY AND
+      THE REGISTER REFERENCE, AND MUST STATE WHETHER SEPA MINT ACTS ON ITS OWN
+      AUTHORISATION OR AS AN AGENT OF A LICENSED INSTITUTION, NAMING THE
+      PRINCIPAL. SEE THE SIX QUESTIONS IN SECTION 8 OF THE BRIEF. NOTHING ON
+      THIS PAGE MAY STATE OR IMPLY A MiCA CASP AUTHORISATION, AN EMI OR PI
+      LICENCE, A BANKING LICENCE, OR DIRECT SEPA SCHEME PARTICIPATION UNTIL
+      THOSE ARE ANSWERED IN WRITING AND REVIEWED BY A LAWYER.]
+      <br>&copy; <span id="yr"></span> Sepa Mint. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= 17. STICKY MOBILE CTA BAR ===================== -->
+<div class="stickybar" data-stickybar>
+  <div class="stickybar__copy">
+    <strong>The euro arrived. Your bank sent it back.</strong>
+    <span class="muted">Land it in your own company's name</span>
+  </div>
+  <a class="btn btn--primary" href="#apply" data-cta="sticky">Check</a>
+</div>
+
+<!-- ======================= 18. EXIT INTENT MODAL ========================= -->
+<div class="modal" id="exit-modal" data-modal data-exit-intent data-key="sepa-mint-v1" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Before you go">
+  <div class="modal__panel">
+    <button class="modal__close" data-modal-close aria-label="Close">&times;</button>
+    <p class="eyebrow">Before you go</p>
+    <h3>Will your payment pass the name check?</h3>
+    <p class="muted">Send us the destination IBAN and the registered company name. We will tell you
+      whether it matches and what would arrive.</p>
+    <form class="form" data-lead-form data-endpoint="" data-success="On its way. We will come back with the result.">
+      <input class="hp" type="text" name="company_website_hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Work email <input type="email" name="email" required placeholder="you@company.com"></label>
+      <button class="btn btn--primary btn--block" type="submit" data-cta="exit-modal">Check my IBAN</button>
+      <p class="form-note" data-form-status>The check only. No sequence, and we do not sell your address.</p>
+    </form>
+  </div>
+</div>
+
+
+<!-- ======================= JSON-LD ====================================== -->
+<!-- Template ships none. FAQPage generated from the FAQ markup in this file. -->
+<!-- Organization. legalName, address and sameAs deliberately omitted. Emitting an unverified legal entity for a firm in a regulated EU payment flow is exactly what the compliance constraint exists to prevent. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sepa Mint",
+  "url": "https://sepamint.com/",
+  "logo": "https://sepamint.com/logo.png"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why did my bank send my euro payment back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always the name. Since 9 October 2025 the receiving bank checks the payee name against the IBAN before it executes the transfer, and most providers pay out of a pooled account held in a settlement company's or a partner bank's name. Your bank has no reason to recognise that name, so the check fails. The money then takes 1 to 5 business days to travel back through the chain, and it comes back as euro rather than what you originally sent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Whose name does the money arrive from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your own registered company name. The account is dedicated to you rather than a virtual IBAN alias pointing at a pooled balance shared with other customers. That is the single thing that decides whether the payee check passes, and it is the reason this page exists."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Verification of Payee and when did it start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a check required under the EU Instant Payments Regulation, mandatory since 9 October 2025, requiring payment providers to verify that the payee's name matches the IBAN before a SEPA Credit Transfer or Instant transfer goes through. Mismatches get flagged and can stop the payment. It applies across the euro area now and extends to the rest of the EEA on 1 January 2027."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you pay out at weekends and on bank holidays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[WEEKEND AND BANK HOLIDAY BEHAVIOUR.] SEPA Instant is designed to run 24 hours a day, every day. Standard SEPA Credit Transfer only moves on business days, which is why a payout started on a Friday evening can sit until Tuesday with providers that do not support Instant. Four of the nine providers we compared do not support it at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if SEPA Instant is unavailable for my bank?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[FALLBACK WHEN INSTANT IS UNAVAILABLE.] Not every receiving institution is reachable over SEPA Instant, and where that is the case the payout falls back to standard Credit Transfer with the business-day timing that implies. We tell you which rail your destination supports before you send, not afterwards."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your conversion rate, and is there a spread on top?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[RATE], and no. It is one number, and you see the euro figure you will actually receive before you confirm. For context, published headline rates in this category run from 0.1 percent to 3.95 percent, and at least one provider states there is an additional spread on the stablecoin to fiat rate on top of its headline fee."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My bank keeps asking where the crypto came from. What do you send them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[WHAT THE RECORD CONTAINS.] Every payout carries an origin record, so your bank's compliance team has the answer before it opens a case. This matters because de-risking is rarely about wrongdoing: accounts get restricted because a bank perceives unmanaged risk, and that increasingly affects regulated, transparent companies operating legally within the EU."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to send from a self-hosted wallet, and does that change anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It changes the checks. Under the EU Transfer of Funds Regulation there is no minimum threshold for originator and beneficiary information between regulated providers, unlike the United States or the FATF baseline. Transfers from a self-hosted wallet above 1,000 euro trigger additional verification steps. We would rather you know that before you start than discover it mid-transfer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries can you settle into?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[SUPPORTED EEA COUNTRIES.] The euro area is the starting scope, because that is where the payee check is already mandatory. The rest of the EEA follows on 1 January 2027."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you licensed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "[THIS ANSWER IS DELIBERATELY UNWRITTEN. Converting crypto to euro and paying it out over SEPA are two separate regulated activities in the EEA, and the honest answer names the legal entity, the authorisation held, the competent authority and the register reference, and states whether Sepa Mint acts on its own authorisation or as an agent of a licensed institution. Section 8 of the brief sets out the six questions that must be answered in writing before this paragraph can be drafted. It will not be filled in with a plausible sentence in the meantime.]"
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://sepamint.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stablecoin payments platform",
+      "item": "https://sepamint.com/"
+    }
+  ]
+}
+</script>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
