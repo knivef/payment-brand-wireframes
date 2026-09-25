@@ -16,8 +16,8 @@
    coral and rose land within 20deg of --negative, which would make the
    comparison table's "No" cells read as brand colour.
 
-   Open: Pure Labs Pay's hex was not available when this was chosen, so
-   separation from that brand is unverified. It is a one-value change here.
+   Pure Labs Pay: separation from that brand was never checked. kvn dropped
+   the requirement on 2026-09-25, so this is closed, not outstanding.
    ========================================================================== */
 :root {
   --accent:      #a78bfa;

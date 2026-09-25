@@ -285,8 +285,9 @@ is the midpoint of the widest remaining gap, at 52 degrees of clearance. **A
 fifth brand will have under 30 degrees anywhere on the wheel.** That is a
 portfolio decision coming, not a colour problem.
 
-**Open:** Pure Labs Pay's hex is still unknown to this session, now across four
-brands. Separation from the other three is verified; from Pure Labs Pay it is not.
+**Closed:** separation from Pure Labs Pay was never checked, because its hex
+was not available to this session. kvn dropped the requirement on 2026-09-25.
+Separation from every other sibling brand is verified and recorded above.
 
 ---
 

@@ -285,8 +285,9 @@ it away from neon. If kvn reads it as crypto-coded it is a one-value change, and
 the only other family that clears all three siblings is magenta, which fails the
 sibling test above.
 
-**Open:** Pure Labs Pay's hex is still not known to this session. Separation from
-Swipe Wire Pay and FiatPay is verified. Separation from Pure Labs Pay is not.
+**Closed:** separation from Pure Labs Pay was never checked, because its hex
+was not available to this session. kvn dropped the requirement on 2026-09-25.
+Separation from every other sibling brand is verified and recorded above.
 
 ---
 

@@ -185,9 +185,9 @@ were tested and rejected for exactly that reason: orange at 27 degrees sits 10
 degrees from --warn, and coral and rose land within 20 degrees of --negative,
 which would make the comparison table's "No" cells read as brand colour.
 
-**Open:** Pure Labs Pay's accent hex is not known to this session and is not in
-this repo. The 84 degree separation from Swipe Wire Pay is verified. Separation
-from Pure Labs Pay is not, and cannot be until kvn supplies the hex.
+**Closed:** separation from Pure Labs Pay was never checked, because its hex
+was not available to this session. kvn dropped the requirement on 2026-09-25.
+Separation from every other sibling brand is verified and recorded above.
 
 ---
 

@@ -230,7 +230,9 @@ where saturation and value were nearly identical to FiatPay.
 degrees anywhere on the wheel. The portfolio needs a differentiation system
 beyond hue before the next brand, not during it.
 
-**Open:** Pure Labs Pay's hex is still unknown, now across five brands.
+**Closed:** separation from Pure Labs Pay was never checked, because its hex
+was not available to this session. kvn dropped the requirement on 2026-09-25.
+Separation from every other sibling brand is verified and recorded above.
 
 ---
 

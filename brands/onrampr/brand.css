@@ -29,8 +29,8 @@
    A sixth brand has no gap above 26deg anywhere. The portfolio needs a
    differentiation system beyond hue before the next one.
 
-   Open: Pure Labs Pay's hex is still unknown, so separation from that brand is
-   unverified across all five.
+   Pure Labs Pay: separation from that brand was never checked. kvn dropped
+   the requirement on 2026-09-25, so this is closed, not outstanding.
    ========================================================================== */
 :root {
   --accent:      #62cbf5;

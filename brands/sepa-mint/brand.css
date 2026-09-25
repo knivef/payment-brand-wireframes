@@ -25,8 +25,8 @@
    clearance. With four brands plus three semantic tokens plus the scaffold
    default, a fifth brand will have under 30deg available anywhere.
 
-   Open: Pure Labs Pay's hex is still unknown, so separation from that brand is
-   unverified. It is a one-value change here.
+   Pure Labs Pay: separation from that brand was never checked. kvn dropped
+   the requirement on 2026-09-25, so this is closed, not outstanding.
    ========================================================================== */
 :root {
   --accent:      #f26de0;
