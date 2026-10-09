@@ -1,0 +1,7 @@
+/* Card Payz - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="stamp"]. */
+:root {
+  --accent:      #c6f24e;
+  --accent-fg:   #14110f;
+  --accent-soft: rgba(198,242,78,0.16);
+}

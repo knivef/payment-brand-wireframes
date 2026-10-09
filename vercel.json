@@ -109,6 +109,15 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/brands/card-payz/(.*)?",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

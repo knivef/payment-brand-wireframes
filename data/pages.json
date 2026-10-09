@@ -1898,6 +1898,430 @@
         ],
         "legal": "Swipe Wire Pay provides payment facilitation and settlement services through licensed acquiring and payment partners. [CONFIRM: name the acquiring and payment partner entities before launch. This line needs legal review.] Services are subject to underwriting and are not available in all jurisdictions."
       }
+    },
+    {
+      "slug": "card-payz",
+      "book_key": "Card Payz",
+      "name": "Card Payz",
+      "mark": "CP",
+      "domain": "cardpayz.com",
+      "style": "stamp",
+      "accent": "#c6f24e",
+      "accent_fg": "#14110f",
+      "accent_soft": "rgba(198,242,78,0.16)",
+      "tagline": "High-risk merchant accounts. Four programmes, terms in writing.",
+      "cta_primary": "Get approved",
+      "telegram_cta": "Message us on Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "High-Risk Merchant Accounts with Published Pricing | Card Payz",
+        "description": "High-risk merchant accounts for iGaming, adult, nutra, peptides, dating, VPN and subscription businesses. EU, UK and US programmes. Setup from $1,500."
+      },
+      "nav": [
+        {
+          "id": "pricing",
+          "label": "Programmes"
+        },
+        {
+          "id": "how",
+          "label": "How it works"
+        },
+        {
+          "id": "requirements",
+          "label": "How to apply"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        }
+      ],
+      "hero": {
+        "eyebrow": "High-risk merchant accounts",
+        "h1": "Declined? Get a merchant account that stays open.",
+        "sub": "Visa and Mastercard processing for high-risk businesses, matched to acquirers that want your vertical. Four programmes, published setup fees, terms in writing before you sign.",
+        "cta": "Get approved",
+        "cta_secondary": "See programmes and pricing",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "10 minute application",
+          "No setup fee charged until you are approved [CONFIRM: setup fee timing]"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "stats",
+          "items": [
+            {
+              "value": "4",
+              "label": "Programmes"
+            },
+            {
+              "value": "$1,500",
+              "label": "Setup, Levels A and B"
+            },
+            {
+              "value": "$2,000",
+              "label": "Setup, Level C and US"
+            },
+            {
+              "value": "$149",
+              "label": "Monthly, every programme"
+            }
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Underwriting for",
+        "chips": [
+          "iGaming",
+          "Adult",
+          "Nutra",
+          "Peptides",
+          "Dating",
+          "Subscriptions",
+          "Digital goods",
+          "VPN",
+          "Prediction markets",
+          "Affiliates"
+        ]
+      },
+      "problem": {
+        "eyebrow": "After approval",
+        "h2": "Most high-risk accounts fail in month four",
+        "lede": "Brokers win on approval and lose on everything after it: hidden reserves, surprise rate changes and terminations with no warning. Card Payz is built around the part that comes after approval.",
+        "cards": [
+          {
+            "icon": "01",
+            "title": "Matched, not sprayed",
+            "body": "Your application goes to acquirers that already board your vertical."
+          },
+          {
+            "icon": "02",
+            "title": "Terms you can read",
+            "body": "Rate, reserve and settlement schedule on paper before you sign."
+          },
+          {
+            "icon": "03",
+            "title": "Backup ready",
+            "body": "Multi-MID setup so one bank exiting does not take your revenue with it. [CONFIRM: multi-MID availability]"
+          }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Programmes",
+        "h2": "Pick your programme",
+        "lede": "Four programmes, published setup fees, one monthly fee. The programme decides which acquirers see your application.",
+        "columns": [
+          "Best for",
+          "Setup",
+          "Monthly",
+          "Rate"
+        ],
+        "rows": [
+          {
+            "label": "Level A [CONFIRM: name and fit]",
+            "values": [
+              "Lower-risk profiles with processing history",
+              "$1,500",
+              "$149",
+              "Quoted after underwriting"
+            ]
+          },
+          {
+            "label": "Level B",
+            "values": [
+              "Mid-risk verticals and newer merchants",
+              "$1,500",
+              "$149",
+              "Quoted after underwriting"
+            ]
+          },
+          {
+            "label": "Level C",
+            "values": [
+              "Highest-risk verticals",
+              "$2,000",
+              "$149",
+              "Quoted after underwriting"
+            ]
+          },
+          {
+            "label": "US",
+            "values": [
+              "US-incorporated high-risk merchants",
+              "$2,000",
+              "$149",
+              "Quoted after underwriting"
+            ]
+          }
+        ],
+        "note": "Rates and reserves are quoted after underwriting. [CONFIRM: publish rate ranges once filled in the price list]",
+        "cta": "Find my programme"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "Three steps to a live account",
+        "cards": [
+          {
+            "title": "Apply",
+            "body": "10 minutes, five questions."
+          },
+          {
+            "title": "Underwriting",
+            "body": "KYB, UBO checks, processing history review. Decision in 48 hours. [CONFIRM: decision time]"
+          },
+          {
+            "title": "Go live",
+            "body": "Hosted checkout, API or plugin. Live in about 5 business days. [CONFIRM: go-live time]"
+          }
+        ]
+      },
+      "product": {
+        "eyebrow": "What you get",
+        "h2": "Everything a high-risk account needs",
+        "accent_index": 0,
+        "cards": [
+          {
+            "title": "Acceptance",
+            "body": "Card payments your customers already trust.",
+            "points": [
+              "Visa and Mastercard acceptance",
+              "Apple Pay and Google Pay [CONFIRM: Pitches tab lists it for High Risk US]",
+              "Recurring and subscription billing"
+            ]
+          },
+          {
+            "title": "Protection",
+            "body": "The tools that keep a high-risk account open.",
+            "points": [
+              "3DS2 and fraud screening",
+              "Chargeback alerts [CONFIRM: provider]",
+              "Named account manager"
+            ]
+          }
+        ],
+        "cta": "Get approved"
+      },
+      "compliance": {
+        "id": "requirements",
+        "eyebrow": "How to apply",
+        "h2": "What you need to apply",
+        "lede": "Have these ready and underwriting moves at the speed of your inbox.",
+        "cards": [
+          {
+            "icon": "01",
+            "title": "Certificate of incorporation",
+            "body": "For the entity that will hold the account."
+          },
+          {
+            "icon": "02",
+            "title": "Share register",
+            "body": "Showing who owns the entity."
+          },
+          {
+            "icon": "03",
+            "title": "UBO ID",
+            "body": "Front and back, photographed."
+          },
+          {
+            "icon": "04",
+            "title": "UBO proof of address",
+            "body": "Under 3 months old."
+          },
+          {
+            "icon": "05",
+            "title": "Processing statements",
+            "body": "The last 3 to 6 months, if you have them."
+          },
+          {
+            "icon": "06",
+            "title": "A live website",
+            "body": "With terms, refund policy and contact details."
+          }
+        ],
+        "cta": "Get approved"
+      },
+      "apply": {
+        "eyebrow": "Apply",
+        "h2": "Get approved",
+        "lede": "Five fields now, full KYB later. We match you to a programme and send terms in writing before you sign.",
+        "points": [
+          "Matched to acquirers that board your vertical",
+          "Rate, reserve and settlement schedule in writing",
+          "A clear no if we cannot place you"
+        ],
+        "telegram_note": "Fastest way to reach us.",
+        "form": {
+          "title": "Get approved",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Send application",
+          "success": "Received. We come back with a programme and terms, or a clear no.",
+          "note": "Used only to underwrite and price your account.",
+          "steps": [
+            [
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Company name",
+                "placeholder": "Registered entity",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "url",
+                "name": "website",
+                "label": "Website",
+                "placeholder": "https://",
+                "half": true
+              },
+              {
+                "type": "text",
+                "name": "country",
+                "label": "Country of incorporation",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly volume",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Under $50,000",
+                  "$50,000 to $250,000",
+                  "$250,000 to $1m",
+                  "Over $1m"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Work email or Telegram handle",
+                "placeholder": "you@company.com or @handle",
+                "required": true
+              }
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions merchants ask",
+        "lede": "Straight answers before you apply.",
+        "items": [
+          {
+            "q": "What counts as high risk?",
+            "a": "Any business card networks flag for chargebacks, regulation or reputation: iGaming, adult, nutra, peptides, dating, VPN, subscriptions and more."
+          },
+          {
+            "q": "Can I get approved after a termination or MATCH listing?",
+            "a": "Often. Disclose it upfront."
+          },
+          {
+            "q": "How much does it cost?",
+            "a": "Setup from $1,500, $149 a month, rate quoted after underwriting."
+          },
+          {
+            "q": "Is there a rolling reserve?",
+            "a": "Most high-risk accounts carry one. Yours is stated on the term sheet before you sign."
+          },
+          {
+            "q": "Do you take US merchants?",
+            "a": "Yes, through the US programme."
+          },
+          {
+            "q": "Do you offer crypto?",
+            "a": "Not on Card Payz. Ask us about our crypto settlement partner. [CONFIRM: cross-link to Swipe Wire Pay or Zepapay]"
+          },
+          {
+            "q": "How fast are payouts?",
+            "a": "[CONFIRM: settlement schedule per programme]"
+          }
+        ]
+      },
+      "final": {
+        "h2": "Serious volume deserves a serious processor",
+        "body": "Only for serious businesses doing serious volumes. Apply in 10 minutes and get your programme and terms in writing.",
+        "cta": "Get approved"
+      },
+      "sticky": {
+        "title": "High-risk merchant accounts",
+        "sub": "Setup from $1,500, $149 a month",
+        "cta": "Get approved"
+      },
+      "footer": {
+        "columns": [
+          {
+            "title": "Programmes",
+            "links": [
+              {
+                "label": "Level A",
+                "href": "#pricing"
+              },
+              {
+                "label": "Level B",
+                "href": "#pricing"
+              },
+              {
+                "label": "Level C",
+                "href": "#pricing"
+              },
+              {
+                "label": "US",
+                "href": "#pricing"
+              }
+            ]
+          },
+          {
+            "title": "Apply",
+            "links": [
+              {
+                "label": "How it works",
+                "href": "#how"
+              },
+              {
+                "label": "What you need",
+                "href": "#requirements"
+              },
+              {
+                "label": "Get approved",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "legal": "Card Payz connects merchants with licensed acquiring banks and payment institutions. [CONFIRM: name the acquiring and payment partner entities before launch. This line needs legal review.] All accounts are subject to underwriting approval."
+      }
     }
   ]
 }
