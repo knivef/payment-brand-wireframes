@@ -2322,6 +2322,341 @@
         ],
         "legal": "Card Payz connects merchants with licensed acquiring banks and payment institutions. [CONFIRM: name the acquiring and payment partner entities before launch. This line needs legal review.] All accounts are subject to underwriting approval."
       }
+    },
+    {
+      "slug": "fiat-pay",
+      "book_key": "Fiat Pay",
+      "name": "Fiat Pay",
+      "mark": "FP",
+      "domain": "fiatpay.io",
+      "style": "warm",
+      "accent": "#c2410c",
+      "accent_fg": "#ffffff",
+      "accent_soft": "rgba(194,65,12,0.09)",
+      "tagline": "Take cards again. Get crypto orders paid into your bank.",
+      "cta_primary": "Start accepting payments",
+      "telegram_cta": "Message us on Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Peptide Payment Processing and Crypto to Bank Payouts | Fiat Pay",
+        "description": "Payment processing for peptide stores shut down by Stripe or Shopify. Take cards and crypto, get paid in fiat to your bank account. Apply in minutes."
+      },
+      "nav": [
+        {
+          "id": "how",
+          "label": "How it works"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        }
+      ],
+      "hero": {
+        "eyebrow": "Payments for peptide and wellness stores",
+        "h1": "Shut down by Stripe? You can take cards again.",
+        "sub": "Fiat Pay gets small peptide stores taking card payments again. And when a customer pays in crypto, the money lands in your bank account. No exchange accounts, no wallet juggling.",
+        "cta": "Start accepting payments",
+        "cta_secondary": "Message us on Telegram",
+        "cta_secondary_anchor": "apply",
+        "reversal": [
+          "Simple signup",
+          "No setup fee on crypto settlement"
+        ],
+        "layout": "center"
+      },
+      "problem": {
+        "eyebrow": "Sound familiar?",
+        "h2": "Small store, big payment problem",
+        "grid": "grid-1",
+        "cards": [
+          {
+            "icon": "1",
+            "title": "Your processor quit on you",
+            "body": "Stripe, Shopify Payments and PayPal routinely close peptide stores."
+          },
+          {
+            "icon": "2",
+            "title": "Customers moved to crypto. Your bank did not.",
+            "body": "Crypto sitting in a wallet does not pay rent, suppliers or tax."
+          },
+          {
+            "icon": "3",
+            "title": "Big payment companies want big stores",
+            "body": "Most will not look at you under $100K a month."
+          }
+        ]
+      },
+      "product": {
+        "eyebrow": "What you get",
+        "h2": "Cards first. Then your crypto, as money in the bank.",
+        "accent_index": 0,
+        "cards": [
+          {
+            "title": "Take cards again",
+            "body": "A card checkout on your store, so customers can pay the way they always did.",
+            "points": [
+              "Card payments for peptide and wellness stores [CONFIRM: programme, Level B assumed]",
+              "Plugins for Shopify and WooCommerce [CONFIRM: plugin availability]",
+              "Human support on Telegram"
+            ]
+          },
+          {
+            "title": "Crypto orders, paid into your bank",
+            "body": "When a customer pays in crypto, we convert it and send the money to your business bank account.",
+            "points": [
+              "From $1,000 per transfer",
+              "Paid to your bank, or straight to your supplier",
+              "No setup fee"
+            ]
+          }
+        ],
+        "cta": "Start accepting payments"
+      },
+      "how": {
+        "eyebrow": "Three steps",
+        "h2": "How it works",
+        "layout": "stack",
+        "cards": [
+          {
+            "title": "Sign up in one step",
+            "body": "Basic business details and ID."
+          },
+          {
+            "title": "Take cards and crypto",
+            "body": "Card checkout for your customers, crypto for the orders cards cannot take."
+          },
+          {
+            "title": "Get paid in your bank",
+            "body": "Crypto orders are converted and sent to your bank by bank transfer (SWIFT or SEPA)."
+          }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Pricing",
+        "h2": "What it costs",
+        "lede": "Two prices side by side. Card pricing depends on what your store sells, so we quote it once we have seen your store.",
+        "columns": [
+          "Cards",
+          "Crypto to your bank"
+        ],
+        "rows": [
+          {
+            "label": "Setup",
+            "values": [
+              "$1,500 [CONFIRM: programme, Level B assumed]",
+              "$0"
+            ]
+          },
+          {
+            "label": "Monthly",
+            "values": [
+              "$149",
+              "$250"
+            ]
+          },
+          {
+            "label": "Rate",
+            "values": [
+              "Quoted after review",
+              "2.5% all-in"
+            ],
+            "highlight": true
+          },
+          {
+            "label": "Currency conversion",
+            "values": [
+              "[CONFIRM: card FX, not in the Cards price lists]",
+              "0.15% + bank FX"
+            ]
+          },
+          {
+            "label": "Per transfer",
+            "values": [
+              "n/a",
+              "$1,000 to $500,000"
+            ]
+          }
+        ],
+        "note": "Nothing on this table changes after you sign up without telling you first.",
+        "cta": "Get my rate"
+      },
+      "estimator": {
+        "eyebrow": "The honest maths",
+        "h2": "What crypto orders cost you",
+        "lede": "Below $10,000 a month in crypto orders, the $250 monthly fee is the bigger part of what you pay. Move the slider to see your number.",
+        "modes": [
+          {
+            "key": "crypto",
+            "label": "Crypto to bank",
+            "pct": 2.5
+          }
+        ],
+        "min": 1000,
+        "max": 100000,
+        "step": 1000,
+        "default": 5000,
+        "setup": 0,
+        "monthly": 250,
+        "out_label": "Your monthly cost for crypto orders",
+        "disclaimer": "Crypto to bank only: 2.5% all-in plus $250 a month, no setup fee. Card fees are not included because card pricing is quoted after review. Your bank's exchange rate is extra.",
+        "cta": "Get my rate"
+      },
+      "compliance": {
+        "id": "accept",
+        "grid": "grid-1",
+        "eyebrow": "Who we work with",
+        "h2": "What we accept and what we do not",
+        "cards": [
+          {
+            "title": "Our acceptance policy",
+            "body": "[CONFIRM: We work with peptide businesses that sell compliantly: clear product labelling, terms, refund policy and a real business entity. RUO stance to be decided. Card networks treat research-use-only sellers very differently from compounding pharmacies and clinics, and acquirers will check this.]"
+          }
+        ]
+      },
+      "apply": {
+        "eyebrow": "Get started",
+        "h2": "Start accepting payments",
+        "lede": "Five quick questions about your store. We come back with card pricing and a crypto account.",
+        "points": [
+          "Built for small stores",
+          "No setup fee on crypto settlement",
+          "A real person on Telegram"
+        ],
+        "telegram_note": "Quickest way to ask a question.",
+        "form": {
+          "title": "Tell us about your store",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Send",
+          "success": "Thanks. We will be in touch soon.",
+          "note": "We only use this to set up your account.",
+          "steps": [
+            [
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Store or company name",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "url",
+                "name": "website",
+                "label": "Store website",
+                "placeholder": "https://",
+                "half": true
+              },
+              {
+                "type": "text",
+                "name": "country",
+                "label": "Country your business is registered in",
+                "required": true
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly sales",
+                "required": true,
+                "options": [
+                  "Under $10,000",
+                  "$10,000 to $50,000",
+                  "$50,000 to $100,000",
+                  "Over $100,000"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Email or Telegram handle",
+                "placeholder": "you@store.com or @handle",
+                "required": true
+              }
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions store owners ask",
+        "lede": "Short answers.",
+        "items": [
+          {
+            "q": "Can a small store apply?",
+            "a": "Yes. Fiat Pay is built for stores that bigger payment companies turn away."
+          },
+          {
+            "q": "How do crypto payments reach my bank?",
+            "a": "We convert them and send the money to your business bank account by bank transfer (SWIFT or SEPA)."
+          },
+          {
+            "q": "Do my customers need a crypto wallet?",
+            "a": "Only if they choose to pay in crypto. Cards work as normal."
+          },
+          {
+            "q": "What does it cost?",
+            "a": "Crypto to bank is 2.5% all-in plus $250 a month, with no setup fee. Card pricing depends on your store."
+          },
+          {
+            "q": "Can I pay my supplier directly?",
+            "a": "Yes. We can send the money straight to your supplier instead of your own account."
+          },
+          {
+            "q": "What do I need to sign up?",
+            "a": "Company registration, a list of your company's owners (the share register), owner ID and proof of address."
+          },
+          {
+            "q": "How long does it take?",
+            "a": "[CONFIRM: onboarding time]"
+          }
+        ]
+      },
+      "final": {
+        "h2": "Get your store paid again",
+        "body": "Tell us about your store. We will show you how to take cards again and get crypto orders into your bank.",
+        "cta": "Start accepting payments"
+      },
+      "sticky": {
+        "title": "Take cards again",
+        "sub": "Crypto to your bank, no setup fee",
+        "cta": "Start"
+      },
+      "footer": {
+        "columns": [
+          {
+            "title": "Fiat Pay",
+            "links": [
+              {
+                "label": "How it works",
+                "href": "#how"
+              },
+              {
+                "label": "Pricing",
+                "href": "#pricing"
+              },
+              {
+                "label": "FAQ",
+                "href": "#faq"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              },
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "legal": "Fiat Pay provides payment and settlement services through licensed payment partners. [CONFIRM: name the payment partner entities before launch. This line needs legal review.] Subject to approval."
+      }
     }
   ]
 }

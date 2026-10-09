@@ -217,6 +217,9 @@ def sec_block(b, key, grid, tint=False, numbered=False):
     s = b.get(key)
     if not s:
         return ""
+    # A page may narrow the grid, e.g. "grid-1" for a style that runs a large
+    # body and a narrow container. Never wider than the section default.
+    grid = s.get("grid", grid)
     head = '<p class="eyebrow">{0}</p>'.format(e(s["eyebrow"])) if s.get("eyebrow") else ""
     lede = '<p class="lede">{0}</p>'.format(e(s["lede"])) if s.get("lede") else ""
     cta = ""
@@ -251,9 +254,10 @@ def sec_how(b):
 <section class="section" id="how">
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow">{eyebrow}</p><h2>{h2}</h2></div>
-    <div class="steps reveal">{steps}</div>
+    <div class="steps{stack} reveal">{steps}</div>
   </div>
-</section>""".format(eyebrow=e(s.get("eyebrow", "Process")), h2=e(s["h2"]), steps=steps)
+</section>""".format(eyebrow=e(s.get("eyebrow", "Process")), h2=e(s["h2"]), steps=steps,
+                     stack=" steps--stack" if s.get("layout") == "stack" else "")
 
 
 def sec_pricing(b, price_lists):
@@ -524,7 +528,7 @@ def sec_footer(b):
     return """
 <footer class="footer">
   <div class="container">
-    <div class="footer__cols">
+    <div class="footer__cols{narrow}">
       <div>
         <div class="nav__brand" style="margin-bottom:10px"><span class="nav__mark">{mark}</span> {name}</div>
         <p class="muted" style="font-size:.86rem">{tagline}</p>
@@ -534,7 +538,8 @@ def sec_footer(b):
     <div class="footer__legal">{legal}<br>&copy; <span id="yr"></span> {name}. All rights reserved.</div>
   </div>
 </footer>""".format(mark=e(b["mark"]), name=e(b["name"]), tagline=e(b["tagline"]),
-                    cols=cols, legal=e(b["footer"]["legal"]))
+                    cols=cols, legal=e(b["footer"]["legal"]),
+                    narrow=" footer__cols--two" if len(b["footer"]["columns"]) == 1 else "")
 
 
 def sec_sticky(b):

@@ -118,6 +118,15 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/brands/fiat-pay/(.*)?",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }
