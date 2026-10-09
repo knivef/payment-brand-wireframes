@@ -217,8 +217,8 @@ def sec_block(b, key, grid, tint=False, numbered=False):
     s = b.get(key)
     if not s:
         return ""
-    # A page may narrow the grid, e.g. "grid-1" for a style that runs a large
-    # body and a narrow container. Never wider than the section default.
+    # A page may override the grid, e.g. "grid-1" for a style that runs a
+    # large body and a narrow container, or "grid-3" for five short cards.
     grid = s.get("grid", grid)
     head = '<p class="eyebrow">{0}</p>'.format(e(s["eyebrow"])) if s.get("eyebrow") else ""
     lede = '<p class="lede">{0}</p>'.format(e(s["lede"])) if s.get("lede") else ""
@@ -369,22 +369,38 @@ def sec_estimator(b):
             if total != round(m["pct"], 6):
                 sys.exit("estimator parts for {0}/{1} add up to {2}, not {3}".format(
                     b["slug"], m["key"], total, m["pct"]))
-    modes = "".join('<button type="button" data-est-mode="{k}" data-pct="{p}"{parts}>{l}</button>'
+    modes = "".join('<button type="button" data-est-mode="{k}" data-pct="{p}"{parts}{floor}>{l}</button>'
                     .format(k=m["key"], p=m["pct"], l=e(m["label"]),
                             parts=(' data-parts="{0}"'.format(e(json.dumps(m["parts"])))
-                                   if m.get("parts") else ""))
+                                   if m.get("parts") else ""),
+                            floor=(' data-floor="{0}"'.format(m["floor"]) if m.get("floor") else ""))
                     for m in s["modes"])
+    # Optional second slider: average payout size. With it, a per-payout
+    # minimum ("1% or $30, whichever is higher") is charged per payout, so the
+    # floor shows up at small tickets instead of hiding inside a percentage.
+    avg = ""
+    if s.get("avg_values"):
+        vals = s["avg_values"]
+        idx = vals.index(s.get("avg_default", vals[0]))
+        avg = """
+        <div>
+          <div class="range-head"><span>{label}</span><b data-est-avg-label>$0</b></div>
+          <input type="range" data-est-avg data-values="{vals}" min="0" max="{mx}" step="1" value="{idx}" aria-label="{label}">
+        </div>""".format(label=e(s.get("avg_label", "Average payout")), vals=e(json.dumps(vals)),
+                         mx=len(vals) - 1, idx=idx)
+    topup = ' data-topup="{0}" data-topup-label="{1}"'.format(
+        s["topup_pct"], e(s.get("topup_label", "Top-up"))) if s.get("topup_pct") else ""
     return """
 <section class="section" id="estimate">
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow">{eyebrow}</p><h2>{h2}</h2><p class="lede">{lede}</p></div>
-    <div class="estimator reveal" data-estimator data-setup="{setup}" data-monthly="{monthly}">
+    <div class="estimator reveal" data-estimator data-setup="{setup}" data-monthly="{monthly}"{topup}>
       <div class="estimator__controls">
         <div class="seg">{modes}</div>
         <div>
           <div class="range-head"><span>Monthly volume</span><b data-est-volume-label>$0</b></div>
           <input type="range" data-est-volume min="{min}" max="{max}" step="{step}" value="{val}" aria-label="Monthly volume">
-        </div>
+        </div>{avg}
         <p class="form-note">{disclaimer}</p>
       </div>
       <div class="estimator__out">
@@ -400,7 +416,7 @@ def sec_estimator(b):
                      min=s.get("min", 10000), max=s.get("max", 1000000),
                      step=s.get("step", 10000), val=s.get("default", 100000),
                      disclaimer=e(s.get("disclaimer", "")), out_label=e(s.get("out_label", "Estimated monthly cost")),
-                     cta=e(s.get("cta", "Get a written quote")))
+                     cta=e(s.get("cta", "Get a written quote")), avg=avg, topup=topup)
 
 
 def _form_markup(f, compact=False):
@@ -617,12 +633,14 @@ def render(b, price_lists, nav_json="[]"):
         sec_nav(b),
         sec_hero(b),
         sec_trustbar(b),
+        # A page that sells to named payee or buyer types can lead with them.
+        (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),
         sec_block(b, "problem", "grid-3"),
         sec_block(b, "product", "grid-2", tint=True),
         sec_how(b),
         sec_pricing(b, price_lists),
         sec_estimator(b),
-        sec_block(b, "segments", "grid-2", tint=True),
+        ("" if b.get("segments_first") else sec_block(b, "segments", "grid-2", tint=True)),
         sec_block(b, "compliance", "grid-3"),
         sec_form(b),
         sec_faq(b),

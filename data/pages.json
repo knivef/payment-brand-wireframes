@@ -861,221 +861,455 @@
       "accent": "#4f46e5",
       "accent_fg": "#ffffff",
       "accent_soft": "rgba(79,70,229,0.09)",
-      "tagline": "Fund in crypto, pay everyone in their own currency.",
+      "tagline": "Fund in crypto. Pay anyone in fiat.",
       "cta_primary": "Start paying out",
-      "telegram_cta": "Telegram",
+      "telegram_cta": "Message us on Telegram",
       "telegram_url": "#apply",
+      "segments_first": true,
       "seo": {
-        "title": "Offrampr | Mass Payouts Funded in Crypto, Paid in Fiat",
-        "description": "Top up in crypto and pay affiliates, creators, traders and players in local currency. Payouts from $25. One platform, many corridors."
+        "title": "Crypto Funded Mass Payouts to Bank Accounts | Offrampr",
+        "description": "Fund in USDT or USDC, pay affiliates, players, traders and suppliers in fiat. Instant multi-currency payouts from one dashboard. Built for iGaming and Forex."
       },
       "nav": [
-        {"id": "problem", "label": "The problem"},
-        {"id": "product", "label": "Payouts"},
-        {"id": "pricing", "label": "Pricing"},
-        {"id": "estimate", "label": "Estimate"},
-        {"id": "faq", "label": "FAQ"}
-      ],
-      "announce": {
-        "text": "Payouts start at $25. Minimum ticket, not minimum relationship.",
-        "cta": "See pricing",
-        "countdown_hours": 0
-      },
-      "hero": {
-        "eyebrow": "Mass payouts for affiliate and creator programmes",
-        "h1": "Fund in crypto. Pay everyone in their own currency.",
-        "sub": "Top up your balance with stablecoin and pay affiliates, creators, traders and players in the currency they actually bank in. One platform, one upload, payouts from $25 to $200,000.",
-        "cta": "Start paying out",
-        "cta_secondary": "See pricing",
-        "cta_secondary_anchor": "pricing",
-        "reversal": [
-          "$25 minimum payout",
-          "Pay in local currency",
-          "One upload, many recipients"
-        ],
-        "layout": "split",
-        "visual": {
-          "type": "mock",
-          "title": "Payout run",
-          "status": "412 recipients",
-          "rows": [
-            {"label": "Balance funded", "sub": "USDT · 180,000.00", "amount": "$180,000"},
-            {"label": "Affiliates, 318 recipients", "sub": "EUR, GBP, PLN, BRL", "amount": "$142,400"},
-            {"label": "Creators, 94 recipients", "sub": "paid, instant where available", "amount": "$31,180", "good": true}
-          ]
+        {
+          "id": "segments",
+          "label": "Use cases"
+        },
+        {
+          "id": "how",
+          "label": "How it works"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
         }
+      ],
+      "hero": {
+        "eyebrow": "Crypto funded payouts",
+        "h1": "Fund in crypto. Pay anyone in fiat.",
+        "sub": "Top up with USDT or USDC and pay affiliates, players, traders, creators and suppliers straight to their bank accounts, in their own currency. One balance, one dashboard, instant payouts.",
+        "cta": "Start paying out",
+        "cta_secondary": "Message us on Telegram",
+        "cta_secondary_anchor": "apply",
+        "reversal": [
+          "Payouts from $25",
+          "Multiple currencies",
+          "Recipients never touch crypto"
+        ],
+        "layout": "center"
       },
       "trustbar": {
-        "label": "Paying out for",
-        "chips": ["iGaming", "Forex", "Affiliate networks", "Creator platforms", "Prop firms"]
-      },
-      "problem": {
-        "eyebrow": "Why payouts hurt",
-        "h2": "Paying people is harder than getting paid",
-        "lede": "Collection has a thousand providers. Paying hundreds of people, in a dozen currencies, at small ticket sizes, from a balance you hold in stablecoin, has almost none.",
-        "cards": [
-          {"icon": "1", "title": "Small payouts cost more than they are worth", "body": "A $40 affiliate payment through a bank wire is mostly fee. So it gets batched, delayed, and the affiliate starts promoting someone else."},
-          {"icon": "2", "title": "Your treasury is in crypto, your payees are not", "body": "Holding stablecoin and paying in euro means converting, moving, reconciling, and doing it again next cycle."},
-          {"icon": "3", "title": "One spreadsheet, twelve currencies", "body": "Every corridor a different process, a different cut-off time, and a different person chasing you about a payment that did not land."}
+        "label": "Built for businesses that pay people",
+        "chips": [
+          "iGaming operators",
+          "Forex brokers",
+          "Affiliate networks",
+          "Crypto businesses",
+          "Creator platforms"
         ]
       },
-      "product": {
-        "eyebrow": "What it does",
-        "h2": "One balance, every recipient",
-        "accent_index": 0,
+      "segments": {
+        "eyebrow": "Use cases",
+        "h2": "Who you pay",
+        "grid": "grid-3",
         "cards": [
           {
-            "title": "Fund in crypto",
-            "body": "Top up with stablecoin or crypto. The balance sits in your account and funds every payout run until you top it up again.",
-            "points": [
-              "USDT, USDC and major assets",
-              "Screening on every inbound transaction",
-              "Balance visible before you commit a run",
-              "No reserve held against the balance"
-            ]
+            "icon": "A",
+            "title": "Affiliates",
+            "body": "Monthly commission runs to bank accounts worldwide."
           },
           {
-            "title": "Pay in fiat",
-            "body": "Upload the run, pay recipients in their own currency. Instant payment schemes where the corridor supports them, bank transfer where it does not.",
-            "points": [
-              "Payouts from $25 to $200,000",
-              "Multiple currencies in one run",
-              "Instant payment rails where available",
-              "Status per recipient, not per batch"
-            ]
+            "icon": "B",
+            "title": "Players",
+            "body": "Fast withdrawals for iGaming players who want fiat."
+          },
+          {
+            "icon": "C",
+            "title": "Traders",
+            "body": "Forex and prop firm withdrawals to bank."
+          },
+          {
+            "icon": "D",
+            "title": "Creators",
+            "body": "Platform earnings paid in local currency."
+          },
+          {
+            "icon": "E",
+            "title": "Suppliers",
+            "body": "Pay EUR and other fiat invoices from your crypto balance."
           }
         ],
         "cta": "Start paying out"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "h2": "Your revenue is on-chain. Your payees are not.",
+        "cards": [
+          {
+            "icon": "1",
+            "title": "Every payout is a manual job",
+            "body": "Convert, withdraw, wait, wire, repeat."
+          },
+          {
+            "icon": "2",
+            "title": "Payees want their own currency",
+            "body": "Affiliates in Brazil and suppliers in Germany do not want USDT."
+          },
+          {
+            "icon": "3",
+            "title": "Exchanges were not built for payouts",
+            "body": "Withdrawal limits and source-of-funds checks stall the whole run."
+          }
+        ]
+      },
+      "product": {
+        "eyebrow": "What you get",
+        "h2": "One balance, every payee",
+        "cards": [
+          {
+            "title": "Instant, multi-currency",
+            "body": "Instant payouts in multiple currencies."
+          },
+          {
+            "title": "B2C and B2B",
+            "body": "Including third party invoice payments."
+          },
+          {
+            "title": "SWIFT and SEPA",
+            "body": "Both rails from the same balance."
+          },
+          {
+            "title": "From $25 to $200,000",
+            "body": "Per single payout."
+          },
+          {
+            "title": "Bulk payouts and API",
+            "body": "[CONFIRM: bulk payouts and API availability]"
+          },
+          {
+            "title": "Full records",
+            "body": "Every payout recorded for reconciliation."
+          }
+        ]
       },
       "how": {
         "eyebrow": "Process",
         "h2": "From balance to paid",
         "cards": [
-          {"title": "Fund the balance", "body": "Send crypto. It is screened, converted at a rate you see, and credited to your payout balance."},
-          {"title": "Upload the run", "body": "Recipients, amounts, currencies. Validation happens before anything moves, so a bad row does not fail the whole batch."},
-          {"title": "They get paid", "body": "Each recipient in their own currency, with a per-recipient status you can hand to support instead of guessing."}
+          {
+            "title": "Fund your balance",
+            "body": "Top up in USDT or USDC."
+          },
+          {
+            "title": "Add payees",
+            "body": "One by one or in bulk. [CONFIRM: CSV upload]"
+          },
+          {
+            "title": "Pay out",
+            "body": "Instant payments in the recipient's currency."
+          }
         ]
       },
       "pricing": {
         "eyebrow": "Pricing",
-        "h2": "One percent, or thirty dollars, whichever is higher",
-        "lede": "That is the payout fee. It is on this page rather than behind a call, because at these ticket sizes the fee is the decision.",
-        "price_list": "Offramp (Payouts)",
-        "show": [
-          ["Settlement via SEPA", "settle_sepa", false],
-          ["Crypto deposit, funding the balance", "crypto_dep", false],
-          ["Crypto settlement", "crypto_wd", false]
+        "h2": "Every fee, including the minimum",
+        "lede": "The per payout fee is 1% or $30, whichever is higher. That means every payout under $3,000 costs $30, and a $25 payout costs more in fees than it sends. It is on the page so you can plan around it.",
+        "columns": [
+          "Offrampr"
         ],
-        "extra_rows": [
-          {"label": "Payout fee", "value": "1% or $30", "note": "whichever is higher, per payout", "highlight": true},
-          {"label": "Payout range", "value": "$25 to $200,000"},
-          {"label": "Currencies", "value": "Multiple, in a single run"},
-          {"label": "Speed", "value": "Instant where the corridor supports it"}
+        "rows": [
+          {
+            "label": "Setup",
+            "values": [
+              "$500"
+            ]
+          },
+          {
+            "label": "Monthly",
+            "values": [
+              "$250"
+            ]
+          },
+          {
+            "label": "Per payout (B2C, B2B, SWIFT)",
+            "values": [
+              "1% or $30, whichever is higher"
+            ],
+            "highlight": true
+          },
+          {
+            "label": "SEPA payout",
+            "values": [
+              "0.5%"
+            ]
+          },
+          {
+            "label": "Crypto top-up",
+            "values": [
+              "2%"
+            ]
+          },
+          {
+            "label": "Crypto withdrawal",
+            "values": [
+              "0.5%"
+            ]
+          },
+          {
+            "label": "FX",
+            "values": [
+              "0.15% + bank FX"
+            ]
+          },
+          {
+            "label": "Payout size",
+            "values": [
+              "$25 to $200,000"
+            ]
+          }
         ],
-        "not_charged": [
-          "No per recipient onboarding fee",
-          "No reserve against your balance",
-          "No charge for a failed row, only for payouts that actually leave"
-        ],
-        "note": "Setup is $500 one time, plus $250 per month. The one percent floor of $30 means very small payouts are better batched per recipient than sent individually. We will tell you that rather than let you discover it."
+        "note": "Funding the balance in crypto costs 2% on the top-up. Add that to the 1% payout fee and a bank payout above $3,000 works out at about 3% before the monthly fee.",
+        "cta": "Get a payout quote"
       },
       "estimator": {
         "eyebrow": "Arithmetic",
-        "h2": "What a payout run costs",
-        "lede": "Set your monthly payout volume. The effective rate is what you are really paying.",
-        "modes": [{"key": "payout", "label": "Payouts", "pct": 1}],
+        "h2": "What a payout run really costs",
+        "lede": "Set your monthly payout volume and your average payout. Small payouts hit the $30 minimum, and the 2% crypto top-up is included, so the effective rate is the whole cost.",
+        "modes": [
+          {
+            "key": "bank",
+            "label": "Bank payout, 1% or $30",
+            "pct": 1,
+            "floor": 30
+          },
+          {
+            "key": "sepa",
+            "label": "SEPA payout, 0.5%",
+            "pct": 0.5
+          }
+        ],
         "min": 5000,
         "max": 1000000,
         "step": 5000,
         "default": 100000,
+        "avg_label": "Average payout",
+        "avg_values": [
+          25,
+          50,
+          100,
+          250,
+          500,
+          1000,
+          2000,
+          3000,
+          5000,
+          10000,
+          25000,
+          50000,
+          100000,
+          200000
+        ],
+        "avg_default": 500,
+        "topup_pct": 2,
+        "topup_label": "Crypto top-up",
         "setup": 500,
         "monthly": 250,
         "out_label": "Estimated monthly cost",
-        "disclaimer": "Indicative, and assumes an average payout above $3,000 so the one percent applies rather than the $30 floor. Small average tickets cost more. Ask us for a run-level estimate.",
-        "cta": "Get a run-level quote"
-      },
-      "segments": {
-        "eyebrow": "Who uses this",
-        "h2": "Four payout problems, one rail",
-        "cards": [
-          {"icon": "A", "title": "Affiliate networks", "body": "Hundreds of partners, monthly cycles, mixed currencies, and a reputation that lives on paying on time."},
-          {"icon": "B", "title": "iGaming operators", "body": "Player withdrawals and affiliate commissions from the same funded balance, with per-recipient status your support team can read."},
-          {"icon": "C", "title": "Creator platforms", "body": "Small, frequent payouts to people in countries your bank has never heard of."},
-          {"icon": "D", "title": "Prop firms and brokers", "body": "Trader payouts that need to be fast, because speed of payout is the product review."}
-        ],
-        "foot": "Paying a group that is not on this list? Tell us the corridors and the average ticket and we will say whether it works."
+        "disclaimer": "Indicative. Top-up is charged on the payout volume. Excludes FX at 0.15% plus bank FX and the $500 one-time setup. Your written quote is the binding number.",
+        "cta": "Get a payout quote"
       },
       "apply": {
         "eyebrow": "Get started",
-        "h2": "Tell us who you pay and where",
-        "lede": "Corridors, recipient count and average ticket. We come back with a run-level cost, not a headline rate.",
+        "h2": "Start paying out",
+        "lede": "Tell us who you pay and how much. We come back with the cost of your actual run, minimum fees included.",
         "points": [
-          "Costed against your actual average ticket",
-          "We say if batching would save you money",
-          "A straight no if the corridors do not work"
+          "Costed at your real average payout",
+          "Every fee on the page, including the $30 minimum",
+          "Recipients never touch crypto"
         ],
         "telegram_note": "Quickest for a scoping chat.",
         "form": {
-          "title": "Scope a payout run",
-          "sub": "Two steps.",
-          "block_free_email": true,
-          "submit": "Get a run-level quote",
-          "success": "Received. A run-level cost comes back within one business day.",
+          "title": "Start paying out",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Get a payout quote",
+          "success": "Received. We will come back with the cost of your run.",
           "note": "Used for scoping and pricing only.",
           "steps": [
             [
-              {"type": "text", "name": "business", "label": "Business name", "required": true, "half": true},
-              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
-              {"type": "select", "name": "who", "label": "Who you pay", "required": true,
-               "options": ["Affiliates", "Players", "Creators", "Traders", "Contractors", "Mixed"]},
-              {"type": "select", "name": "count", "label": "Recipients per cycle", "required": true,
-               "options": ["Under 50", "50 to 250", "250 to 1,000", "Over 1,000"]}
-            ],
-            [
-              {"type": "select", "name": "avg", "label": "Average payout size", "required": true,
-               "options": ["Under $100", "$100 to $500", "$500 to $3,000", "Over $3,000"]},
-              {"type": "text", "name": "corridors", "label": "Main currencies", "placeholder": "EUR, GBP, BRL, PLN", "required": true},
-              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
-              {"type": "textarea", "name": "notes", "label": "How you pay today", "placeholder": "Current provider, what fails, how long a cycle takes"}
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Company name",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "text",
+                "name": "country",
+                "label": "Country of incorporation",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "who",
+                "label": "Who you pay",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Affiliates",
+                  "Players",
+                  "Traders",
+                  "Creators",
+                  "Suppliers",
+                  "Mixed"
+                ]
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly payout volume",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Under $50,000",
+                  "$50,000 to $250,000",
+                  "$250,000 to $1m",
+                  "Over $1m"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Work email or Telegram handle",
+                "placeholder": "you@company.com or @handle",
+                "required": true
+              }
             ]
           ]
         }
       },
       "faq": {
         "h2": "Payout questions",
-        "lede": "What comes up when people scope a run.",
+        "lede": "What comes up before the first run.",
         "items": [
-          {"q": "What does a payout cost?", "a": "One percent, or thirty dollars, whichever is higher. On a $40 payout that floor dominates, so very small payouts are usually better batched per recipient. We will tell you that during scoping."},
-          {"q": "What is the smallest payout you can send?", "a": "$25. The largest single payout is $200,000."},
-          {"q": "How fast do recipients get paid?", "a": "Instant where the corridor supports an instant payment scheme. Otherwise it follows the local rail, typically same or next business day."},
-          {"q": "Can one run contain several currencies?", "a": "Yes. Upload the run once, recipients get paid in their own currency."},
-          {"q": "Do I have to hold crypto?", "a": "You fund the balance in crypto, yes. That is what makes the small-ticket economics work. The recipients never touch crypto."},
-          {"q": "What happens if a row is wrong?", "a": "Validation runs before anything moves, so a bad row is rejected rather than failing the batch. You are only charged for payouts that actually leave."},
-          {"q": "What does it cost to set up?", "a": "$500 one time and $250 per month. Both are on the rate card above."}
+          {
+            "q": "Do my recipients need a crypto wallet?",
+            "a": "No. They receive fiat in their bank account."
+          },
+          {
+            "q": "Which currencies can I pay out in?",
+            "a": "[CONFIRM: currency list]"
+          },
+          {
+            "q": "How fast are payouts?",
+            "a": "Payouts in currency are instant. [CONFIRM: speed by corridor]"
+          },
+          {
+            "q": "What does a payout cost?",
+            "a": "1% or $30, whichever is higher. So every payout under $3,000 costs $30, and a $25 payout costs $30. SEPA payouts are 0.5%. Funding your balance in crypto adds 2% on the top-up, plus $250 a month."
+          },
+          {
+            "q": "Can I pay supplier invoices with crypto?",
+            "a": "Yes. Top up in crypto and settle EUR and other fiat invoices."
+          },
+          {
+            "q": "Can I send bulk payouts?",
+            "a": "[CONFIRM: bulk payouts]"
+          },
+          {
+            "q": "Who is Offrampr for?",
+            "a": "iGaming, Forex, crypto and affiliate businesses that pay many people regularly."
+          }
         ]
       },
       "final": {
-        "h2": "Scope a run, get a real number",
-        "body": "Send the corridors, the recipient count and the average ticket. You get a cost against your actual run, not a headline rate.",
+        "h2": "Run your next payout in fiat",
+        "body": "Tell us who you pay, how often and the average payout. You get the cost of a real run, with every fee in it.",
         "cta": "Start paying out"
       },
-      "sticky": {"title": "Pay out from a crypto balance", "sub": "From $25, in local currency", "cta": "Scope it"},
-      "exit_modal": {
-        "eyebrow": "Before you go",
-        "h": "Take the payout cost model",
-        "body": "A one page sheet showing where the one percent wins and where the thirty dollar floor hurts, by average ticket.",
-        "cta": "Send the cost model",
-        "note": "One email.",
-        "success": "On its way."
+      "sticky": {
+        "title": "Pay anyone in fiat from a crypto balance",
+        "sub": "Payouts from $25, multiple currencies",
+        "cta": "Start"
       },
       "footer": {
         "columns": [
-          {"title": "Product", "links": [{"label": "Mass payouts", "href": "#product"}, {"label": "Crypto funding", "href": "#product"}, {"label": "Pricing", "href": "#pricing"}]},
-          {"title": "Use cases", "links": [{"label": "Affiliates", "href": "#segments"}, {"label": "iGaming", "href": "#segments"}, {"label": "Creators", "href": "#segments"}]},
-          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
-          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+          {
+            "title": "Product",
+            "links": [
+              {
+                "label": "Payouts",
+                "href": "#product"
+              },
+              {
+                "label": "Pricing",
+                "href": "#pricing"
+              },
+              {
+                "label": "Cost estimator",
+                "href": "#estimate"
+              }
+            ]
+          },
+          {
+            "title": "Use cases",
+            "links": [
+              {
+                "label": "Affiliates",
+                "href": "#segments"
+              },
+              {
+                "label": "Players",
+                "href": "#segments"
+              },
+              {
+                "label": "Traders",
+                "href": "#segments"
+              },
+              {
+                "label": "Suppliers",
+                "href": "#segments"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
         ],
-        "legal": "Offrampr provides payout and settlement services in partnership with licensed payment institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch. This line needs legal review.] Services are subject to onboarding approval and are not available in all jurisdictions."
+        "legal": "Offrampr provides payout services through licensed payment partners. [CONFIRM: name the payment partner entities before launch. This line needs legal review.] Subject to onboarding approval."
       }
     },
 

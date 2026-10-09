@@ -157,6 +157,9 @@ announcement, nav, hero, trust bar, problem, product, how it works, pricing,
 estimator, segments, compliance, lead form, FAQ, final CTA, footer, sticky bar,
 rail CTA, exit modal.
 
+One exception: `"segments_first": true` moves segments to directly after the trust
+bar, for a page that leads with who it serves (Offrampr). Nothing else reorders.
+
 Sections appear only if that key exists in `data/pages.json`. **There is no
 competitor comparison section.** It was dropped on purpose. Do not add one back
 without being asked.

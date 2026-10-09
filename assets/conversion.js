@@ -177,6 +177,7 @@
         pct: parseFloat(b.getAttribute("data-pct") || "0"),
         fixed: parseFloat(b.getAttribute("data-fixed") || "0"),
         label: b.textContent.trim(),
+        floor: parseFloat(b.getAttribute("data-floor") || "0"),
         parts: (function () {
           try { return JSON.parse(b.getAttribute("data-parts") || "null"); }
           catch (e) { return null; }
@@ -187,28 +188,52 @@
 
     var setup   = parseFloat(root.getAttribute("data-setup") || "0");
     var monthly = parseFloat(root.getAttribute("data-monthly") || "0");
+    var topupPct   = parseFloat(root.getAttribute("data-topup") || "0");
+    var topupLabel = root.getAttribute("data-topup-label") || "Top-up";
+    var avgEl = root.querySelector("[data-est-avg]");
+    var avgLabel = root.querySelector("[data-est-avg-label]");
+    var avgValues = [];
+    if (avgEl) {
+      try { avgValues = JSON.parse(avgEl.getAttribute("data-values") || "[]"); } catch (e) { avgValues = []; }
+    }
 
     var render = function () {
       var v = parseFloat(vol.value);
       var m = modes[active] || { pct: 0, fixed: 0 };
       var variable = v * (m.pct / 100);
-      var total = variable + monthly;
+      var payoutLine = "";
+      if (avgEl && avgValues.length) {
+        // Charged per payout: the higher of the percentage and the floor.
+        var a = Math.min(avgValues[parseInt(avgEl.value, 10)] || avgValues[0], v);
+        var n = Math.max(1, Math.round(v / a));
+        var each = Math.max(a * m.pct / 100, m.floor || 0);
+        variable = n * each;
+        if (avgLabel) avgLabel.textContent = fmt(a);
+        var floorHit = m.floor && each === m.floor && a * m.pct / 100 < m.floor;
+        var eachTxt = each % 1 ? "$" + each.toFixed(2) : fmt(each);
+        payoutLine = '<div class="estimator__line"><span>' + n.toLocaleString("en-US") + (n === 1 ? " payout at " : " payouts at ") + eachTxt + " each" +
+          (floorHit ? " (minimum fee applies)" : "") + '</span><span>' + fmt(variable) + '</span></div>';
+      }
+      var topup = v * topupPct / 100;
+      var total = variable + topup + monthly;
       if (volLabel) volLabel.textContent = fmt(v);
       out.textContent = fmt(total);
       if (lines) {
-        var rateLines = m.parts && m.parts.length
+        var rateLines = payoutLine ? payoutLine : m.parts && m.parts.length
           ? m.parts.map(function (p) {
               return '<div class="estimator__line"><span>' + p.label + ' at ' + p.pct + '%</span><span>' + fmt(v * p.pct / 100) + '</span></div>';
             }).join("")
           : '<div class="estimator__line"><span>' + (m.label || "Rate") + ' at ' + m.pct + '%</span><span>' + fmt(variable) + '</span></div>';
         lines.innerHTML =
           rateLines +
+          (topupPct ? '<div class="estimator__line"><span>' + topupLabel + ' at ' + topupPct + '%</span><span>' + fmt(topup) + '</span></div>' : '') +
           (monthly ? '<div class="estimator__line"><span>Monthly maintenance</span><span>' + fmt(monthly) + '</span></div>' : '') +
           (setup ? '<div class="estimator__line"><span>One-time setup</span><span>' + fmt(setup) + '</span></div>' : '') +
           '<div class="estimator__line"><span>Effective rate on volume</span><span>' + (v ? ((total / v) * 100).toFixed(2) : "0.00") + '%</span></div>';
       }
     };
     vol.addEventListener("input", render);
+    if (avgEl) avgEl.addEventListener("input", render);
     modeBtns.forEach(function (b) {
       b.addEventListener("click", function () {
         active = b.getAttribute("data-est-mode");
