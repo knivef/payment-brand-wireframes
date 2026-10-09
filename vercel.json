@@ -127,6 +127,15 @@
           "value": "noindex, nofollow"
         }
       ]
+    },
+    {
+      "source": "/brands/onrampr/(.*)?",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

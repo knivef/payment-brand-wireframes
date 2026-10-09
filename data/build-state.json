@@ -1,42 +1,46 @@
 {
   "altpay": {
-    "hash": "30997fffa4fbaed2",
+    "hash": "e358ab0a580cc898",
     "updated": "2026-10-09"
   },
   "ape-card": {
-    "hash": "5d6dfdcd5c172ab6",
+    "hash": "5a09020370189f82",
     "updated": "2026-10-09"
   },
   "card-payz": {
-    "hash": "2314b69e30cba81b",
+    "hash": "26a24d5747a9d526",
     "updated": "2026-10-09"
   },
   "fiat-pay": {
-    "hash": "8a25363d29e274a5",
+    "hash": "be85816821eadee2",
     "updated": "2026-10-09"
   },
   "offrampr": {
-    "hash": "5089c6cc3626cdb6",
+    "hash": "fba9c6bcee080839",
+    "updated": "2026-10-09"
+  },
+  "onrampr": {
+    "hash": "dcd7702884fddd23",
     "updated": "2026-10-09"
   },
   "pure-labs": {
-    "hash": "193636a3489c4fbb",
+    "hash": "fa0f1d5f954fe518",
     "updated": "2026-10-09"
   },
   "secure-payment-services": {
-    "hash": "b819169a76bb8568",
+    "hash": "07a0f9257c59c09d",
     "updated": "2026-10-09"
   },
   "sepa-mint": {
-    "hash": "d7d99646fb2cfa10",
+    "hash": "47cd0017b29c7c5a",
     "updated": "2026-10-09"
   },
   "swipe-wire-pay": {
-    "hash": "593b83e10458f302",
+    "hash": "ccd7e9a917efe6b2",
     "updated": "2026-10-09"
   },
   "zepapay": {
-    "hash": "0918c33961974e59",
+    "hash": "9500802a836430f2",
     "updated": "2026-10-09"
   }
 }

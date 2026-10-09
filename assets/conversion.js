@@ -178,6 +178,8 @@
         fixed: parseFloat(b.getAttribute("data-fixed") || "0"),
         label: b.textContent.trim(),
         floor: parseFloat(b.getAttribute("data-floor") || "0"),
+        // A mode may carry its own monthly fee, e.g. a tier with none.
+        monthly: b.hasAttribute("data-monthly") ? parseFloat(b.getAttribute("data-monthly")) : null,
         parts: (function () {
           try { return JSON.parse(b.getAttribute("data-parts") || "null"); }
           catch (e) { return null; }
@@ -200,6 +202,7 @@
     var render = function () {
       var v = parseFloat(vol.value);
       var m = modes[active] || { pct: 0, fixed: 0 };
+      var mo = m.monthly != null ? m.monthly : monthly;
       var variable = v * (m.pct / 100);
       var payoutLine = "";
       if (avgEl && avgValues.length) {
@@ -215,7 +218,7 @@
           (floorHit ? " (minimum fee applies)" : "") + '</span><span>' + fmt(variable) + '</span></div>';
       }
       var topup = v * topupPct / 100;
-      var total = variable + topup + monthly;
+      var total = variable + topup + mo;
       if (volLabel) volLabel.textContent = fmt(v);
       out.textContent = fmt(total);
       if (lines) {
@@ -227,7 +230,7 @@
         lines.innerHTML =
           rateLines +
           (topupPct ? '<div class="estimator__line"><span>' + topupLabel + ' at ' + topupPct + '%</span><span>' + fmt(topup) + '</span></div>' : '') +
-          (monthly ? '<div class="estimator__line"><span>Monthly maintenance</span><span>' + fmt(monthly) + '</span></div>' : '') +
+          (mo ? '<div class="estimator__line"><span>Monthly maintenance</span><span>' + fmt(mo) + '</span></div>' : '') +
           (setup ? '<div class="estimator__line"><span>One-time setup</span><span>' + fmt(setup) + '</span></div>' : '') +
           '<div class="estimator__line"><span>Effective rate on volume</span><span>' + (v ? ((total / v) * 100).toFixed(2) : "0.00") + '%</span></div>';
       }

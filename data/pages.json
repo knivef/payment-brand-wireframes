@@ -3092,6 +3092,392 @@
         ],
         "legal": "Fiat Pay provides payment and settlement services through licensed payment partners. [CONFIRM: name the payment partner entities before launch. This line needs legal review.] Subject to approval."
       }
+    },
+    {
+      "slug": "onrampr",
+      "book_key": "Onrampr",
+      "name": "Onrampr",
+      "mark": "ON",
+      "domain": "onrampr.com",
+      "style": "wire",
+      "accent": "#0f766e",
+      "accent_fg": "#ffffff",
+      "accent_soft": "rgba(15,118,110,0.09)",
+      "tagline": "Wire in fiat. Get stablecoins in your wallet.",
+      "cta_primary": "Buy stablecoins",
+      "telegram_cta": "Message us on Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Buy USDT and USDC with Bank Transfer for Business | Onrampr",
+        "description": "Business onramp: send EUR or USD by SEPA or SWIFT and receive USDT or USDC in your wallet. From 1.5% all-in, up to $1M per transaction, no setup fee."
+      },
+      "nav": [
+        {
+          "id": "how",
+          "label": "How it works"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing"
+        },
+        {
+          "id": "segments",
+          "label": "Use cases"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        }
+      ],
+      "hero": {
+        "eyebrow": "Fiat to crypto for businesses",
+        "h1": "Wire in fiat. Get stablecoins in your wallet.",
+        "sub": "Onrampr lets businesses buy USDT and USDC with a bank transfer, from $1,000 to $1M per transaction, without OTC desk minimums or exchange account limits.",
+        "cta": "Buy stablecoins",
+        "cta_secondary": "Message us on Telegram",
+        "cta_secondary_anchor": "apply",
+        "reversal": [
+          "No setup fee",
+          "One step signup"
+        ],
+        "layout": "center"
+      },
+      "problem": {
+        "eyebrow": "The problem",
+        "h2": "Buying crypto as a business should not take three weeks",
+        "cards": [
+          {
+            "icon": "01",
+            "title": "Your bank blocks exchange transfers",
+            "body": "Payments to known exchanges get flagged or returned."
+          },
+          {
+            "icon": "02",
+            "title": "OTC desks want six figures",
+            "body": "And a week of onboarding before your first trade."
+          },
+          {
+            "icon": "03",
+            "title": "Retail onramps cap you",
+            "body": "Card and app limits were built for individuals, not treasuries."
+          }
+        ]
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "Bank transfer in, stablecoins out",
+        "cards": [
+          {
+            "title": "Sign up",
+            "body": "One step."
+          },
+          {
+            "title": "Send fiat",
+            "body": "By SEPA or SWIFT from your business account."
+          },
+          {
+            "title": "Receive stablecoins",
+            "body": "In the wallet you choose."
+          }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Pricing",
+        "h2": "Two tiers, both published",
+        "lede": "Provisional until confirmed. [CONFIRM: tier names, and that the offramp \"either direction\" rates apply to onramp. The offramp price lists have no fiat deposit fees filled in.]",
+        "columns": [
+          "Standard",
+          "Large tickets"
+        ],
+        "rows": [
+          {
+            "label": "Best for",
+            "values": [
+              "Regular business purchases",
+              "Treasury and OTC-sized buys"
+            ]
+          },
+          {
+            "label": "Setup",
+            "values": [
+              "$0",
+              "$0"
+            ]
+          },
+          {
+            "label": "Monthly",
+            "values": [
+              "$250",
+              "$0"
+            ]
+          },
+          {
+            "label": "All-in rate",
+            "values": [
+              "2.5%",
+              "1.5%"
+            ],
+            "highlight": true
+          },
+          {
+            "label": "Per transaction",
+            "values": [
+              "$1,000 to $500,000",
+              "$5,000 to $1,000,000"
+            ]
+          },
+          {
+            "label": "FX",
+            "values": [
+              "0.15% + bank FX",
+              "0.15% + bank FX"
+            ]
+          }
+        ],
+        "cta": "Get a quote"
+      },
+      "estimator": {
+        "eyebrow": "Arithmetic",
+        "h2": "What your purchases cost on each tier",
+        "lede": "Large tickets cost less at every volume: 1% less on every dollar and no monthly fee. What puts you on Standard is ticket size, not volume. Standard takes purchases from $1,000, Large tickets start at $5,000.",
+        "modes": [
+          {
+            "key": "standard",
+            "label": "Standard",
+            "pct": 2.5,
+            "monthly": 250
+          },
+          {
+            "key": "large",
+            "label": "Large tickets",
+            "pct": 1.5,
+            "monthly": 0
+          }
+        ],
+        "min": 5000,
+        "max": 1000000,
+        "step": 5000,
+        "default": 50000,
+        "setup": 0,
+        "monthly": 0,
+        "out_label": "Estimated monthly cost",
+        "disclaimer": "Indicative. Excludes FX at 0.15% plus bank FX. Tier names and rates are provisional until confirmed.",
+        "cta": "Get a quote"
+      },
+      "segments": {
+        "eyebrow": "Use cases",
+        "h2": "What businesses buy stablecoins for",
+        "cards": [
+          {
+            "icon": "A",
+            "title": "Pay suppliers in USDT",
+            "body": "Importers and traders paying Asian and Middle East suppliers."
+          },
+          {
+            "icon": "B",
+            "title": "Fund trading and float",
+            "body": "Top up exchange, liquidity and iGaming wallets."
+          },
+          {
+            "icon": "C",
+            "title": "Hold a stablecoin treasury",
+            "body": "Move part of your balance sheet on-chain."
+          },
+          {
+            "icon": "D",
+            "title": "Fund payouts",
+            "body": "Top up your crypto balance for affiliate or player payouts."
+          }
+        ],
+        "cta": "Buy stablecoins"
+      },
+      "apply": {
+        "eyebrow": "Get started",
+        "h2": "Buy stablecoins",
+        "lede": "Tell us what you send, what you want to receive and roughly how much. You get a quote before you send anything.",
+        "points": [
+          "No setup fee",
+          "SEPA or SWIFT from your business account",
+          "USDT or USDC to the wallet you choose"
+        ],
+        "telegram_note": "Often the fastest route.",
+        "form": {
+          "title": "Buy stablecoins",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Get a quote",
+          "success": "Received. Your quote is on its way.",
+          "note": "Used to price and open your account only.",
+          "steps": [
+            [
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Company name",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "text",
+                "name": "country",
+                "label": "Country of incorporation",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "asset",
+                "label": "What you want to buy",
+                "required": true,
+                "half": true,
+                "options": [
+                  "USDT",
+                  "USDC",
+                  "Both",
+                  "Not sure yet"
+                ]
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly purchase volume",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Under $50,000",
+                  "$50,000 to $250,000",
+                  "$250,000 to $1m",
+                  "Over $1m"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Work email or Telegram handle",
+                "placeholder": "you@company.com or @handle",
+                "required": true
+              }
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions treasury teams ask",
+        "lede": "Before the first wire.",
+        "items": [
+          {
+            "q": "Which stablecoins can I buy?",
+            "a": "[CONFIRM: USDT, USDC, chains]"
+          },
+          {
+            "q": "How do I pay?",
+            "a": "By SEPA or SWIFT bank transfer from your business account."
+          },
+          {
+            "q": "What does it cost?",
+            "a": "1.5% all-in on tickets from $5,000, or 2.5% plus $250 a month for tickets from $1,000."
+          },
+          {
+            "q": "What is the largest purchase?",
+            "a": "Up to $1,000,000 per transaction."
+          },
+          {
+            "q": "Can the stablecoins go straight to a supplier wallet?",
+            "a": "[CONFIRM: third party wallet delivery]"
+          },
+          {
+            "q": "How long does it take?",
+            "a": "[CONFIRM: time from bank transfer to delivery]"
+          },
+          {
+            "q": "What do I need to sign up?",
+            "a": "Company documents and UBO ID. Larger volumes may need more."
+          }
+        ]
+      },
+      "final": {
+        "h2": "Your bank wire, on-chain",
+        "body": "Send fiat by SEPA or SWIFT. Receive USDT or USDC in the wallet you choose.",
+        "cta": "Buy stablecoins"
+      },
+      "sticky": {
+        "title": "Buy USDT and USDC by bank transfer",
+        "sub": "From 1.5% all-in, no setup fee",
+        "cta": "Get a quote"
+      },
+      "footer": {
+        "columns": [
+          {
+            "title": "Product",
+            "links": [
+              {
+                "label": "Buy USDT",
+                "href": "#how"
+              },
+              {
+                "label": "Buy USDC",
+                "href": "#how"
+              },
+              {
+                "label": "Pricing",
+                "href": "#pricing"
+              },
+              {
+                "label": "Cost estimator",
+                "href": "#estimate"
+              }
+            ]
+          },
+          {
+            "title": "Use cases",
+            "links": [
+              {
+                "label": "Supplier payments",
+                "href": "#segments"
+              },
+              {
+                "label": "Trading float",
+                "href": "#segments"
+              },
+              {
+                "label": "Treasury",
+                "href": "#segments"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "legal": "Onrampr provides conversion services through licensed partners. [CONFIRM: name the partner entities before launch. This line needs legal review.] Crypto assets carry risk, including price volatility. Onrampr is not a bank or investment adviser."
+      }
     }
   ]
 }

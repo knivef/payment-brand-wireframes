@@ -373,7 +373,8 @@ def sec_estimator(b):
                     .format(k=m["key"], p=m["pct"], l=e(m["label"]),
                             parts=(' data-parts="{0}"'.format(e(json.dumps(m["parts"])))
                                    if m.get("parts") else ""),
-                            floor=(' data-floor="{0}"'.format(m["floor"]) if m.get("floor") else ""))
+                            floor=(' data-floor="{0}"'.format(m["floor"]) if m.get("floor") else "")
+                                  + (' data-monthly="{0}"'.format(m["monthly"]) if "monthly" in m else ""))
                     for m in s["modes"])
     # Optional second slider: average payout size. With it, a per-payout
     # minimum ("1% or $30, whichever is higher") is charged per payout, so the
