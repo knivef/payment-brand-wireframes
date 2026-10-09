@@ -231,13 +231,15 @@ def sec_block(b, key, grid, tint=False, numbered=False):
 <section class="section{tint}" id="{id}">
   <div class="container">
     <div class="section-head reveal">{head}<h2>{h2}</h2>{lede}</div>
-    <div class="grid {grid} reveal">{cards}</div>
+    {grid_html}
     {foot}{cta}
   </div>
 </section>""".format(tint=" section--tint" if tint else "", id=s.get("id", key),
-                     head=head, h2=e(s["h2"]), lede=lede, grid=grid,
-                     cards=_cards(s["cards"], numbered=numbered,
-                                  accent_index=s.get("accent_index")),
+                     head=head, h2=e(s["h2"]), lede=lede,
+                     grid_html=('<div class="grid {0} reveal">{1}</div>'.format(
+                         grid, _cards(s["cards"], numbered=numbered,
+                                      accent_index=s.get("accent_index")))
+                         if s.get("cards") else ""),
                      foot=('<p class="muted reveal" style="margin-top:22px">{0}</p>'
                            .format(e(s["foot"])) if s.get("foot") else ""),
                      cta=cta)
@@ -359,8 +361,19 @@ def sec_estimator(b):
     s = b.get("estimator")
     if not s:
         return ""
-    modes = "".join('<button type="button" data-est-mode="{k}" data-pct="{p}">{l}</button>'
-                    .format(k=m["key"], p=m["pct"], l=e(m["label"])) for m in s["modes"])
+    for m in s["modes"]:
+        # Optional component view, e.g. crypto deposit 2% + SEPA payout 0.5%.
+        # The parts must add up to the headline rate or the page contradicts itself.
+        if m.get("parts"):
+            total = round(sum(x["pct"] for x in m["parts"]), 6)
+            if total != round(m["pct"], 6):
+                sys.exit("estimator parts for {0}/{1} add up to {2}, not {3}".format(
+                    b["slug"], m["key"], total, m["pct"]))
+    modes = "".join('<button type="button" data-est-mode="{k}" data-pct="{p}"{parts}>{l}</button>'
+                    .format(k=m["key"], p=m["pct"], l=e(m["label"]),
+                            parts=(' data-parts="{0}"'.format(e(json.dumps(m["parts"])))
+                                   if m.get("parts") else ""))
+                    for m in s["modes"])
     return """
 <section class="section" id="estimate">
   <div class="container">

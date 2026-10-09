@@ -176,7 +176,11 @@
       modes[b.getAttribute("data-est-mode")] = {
         pct: parseFloat(b.getAttribute("data-pct") || "0"),
         fixed: parseFloat(b.getAttribute("data-fixed") || "0"),
-        label: b.textContent.trim()
+        label: b.textContent.trim(),
+        parts: (function () {
+          try { return JSON.parse(b.getAttribute("data-parts") || "null"); }
+          catch (e) { return null; }
+        })()
       };
     });
     var active = modeBtns.length ? modeBtns[0].getAttribute("data-est-mode") : null;
@@ -192,8 +196,13 @@
       if (volLabel) volLabel.textContent = fmt(v);
       out.textContent = fmt(total);
       if (lines) {
+        var rateLines = m.parts && m.parts.length
+          ? m.parts.map(function (p) {
+              return '<div class="estimator__line"><span>' + p.label + ' at ' + p.pct + '%</span><span>' + fmt(v * p.pct / 100) + '</span></div>';
+            }).join("")
+          : '<div class="estimator__line"><span>' + (m.label || "Rate") + ' at ' + m.pct + '%</span><span>' + fmt(variable) + '</span></div>';
         lines.innerHTML =
-          '<div class="estimator__line"><span>' + (m.label || "Rate") + ' at ' + m.pct + '%</span><span>' + fmt(variable) + '</span></div>' +
+          rateLines +
           (monthly ? '<div class="estimator__line"><span>Monthly maintenance</span><span>' + fmt(monthly) + '</span></div>' : '') +
           (setup ? '<div class="estimator__line"><span>One-time setup</span><span>' + fmt(setup) + '</span></div>' : '') +
           '<div class="estimator__line"><span>Effective rate on volume</span><span>' + (v ? ((total / v) * 100).toFixed(2) : "0.00") + '%</span></div>';

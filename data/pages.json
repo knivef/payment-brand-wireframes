@@ -454,114 +454,195 @@
       "accent": "#d7263d",
       "accent_fg": "#ffffff",
       "accent_soft": "rgba(215,38,61,0.08)",
-      "tagline": "Crypto to euro, settled on SEPA, without the paperwork spiral.",
-      "cta_primary": "Get a euro quote",
-      "telegram_cta": "Telegram",
+      "tagline": "Your crypto, in euros, in your bank. Over SEPA.",
+      "cta_primary": "Open a EUR account",
+      "telegram_cta": "Message us on Telegram",
       "telegram_url": "#apply",
       "seo": {
-        "title": "Sepa Mint | Crypto to EUR Settlement on SEPA Rails",
-        "description": "Convert crypto to euro and receive it by SEPA transfer. For EU businesses whose exchange will not pay out and whose bank will not explain why."
+        "title": "Crypto to EUR via SEPA for Businesses | Sepa Mint",
+        "description": "Convert USDT and USDC to EUR and receive it by SEPA in your business bank account. Built for iGaming and crypto businesses blocked by EU banks. No setup fee."
       },
       "nav": [
-        {"id": "problem", "label": "The problem"},
-        {"id": "product", "label": "How it works"},
-        {"id": "pricing", "label": "Rate"},
-        {"id": "estimate", "label": "Estimate"},
-        {"id": "faq", "label": "FAQ"}
+        {
+          "id": "how",
+          "label": "How it works"
+        },
+        {
+          "id": "igaming",
+          "label": "For iGaming"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        }
       ],
       "hero": {
-        "eyebrow": "Euro settlement for crypto businesses",
-        "h1": "Euro out. On SEPA. Without the paperwork spiral.",
-        "sub": "You cannot get EUR out of the exchange. You cannot buy crypto with EUR without a questionnaire. Your bank wants a file you do not have. Sepa Mint moves crypto to euro and pays it by SEPA transfer, and tells you up front what will be asked for.",
-        "cta": "Get a euro quote",
-        "cta_secondary": "See the rate",
-        "cta_secondary_anchor": "pricing",
+        "eyebrow": "Crypto to EUR for businesses",
+        "h1": "Your crypto, in euros, in your bank. Over SEPA.",
+        "sub": "Exchange will not send EUR? Bank keeps bouncing the transfer? Sepa Mint converts your stablecoins to euros and settles them by SEPA to your business account, without the MiCA paperwork marathon.",
+        "cta": "Open a EUR account",
+        "cta_secondary": "Message us on Telegram",
+        "cta_secondary_anchor": "apply",
         "reversal": [
-          "EUR only, nothing else to explain",
-          "2.50% either direction, published",
-          "No setup fee"
+          "No setup fee",
+          "One step signup",
+          "From $1,000 per transfer"
         ],
         "layout": "center"
       },
       "trustbar": {
-        "label": "For businesses in",
-        "chips": ["EU and EEA", "Crypto businesses", "Affiliates", "iGaming", "Marketplaces"]
+        "label": "Built for euro-market businesses",
+        "chips": [
+          "iGaming operators",
+          "Affiliates",
+          "Crypto businesses",
+          "OTC desks",
+          "Agencies paid in stablecoins"
+        ]
       },
       "problem": {
-        "eyebrow": "Why this exists",
-        "h2": "The euro leg is where it breaks",
-        "lede": "The conversion is the easy part. Getting euro into a European bank account, with an originator the bank recognises and a reference it can file, is the part that stalls.",
+        "eyebrow": "The EU problem",
+        "h2": "Europe made crypto legal. It did not make it bankable.",
         "cards": [
-          {"icon": "1", "title": "The exchange will not pay out", "body": "Withdrawal limits, a source-of-funds request on every attempt at scale, and a support queue measured in days. Not a treasury process."},
-          {"icon": "2", "title": "The incoming SEPA credit gets questioned", "body": "A euro credit from a counterparty your bank has not seen before, with no clear reference, is exactly the kind of thing that gets held pending an explanation."},
-          {"icon": "3", "title": "Nobody tells you the rules before you start", "body": "You find out what documentation is required after you have already committed the transaction. By then the money is in motion and the clock is running."}
+          {
+            "icon": "1",
+            "title": "Exchanges will not pay out EUR",
+            "body": "Business accounts get capped, reviewed or closed."
+          },
+          {
+            "icon": "2",
+            "title": "Banks bounce the transfer",
+            "body": "Any hint of crypto origin and the payment comes back with a compliance questionnaire."
+          },
+          {
+            "icon": "3",
+            "title": "MiCA added paperwork, not solutions",
+            "body": "Every provider is re-papering, and your settlements wait."
+          }
         ]
       },
       "product": {
-        "eyebrow": "What we do",
-        "h2": "One corridor, done properly",
+        "eyebrow": "What you get",
+        "h2": "We take the paperwork off your desk.",
         "cards": [
           {
-            "title": "Crypto to EUR",
-            "body": "Send stablecoin or crypto, see the euro amount before you confirm, and receive it by SEPA transfer with a reference that ties the payment to the transaction.",
-            "points": [
-              "SEPA payout, euro only",
-              "Rate shown before you confirm",
-              "Tickets from $1,000 to $500,000",
-              "Screening on every inbound transaction"
-            ]
+            "title": "EUR by SEPA",
+            "body": "EUR settlement by SEPA to any business account in the SEPA zone."
           },
           {
-            "title": "EUR to crypto",
-            "body": "Fund by SEPA and take delivery in stablecoin to a wallet you hold. Same rate, same account, no second onboarding process.",
-            "points": [
-              "Same rate in both directions",
-              "Delivery to your own wallet",
-              "No reserve held on either leg",
-              "We tell you the document list before you start"
-            ]
+            "title": "Third party payouts",
+            "body": "Pay suppliers, affiliates and partners in EUR."
+          },
+          {
+            "title": "Two-way",
+            "body": "Also buy crypto paying in EUR, at the same rate."
+          },
+          {
+            "title": "Full records",
+            "body": "Settled through licensed technology companies, with full records for your accountant and your bank. [CONFIRM: name the settlement partner entities]"
+          },
+          {
+            "title": "One step signup",
+            "body": "Light KYB for standard volumes."
+          },
+          {
+            "title": "Telegram support",
+            "body": "From people who know iGaming."
           }
         ],
-        "cta": "Get a euro quote"
+        "cta": "Open a EUR account"
       },
       "how": {
         "eyebrow": "Process",
-        "h2": "Three steps, no surprises",
+        "h2": "Stablecoins in, euros out",
         "cards": [
-          {"title": "We tell you what is needed", "body": "Before the first transaction, you get the document list and the questions your bank is likely to ask on the incoming credit. In writing."},
-          {"title": "Send, and see the euro figure", "body": "Conversion rate and final euro amount shown before you confirm. Not discovered on the statement afterwards."},
-          {"title": "SEPA transfer lands", "body": "Paid to your euro account with a settlement reference. Same or next business day in most cases."}
+          {
+            "title": "Sign up",
+            "body": "One step, business details and UBO ID."
+          },
+          {
+            "title": "Send stablecoins",
+            "body": "Transfer from your wallet or exchange."
+          },
+          {
+            "title": "Receive EUR by SEPA",
+            "body": "Converted and paid to your business account, or to a supplier or partner."
+          }
         ]
       },
       "pricing": {
-        "eyebrow": "Rate",
-        "h2": "2.50 percent, either direction",
-        "lede": "One number. It covers the conversion and the SEPA payout. FX is passed through at 0.15 percent over the exchange rate, shown as its own line.",
-        "price_list": "Offramp High Risk",
-        "show": [
-          ["Settlement via SEPA", "settle_sepa", true],
-          ["Withdrawal to bank, B2C", "wd_b2c", false],
-          ["Withdrawal to bank, B2B", "wd_b2b", false],
-          ["Crypto deposit", "crypto_dep", false],
-          ["Crypto settlement", "crypto_wd", false]
+        "eyebrow": "Pricing",
+        "h2": "2.5% all-in, and what it is made of",
+        "lede": "One headline rate, broken into its two parts, so you can check it against what you pay now.",
+        "columns": [
+          "Sepa Mint"
         ],
-        "extra_rows": [
-          {"label": "All in, either direction", "value": "2.50%", "highlight": true},
-          {"label": "Signup", "value": "One step"},
-          {"label": "KYC", "value": "Light, list given up front"}
+        "rows": [
+          {
+            "label": "Setup",
+            "values": [
+              "$0"
+            ]
+          },
+          {
+            "label": "Monthly",
+            "values": [
+              "$250"
+            ]
+          },
+          {
+            "label": "All-in rate",
+            "values": [
+              "2.5%, either direction"
+            ],
+            "highlight": true
+          },
+          {
+            "label": "Made up of",
+            "values": [
+              "Crypto deposit 2% + SEPA payout 0.5%"
+            ]
+          },
+          {
+            "label": "FX",
+            "values": [
+              "0.15% + bank FX"
+            ]
+          },
+          {
+            "label": "Per transfer",
+            "values": [
+              "$1,000 to $500,000 equivalent"
+            ]
+          }
         ],
-        "not_charged": [
-          "No setup fee",
-          "No rolling reserve",
-          "No per transfer SEPA charge on top of the headline rate"
-        ],
-        "note": "A $250 monthly maintenance fee applies. Minimum ticket $1,000, maximum $500,000. Larger tickets can be arranged in advance."
+        "cta": "Open a EUR account"
       },
       "estimator": {
         "eyebrow": "Arithmetic",
         "h2": "What euro settlement costs you",
-        "lede": "The effective rate is the number that matters. Move the slider.",
-        "modes": [{"key": "eur", "label": "Crypto to EUR", "pct": 2.5}],
+        "lede": "Move the slider. The two parts of the rate are shown separately, then the monthly fee.",
+        "modes": [
+          {
+            "key": "eur",
+            "label": "Crypto to EUR",
+            "pct": 2.5,
+            "parts": [
+              {
+                "label": "Crypto deposit",
+                "pct": 2
+              },
+              {
+                "label": "SEPA payout",
+                "pct": 0.5
+              }
+            ]
+          }
+        ],
         "min": 10000,
         "max": 1000000,
         "step": 10000,
@@ -569,46 +650,88 @@
         "setup": 0,
         "monthly": 250,
         "out_label": "Estimated monthly cost",
-        "disclaimer": "Indicative. Excludes bank actual FX at 0.15 percent over the exchange rate. Your written quote is the binding number.",
-        "cta": "Get this in writing"
+        "disclaimer": "Indicative. Crypto deposit 2% plus SEPA payout 0.5%, plus $250 a month, no setup fee. Excludes FX at 0.15% plus bank FX. Your written terms are the binding number.",
+        "cta": "Open a EUR account"
       },
-      "compliance": {
-        "eyebrow": "The part nobody explains",
-        "h2": "EU rules, and where we actually sit",
-        "cards": [
-          {"title": "What we tell you up front", "body": "The document list, the screening we run, and what your own bank is likely to ask about the incoming SEPA credit. Before the first transaction, not after."},
-          {"title": "How this is structured", "body": "[CONFIRM BEFORE LAUNCH: whether Sepa Mint operates under its own authorisation or as an agent of a licensed partner, and name the entity. Do not publish a licensing claim until this line is signed off.]"},
-          {"title": "What we will not claim", "body": "We are not a bank and we do not hold your funds as deposits. Anything on this page that reads as a regulatory status is a placeholder until legal confirms it."}
-        ]
+      "segments": {
+        "id": "igaming",
+        "eyebrow": "For iGaming operators",
+        "h2": "Meet us at SBC. Settle in EUR the week after.",
+        "lede": "Operators hold player deposits in USDT and pay staff, suppliers and tax in euros. Sepa Mint closes that gap with a SEPA rail that does not flinch at the word casino. [CONFIRM: next SBC event and booth or meeting link]",
+        "cards": [],
+        "cta": "Book a meeting at SBC"
       },
       "apply": {
-        "eyebrow": "Get a quote",
-        "h2": "Tell us the corridor, get the euro number",
-        "lede": "Volume, direction and the entity. You get a written rate and the document list in one business day.",
+        "eyebrow": "Open an account",
+        "h2": "Open a EUR account",
+        "lede": "Five fields now, light KYB after. No setup fee.",
         "points": [
-          "The document list before you commit anything",
-          "A euro figure in writing, not a range",
-          "A straight no if the flow is one we cannot take"
+          "One step signup",
+          "EUR by SEPA to your own business account",
+          "The same rate in either direction"
         ],
         "telegram_note": "Often the fastest route.",
         "form": {
-          "title": "Get a euro quote",
-          "sub": "One page.",
-          "block_free_email": true,
-          "submit": "Get my quote",
-          "success": "Received. Written rate and document list within one business day.",
-          "note": "Used to price and underwrite only.",
+          "title": "Open a EUR account",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Open my account",
+          "success": "Received. We will be in touch to complete signup.",
+          "note": "Used to open and price your account only.",
           "steps": [
             [
-              {"type": "text", "name": "business", "label": "Entity name", "required": true, "half": true},
-              {"type": "select", "name": "country", "label": "Country of incorporation", "required": true, "half": true,
-               "options": ["Germany", "Netherlands", "Ireland", "Estonia", "Lithuania", "Cyprus", "Malta", "Other EEA", "Outside EEA"]},
-              {"type": "select", "name": "direction", "label": "Direction", "required": true,
-               "options": ["Crypto to EUR", "EUR to crypto", "Both"]},
-              {"type": "select", "name": "volume", "label": "Monthly volume", "required": true,
-               "options": ["Under EUR 50,000", "EUR 50,000 to 250,000", "EUR 250,000 to 1m", "Over EUR 1m"]},
-              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
-              {"type": "textarea", "name": "notes", "label": "What has gone wrong so far", "placeholder": "Which exchange, which bank, what they asked for, where it stalled"}
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Company name",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "url",
+                "name": "website",
+                "label": "Website",
+                "placeholder": "https://",
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "country",
+                "label": "Country of incorporation",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Germany",
+                  "Netherlands",
+                  "Ireland",
+                  "Estonia",
+                  "Lithuania",
+                  "Cyprus",
+                  "Malta",
+                  "Other EEA",
+                  "Outside EEA"
+                ]
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly volume",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Under EUR 50,000",
+                  "EUR 50,000 to 250,000",
+                  "EUR 250,000 to 1m",
+                  "Over EUR 1m"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Work email or Telegram handle",
+                "placeholder": "you@company.com or @handle",
+                "required": true
+              }
             ]
           ]
         }
@@ -617,36 +740,114 @@
         "h2": "Euro questions",
         "lede": "What EU businesses ask first.",
         "items": [
-          {"q": "Will the euro arrive in my own company account?", "a": "Yes. Payout is a SEPA transfer to an account in your entity's name, with a settlement reference tying it to the transaction you sent."},
-          {"q": "My bank questioned the last incoming crypto-related credit. Will this be different?", "a": "We tell you before the first transaction what the payment will look like on your statement and what your bank is likely to ask. That is the part most providers skip."},
-          {"q": "What does it cost?", "a": "2.50 percent either direction, plus a $250 monthly maintenance fee. FX is 0.15 percent over the exchange rate, shown separately. No setup fee and no reserve."},
-          {"q": "What are the ticket limits?", "a": "Minimum $1,000, maximum $500,000 per transaction. Larger is possible if arranged in advance."},
-          {"q": "Can I go the other way, euro into crypto?", "a": "Yes, at the same rate, to a wallet you hold. Same account, no second onboarding."},
-          {"q": "Are you licensed in the EU?", "a": "[CONFIRM BEFORE LAUNCH. Do not publish an answer to this question until the structure is signed off in writing. An unverified licensing claim here is the single highest risk item on this page.]"}
+          {
+            "q": "Which stablecoins can I convert to EUR?",
+            "a": "[CONFIRM: USDT, USDC, chains]"
+          },
+          {
+            "q": "How long does a SEPA payout take?",
+            "a": "[CONFIRM: SEPA payout time]"
+          },
+          {
+            "q": "What does it cost?",
+            "a": "2.5% all-in in either direction plus $250 a month. No setup fee."
+          },
+          {
+            "q": "Is Sepa Mint MiCA compliant?",
+            "a": "[CONFIRM WITH LEGAL: do not publish any answer to this question until legal has signed off the exact wording. No MiCA status may be stated or implied.]"
+          },
+          {
+            "q": "My bank rejected a crypto-origin transfer. Can you help?",
+            "a": "Yes. That is exactly the problem Sepa Mint exists for."
+          },
+          {
+            "q": "Can I pay a third party in EUR?",
+            "a": "Yes."
+          },
+          {
+            "q": "Can I also buy crypto with EUR?",
+            "a": "Yes, the same rate applies in either direction."
+          },
+          {
+            "q": "What do I need to open an account?",
+            "a": "Certificate of incorporation, share register, UBO ID and proof of address."
+          }
         ]
       },
       "final": {
-        "h2": "Get the euro number in writing",
-        "body": "Send the corridor and the volume. You get a written rate and the document list, or a clear no.",
-        "cta": "Get a euro quote"
+        "h2": "Stop explaining your crypto to your bank",
+        "body": "Send stablecoins, receive euros by SEPA in your business account.",
+        "cta": "Open a EUR account"
       },
-      "sticky": {"title": "Crypto to euro on SEPA", "sub": "2.50% either direction", "cta": "Quote"},
-      "exit_modal": {
-        "eyebrow": "One thing",
-        "h": "Take the EU document checklist",
-        "body": "What a European bank asks about a crypto-funded euro credit, and how to have it ready. One page.",
-        "cta": "Send the checklist",
-        "note": "One email, no sequence.",
-        "success": "On its way."
+      "sticky": {
+        "title": "Crypto to EUR over SEPA",
+        "sub": "2.5% all-in, no setup fee",
+        "cta": "Open account"
       },
       "footer": {
         "columns": [
-          {"title": "Product", "links": [{"label": "Crypto to EUR", "href": "#product"}, {"label": "EUR to crypto", "href": "#product"}, {"label": "Rate", "href": "#pricing"}]},
-          {"title": "Corridors", "links": [{"label": "SEPA", "href": "#"}, {"label": "SEPA Instant", "href": "#"}]},
-          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
-          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+          {
+            "title": "Product",
+            "links": [
+              {
+                "label": "Crypto to EUR",
+                "href": "#product"
+              },
+              {
+                "label": "EUR to crypto",
+                "href": "#product"
+              },
+              {
+                "label": "Pricing",
+                "href": "#pricing"
+              },
+              {
+                "label": "Cost estimator",
+                "href": "#estimate"
+              }
+            ]
+          },
+          {
+            "title": "iGaming",
+            "links": [
+              {
+                "label": "Meet us at SBC",
+                "href": "#igaming"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
         ],
-        "legal": "[CONFIRM BEFORE LAUNCH: the operating and licensing structure for euro settlement in the EEA, and whether Sepa Mint acts under its own authorisation or as an agent of a licensed partner. This page must not imply MiCA, CASP, EMI or payment institution status until that is signed off.] Services are subject to onboarding approval."
+        "legal": "Sepa Mint provides conversion and settlement services through licensed partners. [CONFIRM: name the partner entities and their regulated activity before launch. This page must not imply MiCA, CASP, EMI or payment institution status. This line needs legal review.] Sepa Mint is not a bank. Crypto assets carry risk, including price volatility."
       }
     },
 
