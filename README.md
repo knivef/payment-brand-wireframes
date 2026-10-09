@@ -17,11 +17,18 @@ Plain HTML and CSS, served statically by Vercel. No build step at deploy time.
 |---|---|---|---|
 | Zepapay | `terminal` | Crypto to fiat settlement, two way | UAE PSP |
 | Secure Payment Services | `midnight` | Client collection and IBAN for forex | UAE PSP |
-| Sepa Mint | `swiss` | Crypto to EUR on SEPA | None |
-| Offrampr | `soft` | Mass payouts funded in crypto | None |
+| AltPay | `mono` | Client collection for forex, crypto settlement | None |
 | Ape Card | `brutal` | Crypto cards, four tiers | None |
 | Pure Labs | `clinical` | Pre-screening for peptide and nutra merchants | None |
-| AltPay | `mono` | Client collection for forex, crypto settlement | None |
+| Offrampr | `soft` | Mass payouts funded in crypto | None |
+| Sepa Mint | `swiss` | Crypto to EUR on SEPA | None |
+| Swipe Wire Pay | `ledger` | Card acquiring plus crypto offramp, sold as a bundle | None |
+| Card Payz | `stamp` | High-risk merchant accounts, four programmes | None |
+| Fiat Pay | `warm` | Cards and crypto to bank for small peptide stores | None |
+| Onrampr | `wire` | Fiat in, stablecoins out, for business treasury | None |
+
+Old hand-built pages from before the generator live in
+`archive/legacy-pre-generator/`. They are not built or linked.
 
 Each page uses a different style on purpose, so they can be judged side by side
 before any of them goes to design.
@@ -120,8 +127,8 @@ spend permanent effort on a burnable.
 
 ## Before anything goes public
 
-- 16 open placeholders across the seven pages, mostly licensing and partner
-  entity names. `check.sh` lists every one, in full, per brand.
+- Open placeholders on every page, mostly partner entities, supported assets and
+  timings. `check.sh` lists every one, in full, per brand, with the current total.
 - Launching is per brand. Set `"launched": true` on that brand in
   `data/pages.json` and rebuild. Its page loses the `noindex` meta tag and its
   `X-Robots-Tag` header, and every other brand keeps both. `vercel.json` is
