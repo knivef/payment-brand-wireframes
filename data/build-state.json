@@ -1,0 +1,34 @@
+{
+  "altpay": {
+    "hash": "17918d386221dfd5",
+    "updated": "2026-10-09"
+  },
+  "ape-card": {
+    "hash": "6c45f61669851f34",
+    "updated": "2026-10-09"
+  },
+  "offrampr": {
+    "hash": "d3a04060a8fbb115",
+    "updated": "2026-10-09"
+  },
+  "pure-labs": {
+    "hash": "156efcba194c2db1",
+    "updated": "2026-10-09"
+  },
+  "secure-payment-services": {
+    "hash": "189a7a9dde833b0c",
+    "updated": "2026-10-09"
+  },
+  "sepa-mint": {
+    "hash": "15277ce68b606c85",
+    "updated": "2026-10-09"
+  },
+  "swipe-wire-pay": {
+    "hash": "1327c240ba1668a7",
+    "updated": "2026-10-09"
+  },
+  "zepapay": {
+    "hash": "d9f4ce5d909d7f6e",
+    "updated": "2026-10-09"
+  }
+}

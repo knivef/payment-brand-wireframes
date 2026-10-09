@@ -1,0 +1,7 @@
+/* Pure Labs - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="clinical"]. */
+:root {
+  --accent:      #1d63d1;
+  --accent-fg:   #ffffff;
+  --accent-soft: rgba(29,99,209,0.09);
+}

@@ -1,123 +1,137 @@
 # Payment brand wireframes
 
-One repo, many payment brands, one prompt chain. The base URL is an index of
-every brand. Clicking a card opens that brand's conversion wireframe at
-`/brands/<slug>/`.
+**Canonical repo: https://github.com/knivef/payment-brand-wireframes**
+Every change goes there. Push with `./scripts/sync.sh "message"`, which runs the
+health check first and refuses to push if it fails.
 
-Plain HTML and CSS. No build step, no framework, no bundler. Vercel serves it
-as static output.
+One repo, many payment brands, generated from the brand book. The base URL indexes
+every brand. Each card opens that brand's page at `/brands/<slug>/`.
+
+Plain HTML and CSS, served statically by Vercel. No build step at deploy time.
+
+---
+
+## Brands live
+
+| Brand | Style | Sells | Licence |
+|---|---|---|---|
+| Zepapay | `terminal` | Crypto to fiat settlement, two way | UAE PSP |
+| Secure Payment Services | `midnight` | Client collection and IBAN for forex | UAE PSP |
+| Sepa Mint | `swiss` | Crypto to EUR on SEPA | None |
+| Offrampr | `soft` | Mass payouts funded in crypto | None |
+| Ape Card | `brutal` | Crypto cards, four tiers | None |
+| Pure Labs | `clinical` | Pre-screening for peptide and nutra merchants | None |
+| AltPay | `mono` | Client collection for forex, crypto settlement | None |
+
+Each page uses a different style on purpose, so they can be judged side by side
+before any of them goes to design.
 
 ---
 
 ## Structure
 
 ```
-.
-├── index.html              Brand index. Reads the JSON registry inside it.
-├── vercel.json             Clean URLs, cache headers, noindex while in wireframe stage.
-├── assets/
-│   ├── base.css            All structural CSS. Shared by every brand.
-│   └── conversion.js       Sticky bars, countdown, exit intent, accordion, forms.
-├── brands/
-│   ├── _template/          Fork this for a new brand. Never ship it.
-│   │   ├── index.html      17 sections, every conversion mechanic wired up.
-│   │   ├── brand.css       Token overrides only.
-│   │   └── brief.md        The research output format.
-│   └── <slug>/             One folder per brand, same three files.
-├── prompts/
-│   ├── 00-orchestrator.md  Runs the whole chain with approval gates.
-│   ├── 01-research.md      Competitor teardown, positioning, narrative, copy.
-│   ├── 02-seo.md           Keyword selection, on-page assets, schema.
-│   ├── 03-wireframe.md     Brief to live page.
-│   └── 04-qa-deploy.md     QA checklist, commit, deploy.
-└── scripts/
-    └── check.sh            Repo health check. Run before every push.
+data/brand-book.json     Brands, price lists, pitches, from Brand_Book.xlsx. Source of truth.
+data/pages.json          Page content per brand. The only hand-written input.
+scripts/import-book.py   Re-extract the JSON after editing the workbook.
+scripts/build.py         Render every page and rewrite the hub registry.
+scripts/check.sh         Health check. Run before every push.
+scripts/sync.sh          Check, commit and push to the canonical repo.
+scripts/bootstrap.sh     One-time vercel link for a fresh clone.
+assets/base.css          Layout. Shared by every brand.
+assets/themes.css        Design styles. Count generated into the index page.
+assets/conversion.js     Sticky bars, countdown, exit intent, estimator, forms.
+assets/review.js         Review switcher, bottom left on every wireframe page.
+brands/<slug>/           Generated. Never hand-edit.
+prompts/                 How to add or define a brand.
 ```
 
 ---
 
-## Adding a brand
+## Commands
 
 ```bash
-# 1. From the repo root, open Claude Code and paste prompts/00-orchestrator.md
-#    with the variables filled in. Approve at each of the four gates.
-
-# 2. Preview locally
-python3 -m http.server 4321
-# index:       http://localhost:4321/
-# brand page:  http://localhost:4321/brands/<slug>/
-
-# 3. Check and push
-./scripts/check.sh
-git add -A && git commit -m "Add <slug> wireframe" && git push
+python3 scripts/build.py                      # rebuild everything
+python3 scripts/build.py zepapay              # rebuild one brand
+python3 scripts/import-book.py Brand_Book.xlsx   # after editing the workbook
+./scripts/check.sh                            # before every push
+./scripts/sync.sh "message"                   # check, commit, push
+python3 -m http.server 4321                   # preview at localhost:4321
 ```
 
-Vercel deploys on push. Every branch gets a preview URL, which is the cheap way
-to A/B two versions of a hero with a real stakeholder.
+---
+
+## Reviewing the set
+
+The index at `/` lists every brand with status, licence, type, style and accent,
+filterable by status. From any brand page the review switcher sits bottom left:
+it lists all brands, marks where you are, and gives prev and next.
+
+Keyboard: `[` previous brand, `]` next brand, `b` back to the index, `/` toggle
+the panel. Typing in a form field never triggers them.
+
+The switcher renders only while a page carries its wireframe `noindex` tag, so
+it removes itself at launch. It cannot ship live by accident.
+
+## The three rules
+
+**Never hand-edit `brands/`.** It is generated. Edit `data/pages.json` and rebuild.
+`check.sh` fails if the committed output is stale.
+
+**Structure is shared, style is a theme, brand is an accent.** `base.css` owns
+layout. `themes.css` owns the look under `[data-style="..."]`. A brand's
+`brand.css` is three accent lines. Fix a mobile bug once, every brand inherits it.
+
+**Licence language follows the brand book.** Zepapay and SPS hold a UAE PSP
+licence. NexFlow holds a Canadian MSB licence. Every other brand holds none and
+must never state or imply one. Partner framing is allowed, with the partner entity
+left as `[CONFIRM: ...]`. `check.sh` enforces this per brand.
 
 ---
 
-## The two rules that keep this scalable
+## Conversion layer
 
-**Structure is shared, brand is tokens.** `assets/base.css` owns every layout
-rule. A brand folder's `brand.css` may set `--accent`, `--accent-fg`,
-`--accent-soft`, `--bg`, `--surface`, `--surface-2`, `--radius` and
-`--font-sans`, and nothing else. `scripts/check.sh` fails the build if a
-`brand.css` grows a layout rule. This is what lets you fix a mobile bug once and
-have every brand inherit the fix.
+Published pricing is the main lever. Most providers in these categories hide their
+rates, so putting the real rate card on the page is the cheapest differentiator
+available. Pricing comes from the shared price lists, so changing a rate in the
+workbook changes every page that uses it.
 
-**The brief is the only input to the build.** If a claim is not in
-`brands/<slug>/brief.md`, it does not go on the page. That keeps copy decisions
-in a reviewable markdown file instead of buried in HTML.
+On top of that: announcement bar with a countdown, sticky nav, read progress,
+sticky bottom bar on mobile and a rail CTA on desktop, exit modal once per visitor,
+scroll reveal, single-open FAQ feeding FAQPage schema, a fee estimator that shows
+the effective rate at the buyer's own volume, multi-step forms with per-step
+validation, honeypot plus timing plus free-email blocking, and a Telegram CTA
+alongside every primary CTA because that is the channel these buyers use.
 
----
+Every interaction fires a `wf:event` window event for whatever analytics gets
+bolted on.
 
-## Conversion mechanics available
-
-All wired in the template, all opt-in via data attributes. Delete the markup for
-any you do not want.
-
-| Element | Attribute | Behaviour |
-|---|---|---|
-| Announcement bar | `data-announce` | Sticky top, dismissible, remembers dismissal |
-| Countdown | `data-countdown` | Fixed `data-deadline`, or a rolling `data-hours` window per visitor |
-| Sticky nav | `data-nav` | Gains a border after 32px of scroll |
-| Sticky bottom CTA | `data-stickybar` | Mobile only, appears once the hero leaves the viewport |
-| Exit modal | `data-exit-intent` | Mouse-out on desktop, dwell plus scroll depth on mobile, once per visitor |
-| Scroll reveal | `.reveal` | 16px lift, disabled under reduced motion |
-| FAQ accordion | `.faq details` | One open at a time, feeds FAQPage schema |
-| Lead form | `data-lead-form` | Honeypot, timing check, free-email block, inline success |
-| CTA tracking | `data-cta` | Fires a `wf:cta` window event for any analytics script |
+There is **no competitor comparison section**. It was dropped on purpose.
 
 ---
 
-## House rules
+## Burnable versus Permanent
 
-- No em dashes. Anywhere. `scripts/check.sh` enforces it.
-- No invented numbers, merchant counts, volumes, testimonials or certifications.
-  Unverified content stays as a `[BRACKETED PLACEHOLDER]` and gets a row in the
-  claims register in `brief.md`.
-- The comparison table must contain at least one row where the brand honestly
-  loses or ties.
-- Delete the proof section rather than publish placeholder figures.
-- Drop the countdown rather than invent a deadline.
-- Every page carries `noindex` while it is a wireframe. Remove it per brand at
-  launch, not before.
+The brand book marks each brand. Permanent brands are worth deep SEO and a content
+backlog. Burnable brands get one page, fast, and are built to be replaced. Do not
+spend permanent effort on a burnable.
 
 ---
 
-## Wireframe mode
+## Before anything goes public
 
-Add `class="wf"` to a brand page's `<body>` to strip all colour and shadow and
-review structure alone. Useful when the question is whether the argument holds,
-not whether it looks good.
+- 16 open placeholders across the seven pages, mostly licensing and partner
+  entity names. `check.sh` lists every one, in full, per brand.
+- Launching is per brand. Set `"launched": true` on that brand in
+  `data/pages.json` and rebuild. Its page loses the `noindex` meta tag and its
+  `X-Robots-Tag` header, and every other brand keeps both. `vercel.json` is
+  generated, so there is no repo-wide switch to get wrong.
+- Published pricing is an internal rate card. Confirm per brand before it goes on
+  a public page.
 
 ---
 
-## Vercel setup
+## Vercel
 
-Framework preset: **Other**. Build command: none. Output directory: `.`
-`vercel.json` handles the rest.
-
-Point each brand's real domain at the project later with a rewrite, or split the
-brand into its own project once it is past wireframe stage.
+Framework preset **Other**. Build command: none. Output directory `.`
+`vercel.json` handles clean URLs, cache headers and the noindex header.

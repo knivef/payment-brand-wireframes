@@ -1,0 +1,7 @@
+/* Offrampr - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="soft"]. */
+:root {
+  --accent:      #4f46e5;
+  --accent-fg:   #ffffff;
+  --accent-soft: rgba(79,70,229,0.09);
+}

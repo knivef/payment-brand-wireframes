@@ -1,0 +1,448 @@
+/* ==========================================================================
+   Design styles. Set one on <html data-style="...">.
+   A style owns the look: palette, type, border weight, radius, shadow, rhythm.
+   A brand owns only its accent, set in brands/<slug>/brand.css.
+
+   Built to look like different companies made them, not like one template
+   recoloured. Pick per brand and A/B two against each other.
+
+   The count is not written down anywhere by hand. scripts/build.py parses the
+   numbered section headers below into the index page's style catalogue, so the
+   docs cannot drift from the stylesheet. Add a style by adding a numbered
+   section here and a font entry in FONTS in scripts/build.py.
+   ========================================================================== */
+
+/* ---------- 1. terminal --------------------------------------------------
+   Near-black, monospace headings, tight corners, dense. Reads as payments
+   infrastructure. Good for settlement, payouts, API-led brands.           */
+[data-style="terminal"] {
+  --bg:            #07080a;
+  --surface:       #0f1114;
+  --surface-2:     #171a1f;
+  --fg:            #e8ebee;
+  --fg-muted:      #79818c;
+  --border:        rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.16);
+  --positive:      #2ee07a;
+  --negative:      #ff5f56;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono:    "JetBrains Mono", ui-monospace, monospace;
+  --h1-size:      clamp(2rem, 4.6vw, 3.3rem);
+  --h2-size:      clamp(1.5rem, 3vw, 2.2rem);
+  --h-weight:     600;
+  --h-tracking:   -0.035em;
+  --body-size:    16px;
+  --body-leading: 1.6;
+
+  --border-w:   1px;
+  --radius:     4px;
+  --radius-sm:  3px;
+  --radius-lg:  6px;
+  --btn-radius: 4px;
+  --pill-radius: 4px;
+  --card-pad:   22px;
+  --section-y:  clamp(56px, 7vw, 92px);
+  --container:  1120px;
+  --shadow:     0 24px 60px rgba(0,0,0,0.6);
+  --eyebrow-tracking: 0.18em;
+}
+[data-style="terminal"] .eyebrow::before { content: "> "; }
+[data-style="terminal"] .nav__mark { border-radius: 3px; }
+
+/* ---------- 2. swiss -----------------------------------------------------
+   White, oversized type, hairline rules, no radius, generous air. Reads as
+   editorial and senior. Good for brands selling to institutions.          */
+[data-style="swiss"] {
+  --bg:            #ffffff;
+  --surface:       #f6f6f4;
+  --surface-2:     #ebebe7;
+  --fg:            #101010;
+  --fg-muted:      #6a6a68;
+  --accent-fg:     #ffffff;
+  --border:        rgba(16,16,16,0.14);
+  --border-strong: rgba(16,16,16,0.32);
+  --positive:      #0a7c42;
+  --negative:      #c22d22;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Archivo", "Inter", system-ui, sans-serif;
+  --h1-size:      clamp(2.6rem, 7vw, 5.2rem);
+  --h2-size:      clamp(1.9rem, 4.2vw, 3.2rem);
+  --h-weight:     700;
+  --h-tracking:   -0.035em;
+  --body-size:    18px;
+  --body-leading: 1.55;
+
+  --border-w:   1px;
+  --radius:     0px;
+  --radius-sm:  0px;
+  --radius-lg:  0px;
+  --btn-radius: 0px;
+  --pill-radius: 0px;
+  --card-pad:   28px;
+  --section-y:  clamp(80px, 11vw, 150px);
+  --container:  1200px;
+  --shadow:     none;
+  --shadow-card: none;
+  --eyebrow-tracking: 0.2em;
+}
+[data-style="swiss"] .card { background: transparent; border-width: 0; border-top: 2px solid var(--fg); padding-left: 0; padding-right: 0; }
+[data-style="swiss"] .card--accent { border-top-color: var(--accent); background: transparent; }
+[data-style="swiss"] .final-cta { background: var(--fg); color: var(--bg); border: 0; }
+[data-style="swiss"] .final-cta .lede { color: rgba(255,255,255,0.72); }
+
+/* ---------- 3. brutal ----------------------------------------------------
+   Hard 2px borders, offset shadows, flat blocks, zero radius. Loud and
+   memorable. Good for a burnable brand that needs to be noticed fast.     */
+[data-style="brutal"] {
+  --bg:            #fdfcf7;
+  --surface:       #ffffff;
+  --surface-2:     #f2efe4;
+  --fg:            #0d0d0d;
+  --fg-muted:      #55534c;
+  --accent-fg:     #0d0d0d;
+  --border:        #0d0d0d;
+  --border-strong: #0d0d0d;
+  --positive:      #0b8a3d;
+  --negative:      #d62828;
+
+  --font-sans:    "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --h1-size:      clamp(2.5rem, 6.4vw, 4.6rem);
+  --h2-size:      clamp(1.9rem, 4vw, 3rem);
+  --h-weight:     700;
+  --h-tracking:   -0.04em;
+  --body-size:    17px;
+
+  --border-w:    2px;
+  --radius:      0px;
+  --radius-sm:   0px;
+  --radius-lg:   0px;
+  --btn-radius:  0px;
+  --pill-radius: 0px;
+  --card-pad:    24px;
+  --section-y:   clamp(64px, 8vw, 104px);
+  --shadow:      6px 6px 0 var(--fg);
+  --shadow-card: 5px 5px 0 var(--fg);
+  --shadow-btn:  4px 4px 0 var(--fg);
+}
+[data-style="brutal"] .eyebrow { background: var(--accent); color: var(--fg); padding: 4px 9px; }
+[data-style="brutal"] .btn:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--fg); }
+[data-style="brutal"] .btn--ghost { background: var(--surface); }
+[data-style="brutal"] .announce { border-bottom: 2px solid var(--fg); }
+[data-style="brutal"] .nav.is-stuck { border-bottom-width: 2px; }
+
+/* ---------- 4. soft ------------------------------------------------------
+   Light, rounded, layered shadows, roomy cards. The familiar modern fintech
+   look. Lowest risk, highest trust with non-technical buyers.             */
+[data-style="soft"] {
+  --bg:            #ffffff;
+  --surface:       #f7f8fb;
+  --surface-2:     #eef0f6;
+  --fg:            #12141a;
+  --fg-muted:      #636b7a;
+  --accent-fg:     #ffffff;
+  --border:        rgba(18,20,26,0.09);
+  --border-strong: rgba(18,20,26,0.18);
+  --positive:      #0f9d58;
+  --negative:      #e0443e;
+
+  --font-sans:    "DM Sans", system-ui, sans-serif;
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --h1-size:      clamp(2.3rem, 5.2vw, 3.8rem);
+  --h2-size:      clamp(1.7rem, 3.4vw, 2.6rem);
+  --h-weight:     700;
+  --h-tracking:   -0.028em;
+  --body-size:    17px;
+  --body-leading: 1.7;
+
+  --border-w:    1px;
+  --radius:      16px;
+  --radius-sm:   10px;
+  --radius-lg:   24px;
+  --btn-radius:  999px;
+  --pill-radius: 999px;
+  --card-pad:    28px;
+  --section-y:   clamp(72px, 9vw, 120px);
+  --shadow:      0 24px 60px rgba(18,20,26,0.10);
+  --shadow-card: 0 2px 4px rgba(18,20,26,0.04), 0 10px 26px rgba(18,20,26,0.05);
+}
+
+/* ---------- 5. midnight --------------------------------------------------
+   Deep navy, serif display, warm accent, wide rhythm. Reads premium and
+   relationship-led. Good for VIP, large ticket, private desks.            */
+[data-style="midnight"] {
+  --bg:            #0b1020;
+  --surface:       #121a2e;
+  --surface-2:     #1a2440;
+  --fg:            #eef2fb;
+  --fg-muted:      #8d99b8;
+  --border:        rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.22);
+  --positive:      #4ad295;
+  --negative:      #ff7a70;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --h1-size:      clamp(2.7rem, 6.2vw, 4.6rem);
+  --h2-size:      clamp(2rem, 4vw, 3rem);
+  --h-weight:     400;
+  --h-tracking:   -0.015em;
+  --body-size:    17px;
+  --body-leading: 1.72;
+
+  --border-w:    1px;
+  --radius:      12px;
+  --radius-sm:   8px;
+  --radius-lg:   20px;
+  --btn-radius:  10px;
+  --pill-radius: 999px;
+  --card-pad:    28px;
+  --section-y:   clamp(76px, 10vw, 132px);
+  --container:   1100px;
+  --shadow:      0 30px 80px rgba(0,0,0,0.55);
+  --eyebrow-tracking: 0.22em;
+}
+[data-style="midnight"] h3 { font-family: var(--font-sans); font-weight: 620; }
+
+/* ---------- 6. clinical --------------------------------------------------
+   Pale grey-blue, small radii, dense tables, utilitarian. Reads as
+   compliance and operations. Good where the buyer reads the fine print.   */
+[data-style="clinical"] {
+  --bg:            #fbfcfd;
+  --surface:       #f1f4f8;
+  --surface-2:     #e5eaf1;
+  --fg:            #1b2430;
+  --fg-muted:      #5e6b7b;
+  --accent-fg:     #ffffff;
+  --border:        rgba(27,36,48,0.12);
+  --border-strong: rgba(27,36,48,0.24);
+  --positive:      #157347;
+  --negative:      #b02a37;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+  --h1-size:      clamp(2rem, 4.4vw, 3.1rem);
+  --h2-size:      clamp(1.5rem, 2.8vw, 2.1rem);
+  --h-weight:     660;
+  --h-tracking:   -0.022em;
+  --body-size:    16px;
+  --body-leading: 1.62;
+
+  --border-w:    1px;
+  --radius:      5px;
+  --radius-sm:   4px;
+  --radius-lg:   8px;
+  --btn-radius:  5px;
+  --pill-radius: 4px;
+  --card-pad:    20px;
+  --section-y:   clamp(52px, 6.5vw, 86px);
+  --container:   1080px;
+  --shadow:      0 10px 30px rgba(27,36,48,0.08);
+  --shadow-card: 0 1px 2px rgba(27,36,48,0.05);
+  --eyebrow-tracking: 0.1em;
+}
+
+/* ---------- 7. mono ------------------------------------------------------
+   Black and white, one accent, enormous headlines, no chrome. Reads as
+   confident and unfussy. Good for a single-claim page.                    */
+[data-style="mono"] {
+  --bg:            #0a0a0a;
+  --surface:       #121212;
+  --surface-2:     #1c1c1c;
+  --fg:            #fafafa;
+  --fg-muted:      #8a8a8a;
+  --border:        rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.3);
+  --positive:      #ffffff;
+  --negative:      #8a8a8a;
+
+  --font-sans:    "Archivo", system-ui, sans-serif;
+  --font-display: "Archivo", system-ui, sans-serif;
+  --h1-size:      clamp(2.8rem, 8vw, 6rem);
+  --h2-size:      clamp(2rem, 5vw, 3.6rem);
+  --h-weight:     800;
+  --h-tracking:   -0.05em;
+  --h-transform:  uppercase;
+  --body-size:    17px;
+
+  --border-w:    1px;
+  --radius:      2px;
+  --radius-sm:   2px;
+  --radius-lg:   2px;
+  --btn-radius:  2px;
+  --pill-radius: 2px;
+  --card-pad:    24px;
+  --section-y:   clamp(68px, 9vw, 116px);
+  --shadow:      none;
+  --eyebrow-tracking: 0.26em;
+}
+[data-style="mono"] .ticklist li::before { border-color: var(--accent); }
+[data-style="mono"] .card { background: transparent; }
+[data-style="mono"] .section--tint { background: var(--surface); }
+
+/* ---------- 8. ledger ----------------------------------------------------
+   Slate, structural dividers, strong tabular numerics, two-column rhythm.
+   Reads as a settlement ledger. Built for brands selling two rails at once. */
+[data-style="ledger"] {
+  --bg:            #10141a;
+  --surface:       #171d26;
+  --surface-2:     #202834;
+  --fg:            #eef2f7;
+  --fg-muted:      #8695a8;
+  --border:        rgba(255,255,255,0.11);
+  --border-strong: rgba(255,255,255,0.24);
+  --positive:      #35d0a5;
+  --negative:      #ff6b6b;
+
+  --font-sans:    "Inter Tight", system-ui, sans-serif;
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-mono:    "Roboto Mono", ui-monospace, monospace;
+  --h1-size:      clamp(2.2rem, 5vw, 3.6rem);
+  --h2-size:      clamp(1.65rem, 3.2vw, 2.4rem);
+  --h-weight:     680;
+  --h-tracking:   -0.03em;
+  --body-size:    16.5px;
+  --body-leading: 1.64;
+
+  --border-w:    1px;
+  --radius:      8px;
+  --radius-sm:   5px;
+  --radius-lg:   12px;
+  --btn-radius:  7px;
+  --pill-radius: 4px;
+  --card-pad:    24px;
+  --section-y:   clamp(60px, 7.5vw, 100px);
+  --container:   1160px;
+  --shadow:      0 20px 56px rgba(0,0,0,0.5);
+  --eyebrow-tracking: 0.15em;
+}
+[data-style="ledger"] .card { border-left: 3px solid var(--accent); }
+[data-style="ledger"] .stat__num,
+[data-style="ledger"] .price,
+[data-style="ledger"] .estimator__big { font-family: var(--font-mono); letter-spacing: -0.02em; }
+[data-style="ledger"] .pricetable td:last-child { font-family: var(--font-mono); }
+
+/* ---------- 9. stamp -----------------------------------------------------
+   Ink-dark, condensed uppercase headings, heavy rules. Reads as approval and
+   authority. Built for a brand whose whole promise is getting you approved.  */
+[data-style="stamp"] {
+  --bg:            #14110f;
+  --surface:       #1d1917;
+  --surface-2:     #272220;
+  --fg:            #f6f2ee;
+  --fg-muted:      #9a9088;
+  --border:        rgba(255,255,255,0.13);
+  --border-strong: rgba(255,255,255,0.28);
+  --positive:      #4fc77f;
+  --negative:      #ff5f52;
+
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Oswald", "Inter", system-ui, sans-serif;
+  --h1-size:      clamp(2.6rem, 6.4vw, 4.6rem);
+  --h2-size:      clamp(1.9rem, 4vw, 3rem);
+  --h-weight:     600;
+  --h-tracking:   -0.005em;
+  --h-transform:  uppercase;
+  --body-size:    17px;
+  --body-leading: 1.66;
+
+  --border-w:    2px;
+  --radius:      3px;
+  --radius-sm:   2px;
+  --radius-lg:   4px;
+  --btn-radius:  3px;
+  --pill-radius: 3px;
+  --card-pad:    24px;
+  --section-y:   clamp(64px, 8vw, 104px);
+  --shadow:      0 22px 54px rgba(0,0,0,0.6);
+  --eyebrow-tracking: 0.24em;
+}
+[data-style="stamp"] h3 { font-family: var(--font-sans); text-transform: none; font-weight: 650; }
+[data-style="stamp"] .section { border-top-width: 2px; }
+[data-style="stamp"] .badge { border-radius: 2px; }
+
+/* ---------- 10. warm -----------------------------------------------------
+   Cream, humanist type, large body copy, gentle rounding. Reads as helpful
+   rather than institutional. Built for a small owner-operator buyer.        */
+[data-style="warm"] {
+  --bg:            #fffaf3;
+  --surface:       #fff5e9;
+  --surface-2:     #f7ead9;
+  --fg:            #2a2420;
+  --fg-muted:      #6f6457;
+  --accent-fg:     #ffffff;
+  --border:        rgba(42,36,32,0.12);
+  --border-strong: rgba(42,36,32,0.24);
+  --positive:      #2f8f5b;
+  --negative:      #c0472f;
+
+  --font-sans:    "Nunito", system-ui, sans-serif;
+  --font-display: "Nunito", system-ui, sans-serif;
+  --h1-size:      clamp(2.2rem, 5vw, 3.5rem);
+  --h2-size:      clamp(1.65rem, 3.2vw, 2.4rem);
+  --h-weight:     800;
+  --h-tracking:   -0.025em;
+  --body-size:    18px;
+  --body-leading: 1.74;
+
+  --border-w:    1px;
+  --radius:      14px;
+  --radius-sm:   10px;
+  --radius-lg:   22px;
+  --btn-radius:  12px;
+  --pill-radius: 999px;
+  --card-pad:    26px;
+  --section-y:   clamp(60px, 8vw, 104px);
+  --container:   1060px;
+  --shadow:      0 18px 44px rgba(42,36,32,0.10);
+  --shadow-card: 0 2px 3px rgba(42,36,32,0.04), 0 8px 20px rgba(42,36,32,0.05);
+  --eyebrow-tracking: 0.1em;
+}
+
+/* ---------- 11. wire -----------------------------------------------------
+   Blueprint light, thin rules, monospace numerics, technical calm. Reads as
+   a transfer rail. Built for fiat-in, crypto-out.                           */
+[data-style="wire"] {
+  --bg:            #f7f9fb;
+  --surface:       #ffffff;
+  --surface-2:     #eef2f7;
+  --fg:            #10182a;
+  --fg-muted:      #5a6678;
+  --accent-fg:     #ffffff;
+  --border:        rgba(16,24,42,0.13);
+  --border-strong: rgba(16,24,42,0.26);
+  --positive:      #0e7a5f;
+  --negative:      #b3362b;
+
+  --font-sans:    "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
+  --h1-size:      clamp(2.1rem, 4.8vw, 3.4rem);
+  --h2-size:      clamp(1.6rem, 3vw, 2.3rem);
+  --h-weight:     600;
+  --h-tracking:   -0.025em;
+  --body-size:    16.5px;
+  --body-leading: 1.66;
+
+  --border-w:    1px;
+  --radius:      2px;
+  --radius-sm:   2px;
+  --radius-lg:   3px;
+  --btn-radius:  2px;
+  --pill-radius: 2px;
+  --card-pad:    22px;
+  --section-y:   clamp(58px, 7vw, 96px);
+  --container:   1120px;
+  --shadow:      0 14px 36px rgba(16,24,42,0.08);
+  --shadow-card: none;
+  --eyebrow-tracking: 0.2em;
+}
+[data-style="wire"] .card { border-top: 2px solid var(--accent); }
+[data-style="wire"] .stat__num,
+[data-style="wire"] .price,
+[data-style="wire"] .estimator__big { font-family: var(--font-mono); }
+[data-style="wire"] .mock__row { border-left: 2px solid var(--accent); }

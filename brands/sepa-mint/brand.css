@@ -1,35 +1,7 @@
-/* ==========================================================================
-   Sepa Mint - token overrides only.
-   Do not add layout rules here. Layout lives in /assets/base.css.
-
-   Accent chosen on measured contrast and measured hue separation:
-     #f26de0 on --bg #0a0b0d          = 7.54:1  (AA and AAA)
-     --accent-fg #0a0b0d on #f26de0   = 7.54:1  (AA and AAA)
-
-   Hue 308, saturation 55, value 95. Separation from three sibling brands and
-   the tokens the shared stylesheet reserves for meaning:
-     Swipe Wire Pay #17b9a0  171deg   137deg apart
-     CardPayz       #84cc16   84deg   136deg apart
-     FiatPay        #a78bfa  255deg    53deg apart, the nearest
-     base blue      #2f6bff  223deg    85deg apart
-     --negative               0deg    52deg apart
-     --warn                  37deg    89deg apart
-     --positive             147deg   161deg apart
-
-   The brand's own name points at a colour it cannot have. Mint green sits near
-   hue 158, which is 11deg from --positive (the comparison table's "Yes") and
-   13deg from Swipe Wire Pay's teal. Using it would make the honest-loss rows
-   unreadable and make this look like a Swipe Wire Pay variant.
-
-   308 is the midpoint of the widest remaining gap in the wheel, at 52deg of
-   clearance. With four brands plus three semantic tokens plus the scaffold
-   default, a fifth brand will have under 30deg available anywhere.
-
-   Pure Labs Pay: separation from that brand was never checked. kvn dropped
-   the requirement on 2026-09-25, so this is closed, not outstanding.
-   ========================================================================== */
+/* Sepa Mint - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="swiss"]. */
 :root {
-  --accent:      #f26de0;
-  --accent-fg:   #0a0b0d;
-  --accent-soft: rgba(242, 109, 224, 0.12);
+  --accent:      #d7263d;
+  --accent-fg:   #ffffff;
+  --accent-soft: rgba(215,38,61,0.08);
 }

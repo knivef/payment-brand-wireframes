@@ -1,149 +1,228 @@
 # CLAUDE.md
 
-Repo context. Claude Code loads this automatically. Read it before any task here.
+Repo context. Read this first, before anything else. Treat it as binding.
 
 ## What this repo is
 
-A multi-brand payment wireframe repo. The base URL is an index of every brand.
-Each card links to `/brands/<slug>/`, a standalone conversion wireframe.
+A multi-brand payment wireframe repo, generated from the brand book. The base URL
+indexes every brand. Each card links to `/brands/<slug>/`.
 
-Plain HTML and CSS. No framework, no bundler, no build step. Vercel serves it
-as static output. Do not introduce a build step, a package manager or a
-JavaScript framework. If a task seems to need one, stop and ask.
+Plain HTML and CSS. The deployed site is static. `scripts/build.py` is a content
+generator, not a deploy step. Never introduce a framework, a bundler or a package
+manager.
 
-## Layout
+## Architecture, three layers
 
 ```
-index.html              Brand index. Renders from the inline JSON block id="brand-registry".
-vercel.json             Clean URLs, cache headers, noindex while wireframing.
-assets/base.css         ALL structural CSS. Shared by every brand.
-assets/conversion.js    Sticky bars, countdown, exit intent, accordion, forms.
-brands/_template/       Fork this for a new brand. Never ship it, never edit it casually.
-brands/<slug>/          index.html, brand.css, brief.md
-prompts/                The four-stage build chain. Read before building.
-scripts/check.sh        Health check. Run before every push.
-scripts/bootstrap.sh    One-time gh repo create plus vercel link.
+data/brand-book.json   Brands, price lists, pitches, lifted from Brand_Book.xlsx.
+                       Licence, status, type and priority live here. Source of truth.
+data/pages.json        Page content per brand. The only hand-written input.
+scripts/build.py       Renders brands/<slug>/index.html + brand.css, rewrites the hub.
 ```
 
-## The two architectural rules
+```
+assets/base.css        Layout and structure. Shared by every brand.
+assets/themes.css      Design styles. A style owns the look. Count is generated.
+brands/<slug>/brand.css  Accent tokens only. Three lines.
+```
 
-**1. Structure is shared, brand is tokens.**
-`assets/base.css` owns every layout rule. A brand's `brand.css` may set only:
-`--accent`, `--accent-fg`, `--accent-soft`, `--bg`, `--surface`, `--surface-2`,
-`--radius`, `--radius-sm`, `--radius-lg`, `--font-sans`.
+Change a rate in `data/brand-book.json` and every brand using that price list
+updates on the next build. That is the point.
 
-If a brand needs a layout treatment base.css does not have, add a reusable class
-to `base.css` and tell the user you did it. Never add a layout rule to a brand
-folder. `scripts/check.sh` fails the build if you do.
+## Canonical repo
 
-**2. The brief is the only input to the build.**
-`brands/<slug>/brief.md` is the source of truth for copy, claims, positioning
-and SEO. If something is not in the brief, it does not go on the page. Copy
-decisions get made in the brief, in markdown, where they are reviewable.
+Every change belongs in **https://github.com/knivef/payment-brand-wireframes**.
+That is the only copy that matters. Work left in a local folder, a scratch
+directory or a chat attachment does not count as done.
 
-## Workflow for a new brand
+Push with:
 
-Run the prompts in order. Stop at each gate.
+```bash
+./scripts/sync.sh "imperative one line, no em dashes"
+```
 
-| Stage | Prompt | Output |
+It runs the health check first and refuses to push if the check fails. It wires
+`origin` on first run, so a fresh folder needs no setup. Never push by hand with
+raw git commands; use the script so the check cannot be skipped.
+
+Push at the end of every task, not in a batch at the end of a session. A brand
+page that builds and passes the check is a commit.
+
+## The three rules
+
+**1. Never hand-edit `brands/`.** Everything in there is generated. Edit
+`data/pages.json` and run `python3 scripts/build.py`. `scripts/check.sh` fails if
+the committed output is stale.
+
+**2. Structure is shared, style is a theme, brand is an accent.**
+`base.css` owns every layout rule. `themes.css` owns palette, type, border weight,
+radius, shadow and rhythm, under `[data-style="..."]`. A brand's `brand.css` may
+set only `--accent`, `--accent-fg`, `--accent-soft`. If a brand needs a layout
+treatment that does not exist, add a reusable class to `base.css` and say so.
+
+**3. Every change is pushed.** A task is not finished until
+`./scripts/sync.sh "<message>"` has succeeded and reported the repo URL. If the
+push fails, say so plainly and stop rather than carrying on with the next brand.
+
+**4. Licence language follows the brand book.** `data/brand-book.json` says which
+licence each brand holds. Zepapay and SPS hold a UAE PSP licence. NexFlow holds a
+Canadian MSB licence. **Every other brand holds none.** A brand with no licence
+must never state or imply one. It may describe a partner structure, and the
+partner entity stays as `[CONFIRM: ...]` until legal signs it off.
+`scripts/check.sh` enforces this.
+
+## Design styles
+
+11, in `assets/themes.css`. Set per brand via `"style"` in `data/pages.json`.
+
+| Style | Reads as | In use |
 |---|---|---|
-| 1 | `prompts/01-research.md` | `brands/<slug>/brief.md` sections 1 to 6 and 8 |
-| 2 | `prompts/02-seo.md` | brief section 7 |
-| 3 | `prompts/03-wireframe.md` | `brands/<slug>/index.html` and `brand.css`, plus a registry entry |
-| 4 | `prompts/04-qa-deploy.md` | QA report, commit, deploy |
+| `terminal` | Near-black, monospace headings, tight corners, dense. Reads as payments infrastructure. Good for settlement, payouts, API-led brands. | Zepapay |
+| `swiss` | White, oversized type, hairline rules, no radius, generous air. Reads as editorial and senior. Good for brands selling to institutions. | Sepa Mint |
+| `brutal` | Hard 2px borders, offset shadows, flat blocks, zero radius. Loud and memorable. Good for a burnable brand that needs to be noticed fast. | Ape Card |
+| `soft` | Light, rounded, layered shadows, roomy cards. The familiar modern fintech look. Lowest risk, highest trust with non-technical buyers. | Offrampr |
+| `midnight` | Deep navy, serif display, warm accent, wide rhythm. Reads premium and relationship-led. Good for VIP, large ticket, private desks. | Secure Payment Services |
+| `clinical` | Pale grey-blue, small radii, dense tables, utilitarian. Reads as compliance and operations. Good where the buyer reads the fine print. | Pure Labs |
+| `mono` | Black and white, one accent, enormous headlines, no chrome. Reads as confident and unfussy. Good for a single-claim page. | AltPay |
+| `ledger` | Slate, structural dividers, strong tabular numerics, two-column rhythm. Reads as a settlement ledger. Built for brands selling two rails at once. | free |
+| `stamp` | Ink-dark, condensed uppercase headings, heavy rules. Reads as approval and authority. Built for a brand whose whole promise is getting you approved. | free |
+| `warm` | Cream, humanist type, large body copy, gentle rounding. Reads as helpful rather than institutional. Built for a small owner-operator buyer. | free |
+| `wire` | Blueprint light, thin rules, monospace numerics, technical calm. Reads as a transfer rail. Built for fiat-in, crypto-out. | free |
 
-`prompts/00-orchestrator.md` runs all four with approval gates.
+This table is generated. `assets/themes.css` is the only source of truth, the
+index page reads it at build time, and `scripts/build.py` prints the count. If a
+doc and the stylesheet disagree, the stylesheet is right.
+
+A style not listed as in use is free capacity. Past 11 brands, styles have to be
+shared or new ones written. Sharing is acceptable for Burnable brands that will
+never sit side by side with their twin; it is not acceptable for two Permanent
+brands in the same vertical.
+
+## Content source
+
+`content/brand-homepages.md` carries researched positioning, SEO, full copy,
+pricing and FAQ for Swipe Wire Pay, Card Payz, Fiat Pay, Sepa Mint, Offrampr and
+Onrampr. Build those six from it rather than writing fresh copy. Its section 7
+lists nine open items that block publication.
+
+## The index and the switcher
+
+Two ways to move between brands, both generated:
+
+- **The index at `/`** lists every brand with its status, licence, type, style
+  and accent, filterable by status. `scripts/build.py` rewrites its registry
+  block on every build.
+- **The review switcher**, bottom left on every brand page. Lists all brands,
+  marks the current one, and gives prev and next. Keys: `[` previous, `]` next,
+  `b` index, `/` toggle.
+
+The switcher renders **only while the page carries its wireframe `noindex` tag**.
+Remove that tag for launch and the switcher disappears on its own. Never add a
+hand-written cross-brand nav to a page; it would ship live.
+
+The switcher's order matches the index order, so stepping with `]` follows the
+cards. Only the list scrolls; Prev, Next and All brands stay reachable at any
+brand count, and the current brand is scrolled into view when the panel opens.
+
+`check.sh` verifies that every page's switcher lists every brand, which catches
+the case where one brand was rebuilt alone and its menu went stale. If that fails,
+run `python3 scripts/build.py` with no argument.
+
+## Launching one brand at a time
+
+`vercel.json` is generated. Launching is per brand, in one place:
+
+```json
+{ "slug": "zepapay", "launched": true, ... }   // in data/pages.json
+```
+
+Rebuild, and that brand's page loses its `noindex` meta tag and its
+`X-Robots-Tag` header. Every other brand keeps both, and the index at `/` stays
+out of search permanently. The review switcher also disappears from a launched
+page, because it keys off the same `noindex` tag.
+
+Never hand-edit `vercel.json`, and never remove the robots tag from a page
+template. There is no repo-wide switch, which is the point.
+
+## Dates and build churn
+
+The registry's `updated` field only moves when a page's rendered output actually
+changes. `data/build-state.json` holds a content hash per brand and is committed.
+Rebuilding on a quiet day produces no diff. Do not delete that file to force a
+refresh; change the page.
+
+## Page section order
+
+announcement, nav, hero, trust bar, problem, product, how it works, pricing,
+estimator, segments, compliance, lead form, FAQ, final CTA, footer, sticky bar,
+rail CTA, exit modal.
+
+Sections appear only if that key exists in `data/pages.json`. **There is no
+competitor comparison section.** It was dropped on purpose. Do not add one back
+without being asked.
+
+## Conversion layer
+
+All wired in `assets/conversion.js`, all opt-in via data attributes.
+
+| Element | Attribute |
+|---|---|
+| Announcement bar, dismissal remembered | `data-announce` |
+| Countdown, fixed deadline or rolling window | `data-countdown` |
+| Sticky nav | `data-nav` |
+| Read progress bar | `data-progress` |
+| Sticky bottom bar (mobile) and rail CTA (desktop) | `data-stickybar`, `data-railcta` |
+| Exit modal, once per visitor | `data-exit-intent` |
+| Scroll reveal | `.reveal` |
+| FAQ accordion, feeds FAQPage schema | `.faq details` |
+| Fee estimator, rates read from the markup | `data-estimator` |
+| Multi-step form with per-step validation | `data-multistep` |
+| Lead form: honeypot, timing check, free-email block, inline success | `data-lead-form` |
+| Event stream for analytics | `wf:event` window event |
 
 ## House rules
 
-These are non-negotiable. They apply to code, copy, comments and commit messages.
-
-- **No em dashes.** Anywhere. Use a full stop or a comma. `check.sh` enforces it.
-- **No invented facts.** Never write a merchant count, a processing volume, a
-  testimonial, a certification, a partner name or a compliance claim that has not
-  been verified. Unverified content stays as a literal `[BRACKETED PLACEHOLDER]`
-  and gets a row in the claims register in `brief.md`.
+- **No em dashes.** Anywhere. `check.sh` enforces it.
+- **No invented facts.** Pricing comes from `data/brand-book.json`. Anything else
+  unverified stays as `[CONFIRM: ...]` and gets a claims-register row.
 - **No AI register.** Banned: seamless, robust, unlock, empower, leverage,
-  landscape, "in today's", "we understand that", "it's not just X, it's Y",
-  "designed to", "tailored to". Write the way someone who has closed these deals
-  would write.
-- **The comparison table must contain at least one row where the brand honestly
-  loses or ties.** A table the brand sweeps reads as fiction and buyers discount
-  all of it.
-- **Delete the proof section rather than publish placeholder figures.**
-- **Drop the countdown rather than invent a deadline.**
-- **Every page keeps `noindex` until that specific brand launches** on its own
-  domain. Remove it one brand at a time, never repo-wide.
+  landscape, "in today's", "we understand that", "it's not just X, it's Y".
+- Published pricing is a deliberate conversion lever, and it is also an internal
+  rate card. Confirm with kvn per brand before a page goes public.
+- Every page keeps `noindex` until that brand launches. Remove per brand.
+- Commit messages: imperative, one line, no em dashes. `sync.sh` rejects them.
 
-## Conventions
-
-- Section order in a brand page is fixed by the template. Sections may be
-  deleted. They may not be reordered, and a new one needs a reason.
-- Keep every data attribute the template uses. `conversion.js` binds to
-  `data-nav`, `data-announce`, `data-countdown`, `data-stickybar`,
-  `data-stickybar-after`, `data-modal`, `data-exit-intent`, `data-lead-form`,
-  `data-cta` and silently does nothing if they are missing.
-- Give every CTA a distinct `data-cta` label so clicks are attributable.
-- Set `data-key` on the announcement bar, countdown and exit modal to the brand
-  slug plus a version suffix, so dismissals do not leak between brands sharing a
-  preview domain.
-- The comparison table renders twice, a real table and a stacked card fallback
-  under 820px. Populate both with the same data.
-- FAQ copy on the page and FAQ copy in the FAQPage JSON-LD come from one source.
-  They must not drift.
-- Commit messages: imperative mood, one line, no em dashes.
-
-## Local preview
-
-Pages link `/assets/base.css` with an absolute path, so `file://` will not
-render them. They need a server.
+## Commands
 
 ```bash
-python3 -m http.server 4321
-# index:  http://localhost:4321/
-# brand:  http://localhost:4321/brands/<slug>/
+python3 scripts/build.py            # rebuild every page and the hub
+python3 scripts/build.py zepapay    # rebuild one
+./scripts/check.sh                  # run before every push, 7 sections
+./scripts/sync.sh "message"         # check, commit and push to the canonical repo
+python3 -m http.server 4321         # preview at localhost:4321
 ```
 
-If you are running in Cowork, where each shell call is short-lived, start it
-detached and tell the user the URL to open in their own browser:
+In Cowork, each shell call is a fresh short-lived shell. Start the preview server
+detached and give the user the URL:
 
 ```bash
 cd "<repo root>" && nohup python3 -m http.server 4321 >/dev/null 2>&1 &
 ```
 
-If that server does not survive, do not fight it. Ask the user to run the
-command in their own Terminal, or push the branch and review the Vercel preview
-URL instead.
-
-Add `class="wf"` to a brand page's `<body>` to strip colour and shadow and
-review structure alone. Remove it before committing.
+If it does not survive, ask the user to run it in Terminal, or push and review the
+Vercel preview. Pages link `/assets/base.css` absolutely, so `file://` will not
+render them.
 
 ## Running in Cowork with the folder attached
 
-The attached folder is the repo root. Everything in this file still applies.
-Two differences:
-
-- This file is not loaded automatically. Read it first, before anything else.
-- Each shell call is a fresh short-lived shell. Do not rely on a previous call's
-  working directory or background process. Anchor paths from the repo root every
-  time, and split long jobs into steps.
-
-## Before every push
-
-```bash
-./scripts/check.sh
-```
-
-It checks for em dashes, open placeholders in shipped brands, brand registry
-validity, required files per brand, shared asset links, and layout rules leaking
-into a brand's `brand.css`.
+The attached folder is the repo root. This file is not loaded automatically, so
+read it first. Anchor every path from the repo root; do not rely on a previous
+call's working directory or a background process.
 
 ## Ask, do not assume
 
-Stop and ask the user when:
-
-- A claim needs a number nobody has verified
-- The brief and the layout conflict, so copy would have to change
-- A task seems to need a framework, a build step or a dependency
-- A brand's accent colour fails WCAG AA and the fix changes the brand
-- The legal or licensing disclosure line needs to say something specific
+- A claim needs a number that is not in the brand book
+- A brand with no licence needs to say something about regulation
+- Published pricing is about to go on a public page
+- A page needs a layout `base.css` does not have
+- A brand is missing from `data/brand-book.json`

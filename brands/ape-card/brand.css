@@ -1,0 +1,7 @@
+/* Ape Card - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="brutal"]. */
+:root {
+  --accent:      #ffe500;
+  --accent-fg:   #0d0d0d;
+  --accent-soft: rgba(255,229,0,0.22);
+}

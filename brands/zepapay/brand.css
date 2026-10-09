@@ -1,0 +1,7 @@
+/* Zepapay - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="terminal"]. */
+:root {
+  --accent:      #2ee07a;
+  --accent-fg:   #06180d;
+  --accent-soft: rgba(46,224,122,0.12);
+}

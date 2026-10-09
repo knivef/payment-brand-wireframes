@@ -1,0 +1,1903 @@
+{
+  "_note": "Page content per brand. The only input to scripts/build.py. Numbers come from data/brand-book.json price lists. Anything unverified stays in [BRACKETS] and gets a row in the brand's claims register.",
+  "pages": [
+    {
+      "slug": "zepapay",
+      "book_key": "Zepapay",
+      "name": "Zepapay",
+      "mark": "ZP",
+      "domain": "zepapay.com",
+      "style": "terminal",
+      "accent": "#2ee07a",
+      "accent_fg": "#06180d",
+      "accent_soft": "rgba(46,224,122,0.12)",
+      "tagline": "Crypto to fiat settlement, licensed, two way, any size.",
+      "cta_primary": "Start settling",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Zepapay | Crypto to Fiat Settlement for Businesses",
+        "description": "Settle crypto to your bank account and back. One step signup, no rolling reserve, payouts from $1,000 to $1,000,000. Licensed UAE payment service provider."
+      },
+      "nav": [
+        {"id": "problem", "label": "Why"},
+        {"id": "product", "label": "Rails"},
+        {"id": "pricing", "label": "Pricing"},
+        {"id": "estimate", "label": "Estimate"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "announce": {
+        "text": "Offramp Low Risk is live at 1.50% either direction, zero setup.",
+        "cta": "See the rate card",
+        "countdown_hours": 0
+      },
+      "hero": {
+        "eyebrow": "Licensed UAE payment service provider",
+        "h1": "Crypto in. Bank account out. Both directions.",
+        "sub": "Zepapay settles stablecoins and crypto into fiat in your own bank account, and takes fiat back into crypto when you need it. One step signup, no reserve held against you, and a rate you can read before you sign.",
+        "cta": "Start settling",
+        "cta_secondary": "See the rate card",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "No setup fee on offramp",
+          "No rolling reserve",
+          "Rate published, not quoted"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "mock",
+          "title": "settlement.log",
+          "status": "live",
+          "rows": [
+            {"label": "USDT received", "sub": "TRC20 · 0x7f3a…c21b", "amount": "250,000.00"},
+            {"label": "Converted at mid + 0.15%", "sub": "exchange + bank actual FX", "amount": "249,625.00"},
+            {"label": "Paid to your IBAN", "sub": "SEPA · same business day", "amount": "248,377.88", "good": true}
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Settling for",
+        "chips": ["iGaming", "Forex", "Crypto businesses", "Affiliates", "Marketplaces"]
+      },
+      "problem": {
+        "eyebrow": "The gap",
+        "h2": "Holding stablecoins is not the same as being paid",
+        "lede": "Revenue arrives on chain. Payroll, suppliers and tax do not accept it. The exchange that would convert it asks for source of funds every time you withdraw at scale, and your bank asks a different set of questions when the wire lands.",
+        "cards": [
+          {"icon": "01", "title": "The exchange route breaks at volume", "body": "Retail exchange withdrawal limits and repeated source-of-funds reviews are not a treasury process. They are a queue you join every month."},
+          {"icon": "02", "title": "Your bank does not know what the wire is", "body": "A credit with no clear originator and no settlement reference is the kind of transaction that gets held while someone asks you about it."},
+          {"icon": "03", "title": "The rate is discovered afterwards", "body": "Most providers quote a headline fee and recover the real margin in the spread. You find out what you actually paid when you reconcile."}
+        ]
+      },
+      "product": {
+        "eyebrow": "Two rails",
+        "h2": "Offramp and onramp, one account",
+        "accent_index": 0,
+        "cards": [
+          {
+            "title": "Crypto to fiat",
+            "body": "Send USDT, USDC, BTC or ETH. We screen it, convert at a rate you see, and pay fiat to a bank account in your company name.",
+            "points": [
+              "Payouts via SWIFT, SEPA and local rails",
+              "Tickets from $1,000 to $1,000,000",
+              "Screening and sanctions checks on every inbound",
+              "Settlement reference your bank can read"
+            ]
+          },
+          {
+            "title": "Fiat to crypto",
+            "body": "Fund from your bank and take delivery in stablecoin or crypto to a wallet you hold. Same rate card, same account, no second onboarding.",
+            "points": [
+              "Same day in most corridors",
+              "No reserve held on either direction",
+              "Wallet you control, not a balance we hold",
+              "One step signup, light KYC on low risk"
+            ]
+          }
+        ],
+        "cta": "Open an account"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "From signup to first settlement",
+        "cards": [
+          {"title": "One step signup", "body": "Entity details and the bank account you want paid. Low risk needs no document pack. High risk gets a short KYB."},
+          {"title": "Send the first transaction", "body": "Any amount above the minimum ticket. You see the conversion rate and the payout amount before you confirm."},
+          {"title": "Fiat lands, reconciled", "body": "Payout arrives with a settlement reference tying it to the on-chain transaction, so your accountant and your bank both have an answer."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Published rate card",
+        "h2": "Our rates, on the page, before you talk to anyone",
+        "lede": "Two lists. Low risk if your business is straightforward, high risk if it is not. Nothing here changes after onboarding without written notice.",
+        "price_list": "Offramp Low Risk",
+        "show": [
+          ["Withdrawal to bank, B2C", "wd_b2c", false],
+          ["Withdrawal to bank, B2B", "wd_b2b", false],
+          ["Settlement via SWIFT", "settle_swift", false],
+          ["Settlement via SEPA", "settle_sepa", false],
+          ["Crypto deposit", "crypto_dep", false]
+        ],
+        "extra_rows": [
+          {"label": "All in, either direction", "value": "1.50%", "note": "low risk", "highlight": true},
+          {"label": "All in, either direction", "value": "2.50%", "note": "high risk, plus $250 per month", "highlight": true},
+          {"label": "Signup", "value": "One step", "note": "no document pack on low risk"}
+        ],
+        "not_charged": [
+          "No setup fee on the offramp lists",
+          "No rolling reserve on either direction",
+          "No monthly minimum on low risk",
+          "No exit fee"
+        ],
+        "note": "High risk adds a $250 monthly maintenance fee and a lighter ticket ceiling. Which list applies is decided at onboarding and written into your agreement."
+      },
+      "estimator": {
+        "eyebrow": "Arithmetic",
+        "h2": "What this costs you at your volume",
+        "lede": "Move the slider. The effective rate is what matters, not the headline.",
+        "modes": [
+          {"key": "low", "label": "Low risk", "pct": 1.5},
+          {"key": "high", "label": "High risk", "pct": 2.5}
+        ],
+        "min": 10000,
+        "max": 2000000,
+        "step": 10000,
+        "default": 250000,
+        "setup": 0,
+        "monthly": 0,
+        "out_label": "Estimated monthly cost",
+        "disclaimer": "Indicative. Excludes bank actual FX, which is passed through at 0.15 percent over the exchange rate. Your written quote is the binding number.",
+        "cta": "Get this in writing"
+      },
+      "compliance": {
+        "eyebrow": "How we are structured",
+        "h2": "What we are, stated plainly",
+        "cards": [
+          {"title": "Licensed entity", "body": "Zepapay operates as a UAE payment service provider. [CONFIRM: licence number and issuing authority before launch.]"},
+          {"title": "What we screen", "body": "Wallet screening against sanctions and high-risk exposure on every inbound transaction, KYB on the entity, and monitoring sized to your volume."},
+          {"title": "What we will not do", "body": "Reprice you in month three, hold a settlement without telling you why, or move you to a worse list without a written notice period."}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Open an account",
+        "h2": "One step signup, then send your first transaction",
+        "lede": "Tell us the entity, the corridor and roughly what you move. Low risk accounts can be sending the same day.",
+        "points": [
+          "No document pack needed on the low risk list",
+          "You get the rate card in writing before you send anything",
+          "A named human, not a ticket queue"
+        ],
+        "telegram_note": "Faster than email, most days.",
+        "form": {
+          "title": "Start settling",
+          "sub": "Three short steps.",
+          "block_free_email": true,
+          "submit": "Get my rate card",
+          "success": "Got it. Your rate card comes back within one business day.",
+          "note": "We do not sell or share this. Used only to price and underwrite your account.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Business name", "placeholder": "Registered entity", "required": true, "half": true},
+              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
+              {"type": "select", "name": "industry", "label": "Industry", "required": true,
+               "options": ["iGaming", "Forex", "Crypto business", "Affiliate network", "Marketplace", "Other"]}
+            ],
+            [
+              {"type": "select", "name": "direction", "label": "Which direction", "required": true,
+               "options": ["Crypto to fiat", "Fiat to crypto", "Both"]},
+              {"type": "select", "name": "volume", "label": "Monthly volume", "required": true,
+               "options": ["Under $50,000", "$50,000 to $250,000", "$250,000 to $1m", "Over $1m"]},
+              {"type": "select", "name": "corridor", "label": "Payout currency", "required": true,
+               "options": ["EUR via SEPA", "USD via SWIFT", "GBP", "AED", "Other"]}
+            ],
+            [
+              {"type": "text", "name": "name", "label": "Your name", "required": true, "half": true},
+              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true, "half": true},
+              {"type": "text", "name": "telegram", "label": "Telegram handle, optional", "placeholder": "@handle"},
+              {"type": "textarea", "name": "notes", "label": "Anything we should know", "placeholder": "Previous provider, why you are moving, anything unusual about the flow"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions we actually get",
+        "lede": "The ones that come up on the first call.",
+        "items": [
+          {"q": "Which list will I be on, low risk or high risk?", "a": "Decided at onboarding from your industry, your corridor and your entity structure. We tell you before you sign, not after. Low risk is 1.50 percent either direction with no setup and no monthly fee. High risk is 2.50 percent with a $250 monthly maintenance fee."},
+          {"q": "Do you hold a rolling reserve?", "a": "No. Neither offramp list carries a reserve. That is the main structural difference between this and a card acquiring relationship."},
+          {"q": "What is the minimum and maximum I can send?", "a": "Low risk runs from $1,000 to $1,000,000 per ticket. High risk runs from $1,000 to $500,000. Larger tickets are possible but need to be arranged in advance."},
+          {"q": "How is FX handled?", "a": "Conversion is charged at 0.15 percent over the exchange rate, plus the bank's actual FX on the fiat leg. You see the rate before you confirm the transaction."},
+          {"q": "Which chains and assets?", "a": "USDT and USDC on the major chains, plus BTC and ETH. If you need a chain that is not supported, ask before you send."},
+          {"q": "How fast does fiat arrive?", "a": "Conversion is same day in most cases. Bank arrival depends on the corridor. SEPA is typically same or next business day, SWIFT is two to three."},
+          {"q": "What do you need from me to open an account?", "a": "Low risk is a one step signup with entity details and the destination bank account. High risk adds a short KYB on the entity and its beneficial owners."}
+        ]
+      },
+      "final": {
+        "h2": "Get the rate card in writing",
+        "body": "Tell us the corridor and the volume. You get a written rate card and a straight answer on which list you are on.",
+        "cta": "Start settling"
+      },
+      "sticky": {"title": "Settle crypto to your bank", "sub": "1.50% either direction, no reserve", "cta": "Start"},
+      "exit_modal": {
+        "eyebrow": "One thing before you go",
+        "h": "Take the rate card with you",
+        "body": "Both lists, every line, as a one page PDF. No call, no sales sequence.",
+        "cta": "Send me the rate card",
+        "note": "One email. Unsubscribe in one click.",
+        "success": "On its way."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Crypto to fiat", "href": "#product"}, {"label": "Fiat to crypto", "href": "#product"}, {"label": "Pricing", "href": "#pricing"}, {"label": "Cost estimator", "href": "#estimate"}]},
+          {"title": "Industries", "links": [{"label": "iGaming", "href": "#"}, {"label": "Forex", "href": "#"}, {"label": "Affiliates", "href": "#"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+        ],
+        "legal": "Zepapay operates as a licensed UAE payment service provider. [CONFIRM: licence number, issuing authority and the exact regulated activity before launch. This line needs legal review.] Services are subject to onboarding approval and are not available in all jurisdictions."
+      }
+    },
+
+    {
+      "slug": "secure-payment-services",
+      "book_key": "SPS",
+      "name": "Secure Payment Services",
+      "mark": "SPS",
+      "domain": "securepaymentservices.net",
+      "style": "midnight",
+      "accent": "#d9a441",
+      "accent_fg": "#17120a",
+      "accent_soft": "rgba(217,164,65,0.14)",
+      "tagline": "Client collection and IBAN settlement for regulated brokers.",
+      "cta_primary": "Request terms",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Secure Payment Services | Client Collection and IBAN for Forex",
+        "description": "Collect client deposits, settle in crypto or fiat, and pay withdrawals from a dedicated IBAN. Built for forex brokers. Tickets to $150,000. Licensed UAE PSP."
+      },
+      "nav": [
+        {"id": "problem", "label": "The problem"},
+        {"id": "product", "label": "What you get"},
+        {"id": "pricing", "label": "Terms"},
+        {"id": "compliance", "label": "Compliance"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "hero": {
+        "eyebrow": "Licensed UAE payment service provider",
+        "h1": "Collection and settlement for brokers who have outgrown the workaround",
+        "sub": "Client deposits in, withdrawals out, settlement in crypto or fiat, and a dedicated IBAN underneath it. Single tickets to $150,000 and a minimum entry of $500, so the same rail serves your retail book and your VIP desk.",
+        "cta": "Request terms",
+        "cta_secondary": "See the terms",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "Written terms before you sign",
+          "Reserve disclosed up front",
+          "Named account manager"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "stats",
+          "items": [
+            {"value": "$150,000", "label": "Maximum single ticket"},
+            {"value": "$500", "label": "Minimum deposit"},
+            {"value": "5% / 90", "label": "VIP reserve, percent and days"},
+            {"value": "0.15%", "label": "FX over the exchange rate"}
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Built for",
+        "chips": ["Forex brokers", "Prop firms", "Introducing brokers", "Affiliate networks", "Crypto businesses"]
+      },
+      "problem": {
+        "eyebrow": "Why brokers move",
+        "h2": "The collection rail is usually the weakest part of the business",
+        "lede": "Deposits convert the client. Withdrawals keep them. Most brokers are running both through something that was never designed for the volume, the ticket size, or the questions a bank asks.",
+        "cards": [
+          {"icon": "I", "title": "Ticket ceilings that cut off your best clients", "body": "A rail built for $2,000 deposits quietly loses you the $80,000 one. The client does not complain, they just stop funding."},
+          {"icon": "II", "title": "Withdrawals that take longer than the pitch promised", "body": "Payout speed is the single most reviewed thing about a broker. It is also the thing most providers treat as a batch job."},
+          {"icon": "III", "title": "Terms that change once you are integrated", "body": "The reserve moves, the rate moves, the settlement schedule stretches. By then the integration cost makes leaving expensive."}
+        ]
+      },
+      "product": {
+        "eyebrow": "The stack",
+        "h2": "One relationship, both legs",
+        "accent_index": 1,
+        "cards": [
+          {
+            "title": "Client collection",
+            "body": "Take client deposits by card and by bank, with whitelisted channels and a ticket range wide enough to serve both ends of your book.",
+            "points": [
+              "Single deposits to $150,000",
+              "Minimum entry at $500",
+              "Whitelisted, pre-approved payment channels",
+              "B2C and B2B withdrawals on the same account"
+            ]
+          },
+          {
+            "title": "IBAN and settlement",
+            "body": "Settlement to a dedicated IBAN, or in crypto if that is how you hold treasury. SWIFT for size, SEPA for speed, both priced on the page.",
+            "points": [
+              "Dedicated IBAN, not a pooled account",
+              "SWIFT settlement at a flat $45 on the VIP list",
+              "Crypto settlement at the same desk",
+              "Reserve terms written into the term sheet"
+            ]
+          }
+        ],
+        "cta": "Request a term sheet"
+      },
+      "how": {
+        "eyebrow": "Onboarding",
+        "h2": "Three steps to live",
+        "cards": [
+          {"title": "Tell us the book", "body": "Jurisdiction, licence, average and peak ticket, monthly volume, and where your clients are. We would rather decline on day one than unwind it in month three."},
+          {"title": "Written term sheet", "body": "Rate, reserve percentage, release schedule and settlement timing, in writing, before you sign anything."},
+          {"title": "Integrate and go live", "body": "Hosted collection, API, or both. Your account manager is named on the term sheet and does not change."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Terms",
+        "h2": "Two lists. Which one you get is decided before you sign.",
+        "lede": "VIP is for books processing $250,000 and above with a clean history. High risk is everything else. Both are published here rather than discovered later.",
+        "price_list": "IBAN VIP",
+        "show": [
+          ["Client deposit, C2B", "dep_c2b", true],
+          ["Deposit, B2B", "dep_b2b", false],
+          ["Withdrawal, B2C", "wd_b2c", false],
+          ["Withdrawal, B2B", "wd_b2b", false],
+          ["Settlement via SEPA", "settle_sepa", false],
+          ["Crypto deposit", "crypto_dep", false],
+          ["Crypto settlement", "crypto_wd", false]
+        ],
+        "extra_rows": [
+          {"label": "Settlement via SWIFT", "value": "$45 flat", "note": "VIP list"},
+          {"label": "Qualifying volume", "value": "$250,000 per month", "note": "VIP list"},
+          {"label": "High risk list", "value": "5.50% C2B, 10% reserve over 180 days", "note": "$1,500 setup and $250 per month", "highlight": true}
+        ],
+        "not_charged": [
+          "No monthly maintenance on the VIP list",
+          "No repricing without written notice",
+          "No exit fee"
+        ],
+        "note": "Setup is $1,500 on both lists. The reserve shown is the VIP figure, 5 percent released over 90 days. High risk carries 10 percent over 180 days. Both are stated on your term sheet before signature."
+      },
+      "compliance": {
+        "eyebrow": "Diligence",
+        "h2": "What we ask for, and what we do with it",
+        "cards": [
+          {"title": "What we ask for", "body": "Certificate of incorporation, ownership structure, UBO identification, your licence where the jurisdiction requires one, and six months of processing history if you have it."},
+          {"title": "What we run", "body": "KYB on the entity, sanctions and PEP screening on beneficial owners, wallet screening on crypto legs, and transaction monitoring sized to the book."},
+          {"title": "What we will not do", "body": "Approve you quickly and reprice quietly. Hold a settlement without telling you why. Change your reserve without the notice period on your term sheet."}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Request terms",
+        "h2": "Tell us the book, get a term sheet",
+        "lede": "Written terms in one business day, or a clear no. Both are useful to you.",
+        "points": [
+          "Rate, reserve and settlement timing in writing before signature",
+          "A named account manager from the term sheet onward",
+          "We tell you quickly if you are too early"
+        ],
+        "telegram_note": "Most brokers prefer this.",
+        "form": {
+          "title": "Request a term sheet",
+          "sub": "Two steps, one business day.",
+          "block_free_email": true,
+          "submit": "Request terms",
+          "success": "Received. Your term sheet or a clear no comes back within one business day.",
+          "note": "Shared with underwriting only. Never with a third party.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Entity name", "required": true, "half": true},
+              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
+              {"type": "select", "name": "licence", "label": "Licence jurisdiction", "required": true,
+               "options": ["FCA", "CySEC", "ASIC", "FSA Seychelles", "FSCA", "Offshore, other", "Unlicensed"]},
+              {"type": "select", "name": "volume", "label": "Monthly processing", "required": true,
+               "options": ["Under $100,000", "$100,000 to $250,000", "$250,000 to $1m", "Over $1m"]}
+            ],
+            [
+              {"type": "select", "name": "need", "label": "What you need", "required": true,
+               "options": ["Client collection", "IBAN and settlement", "Both"]},
+              {"type": "text", "name": "name", "label": "Your name", "required": true, "half": true},
+              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true, "half": true},
+              {"type": "textarea", "name": "notes", "label": "Current setup and why you are moving", "placeholder": "Who you process with now, what is not working, any termination history"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Before you ask us on the call",
+        "lede": "The questions that decide whether this is a fit.",
+        "items": [
+          {"q": "What is the largest single deposit you can take?", "a": "$150,000 on both lists. That ceiling is why brokers with a VIP book come to us, because most retail-built rails stop well below it."},
+          {"q": "What is the reserve and when is it released?", "a": "5 percent released over 90 days on the VIP list. 10 percent over 180 days on the high risk list. Which applies is on your term sheet before you sign."},
+          {"q": "Do I need a licence?", "a": "Not always, but it changes which list you land on and what the reserve looks like. Tell us the real position in the application. Hiding it costs you more time than disclosing it."},
+          {"q": "Can I settle in crypto instead of fiat?", "a": "Yes. Crypto settlement runs off the same account at the rate shown on the list. Plenty of brokers take fiat deposits and settle in stablecoin."},
+          {"q": "How is FX charged?", "a": "0.15 percent over the exchange rate plus the bank's actual FX. It is a line on the rate card, not a spread recovered quietly."},
+          {"q": "What is the qualifying volume for the VIP list?", "a": "$250,000 a month equivalent. The high risk list has a $100,000 minimum. Below that, tell us anyway and we will say whether to come back later."}
+        ]
+      },
+      "final": {
+        "h2": "A term sheet beats a sales call",
+        "body": "Send the book. You get rate, reserve and settlement timing in writing within one business day, or a clear no.",
+        "cta": "Request terms"
+      },
+      "sticky": {"title": "Get a written term sheet", "sub": "One business day, or a clear no", "cta": "Request"},
+      "exit_modal": {
+        "eyebrow": "Before you go",
+        "h": "Take both rate cards",
+        "body": "VIP and high risk, every line, one page. No call attached.",
+        "cta": "Send the rate cards",
+        "note": "One email. Nothing else.",
+        "success": "Sent."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Client collection", "href": "#product"}, {"label": "IBAN and settlement", "href": "#product"}, {"label": "Terms", "href": "#pricing"}]},
+          {"title": "Industries", "links": [{"label": "Forex", "href": "#"}, {"label": "Prop firms", "href": "#"}, {"label": "Affiliates", "href": "#"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+        ],
+        "legal": "Secure Payment Services operates as a licensed UAE payment service provider. [CONFIRM: licence number, issuing authority and permitted activities before launch. This line needs legal review given the client-money flows described above.] Services are subject to underwriting approval and are not available in all jurisdictions."
+      }
+    },
+
+    {
+      "slug": "sepa-mint",
+      "book_key": "Sepa Mint",
+      "name": "Sepa Mint",
+      "mark": "SM",
+      "domain": "sepamint.com",
+      "style": "swiss",
+      "accent": "#d7263d",
+      "accent_fg": "#ffffff",
+      "accent_soft": "rgba(215,38,61,0.08)",
+      "tagline": "Crypto to euro, settled on SEPA, without the paperwork spiral.",
+      "cta_primary": "Get a euro quote",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Sepa Mint | Crypto to EUR Settlement on SEPA Rails",
+        "description": "Convert crypto to euro and receive it by SEPA transfer. For EU businesses whose exchange will not pay out and whose bank will not explain why."
+      },
+      "nav": [
+        {"id": "problem", "label": "The problem"},
+        {"id": "product", "label": "How it works"},
+        {"id": "pricing", "label": "Rate"},
+        {"id": "estimate", "label": "Estimate"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "hero": {
+        "eyebrow": "Euro settlement for crypto businesses",
+        "h1": "Euro out. On SEPA. Without the paperwork spiral.",
+        "sub": "You cannot get EUR out of the exchange. You cannot buy crypto with EUR without a questionnaire. Your bank wants a file you do not have. Sepa Mint moves crypto to euro and pays it by SEPA transfer, and tells you up front what will be asked for.",
+        "cta": "Get a euro quote",
+        "cta_secondary": "See the rate",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "EUR only, nothing else to explain",
+          "2.50% either direction, published",
+          "No setup fee"
+        ],
+        "layout": "center"
+      },
+      "trustbar": {
+        "label": "For businesses in",
+        "chips": ["EU and EEA", "Crypto businesses", "Affiliates", "iGaming", "Marketplaces"]
+      },
+      "problem": {
+        "eyebrow": "Why this exists",
+        "h2": "The euro leg is where it breaks",
+        "lede": "The conversion is the easy part. Getting euro into a European bank account, with an originator the bank recognises and a reference it can file, is the part that stalls.",
+        "cards": [
+          {"icon": "1", "title": "The exchange will not pay out", "body": "Withdrawal limits, a source-of-funds request on every attempt at scale, and a support queue measured in days. Not a treasury process."},
+          {"icon": "2", "title": "The incoming SEPA credit gets questioned", "body": "A euro credit from a counterparty your bank has not seen before, with no clear reference, is exactly the kind of thing that gets held pending an explanation."},
+          {"icon": "3", "title": "Nobody tells you the rules before you start", "body": "You find out what documentation is required after you have already committed the transaction. By then the money is in motion and the clock is running."}
+        ]
+      },
+      "product": {
+        "eyebrow": "What we do",
+        "h2": "One corridor, done properly",
+        "cards": [
+          {
+            "title": "Crypto to EUR",
+            "body": "Send stablecoin or crypto, see the euro amount before you confirm, and receive it by SEPA transfer with a reference that ties the payment to the transaction.",
+            "points": [
+              "SEPA payout, euro only",
+              "Rate shown before you confirm",
+              "Tickets from $1,000 to $500,000",
+              "Screening on every inbound transaction"
+            ]
+          },
+          {
+            "title": "EUR to crypto",
+            "body": "Fund by SEPA and take delivery in stablecoin to a wallet you hold. Same rate, same account, no second onboarding process.",
+            "points": [
+              "Same rate in both directions",
+              "Delivery to your own wallet",
+              "No reserve held on either leg",
+              "We tell you the document list before you start"
+            ]
+          }
+        ],
+        "cta": "Get a euro quote"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "Three steps, no surprises",
+        "cards": [
+          {"title": "We tell you what is needed", "body": "Before the first transaction, you get the document list and the questions your bank is likely to ask on the incoming credit. In writing."},
+          {"title": "Send, and see the euro figure", "body": "Conversion rate and final euro amount shown before you confirm. Not discovered on the statement afterwards."},
+          {"title": "SEPA transfer lands", "body": "Paid to your euro account with a settlement reference. Same or next business day in most cases."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Rate",
+        "h2": "2.50 percent, either direction",
+        "lede": "One number. It covers the conversion and the SEPA payout. FX is passed through at 0.15 percent over the exchange rate, shown as its own line.",
+        "price_list": "Offramp High Risk",
+        "show": [
+          ["Settlement via SEPA", "settle_sepa", true],
+          ["Withdrawal to bank, B2C", "wd_b2c", false],
+          ["Withdrawal to bank, B2B", "wd_b2b", false],
+          ["Crypto deposit", "crypto_dep", false],
+          ["Crypto settlement", "crypto_wd", false]
+        ],
+        "extra_rows": [
+          {"label": "All in, either direction", "value": "2.50%", "highlight": true},
+          {"label": "Signup", "value": "One step"},
+          {"label": "KYC", "value": "Light, list given up front"}
+        ],
+        "not_charged": [
+          "No setup fee",
+          "No rolling reserve",
+          "No per transfer SEPA charge on top of the headline rate"
+        ],
+        "note": "A $250 monthly maintenance fee applies. Minimum ticket $1,000, maximum $500,000. Larger tickets can be arranged in advance."
+      },
+      "estimator": {
+        "eyebrow": "Arithmetic",
+        "h2": "What euro settlement costs you",
+        "lede": "The effective rate is the number that matters. Move the slider.",
+        "modes": [{"key": "eur", "label": "Crypto to EUR", "pct": 2.5}],
+        "min": 10000,
+        "max": 1000000,
+        "step": 10000,
+        "default": 150000,
+        "setup": 0,
+        "monthly": 250,
+        "out_label": "Estimated monthly cost",
+        "disclaimer": "Indicative. Excludes bank actual FX at 0.15 percent over the exchange rate. Your written quote is the binding number.",
+        "cta": "Get this in writing"
+      },
+      "compliance": {
+        "eyebrow": "The part nobody explains",
+        "h2": "EU rules, and where we actually sit",
+        "cards": [
+          {"title": "What we tell you up front", "body": "The document list, the screening we run, and what your own bank is likely to ask about the incoming SEPA credit. Before the first transaction, not after."},
+          {"title": "How this is structured", "body": "[CONFIRM BEFORE LAUNCH: whether Sepa Mint operates under its own authorisation or as an agent of a licensed partner, and name the entity. Do not publish a licensing claim until this line is signed off.]"},
+          {"title": "What we will not claim", "body": "We are not a bank and we do not hold your funds as deposits. Anything on this page that reads as a regulatory status is a placeholder until legal confirms it."}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Get a quote",
+        "h2": "Tell us the corridor, get the euro number",
+        "lede": "Volume, direction and the entity. You get a written rate and the document list in one business day.",
+        "points": [
+          "The document list before you commit anything",
+          "A euro figure in writing, not a range",
+          "A straight no if the flow is one we cannot take"
+        ],
+        "telegram_note": "Often the fastest route.",
+        "form": {
+          "title": "Get a euro quote",
+          "sub": "One page.",
+          "block_free_email": true,
+          "submit": "Get my quote",
+          "success": "Received. Written rate and document list within one business day.",
+          "note": "Used to price and underwrite only.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Entity name", "required": true, "half": true},
+              {"type": "select", "name": "country", "label": "Country of incorporation", "required": true, "half": true,
+               "options": ["Germany", "Netherlands", "Ireland", "Estonia", "Lithuania", "Cyprus", "Malta", "Other EEA", "Outside EEA"]},
+              {"type": "select", "name": "direction", "label": "Direction", "required": true,
+               "options": ["Crypto to EUR", "EUR to crypto", "Both"]},
+              {"type": "select", "name": "volume", "label": "Monthly volume", "required": true,
+               "options": ["Under EUR 50,000", "EUR 50,000 to 250,000", "EUR 250,000 to 1m", "Over EUR 1m"]},
+              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
+              {"type": "textarea", "name": "notes", "label": "What has gone wrong so far", "placeholder": "Which exchange, which bank, what they asked for, where it stalled"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Euro questions",
+        "lede": "What EU businesses ask first.",
+        "items": [
+          {"q": "Will the euro arrive in my own company account?", "a": "Yes. Payout is a SEPA transfer to an account in your entity's name, with a settlement reference tying it to the transaction you sent."},
+          {"q": "My bank questioned the last incoming crypto-related credit. Will this be different?", "a": "We tell you before the first transaction what the payment will look like on your statement and what your bank is likely to ask. That is the part most providers skip."},
+          {"q": "What does it cost?", "a": "2.50 percent either direction, plus a $250 monthly maintenance fee. FX is 0.15 percent over the exchange rate, shown separately. No setup fee and no reserve."},
+          {"q": "What are the ticket limits?", "a": "Minimum $1,000, maximum $500,000 per transaction. Larger is possible if arranged in advance."},
+          {"q": "Can I go the other way, euro into crypto?", "a": "Yes, at the same rate, to a wallet you hold. Same account, no second onboarding."},
+          {"q": "Are you licensed in the EU?", "a": "[CONFIRM BEFORE LAUNCH. Do not publish an answer to this question until the structure is signed off in writing. An unverified licensing claim here is the single highest risk item on this page.]"}
+        ]
+      },
+      "final": {
+        "h2": "Get the euro number in writing",
+        "body": "Send the corridor and the volume. You get a written rate and the document list, or a clear no.",
+        "cta": "Get a euro quote"
+      },
+      "sticky": {"title": "Crypto to euro on SEPA", "sub": "2.50% either direction", "cta": "Quote"},
+      "exit_modal": {
+        "eyebrow": "One thing",
+        "h": "Take the EU document checklist",
+        "body": "What a European bank asks about a crypto-funded euro credit, and how to have it ready. One page.",
+        "cta": "Send the checklist",
+        "note": "One email, no sequence.",
+        "success": "On its way."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Crypto to EUR", "href": "#product"}, {"label": "EUR to crypto", "href": "#product"}, {"label": "Rate", "href": "#pricing"}]},
+          {"title": "Corridors", "links": [{"label": "SEPA", "href": "#"}, {"label": "SEPA Instant", "href": "#"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+        ],
+        "legal": "[CONFIRM BEFORE LAUNCH: the operating and licensing structure for euro settlement in the EEA, and whether Sepa Mint acts under its own authorisation or as an agent of a licensed partner. This page must not imply MiCA, CASP, EMI or payment institution status until that is signed off.] Services are subject to onboarding approval."
+      }
+    },
+
+    {
+      "slug": "offrampr",
+      "book_key": "Offrampr",
+      "name": "Offrampr",
+      "mark": "OR",
+      "domain": "offrampr.com",
+      "style": "soft",
+      "accent": "#4f46e5",
+      "accent_fg": "#ffffff",
+      "accent_soft": "rgba(79,70,229,0.09)",
+      "tagline": "Fund in crypto, pay everyone in their own currency.",
+      "cta_primary": "Start paying out",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Offrampr | Mass Payouts Funded in Crypto, Paid in Fiat",
+        "description": "Top up in crypto and pay affiliates, creators, traders and players in local currency. Payouts from $25. One platform, many corridors."
+      },
+      "nav": [
+        {"id": "problem", "label": "The problem"},
+        {"id": "product", "label": "Payouts"},
+        {"id": "pricing", "label": "Pricing"},
+        {"id": "estimate", "label": "Estimate"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "announce": {
+        "text": "Payouts start at $25. Minimum ticket, not minimum relationship.",
+        "cta": "See pricing",
+        "countdown_hours": 0
+      },
+      "hero": {
+        "eyebrow": "Mass payouts for affiliate and creator programmes",
+        "h1": "Fund in crypto. Pay everyone in their own currency.",
+        "sub": "Top up your balance with stablecoin and pay affiliates, creators, traders and players in the currency they actually bank in. One platform, one upload, payouts from $25 to $200,000.",
+        "cta": "Start paying out",
+        "cta_secondary": "See pricing",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "$25 minimum payout",
+          "Pay in local currency",
+          "One upload, many recipients"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "mock",
+          "title": "Payout run",
+          "status": "412 recipients",
+          "rows": [
+            {"label": "Balance funded", "sub": "USDT · 180,000.00", "amount": "$180,000"},
+            {"label": "Affiliates, 318 recipients", "sub": "EUR, GBP, PLN, BRL", "amount": "$142,400"},
+            {"label": "Creators, 94 recipients", "sub": "paid, instant where available", "amount": "$31,180", "good": true}
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Paying out for",
+        "chips": ["iGaming", "Forex", "Affiliate networks", "Creator platforms", "Prop firms"]
+      },
+      "problem": {
+        "eyebrow": "Why payouts hurt",
+        "h2": "Paying people is harder than getting paid",
+        "lede": "Collection has a thousand providers. Paying hundreds of people, in a dozen currencies, at small ticket sizes, from a balance you hold in stablecoin, has almost none.",
+        "cards": [
+          {"icon": "1", "title": "Small payouts cost more than they are worth", "body": "A $40 affiliate payment through a bank wire is mostly fee. So it gets batched, delayed, and the affiliate starts promoting someone else."},
+          {"icon": "2", "title": "Your treasury is in crypto, your payees are not", "body": "Holding stablecoin and paying in euro means converting, moving, reconciling, and doing it again next cycle."},
+          {"icon": "3", "title": "One spreadsheet, twelve currencies", "body": "Every corridor a different process, a different cut-off time, and a different person chasing you about a payment that did not land."}
+        ]
+      },
+      "product": {
+        "eyebrow": "What it does",
+        "h2": "One balance, every recipient",
+        "accent_index": 0,
+        "cards": [
+          {
+            "title": "Fund in crypto",
+            "body": "Top up with stablecoin or crypto. The balance sits in your account and funds every payout run until you top it up again.",
+            "points": [
+              "USDT, USDC and major assets",
+              "Screening on every inbound transaction",
+              "Balance visible before you commit a run",
+              "No reserve held against the balance"
+            ]
+          },
+          {
+            "title": "Pay in fiat",
+            "body": "Upload the run, pay recipients in their own currency. Instant payment schemes where the corridor supports them, bank transfer where it does not.",
+            "points": [
+              "Payouts from $25 to $200,000",
+              "Multiple currencies in one run",
+              "Instant payment rails where available",
+              "Status per recipient, not per batch"
+            ]
+          }
+        ],
+        "cta": "Start paying out"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "From balance to paid",
+        "cards": [
+          {"title": "Fund the balance", "body": "Send crypto. It is screened, converted at a rate you see, and credited to your payout balance."},
+          {"title": "Upload the run", "body": "Recipients, amounts, currencies. Validation happens before anything moves, so a bad row does not fail the whole batch."},
+          {"title": "They get paid", "body": "Each recipient in their own currency, with a per-recipient status you can hand to support instead of guessing."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Pricing",
+        "h2": "One percent, or thirty dollars, whichever is higher",
+        "lede": "That is the payout fee. It is on this page rather than behind a call, because at these ticket sizes the fee is the decision.",
+        "price_list": "Offramp (Payouts)",
+        "show": [
+          ["Settlement via SEPA", "settle_sepa", false],
+          ["Crypto deposit, funding the balance", "crypto_dep", false],
+          ["Crypto settlement", "crypto_wd", false]
+        ],
+        "extra_rows": [
+          {"label": "Payout fee", "value": "1% or $30", "note": "whichever is higher, per payout", "highlight": true},
+          {"label": "Payout range", "value": "$25 to $200,000"},
+          {"label": "Currencies", "value": "Multiple, in a single run"},
+          {"label": "Speed", "value": "Instant where the corridor supports it"}
+        ],
+        "not_charged": [
+          "No per recipient onboarding fee",
+          "No reserve against your balance",
+          "No charge for a failed row, only for payouts that actually leave"
+        ],
+        "note": "Setup is $500 one time, plus $250 per month. The one percent floor of $30 means very small payouts are better batched per recipient than sent individually. We will tell you that rather than let you discover it."
+      },
+      "estimator": {
+        "eyebrow": "Arithmetic",
+        "h2": "What a payout run costs",
+        "lede": "Set your monthly payout volume. The effective rate is what you are really paying.",
+        "modes": [{"key": "payout", "label": "Payouts", "pct": 1}],
+        "min": 5000,
+        "max": 1000000,
+        "step": 5000,
+        "default": 100000,
+        "setup": 500,
+        "monthly": 250,
+        "out_label": "Estimated monthly cost",
+        "disclaimer": "Indicative, and assumes an average payout above $3,000 so the one percent applies rather than the $30 floor. Small average tickets cost more. Ask us for a run-level estimate.",
+        "cta": "Get a run-level quote"
+      },
+      "segments": {
+        "eyebrow": "Who uses this",
+        "h2": "Four payout problems, one rail",
+        "cards": [
+          {"icon": "A", "title": "Affiliate networks", "body": "Hundreds of partners, monthly cycles, mixed currencies, and a reputation that lives on paying on time."},
+          {"icon": "B", "title": "iGaming operators", "body": "Player withdrawals and affiliate commissions from the same funded balance, with per-recipient status your support team can read."},
+          {"icon": "C", "title": "Creator platforms", "body": "Small, frequent payouts to people in countries your bank has never heard of."},
+          {"icon": "D", "title": "Prop firms and brokers", "body": "Trader payouts that need to be fast, because speed of payout is the product review."}
+        ],
+        "foot": "Paying a group that is not on this list? Tell us the corridors and the average ticket and we will say whether it works."
+      },
+      "apply": {
+        "eyebrow": "Get started",
+        "h2": "Tell us who you pay and where",
+        "lede": "Corridors, recipient count and average ticket. We come back with a run-level cost, not a headline rate.",
+        "points": [
+          "Costed against your actual average ticket",
+          "We say if batching would save you money",
+          "A straight no if the corridors do not work"
+        ],
+        "telegram_note": "Quickest for a scoping chat.",
+        "form": {
+          "title": "Scope a payout run",
+          "sub": "Two steps.",
+          "block_free_email": true,
+          "submit": "Get a run-level quote",
+          "success": "Received. A run-level cost comes back within one business day.",
+          "note": "Used for scoping and pricing only.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Business name", "required": true, "half": true},
+              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
+              {"type": "select", "name": "who", "label": "Who you pay", "required": true,
+               "options": ["Affiliates", "Players", "Creators", "Traders", "Contractors", "Mixed"]},
+              {"type": "select", "name": "count", "label": "Recipients per cycle", "required": true,
+               "options": ["Under 50", "50 to 250", "250 to 1,000", "Over 1,000"]}
+            ],
+            [
+              {"type": "select", "name": "avg", "label": "Average payout size", "required": true,
+               "options": ["Under $100", "$100 to $500", "$500 to $3,000", "Over $3,000"]},
+              {"type": "text", "name": "corridors", "label": "Main currencies", "placeholder": "EUR, GBP, BRL, PLN", "required": true},
+              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
+              {"type": "textarea", "name": "notes", "label": "How you pay today", "placeholder": "Current provider, what fails, how long a cycle takes"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Payout questions",
+        "lede": "What comes up when people scope a run.",
+        "items": [
+          {"q": "What does a payout cost?", "a": "One percent, or thirty dollars, whichever is higher. On a $40 payout that floor dominates, so very small payouts are usually better batched per recipient. We will tell you that during scoping."},
+          {"q": "What is the smallest payout you can send?", "a": "$25. The largest single payout is $200,000."},
+          {"q": "How fast do recipients get paid?", "a": "Instant where the corridor supports an instant payment scheme. Otherwise it follows the local rail, typically same or next business day."},
+          {"q": "Can one run contain several currencies?", "a": "Yes. Upload the run once, recipients get paid in their own currency."},
+          {"q": "Do I have to hold crypto?", "a": "You fund the balance in crypto, yes. That is what makes the small-ticket economics work. The recipients never touch crypto."},
+          {"q": "What happens if a row is wrong?", "a": "Validation runs before anything moves, so a bad row is rejected rather than failing the batch. You are only charged for payouts that actually leave."},
+          {"q": "What does it cost to set up?", "a": "$500 one time and $250 per month. Both are on the rate card above."}
+        ]
+      },
+      "final": {
+        "h2": "Scope a run, get a real number",
+        "body": "Send the corridors, the recipient count and the average ticket. You get a cost against your actual run, not a headline rate.",
+        "cta": "Start paying out"
+      },
+      "sticky": {"title": "Pay out from a crypto balance", "sub": "From $25, in local currency", "cta": "Scope it"},
+      "exit_modal": {
+        "eyebrow": "Before you go",
+        "h": "Take the payout cost model",
+        "body": "A one page sheet showing where the one percent wins and where the thirty dollar floor hurts, by average ticket.",
+        "cta": "Send the cost model",
+        "note": "One email.",
+        "success": "On its way."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Mass payouts", "href": "#product"}, {"label": "Crypto funding", "href": "#product"}, {"label": "Pricing", "href": "#pricing"}]},
+          {"title": "Use cases", "links": [{"label": "Affiliates", "href": "#segments"}, {"label": "iGaming", "href": "#segments"}, {"label": "Creators", "href": "#segments"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+        ],
+        "legal": "Offrampr provides payout and settlement services in partnership with licensed payment institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch. This line needs legal review.] Services are subject to onboarding approval and are not available in all jurisdictions."
+      }
+    },
+
+    {
+      "slug": "ape-card",
+      "book_key": "Ape Card",
+      "name": "Ape Card",
+      "mark": "AC",
+      "domain": "apecard.com",
+      "style": "brutal",
+      "accent": "#ffe500",
+      "accent_fg": "#0d0d0d",
+      "accent_soft": "rgba(255,229,0,0.22)",
+      "tagline": "Spend your crypto balance on a card, anywhere.",
+      "cta_primary": "Get a card",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Ape Card | Crypto Cards with Published Tier Pricing",
+        "description": "Load crypto, spend on a card. Four tiers from no minimum to 50K a month, with deposit, transaction and FX fees published up front."
+      },
+      "nav": [
+        {"id": "problem", "label": "Why"},
+        {"id": "product", "label": "Tiers"},
+        {"id": "pricing", "label": "Fees"},
+        {"id": "compliance", "label": "Documents"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "hero": {
+        "eyebrow": "Crypto cards",
+        "h1": "Load crypto. Spend anywhere. Know the fee first.",
+        "sub": "Four tiers, every fee published. Deposit, transaction and non-USD FX, all on this page, so you can work out your real cost before you apply instead of after your first statement.",
+        "cta": "Get a card",
+        "cta_secondary": "See all fees",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "$199 setup, $49 a month",
+          "No minimum spend on the entry tier",
+          "Every fee published"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "stats",
+          "items": [
+            {"value": "5.00%", "label": "Silver, no minimum spend"},
+            {"value": "3.00%", "label": "Gold, 5K a month"},
+            {"value": "2.50%", "label": "Platinum, 25K a month"},
+            {"value": "2.00%", "label": "Black, 50K a month"}
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Issued through",
+        "chips": ["Zepapay settlement", "Visa network", "Multi currency", "Business and personal"]
+      },
+      "problem": {
+        "eyebrow": "The usual story",
+        "h2": "Crypto cards hide the real number in three places",
+        "lede": "The headline is the transaction fee. The cost is the transaction fee plus the deposit fee plus the FX markup, and only one of those is usually on the page.",
+        "cards": [
+          {"icon": "1", "title": "The deposit fee nobody mentions", "body": "You get charged to load the card, before you have spent anything. On a 5 percent tier that is money gone at top up."},
+          {"icon": "2", "title": "FX on every non-USD purchase", "body": "A separate markup on top of the network fee, applied every time you spend outside your base currency."},
+          {"icon": "3", "title": "Tier requirements found after signup", "body": "The good rate turns out to need a monthly spend you were never told about."}
+        ]
+      },
+      "product": {
+        "eyebrow": "Tiers",
+        "h2": "Four tiers. The minimum spend is the price of the rate.",
+        "accent_index": 1,
+        "cards": [
+          {
+            "title": "Silver and Gold",
+            "body": "Silver at 5 percent all in with no minimum monthly spend. Gold at 3 percent once you are spending 5K a month. Gold is where most people land.",
+            "points": [
+              "Silver: 2.00% deposit, 2.00% transaction, 2.00% non-USD FX",
+              "Gold: 1.00% deposit, 1.00% transaction, 2.00% non-USD FX",
+              "Silver has no minimum monthly spend",
+              "Gold requires 5K a month"
+            ]
+          },
+          {
+            "title": "Platinum and Black",
+            "body": "Platinum at 2.50 percent on 25K a month. Black at 2.00 percent on 50K a month, approval only.",
+            "points": [
+              "Platinum: 0.50% deposit, 1.00% transaction, 2.00% non-USD FX",
+              "Black: 0.50% deposit, 0.50% transaction, 2.00% non-USD FX",
+              "Platinum requires 25K a month",
+              "Black requires 50K a month and is on approval only"
+            ]
+          }
+        ],
+        "cta": "Get a card"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "Apply, verify, load, spend",
+        "cards": [
+          {"title": "Send the document pack", "body": "Certificate of incorporation, share register, UBO identification and proof of address. Photographed copies, not scans. The list is on this page so nothing comes as a surprise."},
+          {"title": "Pick a tier honestly", "body": "Tell us the real monthly spend. Being put on Gold and missing the 5K minimum costs more than starting on Silver."},
+          {"title": "Load and spend", "body": "Fund in crypto, spend on the card. Deposit fee is charged at load, transaction fee at spend, FX on non-USD."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Every fee",
+        "h2": "All four tiers, all three fees",
+        "lede": "The all-in percentage is the honest headline. Below it is where each part of that number comes from.",
+        "price_list": "Crypto Cards",
+        "show": [],
+        "extra_rows": [
+          {"label": "Silver, all in", "value": "5.00%", "note": "no minimum monthly spend"},
+          {"label": "Silver breakdown", "value": "2.00% + 2.00% + 2.00%", "note": "deposit, transaction, non-USD FX"},
+          {"label": "Gold, all in", "value": "3.00%", "note": "5K per month minimum", "highlight": true},
+          {"label": "Gold breakdown", "value": "1.00% + 1.00% + 2.00%", "note": "deposit, transaction, non-USD FX"},
+          {"label": "Platinum, all in", "value": "2.50%", "note": "25K per month minimum"},
+          {"label": "Platinum breakdown", "value": "0.50% + 1.00% + 2.00%", "note": "deposit, transaction, non-USD FX"},
+          {"label": "Black, all in", "value": "2.00%", "note": "50K per month, on approval only"},
+          {"label": "Black breakdown", "value": "0.50% + 0.50% + 2.00%", "note": "deposit, transaction, non-USD FX"}
+        ],
+        "not_charged": [
+          "No charge for the tier review",
+          "No charge to hold an unused card within the monthly fee"
+        ],
+        "note": "Setup is $199 one time and $49 per month on every tier. The 2.00 percent non-USD FX figure includes the 1.00 percent network fee. Tier minimums are monthly spend, not deposits."
+      },
+      "compliance": {
+        "eyebrow": "Documents",
+        "h2": "What we need, exactly",
+        "cards": [
+          {"title": "Entity documents", "body": "Certificate of incorporation and the share register. Standard, and usually the quick part."},
+          {"title": "UBO identification", "body": "ID front and back, photographed. Scanned copies are not accepted, which is the single most common reason an application gets sent back."},
+          {"title": "Proof of address", "body": "For the UBO, photographed not scanned, and dated within the last three months. Older than three months and it will be rejected."}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Apply",
+        "h2": "Pick the tier that matches your real spend",
+        "lede": "Tell us what you actually spend each month. We will put you on the tier that costs you least, not the one with the best headline.",
+        "points": [
+          "We tell you if a lower tier is cheaper for your spend",
+          "Document list published, so nothing bounces",
+          "Black is on approval only, and we say so before you apply"
+        ],
+        "telegram_note": "Send documents here if easier.",
+        "form": {
+          "title": "Apply for a card",
+          "sub": "One page.",
+          "block_free_email": false,
+          "submit": "Apply",
+          "success": "Received. We come back with a tier recommendation within one business day.",
+          "note": "Documents are requested after the tier is agreed, not before.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Entity or your name", "required": true, "half": true},
+              {"type": "select", "name": "tier", "label": "Tier you think you want", "required": true, "half": true,
+               "options": ["Silver, no minimum", "Gold, 5K a month", "Platinum, 25K a month", "Black, 50K a month", "Not sure, advise me"]},
+              {"type": "select", "name": "spend", "label": "Actual monthly spend", "required": true,
+               "options": ["Under $5,000", "$5,000 to $25,000", "$25,000 to $50,000", "Over $50,000"]},
+              {"type": "email", "name": "email", "label": "Email", "placeholder": "you@company.com", "required": true},
+              {"type": "textarea", "name": "notes", "label": "Where you will spend", "placeholder": "Mostly USD, mostly EUR, lots of travel, online only"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Card questions",
+        "lede": "Asked before every application.",
+        "items": [
+          {"q": "Which tier is actually cheapest for me?", "a": "Work it out from your monthly spend. Below 5K, Silver at 5 percent is your only option. Above 5K, Gold at 3 percent. Above 25K, Platinum at 2.50 percent. Tell us your real number and we will confirm."},
+          {"q": "What is the all-in percentage made of?", "a": "Deposit fee charged when you load, transaction fee charged when you spend, and non-USD FX charged on any purchase outside USD. All three are published above."},
+          {"q": "Does the 2 percent FX include the network fee?", "a": "Yes. The 2.00 percent non-USD figure includes the 1.00 percent Visa fee. It is not charged on top."},
+          {"q": "Why are scanned documents rejected?", "a": "Photographed copies only, for ID and proof of address. It is the most common reason an application gets sent back, which is why it is on this page rather than in an email after you apply."},
+          {"q": "How old can my proof of address be?", "a": "Three months. Anything older is rejected, no exceptions."},
+          {"q": "What does it cost to get started?", "a": "$199 setup and $49 per month, on every tier."},
+          {"q": "How do I get on the Black tier?", "a": "50K a month spend and approval. It is not self-serve, and we will tell you plainly if the volume is not there yet."}
+        ]
+      },
+      "final": {
+        "h2": "Tell us your spend, get the right tier",
+        "body": "The wrong tier costs more than the right one. Send your real monthly number and we will say which one fits.",
+        "cta": "Get a card"
+      },
+      "sticky": {"title": "Crypto card, fees published", "sub": "From 2.00% all in", "cta": "Apply"},
+      "exit_modal": {
+        "eyebrow": "Before you go",
+        "h": "Take the tier comparison",
+        "body": "All four tiers, all three fees, and the break-even spend between each one. One page.",
+        "cta": "Send the comparison",
+        "note": "One email.",
+        "success": "On its way."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Tiers", "href": "#product"}, {"label": "Fees", "href": "#pricing"}, {"label": "Documents", "href": "#compliance"}]},
+          {"title": "Support", "links": [{"label": "FAQ", "href": "#faq"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "Cardholder agreement", "href": "#"}]}
+        ],
+        "legal": "Ape Card is distributed in partnership with Zepapay. Cards are issued by a licensed issuer under the relevant card scheme rules. [CONFIRM: name the issuing entity and the scheme before launch. This line needs legal review.] Approval is subject to verification and is not available in all jurisdictions."
+      }
+    },
+
+    {
+      "slug": "pure-labs",
+      "book_key": "Pure Labs",
+      "name": "Pure Labs",
+      "mark": "PL",
+      "domain": "purelabspay.com",
+      "style": "clinical",
+      "accent": "#1d63d1",
+      "accent_fg": "#ffffff",
+      "accent_soft": "rgba(29,99,209,0.09)",
+      "tagline": "Pre-screening and vetting for peptide and nutra merchants.",
+      "cta_primary": "Get pre-screened",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "Pure Labs | Pre-Screening for Peptide and Nutra Merchants",
+        "description": "Find out whether you are approvable before you apply. Free pre-screen against acquirer criteria for peptide, nutra and health merchants."
+      },
+      "nav": [
+        {"id": "problem", "label": "The problem"},
+        {"id": "product", "label": "What we check"},
+        {"id": "how", "label": "Process"},
+        {"id": "segments", "label": "Who we screen"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "hero": {
+        "eyebrow": "Pre-screening and vetting, not a merchant account",
+        "h1": "Find out if you are approvable before you apply",
+        "sub": "Every declined application leaves a mark. Pure Labs reads your site, your compliance pack and your processing history against what acquirers in this vertical actually check, then tells you what will fail before anyone else sees it.",
+        "cta": "Get pre-screened",
+        "cta_secondary": "What we check",
+        "cta_secondary_anchor": "product",
+        "reversal": [
+          "Pre-screen is free",
+          "No application filed without your say-so",
+          "We tell you if the answer is no"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "form",
+          "form": {
+            "title": "Free pre-screen",
+            "sub": "Two fields. Result in one business day.",
+            "block_free_email": false,
+            "submit": "Pre-screen my store",
+            "success": "Received. Your pre-screen result comes back within one business day.",
+            "note": "We do not file anything on your behalf without your written go-ahead.",
+            "steps": [
+              [
+                {"type": "url", "name": "website", "label": "Store URL", "placeholder": "https://", "required": true},
+                {"type": "select", "name": "category", "label": "What you sell", "required": true,
+                 "options": ["Research peptides", "Nutra and supplements", "Health and fitness", "Mixed"]},
+                {"type": "email", "name": "email", "label": "Email", "placeholder": "you@store.com", "required": true}
+              ]
+            ]
+          }
+        }
+      },
+      "trustbar": {
+        "label": "Screening for",
+        "chips": ["Research peptides", "Nutra and supplements", "Health and fitness", "RUO suppliers"]
+      },
+      "problem": {
+        "eyebrow": "Why pre-screening",
+        "h2": "A declined application is not free",
+        "lede": "In this vertical, applications are reviewed by humans who have seen a thousand stores like yours. The things that get you declined are almost always visible on your own website before you ever file.",
+        "cards": [
+          {"icon": "1", "title": "Declines follow you", "body": "A pattern of applications and declines across acquirers is itself a signal, and the next underwriter can see more of it than you think."},
+          {"icon": "2", "title": "The problem is usually the site, not the business", "body": "Claims language, missing terms, an unclear refund policy, a research-use disclaimer that is not where it needs to be. All fixable, all fatal if left."},
+          {"icon": "3", "title": "Nobody tells you why you failed", "body": "Declines come back as a one line answer. You are left guessing which of a dozen things to change before the next attempt."}
+        ]
+      },
+      "product": {
+        "eyebrow": "The screen",
+        "h2": "What we actually check",
+        "cards": [
+          {
+            "title": "Your storefront",
+            "body": "Read the way an underwriter reads it, not the way a customer does. Most declines in this vertical are decided here.",
+            "points": [
+              "Claims and indication language on product pages",
+              "Research use disclaimers, placement and wording",
+              "Terms, refund and shipping policies",
+              "Contact details, entity name and jurisdiction visibility"
+            ]
+          },
+          {
+            "title": "Your file",
+            "body": "The pack an acquirer will ask for, checked for the gaps that cause a resubmission rather than a decline.",
+            "points": [
+              "Entity documents and ownership structure",
+              "Processing history and chargeback ratios where they exist",
+              "Prior terminations, and how to present them",
+              "Which acquirer profile you realistically fit"
+            ]
+          }
+        ],
+        "cta": "Get pre-screened"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "Three steps, and you control the third",
+        "cards": [
+          {"title": "Send the store URL", "body": "That is the whole first step. No documents, no call, no commitment."},
+          {"title": "Get the screen back", "body": "A written list of what would fail, ranked by how much it matters, with the specific fix for each."},
+          {"title": "Decide what happens next", "body": "Fix it yourself and apply wherever you like, or tell us to introduce you. We do not file anything without your written go-ahead."}
+        ]
+      },
+      "segments": {
+        "eyebrow": "Scope",
+        "h2": "Who we screen, and who we do not",
+        "cards": [
+          {"icon": "A", "title": "Research peptides", "body": "RUO suppliers and labs. The vertical where storefront language does the most damage and is the easiest to fix."},
+          {"icon": "B", "title": "Nutra and supplements", "body": "Including continuity and free trial models, where the chargeback profile is what gets read first."},
+          {"icon": "C", "title": "Health and fitness", "body": "Adjacent stores that keep getting caught in the same underwriting net as the two above."},
+          {"icon": "D", "title": "Who we turn away", "body": "Anything making a medical treatment claim, anything shipping a scheduled substance, and anything where the honest answer is that no acquirer will take it. We say so rather than take your time."}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Pre-screen",
+        "h2": "Send the URL, get the list",
+        "lede": "No documents at this stage. A store URL and an email is enough to tell you most of what you need to know.",
+        "points": [
+          "Written list of what would fail, ranked",
+          "The specific fix for each item",
+          "Nothing filed on your behalf without written approval"
+        ],
+        "telegram_note": "Also fine for a quick question.",
+        "form": {
+          "title": "Full pre-screen",
+          "sub": "More detail, better screen.",
+          "block_free_email": false,
+          "submit": "Pre-screen my store",
+          "success": "Received. Your written screen comes back within one business day.",
+          "note": "Your details are not shared with any acquirer unless you tell us to introduce you.",
+          "steps": [
+            [
+              {"type": "url", "name": "website", "label": "Store URL", "placeholder": "https://", "required": true, "half": true},
+              {"type": "select", "name": "category", "label": "What you sell", "required": true, "half": true,
+               "options": ["Research peptides", "Nutra and supplements", "Health and fitness", "Mixed"]},
+              {"type": "select", "name": "volume", "label": "Monthly revenue", "required": true, "half": true,
+               "options": ["Under $20,000", "$20,000 to $100,000", "$100,000 to $500,000", "Over $500,000"]},
+              {"type": "select", "name": "history", "label": "Processing history", "required": true, "half": true,
+               "options": ["Never processed cards", "Processing now", "Terminated before", "Terminated and MATCH listed"]},
+              {"type": "email", "name": "email", "label": "Email", "placeholder": "you@store.com", "required": true},
+              {"type": "textarea", "name": "notes", "label": "Anything you already know is a problem", "placeholder": "Who terminated you and why. Telling us is always better than us finding it."}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Pre-screening questions",
+        "lede": "What merchants ask before sending a URL.",
+        "items": [
+          {"q": "Is Pure Labs a payment processor?", "a": "No. We pre-screen and vet, then introduce you if you want that. The processing relationship is with an acquirer, not with us."},
+          {"q": "What does the pre-screen cost?", "a": "The initial screen is free. [CONFIRM: pricing for the full vetting and introduction service before launch.]"},
+          {"q": "Will you file an application for me?", "a": "Only if you tell us to, in writing. The default is that you get the list and decide what to do with it."},
+          {"q": "I have been terminated before. Is that fatal?", "a": "Usually not. Hiding it is far worse than disclosing it, because the next underwriter will find it and the omission becomes the problem."},
+          {"q": "What is the most common thing you find?", "a": "Claims language on product pages and a research use disclaimer that is either missing or in the wrong place. Both are cheap to fix and both get applications declined."},
+          {"q": "How long does the screen take?", "a": "One business day for the written list on a standard store."},
+          {"q": "Do you share my details with acquirers?", "a": "Not unless you ask us to introduce you. The screen itself is between you and us."}
+        ]
+      },
+      "final": {
+        "h2": "Send a URL. Find out where you stand.",
+        "body": "One link and an email. You get a written list of what would fail and what to do about it, before anyone files anything.",
+        "cta": "Get pre-screened"
+      },
+      "sticky": {"title": "Free pre-screen", "sub": "Send a URL, get the list", "cta": "Screen"},
+      "exit_modal": {
+        "eyebrow": "Before you go",
+        "h": "Take the decline checklist",
+        "body": "The items underwriters in this vertical check first, in the order they check them. Fix them yourself if you prefer.",
+        "cta": "Send the checklist",
+        "note": "One email, no sequence.",
+        "success": "On its way."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Service", "links": [{"label": "What we check", "href": "#product"}, {"label": "Process", "href": "#how"}, {"label": "Scope", "href": "#segments"}]},
+          {"title": "Verticals", "links": [{"label": "Peptides", "href": "#segments"}, {"label": "Nutra", "href": "#segments"}, {"label": "Health and fitness", "href": "#segments"}]},
+          {"title": "Company", "links": [{"label": "About", "href": "#"}, {"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}]}
+        ],
+        "legal": "Pure Labs provides pre-screening, vetting and introduction services. We are not a payment processor, an acquirer or a licensed payment institution, and we do not hold merchant funds. Approval decisions are made by acquirers, not by us."
+      }
+    },
+
+    {
+      "slug": "altpay",
+      "book_key": "AltPay",
+      "name": "AltPay",
+      "mark": "AP",
+      "domain": "altpaytech.com",
+      "style": "mono",
+      "accent": "#ff6b2c",
+      "accent_fg": "#0a0a0a",
+      "accent_soft": "rgba(255,107,44,0.14)",
+      "tagline": "Client collection for forex, settled in crypto.",
+      "cta_primary": "Get terms",
+      "telegram_cta": "Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "AltPay | Client Collection for Forex, Settled in Crypto",
+        "description": "Collect client deposits and settle in crypto or fiat. Built for forex brokers and affiliate networks. Tickets from $500 to $150,000."
+      },
+      "nav": [
+        {"id": "problem", "label": "Problem"},
+        {"id": "product", "label": "Product"},
+        {"id": "pricing", "label": "Terms"},
+        {"id": "faq", "label": "FAQ"}
+      ],
+      "announce": {
+        "text": "Onboarding window for Q4 forex books closes soon.",
+        "cta": "Get terms",
+        "countdown_hours": 72
+      },
+      "hero": {
+        "eyebrow": "Collection and settlement for forex",
+        "h1": "Take client money. Settle how you want.",
+        "sub": "Client deposits collected through whitelisted channels, settled to you in crypto or to a bank account. Tickets from $500 to $150,000, so one rail covers the retail book and the large tickets.",
+        "cta": "Get terms",
+        "cta_secondary": "See the rate",
+        "cta_secondary_anchor": "pricing",
+        "reversal": [
+          "Terms in writing before signature",
+          "$150,000 single ticket ceiling",
+          "Reserve stated up front"
+        ],
+        "layout": "center"
+      },
+      "trustbar": {
+        "label": "For",
+        "chips": ["Forex brokers", "Prop firms", "Affiliate networks", "Crypto businesses"]
+      },
+      "problem": {
+        "eyebrow": "Why move",
+        "h2": "Most collection rails were not built for this book",
+        "lede": "Your average ticket and your largest ticket are an order of magnitude apart, your clients are spread across jurisdictions, and your provider priced the relationship for neither.",
+        "cards": [
+          {"icon": "1", "title": "Ticket ceiling", "body": "A rail that caps at a few thousand quietly loses your best funding clients. They do not complain, they just stop."},
+          {"icon": "2", "title": "Settlement that does not match treasury", "body": "You hold in crypto, they settle in fiat, or the reverse. Every cycle becomes a conversion exercise."},
+          {"icon": "3", "title": "Terms that move after integration", "body": "Rate up, reserve up, settlement slower. The integration cost is what keeps you there."}
+        ]
+      },
+      "product": {
+        "eyebrow": "What you get",
+        "h2": "Collection in, settlement your way",
+        "accent_index": 0,
+        "cards": [
+          {
+            "title": "Collection",
+            "body": "Whitelisted, pre-approved channels for client deposits, with a ticket range that covers the whole book rather than the easy half of it.",
+            "points": [
+              "Deposits from $500 to $150,000",
+              "Whitelisted payment channels",
+              "B2C and B2B withdrawals supported",
+              "SWIFT and SEPA both available"
+            ]
+          },
+          {
+            "title": "Settlement",
+            "body": "Settled to you in crypto or to a bank account, at rates published on this page rather than discovered later.",
+            "points": [
+              "Crypto or fiat settlement, your choice",
+              "FX at 0.15 percent over the exchange rate",
+              "Reserve stated before signature",
+              "No repricing without written notice"
+            ]
+          }
+        ],
+        "cta": "Get terms"
+      },
+      "how": {
+        "eyebrow": "Onboarding",
+        "h2": "Three steps",
+        "cards": [
+          {"title": "Send the book", "body": "Jurisdiction, licence position, average and peak ticket, monthly volume, and any termination history. Disclose it, it always comes out."},
+          {"title": "Written terms", "body": "Rate, reserve percentage and release period, and settlement timing, in writing before you sign anything."},
+          {"title": "Integrate", "body": "Hosted or API. Live inside a week on a standard book."}
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Terms",
+        "h2": "The rate, on the page",
+        "lede": "High risk terms, published. If your book qualifies for better, we will tell you at underwriting rather than let you find out from a competitor.",
+        "price_list": "IBAN High Risk",
+        "show": [
+          ["Client deposit, C2B", "dep_c2b", true],
+          ["Deposit, B2B", "dep_b2b", false],
+          ["Withdrawal, B2C", "wd_b2c", false],
+          ["Withdrawal, B2B", "wd_b2b", false],
+          ["Settlement via SWIFT", "settle_swift", false],
+          ["Settlement via SEPA", "settle_sepa", false],
+          ["Crypto deposit", "crypto_dep", false],
+          ["Crypto settlement", "crypto_wd", false]
+        ],
+        "extra_rows": [
+          {"label": "Minimum monthly processing", "value": "$100,000"}
+        ],
+        "not_charged": [
+          "No repricing without written notice",
+          "No exit fee"
+        ],
+        "note": "Setup is $1,500 one time plus $250 per month. Reserve is 10 percent released over 180 days, stated on your term sheet before signature."
+      },
+      "compliance": {
+        "eyebrow": "Structure",
+        "h2": "How this is set up",
+        "cards": [
+          {"title": "Who settles", "body": "AltPay arranges collection and settlement through licensed partner institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch.]"},
+          {"title": "What we run", "body": "KYB on the entity, sanctions and PEP screening on beneficial owners, wallet screening on crypto legs, and monitoring sized to the book."},
+          {"title": "What we do not claim", "body": "AltPay does not hold a licence of its own. Nothing on this page should be read as a regulatory status. [This section needs legal review before launch.]"}
+        ]
+      },
+      "apply": {
+        "eyebrow": "Get terms",
+        "h2": "Send the book, get a term sheet",
+        "lede": "One business day to written terms or a clear no.",
+        "points": [
+          "Rate, reserve and settlement in writing",
+          "Fast no if the book does not fit",
+          "Disclosed termination history does not disqualify you"
+        ],
+        "telegram_note": "Usually quicker.",
+        "form": {
+          "title": "Request terms",
+          "sub": "Two steps.",
+          "block_free_email": true,
+          "submit": "Get terms",
+          "success": "Received. Terms or a clear no within one business day.",
+          "note": "Underwriting only.",
+          "steps": [
+            [
+              {"type": "text", "name": "business", "label": "Entity name", "required": true, "half": true},
+              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
+              {"type": "select", "name": "industry", "label": "Business", "required": true,
+               "options": ["Forex broker", "Prop firm", "Affiliate network", "Crypto business", "Other"]},
+              {"type": "select", "name": "volume", "label": "Monthly processing", "required": true,
+               "options": ["Under $100,000", "$100,000 to $500,000", "$500,000 to $2m", "Over $2m"]}
+            ],
+            [
+              {"type": "select", "name": "settle", "label": "Settlement preference", "required": true,
+               "options": ["Crypto", "Fiat to bank", "Both"]},
+              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
+              {"type": "textarea", "name": "notes", "label": "Current setup and termination history", "placeholder": "Who you process with, what broke, who terminated you and why"}
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions",
+        "lede": "Before the first call.",
+        "items": [
+          {"q": "What is the largest single deposit?", "a": "$150,000. Minimum is $500, so the same rail serves both ends of the book."},
+          {"q": "What is the reserve?", "a": "10 percent released over 180 days on the published high risk terms, stated on your term sheet before you sign."},
+          {"q": "What is the minimum volume?", "a": "$100,000 a month processing. Below that, tell us anyway and we will say whether to come back later."},
+          {"q": "Can I settle in crypto?", "a": "Yes. Crypto settlement runs off the same account at the published rate."},
+          {"q": "I was terminated by a previous provider. Does that end it?", "a": "Usually not. Tell us who and why in the application. Hiding it is what ends it."},
+          {"q": "Is AltPay licensed?", "a": "[CONFIRM BEFORE LAUNCH. AltPay does not hold a licence of its own and this answer must describe the partner structure accurately. Do not publish until legal signs it off.]"}
+        ]
+      },
+      "final": {
+        "h2": "Written terms in one business day",
+        "body": "Send the book. Rate, reserve and settlement timing in writing, or a clear no.",
+        "cta": "Get terms"
+      },
+      "sticky": {"title": "Collection for forex", "sub": "Terms in writing, one day", "cta": "Get terms"},
+      "exit_modal": {
+        "eyebrow": "Before you go",
+        "h": "Take the rate card",
+        "body": "Every published line, one page, no call attached.",
+        "cta": "Send the rate card",
+        "note": "One email.",
+        "success": "Sent."
+      },
+      "footer": {
+        "columns": [
+          {"title": "Product", "links": [{"label": "Collection", "href": "#product"}, {"label": "Settlement", "href": "#product"}, {"label": "Terms", "href": "#pricing"}]},
+          {"title": "For", "links": [{"label": "Forex", "href": "#"}, {"label": "Prop firms", "href": "#"}, {"label": "Affiliates", "href": "#"}]},
+          {"title": "Company", "links": [{"label": "Contact", "href": "#apply"}]},
+          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+        ],
+        "legal": "AltPay arranges payment collection and settlement in partnership with licensed payment institutions. AltPay does not hold a licence of its own. [CONFIRM: name the licensed partner entity and permitted activities before launch. This line needs legal review.] Services are subject to underwriting approval and are not available in all jurisdictions."
+      }
+    },
+    {
+      "slug": "swipe-wire-pay",
+      "book_key": "Swipe Wire Pay",
+      "name": "Swipe Wire Pay",
+      "mark": "SW",
+      "domain": "swipewirepay.com",
+      "style": "ledger",
+      "accent": "#38bdf8",
+      "accent_fg": "#06121c",
+      "accent_soft": "rgba(56,189,248,0.13)",
+      "tagline": "Cards get the volume. The offramp gets the money out.",
+      "cta_primary": "Apply in 10 minutes",
+      "telegram_cta": "Message us on Telegram",
+      "telegram_url": "#apply",
+      "seo": {
+        "title": "High-Risk Card Processing + Crypto Offramp | Swipe Wire Pay",
+        "description": "Card acquiring for iGaming, adult, peptide and nutra merchants, plus a crypto offramp that pays out to your bank. Written terms, answer in 48 hours."
+      },
+      "nav": [
+        {
+          "id": "product",
+          "label": "Cards"
+        },
+        {
+          "id": "product",
+          "label": "Offramp"
+        },
+        {
+          "id": "segments",
+          "label": "Industries"
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        }
+      ],
+      "hero": {
+        "eyebrow": "Card acquiring and crypto offramp for high-risk merchants",
+        "h1": "Take cards. Settle in crypto. Cash out to your bank.",
+        "sub": "One provider for iGaming, adult, peptide and nutra businesses. A card rail your customers trust and a crypto offramp that pays out in fiat, behind one application and one account manager.",
+        "cta": "Apply in 10 minutes",
+        "cta_secondary": "Message us on Telegram",
+        "cta_secondary_anchor": "apply",
+        "reversal": [
+          "Decision in 48 hours [CONFIRM: decision time]",
+          "If the answer is no, you hear it on day one"
+        ],
+        "layout": "split",
+        "visual": {
+          "type": "stats",
+          "items": [
+            {
+              "value": "2.5%",
+              "label": "Offramp, all-in, either direction"
+            },
+            {
+              "value": "$1K to $500K",
+              "label": "Per offramp settlement"
+            },
+            {
+              "value": "$0",
+              "label": "Offramp setup"
+            },
+            {
+              "value": "$149",
+              "label": "Card programme, monthly"
+            }
+          ]
+        }
+      },
+      "trustbar": {
+        "label": "Cards in, a bank exit out, for",
+        "chips": [
+          "iGaming",
+          "Adult and creator platforms",
+          "Peptides",
+          "Nutra and supplements",
+          "Crypto-native businesses"
+        ]
+      },
+      "problem": {
+        "eyebrow": "The gap",
+        "h2": "Getting approved was never the hard part",
+        "lede": "Any broker can find you a MID. The trouble starts in month four: the reserve climbs, settlement stretches, a compliance review freezes payouts, and then the acquirer exits your vertical. Crypto fixes acceptance but leaves you holding stablecoins your bank does not want to touch.",
+        "cards": [
+          {
+            "icon": "01",
+            "title": "Reserves you never see again",
+            "body": "High-risk MIDs often hold 5 to 10% for six months."
+          },
+          {
+            "icon": "02",
+            "title": "Settlement that is not really yours",
+            "body": "Funds sitting with an acquirer can stop on any review."
+          },
+          {
+            "icon": "03",
+            "title": "Crypto you cannot bank",
+            "body": "Stablecoins do not pay suppliers, payroll or tax."
+          }
+        ]
+      },
+      "product": {
+        "eyebrow": "What you get",
+        "h2": "Two rails. One provider.",
+        "lede": "The card rail brings the volume in. The offramp turns what you hold in crypto into money in your bank. One application, one term sheet covering both.",
+        "accent_index": 1,
+        "cards": [
+          {
+            "title": "Card acquiring",
+            "body": "Visa and Mastercard through acquirers that underwrite your vertical.",
+            "points": [
+              "Programmes for EU, UK, rest of world and US merchants [CONFIRM: regions per level]",
+              "Reserve, rate and settlement schedule in writing before you sign",
+              "Chargeback alerts and descriptor control [CONFIRM: chargeback alerts and descriptor control]",
+              "Dedicated account manager"
+            ]
+          },
+          {
+            "title": "Crypto offramp",
+            "body": "Convert crypto receipts to fiat and pay out to your bank.",
+            "points": [
+              "2.5% all-in, either direction",
+              "$1,000 to $500,000 per settlement",
+              "SWIFT, SEPA, B2B and B2C payouts, including third parties",
+              "One step signup, payouts to a bank account, no wallet needed on the receiving side"
+            ]
+          }
+        ],
+        "cta": "Get my rate"
+      },
+      "how": {
+        "eyebrow": "Process",
+        "h2": "One application, both rails",
+        "cards": [
+          {
+            "title": "Apply in 10 minutes",
+            "body": "Vertical, volume, entity, processing history."
+          },
+          {
+            "title": "Get written terms",
+            "body": "Rate, reserve, settlement schedule and offramp fees on one term sheet."
+          },
+          {
+            "title": "Go live",
+            "body": "Most merchants take live card volume within 5 business days [CONFIRM: card go-live time]. The offramp is live as soon as KYB clears."
+          }
+        ]
+      },
+      "pricing": {
+        "eyebrow": "Published pricing",
+        "h2": "Pricing you can quote back to us",
+        "lede": "Both rails on one table. The offramp is a fixed rate today. The card rate depends on your vertical, so it is written into your term sheet rather than guessed here.",
+        "columns": [
+          "Card acquiring",
+          "Crypto offramp"
+        ],
+        "rows": [
+          {
+            "label": "Setup",
+            "values": [
+              "From $1,500 (US and high-risk programmes $2,000)",
+              "$0"
+            ]
+          },
+          {
+            "label": "Monthly",
+            "values": [
+              "$149",
+              "$250"
+            ]
+          },
+          {
+            "label": "Rate",
+            "values": [
+              "Quoted per vertical after underwriting",
+              "2.5% all-in, either direction"
+            ],
+            "highlight": true
+          },
+          {
+            "label": "FX",
+            "values": [
+              "[CONFIRM: card FX, not in the Cards price lists]",
+              "0.15% + bank FX"
+            ]
+          },
+          {
+            "label": "Ticket size",
+            "values": [
+              "Per programme",
+              "$1,000 to $500,000"
+            ]
+          }
+        ],
+        "note": "Card rate, reserve and settlement schedule go on your term sheet before you sign.",
+        "cta": "Get my rate"
+      },
+      "estimator": {
+        "eyebrow": "Offramp arithmetic",
+        "h2": "What the offramp costs at your volume",
+        "lede": "Move the slider to the crypto you convert each month. This covers the offramp only.",
+        "modes": [
+          {
+            "key": "offramp",
+            "label": "Offramp",
+            "pct": 2.5
+          }
+        ],
+        "min": 10000,
+        "max": 1000000,
+        "step": 10000,
+        "default": 100000,
+        "setup": 0,
+        "monthly": 250,
+        "out_label": "Estimated monthly offramp cost",
+        "disclaimer": "Offramp only, at 2.5% all-in plus $250 a month. Card processing is not estimated because the card rate is quoted per vertical after underwriting. Excludes bank FX. Your written term sheet is the binding number.",
+        "cta": "Get my rate"
+      },
+      "segments": {
+        "eyebrow": "Industries",
+        "h2": "Four verticals, underwritten properly",
+        "cards": [
+          {
+            "icon": "A",
+            "title": "iGaming",
+            "body": "Casino, sportsbook, sweepstakes. Card deposits plus a fiat exit for crypto treasury."
+          },
+          {
+            "icon": "B",
+            "title": "Adult",
+            "body": "Subscription, cam and creator platforms. Recurring card billing and descriptor control, plus a bank payout for whatever members pay in crypto."
+          },
+          {
+            "icon": "C",
+            "title": "Peptides",
+            "body": "Compliance-ready peptide brands. Cards for domestic orders, crypto for the rest. [CONFIRM: RUO policy]"
+          },
+          {
+            "icon": "D",
+            "title": "Nutra",
+            "body": "Supplements and continuity offers. Chargeback tooling on recurring card billing, and an offramp so crypto orders land in the same bank account."
+          }
+        ],
+        "foot": "Not on the list but getting declined everywhere? Tell us your volume."
+      },
+      "apply": {
+        "eyebrow": "Apply",
+        "h2": "Apply in 10 minutes",
+        "lede": "Five fields now, full KYB later. You get one term sheet covering the card rate, the reserve, the settlement schedule and the offramp fees.",
+        "points": [
+          "Both rails on one application",
+          "Terms in writing before you sign",
+          "A clear no if we cannot place you"
+        ],
+        "telegram_note": "Fastest way to reach us.",
+        "form": {
+          "title": "Apply in 10 minutes",
+          "sub": "Five fields.",
+          "block_free_email": false,
+          "submit": "Send application",
+          "success": "Received. We come back with a term sheet or a clear no.",
+          "note": "Used only to underwrite and price your account.",
+          "steps": [
+            [
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Company name",
+                "placeholder": "Registered entity",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "url",
+                "name": "website",
+                "label": "Website",
+                "placeholder": "https://",
+                "half": true
+              },
+              {
+                "type": "text",
+                "name": "country",
+                "label": "Country of incorporation",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly volume",
+                "required": true,
+                "half": true,
+                "options": [
+                  "Under $50,000",
+                  "$50,000 to $250,000",
+                  "$250,000 to $1m",
+                  "Over $1m"
+                ]
+              },
+              {
+                "type": "text",
+                "name": "contact",
+                "label": "Work email or Telegram handle",
+                "placeholder": "you@company.com or @handle",
+                "required": true
+              }
+            ]
+          ]
+        }
+      },
+      "faq": {
+        "h2": "Questions merchants ask",
+        "lede": "Cards and offramp, answered together.",
+        "items": [
+          {
+            "q": "Will you approve me if a previous processor terminated me?",
+            "a": "Often, yes. Tell us who and why in the application. Hiding a MATCH listing is a decline, disclosing one is not automatically."
+          },
+          {
+            "q": "What does the card rate depend on?",
+            "a": "Vertical, volume, chargeback history and region. You get it in writing before you sign."
+          },
+          {
+            "q": "What does the offramp cost?",
+            "a": "2.5% all-in in either direction, plus $250 a month. No setup fee."
+          },
+          {
+            "q": "Is there a rolling reserve?",
+            "a": "On cards it depends on your vertical and is on your term sheet. [CONFIRM: reserve on offramp volume]"
+          },
+          {
+            "q": "Can I pay suppliers or third parties directly?",
+            "a": "Yes. B2B and third party payouts are supported."
+          },
+          {
+            "q": "What do I need to apply?",
+            "a": "Certificate of incorporation, share register, UBO ID and proof of address, recent processing statements if you have them."
+          },
+          {
+            "q": "Which crypto do you accept?",
+            "a": "[CONFIRM: USDT, USDC, chains]"
+          }
+        ]
+      },
+      "final": {
+        "h2": "A straight answer in 48 hours",
+        "body": "Send your vertical, volume and history. You get one written term sheet covering cards and the offramp, or a clear no.",
+        "cta": "Apply in 10 minutes"
+      },
+      "sticky": {
+        "title": "Take cards, cash out to your bank",
+        "sub": "Offramp 2.5% all-in, card rate in writing",
+        "cta": "Apply"
+      },
+      "footer": {
+        "columns": [
+          {
+            "title": "Product",
+            "links": [
+              {
+                "label": "Card acquiring",
+                "href": "#product"
+              },
+              {
+                "label": "Crypto offramp",
+                "href": "#product"
+              },
+              {
+                "label": "Pricing",
+                "href": "#pricing"
+              },
+              {
+                "label": "Offramp estimator",
+                "href": "#estimate"
+              }
+            ]
+          },
+          {
+            "title": "Industries",
+            "links": [
+              {
+                "label": "iGaming",
+                "href": "#segments"
+              },
+              {
+                "label": "Adult",
+                "href": "#segments"
+              },
+              {
+                "label": "Peptides",
+                "href": "#segments"
+              },
+              {
+                "label": "Nutra",
+                "href": "#segments"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "About",
+                "href": "#"
+              },
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
+        ],
+        "legal": "Swipe Wire Pay provides payment facilitation and settlement services through licensed acquiring and payment partners. [CONFIRM: name the acquiring and payment partner entities before launch. This line needs legal review.] Services are subject to underwriting and are not available in all jurisdictions."
+      }
+    }
+  ]
+}

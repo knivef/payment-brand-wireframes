@@ -1,0 +1,7 @@
+/* Secure Payment Services - accent tokens only. Layout lives in /assets/base.css.
+   Look lives in /assets/themes.css under [data-style="midnight"]. */
+:root {
+  --accent:      #d9a441;
+  --accent-fg:   #17120a;
+  --accent-soft: rgba(217,164,65,0.14);
+}
