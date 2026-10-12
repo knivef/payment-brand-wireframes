@@ -573,7 +573,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 }
 /* x position of the frame lines, relative to any full-width element */
 [data-framed] body,
-[data-framed] .hero, [data-framed] .trustbar, [data-framed] .section,
+[data-framed] .hero, [data-framed] .trustbar, [data-framed] .section, [data-framed] .statstrip,
 [data-framed] .footer, [data-framed] .nav {
   --frame-x: max(var(--frame-edge), calc(50% - var(--frame-w) / 2));
 }
@@ -606,16 +606,18 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 [data-framed] .section { padding: var(--section-y) 0; }
 
 /* Nodes where each section line meets the two frame edges */
-[data-framed] :is(.hero, .trustbar, .section, .footer) { position: relative; }
-[data-framed] :is(.hero, .trustbar, .section, .footer)::before,
-[data-framed] :is(.hero, .trustbar, .section, .footer)::after,
+[data-framed] :is(.hero, .statstrip, .trustbar, .section, .footer) { position: relative; }
+[data-framed] :is(.hero, .statstrip, .trustbar, .section, .footer)::before,
+[data-framed] :is(.hero, .statstrip, .trustbar, .section, .footer)::after,
 [data-framed] .gnode {
   content: ""; position: absolute; z-index: 50; pointer-events: none;
   width: var(--node); height: var(--node); background: var(--node-color);
-  top: calc(var(--border-w) / 2 - var(--node) / 2);
+  /* the element draws this line as its own border-top, and offsets are
+     measured from inside that border */
+  top: calc(-1 * var(--border-w) / 2 - var(--node) / 2);
 }
-[data-framed] :is(.hero, .trustbar, .section, .footer)::before { left: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
-[data-framed] :is(.hero, .trustbar, .section, .footer)::after { right: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] :is(.hero, .statstrip, .trustbar, .section, .footer)::before { left: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] :is(.hero, .statstrip, .trustbar, .section, .footer)::after { right: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
 
 /* Two-column sections. Columns run the full section height so the divider
    meets the section lines above and below, and those meetings get nodes. */
@@ -640,7 +642,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   left: calc(50% - var(--border-w) / 2 - var(--node) / 2);
 }
 [data-framed] .container.split::before,
-[data-framed] .container.split--form::before { top: calc(var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] .container.split--form::before { top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
 [data-framed] .container.split::after,
 [data-framed] .container.split--form::after { bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
 
@@ -666,9 +668,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
     bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2);
   }
   [data-framed] .container.split > :first-child::before,
-  [data-framed] .container.split--form > :first-child::before { left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .container.split--form > :first-child::before { left: calc(var(--border-w) / 2 - var(--node) / 2); }
   [data-framed] .container.split > :first-child::after,
-  [data-framed] .container.split--form > :first-child::after { right: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .container.split--form > :first-child::after { right: calc(var(--border-w) / 2 - var(--node) / 2); }
   [data-framed] .estimator > :first-child { padding-right: 0; border-right: 0; }
   [data-framed] .estimator > :last-child { margin-left: 0; }
 }
@@ -702,3 +704,47 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .stack__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
 .stack__check { color: var(--accent); flex: none; }
 @media (max-width: 480px) { .stack__card { width: 94%; } .stack__row { font-size: 0.84rem; } }
+
+/* ---------- 27. Stat strip ----------------------------------------------
+   Four equal cells of headline figures under the hero, split by vertical
+   lines. Two by two on narrow screens with every line kept.              */
+.statstrip { border-top: var(--border-w) solid var(--border); }
+.statstrip__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.statstrip__cell { padding: 40px 32px; border-left: var(--border-w) solid var(--border); position: relative; }
+.statstrip__cell:first-child { border-left: 0; }
+.statstrip__num { font-family: var(--font-display); font-size: 40px; line-height: 1.1; font-weight: var(--h-weight); letter-spacing: -0.02em; color: var(--fg); }
+.statstrip__label { font-size: 14px; line-height: 1.45; color: var(--fg-muted); margin-top: 8px; }
+@media (max-width: 760px) {
+  .statstrip__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .statstrip__cell { padding: 28px 20px; }
+  .statstrip__cell:nth-child(odd) { border-left: 0; }
+  .statstrip__cell:nth-child(n+3) { border-top: var(--border-w) solid var(--border); }
+}
+/* In the framed layout the cells run edge to edge of the frame, and every
+   point where a cell line meets another line gets a node. Offsets are
+   measured from inside a cell's own border, so a node on a line the cell
+   draws itself sits at -(line/2 + node/2), and one on a neighbour's line
+   at +(line/2) - node/2. */
+[data-framed] .statstrip .container { padding: 0; }
+[data-framed] .statstrip__cell::before,
+[data-framed] .statstrip__cell::after {
+  content: ""; position: absolute; z-index: 50; pointer-events: none; display: none;
+  width: var(--node); height: var(--node); background: var(--node-color);
+}
+/* Desktop: each divider meets the top and bottom lines */
+@media (min-width: 761px) {
+  [data-framed] .statstrip__cell:not(:first-child)::before,
+  [data-framed] .statstrip__cell:not(:first-child)::after { display: block; left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .statstrip__cell:not(:first-child)::before { top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .statstrip__cell:not(:first-child)::after { bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+}
+@media (max-width: 760px) {
+  /* 2: top of the vertical divider, and where the middle line meets the right frame edge */
+  [data-framed] .statstrip__cell:nth-child(2)::before { display: block; left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .statstrip__cell:nth-child(2)::after { display: block; right: calc(var(--border-w) / 2 - var(--node) / 2); bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  /* 3: where the middle line meets the left frame edge */
+  [data-framed] .statstrip__cell:nth-child(3)::before { display: block; left: calc(var(--border-w) / 2 - var(--node) / 2); top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  /* 4: centre crossing, and bottom of the vertical divider */
+  [data-framed] .statstrip__cell:nth-child(4)::before { display: block; left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .statstrip__cell:nth-child(4)::after { display: block; left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+}

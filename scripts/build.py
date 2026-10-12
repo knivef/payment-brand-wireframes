@@ -222,6 +222,32 @@ def sec_hero(b):
 </header>""".format(cls=cls, copy=copy, visual=_hero_visual(h))
 
 
+def sec_statstrip(b):
+    """Full-width strip of headline figures directly under the hero.
+
+    Four equal cells split by vertical lines. Stands in for a partner logo
+    bar until logos are approved; the logo slot is left as a comment.
+    """
+    t = b.get("stat_strip")
+    if not t:
+        return ""
+    cells = "".join(
+        '<div class="statstrip__cell"><div class="statstrip__num">{v}</div>'
+        '<div class="statstrip__label">{l}</div></div>'.format(v=e(c["value"]), l=e(c["label"]))
+        for c in t["items"])
+    slot = ""
+    if t.get("logo_slot"):
+        slot = """
+<!-- <LogoStrip /> slot. Partner logos are not approved yet. When they are,
+     add a "logo_strip" renderer and output it here, or swap it in for the
+     stat strip below. Keep it inside the frame: one full-width section with
+     a top line, logos in equal cells split by vertical lines. -->"""
+    return """{slot}
+<section class="statstrip" aria-label="Key figures">
+  <div class="container statstrip__grid">{cells}</div>
+</section>""".format(slot=slot, cells=cells)
+
+
 def sec_trustbar(b):
     t = b.get("trustbar")
     if not t:
@@ -674,6 +700,7 @@ def render(b, price_lists, nav_json="[]"):
         '<div class="progress" data-progress></div>',
         sec_nav(b),
         sec_hero(b),
+        sec_statstrip(b),
         sec_trustbar(b),
         # A page that sells to named payee or buyer types can lead with them.
         (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),

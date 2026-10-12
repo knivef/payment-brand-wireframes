@@ -1798,6 +1798,27 @@
           ]
         }
       },
+      "stat_strip": {
+        "logo_slot": true,
+        "items": [
+          {
+            "value": "$100K",
+            "label": "Max single deposit"
+          },
+          {
+            "value": "$250",
+            "label": "Minimum deposit"
+          },
+          {
+            "value": "SWIFT",
+            "label": "Bank network only"
+          },
+          {
+            "value": "Global",
+            "label": "Accepts payments from all SWIFT networks"
+          }
+        ]
+      },
       "trustbar": {
         "label": "For",
         "chips": [
