@@ -73,7 +73,7 @@ partner entity stays as `[CONFIRM: ...]` until legal signs it off.
 
 ## Design styles
 
-11, in `assets/themes.css`. Set per brand via `"style"` in `data/pages.json`.
+12, in `assets/themes.css`. Set per brand via `"style"` in `data/pages.json`.
 
 | Style | Reads as | In use |
 |---|---|---|
@@ -83,17 +83,18 @@ partner entity stays as `[CONFIRM: ...]` until legal signs it off.
 | `soft` | Light, rounded, layered shadows, roomy cards. The familiar modern fintech look. Lowest risk, highest trust with non-technical buyers. | Offrampr |
 | `midnight` | Deep navy, serif display, warm accent, wide rhythm. Reads premium and relationship-led. Good for VIP, large ticket, private desks. | Secure Payment Services |
 | `clinical` | Pale grey-blue, small radii, dense tables, utilitarian. Reads as compliance and operations. Good where the buyer reads the fine print. | Pure Labs |
-| `mono` | Black and white, one accent, enormous headlines, no chrome. Reads as confident and unfussy. Good for a single-claim page. | AltPay |
+| `mono` | Black and white, one accent, enormous headlines, no chrome. Reads as confident and unfussy. Good for a single-claim page. | free |
 | `ledger` | Slate, structural dividers, strong tabular numerics, two-column rhythm. Reads as a settlement ledger. Built for brands selling two rails at once. | free |
 | `stamp` | Ink-dark, condensed uppercase headings, heavy rules. Reads as approval and authority. Built for a brand whose whole promise is getting you approved. | free |
 | `warm` | Cream, humanist type, large body copy, gentle rounding. Reads as helpful rather than institutional. Built for a small owner-operator buyer. | free |
 | `wire` | Blueprint light, thin rules, monospace numerics, technical calm. Reads as a transfer rail. Built for fiat-in, crypto-out. | free |
+| `frame` | Near-black, thin white hairlines, a visible outer frame and square nodes where lines cross. Light headings, muted body, white buttons, accent only on links, active tabs and checks. Flat. | AltPay |
 
 This table is generated. `assets/themes.css` is the only source of truth, the
 index page reads it at build time, and `scripts/build.py` prints the count. If a
 doc and the stylesheet disagree, the stylesheet is right.
 
-A style not listed as in use is free capacity. Past 11 brands, styles have to be
+A style not listed as in use is free capacity. Past 12 brands, styles have to be
 shared or new ones written. Sharing is acceptable for Burnable brands that will
 never sit side by side with their twin; it is not acceptable for two Permanent
 brands in the same vertical.
@@ -156,6 +157,12 @@ refresh; change the page.
 announcement, nav, hero, trust bar, problem, product, how it works, pricing,
 estimator, segments, compliance, lead form, FAQ, final CTA, footer, sticky bar,
 rail CTA, exit modal.
+
+Framed layout: `"framed": true` puts `data-framed` on `<html>`. base.css then draws
+one centred frame with an outer border, a full-width hairline between sections, a
+divider between two-column layouts, and a 6px node wherever lines cross. Pair it with
+the `frame` style (AltPay). Its tokens (`--frame-w`, `--line`, `--node`,
+`--node-color`, `--col-pad`) live on `[data-framed]` and the theme can override them.
 
 One exception: `"segments_first": true` moves segments to directly after the trust
 bar, for a page that leads with who it serves (Offrampr). Nothing else reorders.

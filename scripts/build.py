@@ -39,6 +39,7 @@ FONTS = {
     "stamp":    "Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700",
     "warm":     "Nunito:wght@400;600;700;800",
     "wire":     "IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600",
+    "frame":    "Inter:wght@400;500;600",
 }
 
 
@@ -651,7 +652,7 @@ def render(b, price_lists, nav_json="[]"):
         sec_exit(b),
     ])
     return """<!doctype html>
-<html lang="en" data-style="{style}">
+<html lang="en" data-style="{style}"{framed}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -683,6 +684,7 @@ def render(b, price_lists, nav_json="[]"):
 """.format(style=b["style"], title=e(b["seo"]["title"]), desc=e(b["seo"]["description"]),
            domain=e(b["domain"]), font=FONTS[b["style"]], body=body, schema=faq_schema(b),
            nav=nav_json,
+           framed=" data-framed" if b.get("framed") else "",
            robots=("" if b.get("launched")
                    else '<meta name="robots" content="noindex, nofollow">'))
 

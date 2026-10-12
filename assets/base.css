@@ -551,3 +551,122 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 }
 .hub__filters { display: block; }
 .hub__card--live { border-color: var(--positive); }
+
+/* ---------- 25. Framed grid ---------------------------------------------
+   Opt in per page with "framed": true in data/pages.json, which puts
+   data-framed on <html>. The page sits inside one centred frame with a
+   visible outer border, every section is divided by a full-width hairline,
+   two-column layouts get a hairline between columns, and a small square
+   node marks every point where a horizontal line meets a vertical one.
+
+   Nodes are a pure CSS utility. Any element that carries a top line gets
+   two nodes from ::before and ::after, one on each frame edge. A two-column
+   container gets its divider nodes the same way. Colours come from tokens,
+   so the theme decides how strong the lines and nodes are.            */
+[data-framed] {
+  --frame-w:     var(--container);
+  --frame-edge:  12px;                      /* smallest inset on narrow screens */
+  --line:        var(--border-w) solid var(--border);
+  --node:        6px;
+  --node-color:  rgba(255,255,255,0.8);
+  --col-pad:     48px;
+}
+/* x position of the frame lines, relative to any full-width element */
+[data-framed] body,
+[data-framed] .hero, [data-framed] .trustbar, [data-framed] .section,
+[data-framed] .footer, [data-framed] .nav {
+  --frame-x: max(var(--frame-edge), calc(50% - var(--frame-w) / 2));
+}
+
+/* The container is the frame: its edges are the frame lines. */
+[data-framed] .container {
+  max-width: none;
+  width: min(var(--frame-w), calc(100% - 2 * var(--frame-edge)));
+  padding: 0 var(--col-pad);
+}
+
+/* Outer frame, full page height */
+[data-framed] body { position: relative; }
+[data-framed] body::before {
+  content: ""; position: absolute; top: 0; bottom: 0; z-index: 49;
+  left: var(--frame-x); right: var(--frame-x);
+  border-left: var(--line); border-right: var(--line);
+  pointer-events: none;
+}
+/* The sticky nav covers the frame, so it draws its own segment of it. */
+[data-framed] .nav { border-bottom: var(--line); }
+[data-framed] .nav .container { border-left: var(--line); border-right: var(--line); }
+
+/* Full-width hairline above every section, and no doubled lines */
+[data-framed] .hero,
+[data-framed] .section,
+[data-framed] .section--flush { border-top: var(--line); }
+[data-framed] .trustbar { border-bottom: 0; }
+[data-framed] .hero { padding: var(--section-y) 0; }
+[data-framed] .section { padding: var(--section-y) 0; }
+
+/* Nodes where each section line meets the two frame edges */
+[data-framed] :is(.hero, .trustbar, .section, .footer) { position: relative; }
+[data-framed] :is(.hero, .trustbar, .section, .footer)::before,
+[data-framed] :is(.hero, .trustbar, .section, .footer)::after,
+[data-framed] .gnode {
+  content: ""; position: absolute; z-index: 50; pointer-events: none;
+  width: var(--node); height: var(--node); background: var(--node-color);
+  top: calc(var(--border-w) / 2 - var(--node) / 2);
+}
+[data-framed] :is(.hero, .trustbar, .section, .footer)::before { left: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] :is(.hero, .trustbar, .section, .footer)::after { right: calc(var(--frame-x) + var(--border-w) / 2 - var(--node) / 2); }
+
+/* Two-column sections. Columns run the full section height so the divider
+   meets the section lines above and below, and those meetings get nodes. */
+[data-framed] .hero:has(> .split),
+[data-framed] .section:has(> .split--form) { padding: 0; }
+[data-framed] .container.split,
+[data-framed] .container.split--form {
+  display: grid; position: relative; padding: 0;
+  grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch;
+}
+[data-framed] .container.split > *,
+[data-framed] .container.split--form > * { padding: var(--section-y) var(--col-pad); margin: 0; }
+[data-framed] .container.split > :first-child,
+[data-framed] .container.split--form > :first-child { border-right: var(--line); }
+[data-framed] .container.split--form > .card { border: 0; background: transparent; }
+[data-framed] .container.split::before, [data-framed] .container.split::after,
+[data-framed] .container.split--form::before, [data-framed] .container.split--form::after {
+  content: ""; position: absolute; z-index: 50; pointer-events: none;
+  width: var(--node); height: var(--node); background: var(--node-color);
+  left: calc(50% - var(--border-w) / 2 - var(--node) / 2);
+}
+[data-framed] .container.split::before,
+[data-framed] .container.split--form::before { top: calc(var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] .container.split::after,
+[data-framed] .container.split--form::after { bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+
+/* Two columns inside a section with a heading: divider only. It does not
+   touch a section line, so there is no intersection and no node. */
+[data-framed] .estimator { gap: 0; }
+[data-framed] .estimator > :first-child { padding-right: var(--col-pad); border-right: var(--line); }
+[data-framed] .estimator > :last-child { margin-left: var(--col-pad); }
+
+/* Stacked on narrow screens: the divider turns horizontal and meets the two
+   frame edges, so its nodes move there. */
+@media (max-width: 960px) {
+  [data-framed] .container.split,
+  [data-framed] .container.split--form { grid-template-columns: minmax(0, 1fr); }
+  [data-framed] .container.split > :first-child,
+  [data-framed] .container.split--form > :first-child { border-right: 0; border-bottom: var(--line); position: relative; }
+  [data-framed] .container.split::before, [data-framed] .container.split::after,
+  [data-framed] .container.split--form::before, [data-framed] .container.split--form::after { display: none; }
+  [data-framed] .container.split > :first-child::before, [data-framed] .container.split > :first-child::after,
+  [data-framed] .container.split--form > :first-child::before, [data-framed] .container.split--form > :first-child::after {
+    content: ""; position: absolute; z-index: 50; pointer-events: none;
+    width: var(--node); height: var(--node); background: var(--node-color);
+    bottom: calc(-1 * var(--border-w) / 2 - var(--node) / 2);
+  }
+  [data-framed] .container.split > :first-child::before,
+  [data-framed] .container.split--form > :first-child::before { left: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .container.split > :first-child::after,
+  [data-framed] .container.split--form > :first-child::after { right: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .estimator > :first-child { padding-right: 0; border-right: 0; }
+  [data-framed] .estimator > :last-child { margin-left: 0; }
+}

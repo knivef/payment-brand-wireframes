@@ -17,7 +17,7 @@ Plain HTML and CSS, served statically by Vercel. No build step at deploy time.
 |---|---|---|---|
 | Zepapay | `terminal` | Crypto to fiat settlement, two way | UAE PSP |
 | Secure Payment Services | `midnight` | Client collection and IBAN for forex | UAE PSP |
-| AltPay | `mono` | Client collection for forex, crypto settlement | None |
+| AltPay | `frame` | Client collection for forex, crypto settlement | None |
 | Ape Card | `brutal` | Crypto cards, four tiers | None |
 | Pure Labs | `clinical` | Pre-screening for peptide and nutra merchants | None |
 | Offrampr | `soft` | Mass payouts funded in crypto | None |

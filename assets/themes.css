@@ -446,3 +446,90 @@
 [data-style="wire"] .price,
 [data-style="wire"] .estimator__big { font-family: var(--font-mono); }
 [data-style="wire"] .mock__row { border-left: 2px solid var(--accent); }
+
+/* ---------- 12. frame ----------------------------------------------------
+   Near-black, thin white hairlines, a visible outer frame and square nodes
+   where lines cross. Light-weight headings, muted body, white buttons, one
+   accent used only for links, active tabs and checks. Flat and technical. */
+[data-style="frame"] {
+  /* Surfaces */
+  --bg:            #0A0A0A;
+  --surface:       #111111;   /* section surface */
+  --surface-2:     #161616;   /* card surface */
+  --fg:            #FFFFFF;
+  --fg-muted:      rgba(255,255,255,0.6);
+  --border:        rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.10);
+  --positive:      var(--accent);
+  --negative:      rgba(255,255,255,0.6);
+
+  /* Buttons */
+  --btn-primary-bg:   #FFFFFF;
+  --btn-primary-fg:   #000000;
+  --btn-secondary-bd: #FFFFFF;
+
+  /* Type */
+  --font-sans:    "Inter", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
+  --h1-size:      clamp(38px, 6vw, 56px);
+  --h1-leading:   1.1;
+  --h2-size:      clamp(28px, 4vw, 36px);
+  --h2-leading:   1.15;
+  --h-weight:     400;
+  --h-tracking:   -0.02em;
+  --h-transform:  none;
+  --body-size:    16px;
+  --body-leading: 1.6;
+  --eyebrow-tracking: 0.12em;
+
+  /* Shape. Flat: no radius on panels, no shadows anywhere. */
+  --border-w:    1px;
+  --radius:      0px;
+  --radius-sm:   0px;
+  --radius-lg:   0px;
+  --btn-radius:  4px;
+  --pill-radius: 999px;
+  --shadow:      none;
+  --shadow-card: none;
+  --shadow-btn:  none;
+
+  /* Rhythm */
+  --section-y:   96px;
+  --col-pad:     48px;
+  --card-pad:    24px;
+  --container:   1200px;
+  --gutter:      48px;
+}
+@media (max-width: 760px) {
+  [data-style="frame"] { --section-y: 64px; --col-pad: 24px; --gutter: 24px; }
+}
+[data-style="frame"] body { color: var(--fg-muted); }
+[data-style="frame"] h1, [data-style="frame"] h2,
+[data-style="frame"] h3, [data-style="frame"] h4 { color: var(--fg); }
+[data-style="frame"] h1 { line-height: var(--h1-leading); letter-spacing: var(--h-tracking); }
+[data-style="frame"] h2 { line-height: var(--h2-leading); }
+[data-style="frame"] h3 { font-weight: 500; }
+[data-style="frame"] .eyebrow { color: var(--fg-muted); font-weight: 500; }
+[data-style="frame"] a:not(.btn):not(.nav__brand) { color: var(--accent); }
+[data-style="frame"] .nav__links a,
+[data-style="frame"] .footer a { color: var(--fg-muted); }
+[data-style="frame"] .nav__links a:hover,
+[data-style="frame"] .footer a:hover { color: var(--fg); }
+[data-style="frame"] .nav { background: var(--bg); backdrop-filter: none; }
+[data-style="frame"] .nav__mark { background: var(--fg); color: var(--bg); }
+[data-style="frame"] .btn:hover { transform: none; }
+[data-style="frame"] .btn--primary { background: var(--btn-primary-bg); color: var(--btn-primary-fg); border-color: var(--btn-primary-bg); }
+[data-style="frame"] .btn--ghost,
+[data-style="frame"] .btn--tg { background: transparent; color: var(--fg); border-color: var(--btn-secondary-bd); }
+[data-style="frame"] .btn--ghost:hover,
+[data-style="frame"] .btn--tg:hover { background: transparent; color: var(--fg); opacity: 0.8; }
+[data-style="frame"] .card { background: var(--surface-2); }
+[data-style="frame"] .card--accent { border-color: var(--border); background: var(--surface-2); }
+[data-style="frame"] .card__icon { background: transparent; border: var(--border-w) solid var(--border); color: var(--fg); }
+[data-style="frame"] .chip { background: transparent; }
+[data-style="frame"] .final-cta { border: 0; background: transparent; padding: 0; }
+[data-style="frame"] .estimator__out { background: var(--surface-2); border-color: var(--border); }
+[data-style="frame"] .pricetable tr.is-highlight td { background: var(--surface-2); }
+[data-style="frame"] .seg button { border-bottom: var(--border-w) solid transparent; }
+[data-style="frame"] .seg button[aria-pressed="true"] { background: transparent; color: var(--accent); border-bottom-color: var(--accent); }
+[data-style="frame"] .announce { background: var(--surface); color: var(--fg-muted); border-bottom: var(--border-w) solid var(--border); }

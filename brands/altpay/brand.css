@@ -1,7 +1,7 @@
 /* AltPay - accent tokens only. Layout lives in /assets/base.css.
-   Look lives in /assets/themes.css under [data-style="mono"]. */
+   Look lives in /assets/themes.css under [data-style="frame"]. */
 :root {
-  --accent:      #ff6b2c;
-  --accent-fg:   #0a0a0a;
-  --accent-soft: rgba(255,107,44,0.14);
+  --accent:      #22C55E;
+  --accent-fg:   #0A0A0A;
+  --accent-soft: rgba(34,197,94,0.12);
 }
