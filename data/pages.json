@@ -1940,6 +1940,89 @@
           }
         ]
       },
+      "use_cases": {
+        "id": "use-cases",
+        "items": [
+          {
+            "pill": "Forex Brokers",
+            "h3": "Fund Trading Accounts by Wire",
+            "body": "Give clients a familiar way to deposit. They send a SWIFT transfer to your AltPay IBAN, and the balance lands in your treasury as crypto.",
+            "href": "#how",
+            "more": "see how it works",
+            "visual": {
+              "type": "stack",
+              "note": "Illustrative values only. Not real account details.",
+              "cards": [
+                {
+                  "title": "Deposit Funds",
+                  "button": "Copy reference",
+                  "rows": [
+                    {
+                      "label": "Account name",
+                      "value": "Your brokerage"
+                    },
+                    {
+                      "label": "IBAN",
+                      "value": "DE89 •••• •••• 3000",
+                      "mono": true
+                    },
+                    {
+                      "label": "Network",
+                      "value": "SWIFT"
+                    },
+                    {
+                      "label": "Reference",
+                      "value": "AP-20418-CL",
+                      "mono": true
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "pill": "Crypto Businesses and Affiliates",
+            "h3": "Collect Fiat, Hold Crypto",
+            "body": "Exchanges, OTC desks, and affiliate networks can accept bank wires from customers worldwide and keep their books in crypto, without opening a new banking relationship.",
+            "href": "#pricing",
+            "more": "see pricing",
+            "visual": {
+              "type": "stack",
+              "note": "Illustrative values only. Not real transfers.",
+              "cards": [
+                {
+                  "title": "Settlement",
+                  "rows": [
+                    {
+                      "label": "CL-20431 · $12,400.00",
+                      "value": "Settled",
+                      "status": "check"
+                    },
+                    {
+                      "label": "CL-20428 · $3,150.00",
+                      "value": "Settled",
+                      "status": "check"
+                    },
+                    {
+                      "label": "CL-20425 · $58,000.00",
+                      "value": "Settled",
+                      "status": "check"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "chips": [
+          "Forex",
+          "CFD Brokers",
+          "Prop Trading",
+          "Crypto Exchanges",
+          "OTC Desks",
+          "Affiliate Networks"
+        ]
+      },
       "problem": {
         "eyebrow": "Why move",
         "h2": "Most collection rails were not built for this book",

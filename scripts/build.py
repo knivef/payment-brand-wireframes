@@ -245,9 +245,15 @@ def _hero_visual(h):
                     '<span class="stack__value{mono}">{m}{v}</span></div>').format(
                         l=e(r["label"]), v=e(r["value"]), m=mark,
                         mono=" mono" if r.get("mono") else "")
+        def mockbtn(c):
+            # A button drawn inside the mockup. Not interactive: it is a picture of one.
+            if not c.get("button"):
+                return ""
+            return '<span class="stack__btn" aria-hidden="true">{i}{l}</span>'.format(
+                i=icon("copy", 16), l=e(c["button"]))
         cards = "".join(
-            '<div class="stack__card"><div class="stack__title">{t}</div>{rows}</div>'.format(
-                t=e(c["title"]), rows="".join(row(r) for r in c["rows"]))
+            '<div class="stack__card"><div class="stack__title">{t}</div>{rows}{btn}</div>'.format(
+                t=e(c["title"]), rows="".join(row(r) for r in c["rows"]), btn=mockbtn(c))
             for c in v["cards"])
         note = ("\n    <!-- {0} -->".format(e(v["note"])) if v.get("note") else "")
         return """{note}
@@ -304,16 +310,47 @@ ICONS = {
     "shield-check": ('<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6'
                      'a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5'
                      'a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>'),
+    "arrow-up-right": '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+    "copy": ('<rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>'
+             '<path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>'),
     "landmark": ('<line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/>'
                  '<line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/>'
                  '<line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/>'),
 }
 
 
-def icon(name):
-    return ('<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-            'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{0}</svg>'
-            ).format(ICONS[name])
+def icon(name, size=24):
+    return ('<svg class="icon" width="{s}" height="{s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+            'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{p}</svg>'
+            ).format(s=size, p=ICONS[name])
+
+
+def sec_usecases(b):
+    """Two use-case cards side by side, then a full-width row of chips.
+    Each card: a small mockup, a pill, an H3, body, a round arrow link."""
+    u = b.get("use_cases")
+    if not u:
+        return ""
+    cols = "".join("""
+    <article class="usecase reveal">
+      <div class="usecase__mock">{mock}</div>
+      <span class="pill">{pill}</span>
+      <h3>{h3}</h3>
+      <p>{body}</p>
+      <a class="arrowbtn" href="{href}" aria-label="{h3}: {more}" data-cta="usecase">{arrow}</a>
+    </article>""".format(mock=_hero_visual({"visual": c["visual"]}), pill=e(c["pill"]), h3=e(c["h3"]),
+                       body=e(c["body"]), href=e(c["href"]), more=e(c.get("more", "read more")),
+                       arrow=icon("arrow-up-right", 18)) for c in u["items"])
+    chips = ""
+    if u.get("chips"):
+        chips = """
+  <div class="container chiprow">{0}</div>""".format("".join(
+            '<span class="chip">{0}</span>'.format(e(x)) for x in u["chips"]))
+    return """
+<section class="section usecases" id="{id}">
+  <div class="container split">{cols}
+  </div>{chips}
+</section>""".format(id=e(u.get("id", "use-cases")), cols=cols, chips=chips)
 
 
 def sec_featrow(b):
@@ -814,6 +851,7 @@ def render(b, price_lists, nav_json="[]"):
         sec_trustbar(b),
         sec_featsplits(b),
         sec_featrow(b),
+        sec_usecases(b),
         # A page that sells to named payee or buyer types can lead with them.
         (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),
         sec_block(b, "problem", "grid-3"),

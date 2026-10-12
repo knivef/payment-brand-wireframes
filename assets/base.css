@@ -799,3 +799,52 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   [data-framed] .featrow .statstrip__cell:not(:first-child)::before { display: block; top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); left: calc(var(--border-w) / 2 - var(--node) / 2); }
   [data-framed] .featrow .statstrip__cell:not(:first-child)::after { display: block; top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); right: calc(var(--border-w) / 2 - var(--node) / 2); }
 }
+
+/* ---------- 30. Use-case cards, pills, arrow button, chip row ------------
+   "use_cases" in pages.json. Two columns on .split, so the framed layout
+   gives the divider and its nodes. The chip row underneath draws its own
+   full-width line, with a node at each frame edge.                     */
+.usecase { display: flex; flex-direction: column; }
+.usecase__mock { margin-bottom: 28px; }
+.usecase__mock .hero__stack, .usecase__mock .stack { max-width: none; }
+.usecase__mock .stack__card { width: 100%; }
+.usecase h3 { font-size: 24px; line-height: 1.25; margin: 14px 0 10px; }
+.usecase p { color: var(--fg-muted); margin: 0 0 24px; max-width: 46ch; }
+.pill {
+  display: inline-flex; align-self: flex-start; align-items: center;
+  font-size: 0.78rem; padding: 4px 12px; border-radius: var(--pill-radius);
+  border: var(--border-w) solid var(--border); color: var(--fg-muted);
+}
+.arrowbtn {
+  margin-top: auto; align-self: flex-end;
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  border: var(--border-w) solid var(--btn-secondary-bd, var(--border-strong)); color: var(--fg);
+  transition: opacity 0.12s ease;
+}
+.arrowbtn:hover { opacity: 0.75; }
+.stack__btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin: 6px 0 14px; padding: 10px 14px; border-radius: var(--btn-radius);
+  border: var(--border-w) solid var(--border); color: var(--fg); font-size: 0.86rem;
+}
+.chiprow { display: flex; flex-wrap: wrap; gap: 10px; padding-top: 28px; padding-bottom: 28px; border-top: var(--border-w) solid var(--border); margin-top: 32px; }
+.chiprow .chip { background: transparent; }
+/* Shared rows across the two cards, so the pills, headings and arrows line
+   up even when the mockups differ in height. Falls back to stacked flex. */
+@supports (grid-template-rows: subgrid) {
+  .usecases .container.split > .usecase,
+  [data-framed] .usecases .container.split > .usecase {
+    display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+  }
+  .usecase > .arrowbtn { align-self: end; justify-self: end; }
+  .usecase > .pill { justify-self: start; align-self: start; }
+}
+[data-framed] .chiprow { margin-top: 0; position: relative; }
+[data-framed] .chiprow::before, [data-framed] .chiprow::after {
+  content: ""; position: absolute; z-index: 50; pointer-events: none;
+  width: var(--node); height: var(--node); background: var(--node-color); top: calc(-1 * var(--border-w) / 2 - var(--node) / 2);
+}
+[data-framed] .chiprow::before { left: calc(var(--border-w) / 2 - var(--node) / 2); }
+[data-framed] .chiprow::after { right: calc(var(--border-w) / 2 - var(--node) / 2); }
