@@ -1915,6 +1915,31 @@
           }
         }
       ],
+      "feature_row": {
+        "id": "benefits",
+        "items": [
+          {
+            "icon": "trending-up",
+            "title": "Scale",
+            "text": "Accept single deposits of up to $100K, built for high-value transactions."
+          },
+          {
+            "icon": "door-open",
+            "title": "Open",
+            "text": "Minimum deposit starts at just $250, so smaller clients can fund too."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Trust",
+            "text": "Whitelisted, pre-approved payment channels for smoother, more reliable processing."
+          },
+          {
+            "icon": "landmark",
+            "title": "Secure",
+            "text": "Every payment runs through the established SWIFT banking network. Nothing else."
+          }
+        ]
+      },
       "problem": {
         "eyebrow": "Why move",
         "h2": "Most collection rails were not built for this book",

@@ -294,6 +294,44 @@ def sec_hero(b):
 </header>""".format(cls=cls, copy=copy, visual=_hero_visual(h))
 
 
+# 24px line icons, inline. Paths from Lucide (lucide.dev), ISC licence,
+# Copyright (c) Lucide Contributors. Add new ones by name here.
+ICONS = {
+    "trending-up": '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+    "door-open": ('<path d="M13 4h3a2 2 0 0 1 2 2v14"/><path d="M2 20h3"/><path d="M13 20h9"/>'
+                  '<path d="M10 12v.01"/><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562'
+                  'a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"/>'),
+    "shield-check": ('<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6'
+                     'a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5'
+                     'a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>'),
+    "landmark": ('<line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/>'
+                 '<line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/>'
+                 '<line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/>'),
+}
+
+
+def icon(name):
+    return ('<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+            'stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{0}</svg>'
+            ).format(ICONS[name])
+
+
+def sec_featrow(b):
+    """A row of four short benefits under the feature split: icon, one-word
+    title, two-line text. Shares the stat strip's cells, lines and nodes."""
+    t = b.get("feature_row")
+    if not t:
+        return ""
+    cells = "".join(
+        '<div class="statstrip__cell featrow__cell">{i}<h3 class="featrow__title">{h}</h3>'
+        '<p class="featrow__text">{p}</p></div>'.format(i=icon(c["icon"]), h=e(c["title"]), p=e(c["text"]))
+        for c in t["items"])
+    return """
+<section class="statstrip featrow"{id}>
+  <div class="container statstrip__grid">{cells}</div>
+</section>""".format(cells=cells, id=' id="{0}"'.format(e(t["id"])) if t.get("id") else "")
+
+
 def sec_statstrip(b):
     """Full-width strip of headline figures directly under the hero.
 
@@ -775,6 +813,7 @@ def render(b, price_lists, nav_json="[]"):
         sec_statstrip(b),
         sec_trustbar(b),
         sec_featsplits(b),
+        sec_featrow(b),
         # A page that sells to named payee or buyer types can lead with them.
         (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),
         sec_block(b, "problem", "grid-3"),

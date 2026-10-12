@@ -779,3 +779,23 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .panel__status--open { color: var(--fg-muted); }
 .panel__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fg-muted); flex: none; }
 @media (max-width: 480px) { .panel { padding: 16px; } .panel__table { font-size: 0.78rem; } }
+
+/* ---------- 29. Feature row ---------------------------------------------
+   Four short benefits in the stat strip's cells: icon, one-word title,
+   short text. Four across, two by two under 760px, one column under 480px,
+   every line and node kept.                                             */
+.featrow .statstrip__cell { padding: 40px 32px; }
+.featrow .icon { display: block; color: var(--fg); margin-bottom: 22px; }
+.featrow__title { font-size: 20px; line-height: 1.2; font-weight: var(--h-weight); margin: 0 0 8px; color: var(--fg); }
+.featrow__text { font-size: 14px; line-height: 1.55; color: var(--fg-muted); margin: 0; }
+@media (max-width: 760px) { .featrow .statstrip__cell { padding: 28px 20px; } }
+@media (max-width: 480px) {
+  .featrow .statstrip__grid { grid-template-columns: minmax(0, 1fr); }
+  .featrow .statstrip__cell { border-left: 0; }
+  .featrow .statstrip__cell:not(:first-child) { border-top: var(--border-w) solid var(--border); }
+  /* every inner line now runs frame edge to frame edge: a node at each end */
+  [data-framed] .featrow .statstrip__cell::before,
+  [data-framed] .featrow .statstrip__cell::after { display: none; left: auto; right: auto; top: auto; bottom: auto; }
+  [data-framed] .featrow .statstrip__cell:not(:first-child)::before { display: block; top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); left: calc(var(--border-w) / 2 - var(--node) / 2); }
+  [data-framed] .featrow .statstrip__cell:not(:first-child)::after { display: block; top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); right: calc(var(--border-w) / 2 - var(--node) / 2); }
+}
