@@ -1985,8 +1985,8 @@
             "pill": "Crypto Businesses and Affiliates",
             "h3": "Collect Fiat, Hold Crypto",
             "body": "Exchanges, OTC desks, and affiliate networks can accept bank wires from customers worldwide and keep their books in crypto, without opening a new banking relationship.",
-            "href": "#pricing",
-            "more": "see pricing",
+            "href": "#wire-to-wallet",
+            "more": "see the flow",
             "visual": {
               "type": "stack",
               "note": "Illustrative values only. Not real transfers.",
@@ -2092,19 +2092,18 @@
             "title": "Collection",
             "body": "Whitelisted, pre-approved channels for client deposits, with a ticket range that covers the whole book rather than the easy half of it.",
             "points": [
-              "Deposits from $500 to $150,000",
+              "Deposits from $250 to $100K",
               "Whitelisted payment channels",
               "B2C and B2B withdrawals supported",
-              "SWIFT and SEPA both available"
+              "SWIFT inbound from anywhere"
             ]
           },
           {
             "title": "Settlement",
-            "body": "Settled to you in crypto or to a bank account, at rates published on this page rather than discovered later.",
+            "body": "Settled to you in crypto or to a bank account, on terms agreed in writing before you sign.",
             "points": [
               "Crypto or fiat settlement, your choice",
-              "FX at 0.15 percent over the exchange rate",
-              "Reserve stated before signature",
+              "Terms in writing before signature",
               "No repricing without written notice"
             ]
           }
@@ -2129,80 +2128,21 @@
           }
         ]
       },
-      "pricing": {
-        "eyebrow": "Terms",
-        "h2": "The rate, on the page",
-        "lede": "High risk terms, published. If your book qualifies for better, we will tell you at underwriting rather than let you find out from a competitor.",
-        "price_list": "IBAN High Risk",
-        "show": [
-          [
-            "Client deposit, C2B",
-            "dep_c2b",
-            true
-          ],
-          [
-            "Deposit, B2B",
-            "dep_b2b",
-            false
-          ],
-          [
-            "Withdrawal, B2C",
-            "wd_b2c",
-            false
-          ],
-          [
-            "Withdrawal, B2B",
-            "wd_b2b",
-            false
-          ],
-          [
-            "Settlement via SWIFT",
-            "settle_swift",
-            false
-          ],
-          [
-            "Settlement via SEPA",
-            "settle_sepa",
-            false
-          ],
-          [
-            "Crypto deposit",
-            "crypto_dep",
-            false
-          ],
-          [
-            "Crypto settlement",
-            "crypto_wd",
-            false
-          ]
-        ],
-        "extra_rows": [
-          {
-            "label": "Minimum monthly processing",
-            "value": "$100,000"
-          }
-        ],
-        "not_charged": [
-          "No repricing without written notice",
-          "No exit fee"
-        ],
-        "note": "Setup is $1,500 one time plus $250 per month. Reserve is 10 percent released over 180 days, stated on your term sheet before signature."
-      },
       "compliance": {
         "eyebrow": "Structure",
         "h2": "How this is set up",
         "cards": [
           {
-            "title": "Who settles",
-            "body": "AltPay arranges collection and settlement through licensed partner institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch.]"
+            "title": "Partners",
+            "body": "Collection and settlement run through established banking and payment partners."
           },
           {
-            "title": "What we run",
-            "body": "KYB on the entity, sanctions and PEP screening on beneficial owners, wallet screening on crypto legs, and monitoring sized to the book."
+            "title": "Checks",
+            "body": "Every business is verified at onboarding, and activity is monitored after that."
           },
           {
-            "title": "What we do not claim",
-            "body": "AltPay does not hold a licence of its own. Nothing on this page should be read as a regulatory status. [This section needs legal review before launch.]"
+            "title": "Details",
+            "body": "We walk you through the full structure during onboarding."
           }
         ]
       },
@@ -2339,17 +2279,9 @@
         "sub": "Terms in writing, one day",
         "cta": "Get terms"
       },
-      "exit_modal": {
-        "eyebrow": "Before you go",
-        "h": "Take the rate card",
-        "body": "Every published line, one page, no call attached.",
-        "cta": "Send the rate card",
-        "note": "One email.",
-        "success": "Sent."
-      },
       "footer": {
         "layout": "brand",
-        "legal": "[PLACEHOLDER: legal entity name, registration, and licensing disclosure.]",
+        "legal": "AltPay provides IBAN collection and crypto settlement for businesses through its banking and payment partners. Services are subject to onboarding approval and are not available in all jurisdictions.",
         "columns": [
           {
             "title": "Product",
