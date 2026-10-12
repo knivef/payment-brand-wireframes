@@ -2023,6 +2023,43 @@
           "Affiliate Networks"
         ]
       },
+      "flow_split": {
+        "id": "wire-to-wallet",
+        "visual_side": "left",
+        "h2": "From Wire to Wallet",
+        "body": [
+          "AltPay sits between your clients' banks and your crypto treasury. You get the reach of SWIFT on the way in and the speed of crypto on the way out."
+        ],
+        "checklist": [
+          "Dedicated IBAN for your business",
+          "SWIFT-only inbound, globally",
+          "Settlement in stablecoins"
+        ],
+        "cta_secondary": "Talk to Sales",
+        "cta_href": "#apply",
+        "visual": {
+          "type": "timeline",
+          "label": "wire-to-wallet",
+          "steps": [
+            {
+              "title": "Onboard",
+              "text": "Basic KYB and we issue your dedicated IBAN."
+            },
+            {
+              "title": "Client deposits",
+              "text": "Your client sends a SWIFT wire, from $250 up to $100K."
+            },
+            {
+              "title": "Whitelisted processing",
+              "text": "Funds clear through pre-approved payment channels."
+            },
+            {
+              "title": "Crypto settlement",
+              "text": "We convert and settle to your wallet."
+            }
+          ]
+        }
+      },
       "problem": {
         "eyebrow": "Why move",
         "h2": "Most collection rails were not built for this book",

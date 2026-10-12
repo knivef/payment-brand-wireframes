@@ -187,24 +187,61 @@ def _dashboard(v):
                      head=head, rows=rows)
 
 
-def sec_featsplits(b):
-    """Two-column feature sections: a visual on one side, copy on the other."""
-    out = []
-    for f in b.get("feature_splits", []):
-        visual = _hero_visual({"visual": f["visual"]})
-        copy = """
+CHECK_SVG = ('<svg class="checklist__icon" width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">'
+             '<path d="M2.5 7.5 5.5 10.5 11.5 3.5" stroke="currentColor" stroke-width="1.6" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+
+def _featsplit(f):
+    """One two-column feature section: a visual on one side, copy on the other.
+    Copy may carry a checklist and a secondary button."""
+    visual = _hero_visual({"visual": f["visual"]})
+    checklist = ""
+    if f.get("checklist"):
+        checklist = '<ul class="checklist">' + "".join(
+            "<li>{0}<span>{1}</span></li>".format(CHECK_SVG, e(x)) for x in f["checklist"]) + "</ul>"
+    cta = ""
+    if f.get("cta_secondary"):
+        cta = ('<div class="cta-row"><a class="btn btn--ghost" href="{h}" data-cta="{id}-secondary">{l}</a></div>'
+               .format(h=e(f.get("cta_href", "#apply")), l=e(f["cta_secondary"]), id=e(f["id"])))
+    copy = """
     <div class="split__copy reveal">
       {eyebrow}<h2>{h2}</h2>
-      {body}
+      {body}{checklist}{cta}
     </div>""".format(eyebrow=('<p class="eyebrow">{0}</p>'.format(e(f["eyebrow"])) if f.get("eyebrow") else ""),
-                     h2=e(f["h2"]), body="".join('<p class="lede">{0}</p>'.format(e(p)) for p in f["body"]))
-        cols = visual + copy if f.get("visual_side", "left") == "left" else copy + visual
-        out.append("""
+                     h2=e(f["h2"]), body="".join('<p class="lede">{0}</p>'.format(e(p)) for p in f["body"]),
+                     checklist=checklist, cta=cta)
+    cols = visual + copy if f.get("visual_side", "left") == "left" else copy + visual
+    return """
 <section class="section featsplit" id="{id}">
   <div class="container split">{cols}
   </div>
-</section>""".format(id=e(f["id"]), cols=cols))
-    return "".join(out)
+</section>""".format(id=e(f["id"]), cols=cols)
+
+
+def sec_featsplits(b):
+    return "".join(_featsplit(f) for f in b.get("feature_splits", []))
+
+
+def sec_flowsplit(b):
+    """Same layout, placed after the use cases: the wire-to-wallet flow."""
+    return _featsplit(b["flow_split"]) if b.get("flow_split") else ""
+
+
+def _timeline(v):
+    """Numbered steps in a code-panel box: a gutter of mono step numbers,
+    like line numbers, then a title and a description on the next line."""
+    steps = "".join(
+        '<li class="codepanel__step"><span class="codepanel__num">{n:02d}</span>'
+        '<div class="codepanel__body"><span class="codepanel__title">{t}</span>'
+        '<span class="codepanel__desc">{d}</span></div></li>'.format(n=i + 1, t=e(st["title"]), d=e(st["text"]))
+        for i, st in enumerate(v["steps"]))
+    head = ('<div class="codepanel__head"><span>{0}</span></div>'.format(e(v["label"]))
+            if v.get("label") else "")
+    return """
+    <div class="split__visual reveal">
+      <div class="codepanel">{head}<ol class="codepanel__steps">{steps}</ol></div>
+    </div>""".format(head=head, steps=steps)
 
 
 def _hero_visual(h):
@@ -230,6 +267,8 @@ def _hero_visual(h):
         return _form_markup(v["form"], compact=True)
     if kind == "dashboard":
         return _dashboard(v)
+    if kind == "timeline":
+        return _timeline(v)
     if kind == "stack":
         # Product mockup built in HTML: cards stacked with a slight offset.
         # Values are typed in pages.json and are not live data.
@@ -852,6 +891,7 @@ def render(b, price_lists, nav_json="[]"):
         sec_featsplits(b),
         sec_featrow(b),
         sec_usecases(b),
+        sec_flowsplit(b),
         # A page that sells to named payee or buyer types can lead with them.
         (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),
         sec_block(b, "problem", "grid-3"),
