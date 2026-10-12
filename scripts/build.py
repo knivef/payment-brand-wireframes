@@ -808,7 +808,11 @@ def sec_final(b):
     if not s:
         return ""
     second = ""
-    if b.get("telegram_cta"):
+    if s.get("cta_secondary"):
+        # e.g. "Read the Docs" in place of the Telegram button
+        second = ('<a class="btn btn--ghost btn--lg" href="{h}" data-cta="final-secondary">{l}</a>'
+                  .format(h=e(s.get("cta_secondary_href", "#")), l=e(s["cta_secondary"])))
+    elif b.get("telegram_cta"):
         second = ('<a class="btn btn--ghost btn--lg" href="{h}" data-cta="final-telegram">{l}</a>'
                   .format(h=e(b.get("telegram_url", "#")), l=e(b["telegram_cta"])))
     return """
@@ -824,7 +828,46 @@ def sec_final(b):
 </section>""".format(h2=e(s["h2"]), body=e(s["body"]), cta=e(s["cta"]), second=second)
 
 
+SOCIAL = {
+    # Brand glyphs from Simple Icons (simpleicons.org), CC0.
+    "x": ('<path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83'
+          'L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/>'),
+    "linkedin": ('<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939'
+                 'v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286z'
+                 'M5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063'
+                 ' 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729'
+                 'v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>'),
+}
+
+
 def sec_footer(b):
+    f = b["footer"]
+    if f.get("layout") == "brand":
+        # Brand column with a compliance paragraph, link columns, then a
+        # bottom row with the copyright and social icons.
+        cols = "".join(
+            '<div><h4>{t}</h4><ul>{li}</ul></div>'.format(
+                t=e(c["title"]),
+                li="".join('<li><a href="{h}">{l}</a></li>'.format(
+                    h=e(x.get("href", "#")), l=e(x["label"])) for x in c["links"]))
+            for c in f["columns"])
+        brand = ('<div class="nav__brand nav__brand--wordmark">{0}</div>'.format(e(b["name"])) if b.get("wordmark")
+                 else '<div class="nav__brand"><span class="nav__mark">{0}</span> {1}</div>'.format(e(b["mark"]), e(b["name"])))
+        social = "".join(
+            '<a class="footer__social" href="{h}" aria-label="{l}"><svg width="16" height="16" viewBox="0 0 24 24" '
+            'fill="currentColor" aria-hidden="true">{p}</svg></a>'.format(h=e(x.get("href", "#")), l=e(x["label"]), p=SOCIAL[x["icon"]])
+            for x in f.get("social", []))
+        return """
+<footer class="footer footer--brand">
+  <div class="container">
+    <div class="footer__cols footer__cols--n{n}">
+      <div class="footer__brandcol">{brand}<p class="footer__legaltext">{legal}</p></div>
+      {cols}
+    </div>
+    <div class="footer__bottom"><span>&copy; <span id="yr"></span> {name}</span><span class="footer__socials">{social}</span></div>
+  </div>
+</footer>""".format(n=len(f["columns"]) + 1, brand=brand, legal=ph(f["legal"]), cols=cols,
+                    name=e(b["name"]), social=social)
     cols = "".join(
         '<div><h4>{t}</h4><ul>{li}</ul></div>'.format(
             t=e(c["title"]),

@@ -540,3 +540,5 @@
 [data-style="frame"] .footer .footer__cols a { color: var(--fg-muted); }
 [data-style="frame"] .nav .nav__links a:hover,
 [data-style="frame"] .footer .footer__cols a:hover { color: var(--fg); }
+[data-style="frame"] .footer a.footer__social { color: var(--fg-muted); }
+[data-style="frame"] .footer a.footer__social:hover { color: var(--fg); }

@@ -2327,9 +2327,11 @@
         ]
       },
       "final": {
-        "h2": "Written terms in one business day",
-        "body": "Send the book. Rate, reserve and settlement timing in writing, or a clear no.",
-        "cta": "Get terms"
+        "h2": "Bring Wire Deposits to Your Platform.",
+        "body": "Larger tickets, lower minimums, settled in crypto.",
+        "cta": "Talk to Sales →",
+        "cta_secondary": "Read the Docs",
+        "cta_secondary_href": "#"
       },
       "sticky": {
         "title": "Collection for forex",
@@ -2345,38 +2347,44 @@
         "success": "Sent."
       },
       "footer": {
+        "layout": "brand",
+        "legal": "[PLACEHOLDER: legal entity name, registration, and licensing disclosure.]",
         "columns": [
           {
             "title": "Product",
             "links": [
               {
-                "label": "Collection",
+                "label": "IBAN Collections",
                 "href": "#product"
               },
               {
-                "label": "Settlement",
-                "href": "#product"
+                "label": "Crypto Settlement",
+                "href": "#wire-to-wallet"
               },
               {
-                "label": "Terms",
-                "href": "#pricing"
+                "label": "How It Works",
+                "href": "#how"
+              },
+              {
+                "label": "Docs",
+                "href": "#"
               }
             ]
           },
           {
-            "title": "For",
+            "title": "Industries",
             "links": [
               {
                 "label": "Forex",
-                "href": "#"
+                "href": "#use-cases"
               },
               {
-                "label": "Prop firms",
-                "href": "#"
+                "label": "Crypto Businesses",
+                "href": "#use-cases"
               },
               {
                 "label": "Affiliates",
-                "href": "#"
+                "href": "#use-cases"
               }
             ]
           },
@@ -2384,14 +2392,13 @@
             "title": "Company",
             "links": [
               {
+                "label": "About",
+                "href": "#"
+              },
+              {
                 "label": "Contact",
                 "href": "#apply"
-              }
-            ]
-          },
-          {
-            "title": "Legal",
-            "links": [
+              },
               {
                 "label": "Terms",
                 "href": "#"
@@ -2401,13 +2408,24 @@
                 "href": "#"
               },
               {
-                "label": "AML policy",
+                "label": "AML Policy",
                 "href": "#"
               }
             ]
           }
         ],
-        "legal": "AltPay arranges payment collection and settlement in partnership with licensed payment institutions. AltPay does not hold a licence of its own. [CONFIRM: name the licensed partner entity and permitted activities before launch. This line needs legal review.] Services are subject to underwriting approval and are not available in all jurisdictions."
+        "social": [
+          {
+            "icon": "x",
+            "label": "AltPay on X",
+            "href": "#"
+          },
+          {
+            "icon": "linkedin",
+            "label": "AltPay on LinkedIn",
+            "href": "#"
+          }
+        ]
       },
       "wordmark": true,
       "nav_layout": "center",

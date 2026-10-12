@@ -894,3 +894,22 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
   outline: 1px dashed #FACC15; outline-offset: 2px; border-radius: 2px;
   padding: 0 3px; color: #FACC15;
 }
+
+/* ---------- 33. Brand footer --------------------------------------------
+   footer "layout": "brand": wordmark and compliance text, link columns,
+   then a bottom row with copyright and social icons. In the framed layout
+   the footer sits outside the frame: it covers the frame lines and keeps
+   only the nodes where its top line meets the frame, which close the box. */
+.footer__cols--n4 { grid-template-columns: 2fr 1fr 1fr 1fr; }
+.footer__brandcol .nav__brand { margin-bottom: 14px; }
+.footer__legaltext { color: var(--fg-muted); font-size: 0.82rem; line-height: 1.6; max-width: 36ch; margin: 0; }
+.footer__bottom {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  border-top: var(--border-w) solid var(--border); padding-top: 20px; color: var(--fg-muted); font-size: 0.82rem;
+}
+.footer__socials { display: flex; gap: 14px; }
+.footer__social { color: var(--fg-muted); display: inline-flex; }
+.footer__social:hover { color: var(--fg); }
+@media (max-width: 960px) { .footer__cols--n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer__brandcol { grid-column: 1 / -1; } }
+[data-framed] .footer { z-index: 51; background: var(--bg); }
+[data-framed] .final-cta .lede { margin-left: auto; margin-right: auto; }
