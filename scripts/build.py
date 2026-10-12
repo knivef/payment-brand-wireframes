@@ -763,14 +763,37 @@ def sec_form(b):
                      form=_form_markup(s["form"]))
 
 
+PLACEHOLDER = re.compile(r"\[PLACEHOLDER[^\]]*\]")
+
+
+def ph(text):
+    """Escape text, then wrap every [PLACEHOLDER: ...] in a span that the
+    stylesheet outlines, so open items are easy to spot before launch."""
+    return PLACEHOLDER.sub(lambda m: '<span class="ph">{0}</span>'.format(m.group(0)), e(text))
+
+
 def sec_faq(b):
     s = b.get("faq")
     if not s:
         return ""
     items = "".join(
         '<details{o}><summary>{q}</summary><div>{a}</div></details>'.format(
-            o=" open" if i == 0 else "", q=e(x["q"]), a=e(x["a"]))
+            o=" open" if i == 0 else "", q=e(x["q"]), a=ph(x["a"]))
         for i, x in enumerate(s["items"]))
+    if s.get("layout") == "split":
+        # Narrow left column with the heading and a way out, wide right
+        # column with the accordion.
+        aside = ""
+        if s.get("aside"):
+            aside = '<p class="faq__aside">{t} <a href="{h}" data-cta="faq-talk">{l}</a></p>'.format(
+                t=e(s["aside"]), h=e(s.get("aside_href", "#apply")), l=e(s.get("aside_link", "")))
+        return """
+<section class="section faqsplit" id="faq">
+  <div class="container split split--narrow">
+    <div class="reveal"><h2>{h2}</h2>{aside}</div>
+    <div class="faq faq--wide reveal">{items}</div>
+  </div>
+</section>""".format(h2=e(s.get("h2", "FAQ")), aside=aside, items=items)
     return """
 <section class="section section--tint" id="faq">
   <div class="container">

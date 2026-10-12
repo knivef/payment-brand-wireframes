@@ -346,7 +346,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .faq summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; position: relative; font-weight: 580; font-size: 1.01rem; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%); font-size: 1.3rem; font-weight: 400; color: var(--fg-muted); line-height: 1; }
-.faq details[open] summary::after { content: "\2013"; }
+.faq details[open] summary::after { content: "\2212"; }
 .faq details > div { padding: 0 40px 20px 0; color: var(--fg-muted); }
 
 /* ---------- 15. Forms ---------------------------------------------------- */
@@ -640,7 +640,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 [data-framed] .container.split--form::before, [data-framed] .container.split--form::after {
   content: ""; position: absolute; z-index: 50; pointer-events: none;
   width: var(--node); height: var(--node); background: var(--node-color);
-  left: calc(50% - var(--border-w) / 2 - var(--node) / 2);
+  left: calc(var(--split-at, 50%) - var(--border-w) / 2 - var(--node) / 2);
 }
 [data-framed] .container.split::before,
 [data-framed] .container.split--form::before { top: calc(-1 * var(--border-w) / 2 - var(--node) / 2); }
@@ -657,6 +657,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
    frame edges, so its nodes move there. */
 @media (max-width: 960px) {
   [data-framed] .container.split,
+  [data-framed] .container.split.split--narrow,
   [data-framed] .container.split--form { grid-template-columns: minmax(0, 1fr); }
   [data-framed] .container.split > :first-child,
   [data-framed] .container.split--form > :first-child { border-right: 0; border-bottom: var(--line); position: relative; }
@@ -874,3 +875,22 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 .checklist { list-style: none; margin: 8px 0 28px; padding: 0; display: grid; gap: 12px; }
 .checklist li { display: flex; align-items: flex-start; gap: 10px; color: var(--fg); }
 .checklist__icon { color: var(--accent); flex: none; margin-top: 4px; }
+
+/* ---------- 32. FAQ split, placeholders ---------------------------------
+   faq "layout": "split": narrow heading column, wide accordion column.
+   .ph outlines any [PLACEHOLDER: ...] so it cannot slip through to launch. */
+.split--narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); --split-at: 33.3333%; }
+@media (max-width: 960px) { .split--narrow { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 961px) {
+  [data-framed] .container.split.split--narrow { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+}
+.faqsplit .split > :first-child { justify-content: flex-start; }
+.faq--wide { max-width: none; margin: 0; width: 100%; }
+.faq--wide details:first-child { border-top: var(--border-w) solid var(--border); }
+.faq__aside { color: var(--fg-muted); margin: 0; max-width: 24ch; }
+[data-framed] .faqsplit .container.split > * { justify-content: flex-start; }
+[data-framed] .faqsplit .container.split > .faq { align-items: stretch; }
+.ph {
+  outline: 1px dashed #FACC15; outline-offset: 2px; border-radius: 2px;
+  padding: 0 3px; color: #FACC15;
+}

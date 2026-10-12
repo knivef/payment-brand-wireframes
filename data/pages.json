@@ -2294,32 +2294,35 @@
         }
       },
       "faq": {
-        "h2": "Questions",
-        "lede": "Before the first call.",
+        "layout": "split",
+        "h2": "FAQ",
+        "aside": "Can't find your answer?",
+        "aside_link": "Talk to our team.",
+        "aside_href": "#apply",
         "items": [
           {
-            "q": "What is the largest single deposit?",
-            "a": "$150,000. Minimum is $500, so the same rail serves both ends of the book."
+            "q": "Who is AltPay built for?",
+            "a": "Forex and CFD brokers, crypto businesses, and affiliate networks that need to collect client deposits by bank wire and settle in crypto."
           },
           {
-            "q": "What is the reserve?",
-            "a": "10 percent released over 180 days on the published high risk terms, stated on your term sheet before you sign."
+            "q": "What is the minimum and maximum deposit?",
+            "a": "Deposits start at $250 and a single deposit can go up to $100K."
           },
           {
-            "q": "What is the minimum volume?",
-            "a": "$100,000 a month processing. Below that, tell us anyway and we will say whether to come back later."
+            "q": "Which payment networks do you accept?",
+            "a": "SWIFT only. We accept international payments across all SWIFT networks worldwide."
           },
           {
-            "q": "Can I settle in crypto?",
-            "a": "Yes. Crypto settlement runs off the same account at the published rate."
+            "q": "What does whitelisted mean?",
+            "a": "Payments go through pre-approved, trusted channels, which means smoother and more reliable processing."
           },
           {
-            "q": "I was terminated by a previous provider. Does that end it?",
-            "a": "Usually not. Tell us who and why in the application. Hiding it is what ends it."
+            "q": "How do I receive settlement?",
+            "a": "Funds are settled to your wallet in crypto. [PLACEHOLDER: confirm supported assets and networks]"
           },
           {
-            "q": "Is AltPay licensed?",
-            "a": "[CONFIRM BEFORE LAUNCH. AltPay does not hold a licence of its own and this answer must describe the partner structure accurately. Do not publish until legal signs it off.]"
+            "q": "How long does onboarding take?",
+            "a": "[PLACEHOLDER: confirm onboarding timeline]"
           }
         ]
       },
