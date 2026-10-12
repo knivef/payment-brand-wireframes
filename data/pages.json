@@ -1829,6 +1829,92 @@
         ],
         "id": "industries"
       },
+      "feature_splits": [
+        {
+          "id": "range",
+          "visual_side": "left",
+          "h2": "One IBAN for every deposit size.",
+          "body": [
+            "From a first-time client funding $250 to a high-net-worth trader wiring $100K in a single transfer, AltPay handles the full range through one account. Your clients pay by bank wire, you get settled in crypto."
+          ],
+          "visual": {
+            "type": "dashboard",
+            "note": "Illustrative values only. Not live data and not a real client.",
+            "title": "Collections Overview",
+            "tag": "30 days",
+            "chart": {
+              "label": "Deposits, last 30 days",
+              "from": "30 days ago",
+              "to": "Today",
+              "series": [
+                42,
+                48,
+                45,
+                51,
+                58,
+                54,
+                61,
+                57,
+                63,
+                70,
+                66,
+                64,
+                72,
+                78,
+                74,
+                81,
+                77,
+                85,
+                83,
+                90,
+                86,
+                94,
+                91,
+                98,
+                95,
+                103,
+                99,
+                108,
+                112,
+                118
+              ]
+            },
+            "table": {
+              "columns": [
+                "Client ID",
+                "Amount",
+                "Status"
+              ],
+              "rows": [
+                {
+                  "client": "CL-20418",
+                  "amount": "$250.00",
+                  "status": "Settled",
+                  "state": "done"
+                },
+                {
+                  "client": "CL-20417",
+                  "amount": "$4,800.00",
+                  "status": "Settled",
+                  "state": "done"
+                },
+                {
+                  "client": "CL-20415",
+                  "amount": "$27,500.00",
+                  "status": "Received",
+                  "state": "open"
+                },
+                {
+                  "client": "CL-20412",
+                  "amount": "$100,000.00",
+                  "status": "Settled",
+                  "state": "done"
+                }
+              ]
+            }
+          }
+        }
+      ],
       "problem": {
         "eyebrow": "Why move",
         "h2": "Most collection rails were not built for this book",

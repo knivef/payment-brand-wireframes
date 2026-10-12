@@ -137,6 +137,76 @@ def _reversal(items):
         "<span>{0}</span>".format(e(i)) for i in items) + "</div>"
 
 
+def _sparkline(series, w=320, h=120, pad=6):
+    """Inline SVG line chart from a list of numbers. No fill, no gradient."""
+    lo, hi = min(series), max(series)
+    span = (hi - lo) or 1
+    step = (w - 2 * pad) / (len(series) - 1)
+    pts = " ".join("{0:.1f},{1:.1f}".format(pad + i * step, h - pad - (y - lo) / span * (h - 2 * pad))
+                   for i, y in enumerate(series))
+    grid = "".join('<line x1="0" x2="{w}" y1="{y:.1f}" y2="{y:.1f}" class="chart__grid"/>'.format(
+        w=w, y=pad + k * (h - 2 * pad) / 3) for k in range(4))
+    return ('<svg class="chart" viewBox="0 0 {w} {h}" preserveAspectRatio="none" role="img" '
+            'aria-label="Line chart of daily deposits over the last 30 days">{grid}'
+            '<polyline points="{pts}" class="chart__line" vector-effect="non-scaling-stroke"/></svg>'
+            ).format(w=w, h=h, grid=grid, pts=pts)
+
+
+def _dashboard(v):
+    """Dashboard mockup panel: title, a line chart, a small table.
+    Values are typed in pages.json and are not live data."""
+    check = ('<svg class="stack__check" width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">'
+             '<path d="M2.5 7.5 5.5 10.5 11.5 3.5" stroke="currentColor" stroke-width="1.6" '
+             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    def status(r):
+        mark = check if r.get("state") == "done" else '<i class="panel__dot" aria-hidden="true"></i>'
+        return '<span class="panel__status panel__status--{0}">{1}{2}</span>'.format(
+            e(r.get("state", "open")), mark, e(r["status"]))
+    head = "".join("<th scope=\"col\">{0}</th>".format(e(c)) for c in v["table"]["columns"])
+    rows = "".join(
+        '<tr><td class="mono">{0}</td><td class="mono">{1}</td><td>{2}</td></tr>'.format(
+            e(r["client"]), e(r["amount"]), status(r)) for r in v["table"]["rows"])
+    note = ("\n    <!-- {0} -->".format(e(v["note"])) if v.get("note") else "")
+    return """{note}
+    <div class="split__visual reveal">
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">{title}</span><span class="panel__tag">{tag}</span></div>
+        <div class="panel__chart">
+          <div class="panel__caption">{caption}</div>
+          {chart}
+          <div class="panel__axis"><span>{x0}</span><span>{x1}</span></div>
+        </div>
+        <table class="panel__table">
+          <thead><tr>{head}</tr></thead>
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
+    </div>""".format(note=note, title=e(v["title"]), tag=e(v.get("tag", "")),
+                     caption=e(v["chart"]["label"]), chart=_sparkline(v["chart"]["series"]),
+                     x0=e(v["chart"].get("from", "")), x1=e(v["chart"].get("to", "")),
+                     head=head, rows=rows)
+
+
+def sec_featsplits(b):
+    """Two-column feature sections: a visual on one side, copy on the other."""
+    out = []
+    for f in b.get("feature_splits", []):
+        visual = _hero_visual({"visual": f["visual"]})
+        copy = """
+    <div class="split__copy reveal">
+      {eyebrow}<h2>{h2}</h2>
+      {body}
+    </div>""".format(eyebrow=('<p class="eyebrow">{0}</p>'.format(e(f["eyebrow"])) if f.get("eyebrow") else ""),
+                     h2=e(f["h2"]), body="".join('<p class="lede">{0}</p>'.format(e(p)) for p in f["body"]))
+        cols = visual + copy if f.get("visual_side", "left") == "left" else copy + visual
+        out.append("""
+<section class="section featsplit" id="{id}">
+  <div class="container split">{cols}
+  </div>
+</section>""".format(id=e(f["id"]), cols=cols))
+    return "".join(out)
+
+
 def _hero_visual(h):
     kind = h.get("visual", {}).get("type")
     v = h.get("visual", {})
@@ -158,6 +228,8 @@ def _hero_visual(h):
         return '<div class="stats reveal">{0}</div>'.format(cells)
     if kind == "form":
         return _form_markup(v["form"], compact=True)
+    if kind == "dashboard":
+        return _dashboard(v)
     if kind == "stack":
         # Product mockup built in HTML: cards stacked with a slight offset.
         # Values are typed in pages.json and are not live data.
@@ -702,6 +774,7 @@ def render(b, price_lists, nav_json="[]"):
         sec_hero(b),
         sec_statstrip(b),
         sec_trustbar(b),
+        sec_featsplits(b),
         # A page that sells to named payee or buyer types can lead with them.
         (sec_block(b, "segments", "grid-2", tint=True) if b.get("segments_first") else ""),
         sec_block(b, "problem", "grid-3"),
