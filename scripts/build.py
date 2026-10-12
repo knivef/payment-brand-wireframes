@@ -100,24 +100,34 @@ def sec_announce(b):
 
 
 def sec_nav(b):
-    links = "".join('<a href="#{0}">{1}</a>'.format(e(l["id"]), e(l["label"]))
-                    for l in b["nav"])
+    # A nav item points at a section by "id", or anywhere by "href".
+    links = "".join('<a href="{0}">{1}</a>'.format(
+        e(l["href"]) if l.get("href") else "#" + e(l["id"]), e(l["label"])) for l in b["nav"])
     second = ""
-    if b.get("telegram_cta"):
+    if b.get("nav_secondary"):
+        # e.g. a "Log In" button in place of the Telegram button
+        ns = b["nav_secondary"]
+        second = ('<a class="btn btn--ghost" href="{href}" data-cta="nav-secondary">{label}</a>'
+                  .format(href=e(ns.get("href", "#")), label=e(ns["label"])))
+    elif b.get("telegram_cta"):
         second = ('<a class="btn btn--tg" href="{href}" data-cta="nav-telegram">{label}</a>'
                   .format(href=e(b.get("telegram_url", "#apply")), label=e(b["telegram_cta"])))
     return """
 <nav class="nav" data-nav>
-  <div class="container nav__inner">
-    <a class="nav__brand" href="./"><span class="nav__mark">{mark}</span> {name}</a>
+  <div class="container nav__inner{center}">
+    {brand}
     <div class="nav__links">{links}</div>
     <div class="nav__actions">
       {second}
       <a class="btn btn--primary" href="#apply" data-cta="nav-primary">{cta}</a>
     </div>
   </div>
-</nav>""".format(mark=e(b["mark"]), name=e(b["name"]), links=links, second=second,
-                 cta=e(b["cta_primary"]))
+</nav>""".format(links=links, second=second, cta=e(b["cta_primary"]),
+                 center=" nav__inner--center" if b.get("nav_layout") == "center" else "",
+                 brand=('<a class="nav__brand nav__brand--wordmark" href="./">{0}</a>'.format(e(b["name"]))
+                        if b.get("wordmark") else
+                        '<a class="nav__brand" href="./"><span class="nav__mark">{0}</span> {1}</a>'
+                        .format(e(b["mark"]), e(b["name"]))))
 
 
 def _reversal(items):
@@ -148,6 +158,28 @@ def _hero_visual(h):
         return '<div class="stats reveal">{0}</div>'.format(cells)
     if kind == "form":
         return _form_markup(v["form"], compact=True)
+    if kind == "stack":
+        # Product mockup built in HTML: cards stacked with a slight offset.
+        # Values are typed in pages.json and are not live data.
+        def row(r):
+            mark = ""
+            if r.get("status") == "dot":
+                mark = '<i class="stack__dot" aria-hidden="true"></i>'
+            elif r.get("status") == "check":
+                mark = ('<svg class="stack__check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">'
+                        '<path d="M2.5 7.5 5.5 10.5 11.5 3.5" stroke="currentColor" stroke-width="1.6" '
+                        'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+            return ('<div class="stack__row"><span class="stack__label">{l}</span>'
+                    '<span class="stack__value{mono}">{m}{v}</span></div>').format(
+                        l=e(r["label"]), v=e(r["value"]), m=mark,
+                        mono=" mono" if r.get("mono") else "")
+        cards = "".join(
+            '<div class="stack__card"><div class="stack__title">{t}</div>{rows}</div>'.format(
+                t=e(c["title"]), rows="".join(row(r) for r in c["rows"]))
+            for c in v["cards"])
+        note = ("\n    <!-- {0} -->".format(e(v["note"])) if v.get("note") else "")
+        return """{note}
+    <div class="hero__stack reveal"><div class="stack">{cards}</div></div>""".format(note=note, cards=cards)
     return ""
 
 
@@ -156,7 +188,14 @@ def sec_hero(b):
     layout = h.get("layout", "split")
     ctas = ('<a class="btn btn--primary btn--lg" href="#apply" data-cta="hero-primary">{0}</a>'
             .format(e(h["cta"])))
-    if h.get("cta_secondary"):
+    if h.get("cta_secondary") and h.get("cta_secondary_style") == "link":
+        ctas += ('<a class="link-cta" href="#{anchor}" data-cta="hero-secondary">'
+                 '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">'
+                 '<circle cx="9" cy="9" r="8" stroke="currentColor"/>'
+                 '<path d="M7.5 5.5 11 9l-3.5 3.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>'
+                 '</svg>{0}</a>'
+                 .format(e(h["cta_secondary"]), anchor=e(h.get("cta_secondary_anchor", "how"))))
+    elif h.get("cta_secondary"):
         ctas += ('<a class="btn btn--ghost btn--lg" href="#{anchor}" data-cta="hero-secondary">{0}</a>'
                  .format(e(h["cta_secondary"]), anchor=e(h.get("cta_secondary_anchor", "how"))))
 
@@ -189,11 +228,12 @@ def sec_trustbar(b):
         return ""
     chips = "".join('<span class="chip">{0}</span>'.format(e(c)) for c in t["chips"])
     return """
-<section class="trustbar">
+<section class="trustbar"{id}>
   <div class="container trustbar__inner">
     <span class="trustbar__label">{label}</span>{chips}
   </div>
-</section>""".format(label=e(t["label"]), chips=chips)
+</section>""".format(label=e(t["label"]), chips=chips,
+                     id=' id="{0}"'.format(e(t["id"])) if t.get("id") else "")
 
 
 def _cards(items, numbered=False, accent_index=None):

@@ -1711,7 +1711,7 @@
       "accent_fg": "#0A0A0A",
       "accent_soft": "rgba(34,197,94,0.12)",
       "tagline": "Client collection for forex, settled in crypto.",
-      "cta_primary": "Get terms",
+      "cta_primary": "Talk to Sales",
       "telegram_cta": "Telegram",
       "telegram_url": "#apply",
       "seo": {
@@ -1719,10 +1719,26 @@
         "description": "Collect client deposits and settle in crypto or fiat. Built for forex brokers and affiliate networks. Tickets from $500 to $150,000."
       },
       "nav": [
-        {"id": "problem", "label": "Problem"},
-        {"id": "product", "label": "Product"},
-        {"id": "pricing", "label": "Terms"},
-        {"id": "faq", "label": "FAQ"}
+        {
+          "id": "product",
+          "label": "Solutions"
+        },
+        {
+          "id": "industries",
+          "label": "Industries"
+        },
+        {
+          "id": "how",
+          "label": "How It Works"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ"
+        },
+        {
+          "href": "#",
+          "label": "Docs"
+        }
       ],
       "announce": {
         "text": "Onboarding window for Q4 forex books closes soon.",
@@ -1730,31 +1746,88 @@
         "countdown_hours": 72
       },
       "hero": {
-        "eyebrow": "Collection and settlement for forex",
-        "h1": "Take client money. Settle how you want.",
-        "sub": "Client deposits collected through whitelisted channels, settled to you in crypto or to a bank account. Tickets from $500 to $150,000, so one rail covers the retail book and the large tickets.",
-        "cta": "Get terms",
-        "cta_secondary": "See the rate",
-        "cta_secondary_anchor": "pricing",
-        "reversal": [
-          "Terms in writing before signature",
-          "$150,000 single ticket ceiling",
-          "Reserve stated up front"
-        ],
-        "layout": "center"
+        "eyebrow": "IBAN COLLECTIONS FOR FOREX",
+        "h1": "Collect Client Deposits by Wire. Settle in Crypto.",
+        "sub": "AltPay gives Forex brokers, crypto businesses, and affiliate networks a dedicated IBAN to collect client deposits over SWIFT, then settles the funds to you in crypto.",
+        "cta": "Talk to Sales →",
+        "cta_secondary": "How It Works",
+        "cta_secondary_anchor": "how",
+        "cta_secondary_style": "link",
+        "layout": "split",
+        "visual": {
+          "type": "stack",
+          "note": "Illustrative values only. Not live data, not a quote, and not derived from the AltPay rate card.",
+          "cards": [
+            {
+              "title": "Incoming Wire",
+              "rows": [
+                {
+                  "label": "IBAN",
+                  "value": "DE89 •••• 3000",
+                  "mono": true
+                },
+                {
+                  "label": "Amount",
+                  "value": "$48,250.00"
+                },
+                {
+                  "label": "Network",
+                  "value": "SWIFT"
+                },
+                {
+                  "label": "Status",
+                  "value": "Whitelisted",
+                  "status": "dot"
+                }
+              ]
+            },
+            {
+              "title": "Settlement",
+              "rows": [
+                {
+                  "label": "Conversion",
+                  "value": "$48,250.00 → 48,105.25 USDT"
+                },
+                {
+                  "label": "Status",
+                  "value": "Settled",
+                  "status": "check"
+                }
+              ]
+            }
+          ]
+        }
       },
       "trustbar": {
         "label": "For",
-        "chips": ["Forex brokers", "Prop firms", "Affiliate networks", "Crypto businesses"]
+        "chips": [
+          "Forex brokers",
+          "Prop firms",
+          "Affiliate networks",
+          "Crypto businesses"
+        ],
+        "id": "industries"
       },
       "problem": {
         "eyebrow": "Why move",
         "h2": "Most collection rails were not built for this book",
         "lede": "Your average ticket and your largest ticket are an order of magnitude apart, your clients are spread across jurisdictions, and your provider priced the relationship for neither.",
         "cards": [
-          {"icon": "1", "title": "Ticket ceiling", "body": "A rail that caps at a few thousand quietly loses your best funding clients. They do not complain, they just stop."},
-          {"icon": "2", "title": "Settlement that does not match treasury", "body": "You hold in crypto, they settle in fiat, or the reverse. Every cycle becomes a conversion exercise."},
-          {"icon": "3", "title": "Terms that move after integration", "body": "Rate up, reserve up, settlement slower. The integration cost is what keeps you there."}
+          {
+            "icon": "1",
+            "title": "Ticket ceiling",
+            "body": "A rail that caps at a few thousand quietly loses your best funding clients. They do not complain, they just stop."
+          },
+          {
+            "icon": "2",
+            "title": "Settlement that does not match treasury",
+            "body": "You hold in crypto, they settle in fiat, or the reverse. Every cycle becomes a conversion exercise."
+          },
+          {
+            "icon": "3",
+            "title": "Terms that move after integration",
+            "body": "Rate up, reserve up, settlement slower. The integration cost is what keeps you there."
+          }
         ]
       },
       "product": {
@@ -1789,9 +1862,18 @@
         "eyebrow": "Onboarding",
         "h2": "Three steps",
         "cards": [
-          {"title": "Send the book", "body": "Jurisdiction, licence position, average and peak ticket, monthly volume, and any termination history. Disclose it, it always comes out."},
-          {"title": "Written terms", "body": "Rate, reserve percentage and release period, and settlement timing, in writing before you sign anything."},
-          {"title": "Integrate", "body": "Hosted or API. Live inside a week on a standard book."}
+          {
+            "title": "Send the book",
+            "body": "Jurisdiction, licence position, average and peak ticket, monthly volume, and any termination history. Disclose it, it always comes out."
+          },
+          {
+            "title": "Written terms",
+            "body": "Rate, reserve percentage and release period, and settlement timing, in writing before you sign anything."
+          },
+          {
+            "title": "Integrate",
+            "body": "Hosted or API. Live inside a week on a standard book."
+          }
         ]
       },
       "pricing": {
@@ -1800,17 +1882,52 @@
         "lede": "High risk terms, published. If your book qualifies for better, we will tell you at underwriting rather than let you find out from a competitor.",
         "price_list": "IBAN High Risk",
         "show": [
-          ["Client deposit, C2B", "dep_c2b", true],
-          ["Deposit, B2B", "dep_b2b", false],
-          ["Withdrawal, B2C", "wd_b2c", false],
-          ["Withdrawal, B2B", "wd_b2b", false],
-          ["Settlement via SWIFT", "settle_swift", false],
-          ["Settlement via SEPA", "settle_sepa", false],
-          ["Crypto deposit", "crypto_dep", false],
-          ["Crypto settlement", "crypto_wd", false]
+          [
+            "Client deposit, C2B",
+            "dep_c2b",
+            true
+          ],
+          [
+            "Deposit, B2B",
+            "dep_b2b",
+            false
+          ],
+          [
+            "Withdrawal, B2C",
+            "wd_b2c",
+            false
+          ],
+          [
+            "Withdrawal, B2B",
+            "wd_b2b",
+            false
+          ],
+          [
+            "Settlement via SWIFT",
+            "settle_swift",
+            false
+          ],
+          [
+            "Settlement via SEPA",
+            "settle_sepa",
+            false
+          ],
+          [
+            "Crypto deposit",
+            "crypto_dep",
+            false
+          ],
+          [
+            "Crypto settlement",
+            "crypto_wd",
+            false
+          ]
         ],
         "extra_rows": [
-          {"label": "Minimum monthly processing", "value": "$100,000"}
+          {
+            "label": "Minimum monthly processing",
+            "value": "$100,000"
+          }
         ],
         "not_charged": [
           "No repricing without written notice",
@@ -1822,9 +1939,18 @@
         "eyebrow": "Structure",
         "h2": "How this is set up",
         "cards": [
-          {"title": "Who settles", "body": "AltPay arranges collection and settlement through licensed partner institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch.]"},
-          {"title": "What we run", "body": "KYB on the entity, sanctions and PEP screening on beneficial owners, wallet screening on crypto legs, and monitoring sized to the book."},
-          {"title": "What we do not claim", "body": "AltPay does not hold a licence of its own. Nothing on this page should be read as a regulatory status. [This section needs legal review before launch.]"}
+          {
+            "title": "Who settles",
+            "body": "AltPay arranges collection and settlement through licensed partner institutions. [CONFIRM: name the licensed partner entity and the regulated activity before launch.]"
+          },
+          {
+            "title": "What we run",
+            "body": "KYB on the entity, sanctions and PEP screening on beneficial owners, wallet screening on crypto legs, and monitoring sized to the book."
+          },
+          {
+            "title": "What we do not claim",
+            "body": "AltPay does not hold a licence of its own. Nothing on this page should be read as a regulatory status. [This section needs legal review before launch.]"
+          }
         ]
       },
       "apply": {
@@ -1846,18 +1972,71 @@
           "note": "Underwriting only.",
           "steps": [
             [
-              {"type": "text", "name": "business", "label": "Entity name", "required": true, "half": true},
-              {"type": "url", "name": "website", "label": "Website", "placeholder": "https://", "half": true},
-              {"type": "select", "name": "industry", "label": "Business", "required": true,
-               "options": ["Forex broker", "Prop firm", "Affiliate network", "Crypto business", "Other"]},
-              {"type": "select", "name": "volume", "label": "Monthly processing", "required": true,
-               "options": ["Under $100,000", "$100,000 to $500,000", "$500,000 to $2m", "Over $2m"]}
+              {
+                "type": "text",
+                "name": "business",
+                "label": "Entity name",
+                "required": true,
+                "half": true
+              },
+              {
+                "type": "url",
+                "name": "website",
+                "label": "Website",
+                "placeholder": "https://",
+                "half": true
+              },
+              {
+                "type": "select",
+                "name": "industry",
+                "label": "Business",
+                "required": true,
+                "options": [
+                  "Forex broker",
+                  "Prop firm",
+                  "Affiliate network",
+                  "Crypto business",
+                  "Other"
+                ]
+              },
+              {
+                "type": "select",
+                "name": "volume",
+                "label": "Monthly processing",
+                "required": true,
+                "options": [
+                  "Under $100,000",
+                  "$100,000 to $500,000",
+                  "$500,000 to $2m",
+                  "Over $2m"
+                ]
+              }
             ],
             [
-              {"type": "select", "name": "settle", "label": "Settlement preference", "required": true,
-               "options": ["Crypto", "Fiat to bank", "Both"]},
-              {"type": "email", "name": "email", "label": "Work email", "placeholder": "you@company.com", "required": true},
-              {"type": "textarea", "name": "notes", "label": "Current setup and termination history", "placeholder": "Who you process with, what broke, who terminated you and why"}
+              {
+                "type": "select",
+                "name": "settle",
+                "label": "Settlement preference",
+                "required": true,
+                "options": [
+                  "Crypto",
+                  "Fiat to bank",
+                  "Both"
+                ]
+              },
+              {
+                "type": "email",
+                "name": "email",
+                "label": "Work email",
+                "placeholder": "you@company.com",
+                "required": true
+              },
+              {
+                "type": "textarea",
+                "name": "notes",
+                "label": "Current setup and termination history",
+                "placeholder": "Who you process with, what broke, who terminated you and why"
+              }
             ]
           ]
         }
@@ -1866,12 +2045,30 @@
         "h2": "Questions",
         "lede": "Before the first call.",
         "items": [
-          {"q": "What is the largest single deposit?", "a": "$150,000. Minimum is $500, so the same rail serves both ends of the book."},
-          {"q": "What is the reserve?", "a": "10 percent released over 180 days on the published high risk terms, stated on your term sheet before you sign."},
-          {"q": "What is the minimum volume?", "a": "$100,000 a month processing. Below that, tell us anyway and we will say whether to come back later."},
-          {"q": "Can I settle in crypto?", "a": "Yes. Crypto settlement runs off the same account at the published rate."},
-          {"q": "I was terminated by a previous provider. Does that end it?", "a": "Usually not. Tell us who and why in the application. Hiding it is what ends it."},
-          {"q": "Is AltPay licensed?", "a": "[CONFIRM BEFORE LAUNCH. AltPay does not hold a licence of its own and this answer must describe the partner structure accurately. Do not publish until legal signs it off.]"}
+          {
+            "q": "What is the largest single deposit?",
+            "a": "$150,000. Minimum is $500, so the same rail serves both ends of the book."
+          },
+          {
+            "q": "What is the reserve?",
+            "a": "10 percent released over 180 days on the published high risk terms, stated on your term sheet before you sign."
+          },
+          {
+            "q": "What is the minimum volume?",
+            "a": "$100,000 a month processing. Below that, tell us anyway and we will say whether to come back later."
+          },
+          {
+            "q": "Can I settle in crypto?",
+            "a": "Yes. Crypto settlement runs off the same account at the published rate."
+          },
+          {
+            "q": "I was terminated by a previous provider. Does that end it?",
+            "a": "Usually not. Tell us who and why in the application. Hiding it is what ends it."
+          },
+          {
+            "q": "Is AltPay licensed?",
+            "a": "[CONFIRM BEFORE LAUNCH. AltPay does not hold a licence of its own and this answer must describe the partner structure accurately. Do not publish until legal signs it off.]"
+          }
         ]
       },
       "final": {
@@ -1879,7 +2076,11 @@
         "body": "Send the book. Rate, reserve and settlement timing in writing, or a clear no.",
         "cta": "Get terms"
       },
-      "sticky": {"title": "Collection for forex", "sub": "Terms in writing, one day", "cta": "Get terms"},
+      "sticky": {
+        "title": "Collection for forex",
+        "sub": "Terms in writing, one day",
+        "cta": "Get terms"
+      },
       "exit_modal": {
         "eyebrow": "Before you go",
         "h": "Take the rate card",
@@ -1890,12 +2091,74 @@
       },
       "footer": {
         "columns": [
-          {"title": "Product", "links": [{"label": "Collection", "href": "#product"}, {"label": "Settlement", "href": "#product"}, {"label": "Terms", "href": "#pricing"}]},
-          {"title": "For", "links": [{"label": "Forex", "href": "#"}, {"label": "Prop firms", "href": "#"}, {"label": "Affiliates", "href": "#"}]},
-          {"title": "Company", "links": [{"label": "Contact", "href": "#apply"}]},
-          {"title": "Legal", "links": [{"label": "Terms", "href": "#"}, {"label": "Privacy", "href": "#"}, {"label": "AML policy", "href": "#"}]}
+          {
+            "title": "Product",
+            "links": [
+              {
+                "label": "Collection",
+                "href": "#product"
+              },
+              {
+                "label": "Settlement",
+                "href": "#product"
+              },
+              {
+                "label": "Terms",
+                "href": "#pricing"
+              }
+            ]
+          },
+          {
+            "title": "For",
+            "links": [
+              {
+                "label": "Forex",
+                "href": "#"
+              },
+              {
+                "label": "Prop firms",
+                "href": "#"
+              },
+              {
+                "label": "Affiliates",
+                "href": "#"
+              }
+            ]
+          },
+          {
+            "title": "Company",
+            "links": [
+              {
+                "label": "Contact",
+                "href": "#apply"
+              }
+            ]
+          },
+          {
+            "title": "Legal",
+            "links": [
+              {
+                "label": "Terms",
+                "href": "#"
+              },
+              {
+                "label": "Privacy",
+                "href": "#"
+              },
+              {
+                "label": "AML policy",
+                "href": "#"
+              }
+            ]
+          }
         ],
         "legal": "AltPay arranges payment collection and settlement in partnership with licensed payment institutions. AltPay does not hold a licence of its own. [CONFIRM: name the licensed partner entity and permitted activities before launch. This line needs legal review.] Services are subject to underwriting approval and are not available in all jurisdictions."
+      },
+      "wordmark": true,
+      "nav_layout": "center",
+      "nav_secondary": {
+        "label": "Log In",
+        "href": "#"
       }
     },
     {

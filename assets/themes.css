@@ -533,3 +533,10 @@
 [data-style="frame"] .seg button { border-bottom: var(--border-w) solid transparent; }
 [data-style="frame"] .seg button[aria-pressed="true"] { background: transparent; color: var(--accent); border-bottom-color: var(--accent); }
 [data-style="frame"] .announce { background: var(--surface); color: var(--fg-muted); border-bottom: var(--border-w) solid var(--border); }
+[data-style="frame"] { --mock-radius: 14px; }
+[data-style="frame"] .hero .eyebrow { color: var(--accent); font-variant-caps: all-small-caps; letter-spacing: 0.1em; font-size: 0.9rem; }
+[data-style="frame"] .link-cta:hover { opacity: 0.8; }
+[data-style="frame"] .nav .nav__links a,
+[data-style="frame"] .footer .footer__cols a { color: var(--fg-muted); }
+[data-style="frame"] .nav .nav__links a:hover,
+[data-style="frame"] .footer .footer__cols a:hover { color: var(--fg); }
