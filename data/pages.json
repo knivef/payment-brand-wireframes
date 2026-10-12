@@ -1707,6 +1707,7 @@
       "domain": "altpaytech.com",
       "style": "frame",
       "framed": true,
+      "flag_placeholders": true,
       "accent": "#22C55E",
       "accent_fg": "#0A0A0A",
       "accent_soft": "rgba(34,197,94,0.12)",

@@ -946,6 +946,31 @@ def faq_schema(b):
     return '<script type="application/ld+json">{0}</script>'.format(json.dumps(data))
 
 
+OPEN_ITEM = re.compile(r"\[(?:PLACEHOLDER|CONFIRM|This section)[^\]<]*\]")
+
+
+def flag_open_items(html):
+    """Outline every bracketed open item in visible text, once. Leaves tags,
+    attributes and script contents alone, and skips text already wrapped."""
+    parts = re.split(r"(<[^>]+>)", html)
+    out, in_script = [], False
+    for i, part in enumerate(parts):
+        if part.startswith("<"):
+            low = part.lower()
+            if low.startswith("<script"):
+                in_script = True
+            elif low.startswith("</script"):
+                in_script = False
+            out.append(part)
+            continue
+        prev = parts[i - 1] if i else ""
+        if in_script or prev == '<span class="ph">':
+            out.append(part)
+            continue
+        out.append(OPEN_ITEM.sub(lambda m: '<span class="ph">{0}</span>'.format(m.group(0)), part))
+    return "".join(out)
+
+
 def render(b, price_lists, nav_json="[]"):
     body = "".join([
         sec_announce(b),
@@ -974,6 +999,8 @@ def render(b, price_lists, nav_json="[]"):
         sec_sticky(b),
         sec_exit(b),
     ])
+    if b.get("flag_placeholders"):
+        body = flag_open_items(body)
     return """<!doctype html>
 <html lang="en" data-style="{style}"{framed}>
 <head>
