@@ -712,9 +712,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
    lines. Two by two on narrow screens with every line kept.              */
 .statstrip { border-top: var(--border-w) solid var(--border); }
 .statstrip__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.statstrip__cell { padding: 40px 32px; border-left: var(--border-w) solid var(--border); position: relative; }
+.statstrip__cell { padding: 40px 32px; border-left: var(--border-w) solid var(--border); position: relative; container-type: inline-size; }
 .statstrip__cell:first-child { border-left: 0; }
-.statstrip__num { font-family: var(--font-display); font-size: 40px; line-height: 1.1; font-weight: var(--h-weight); letter-spacing: -0.02em; color: var(--fg); }
+.statstrip__num { font-family: var(--font-display); font-size: 40px; font-size: min(40px, 22cqi); white-space: nowrap; line-height: 1.1; font-weight: var(--h-weight); letter-spacing: -0.02em; color: var(--fg); }
 .statstrip__label { font-size: 14px; line-height: 1.45; color: var(--fg-muted); margin-top: 8px; }
 @media (max-width: 760px) {
   .statstrip__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -913,3 +913,16 @@ input[type="range"] { width: 100%; accent-color: var(--accent); }
 @media (max-width: 960px) { .footer__cols--n4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .footer__brandcol { grid-column: 1 / -1; } }
 [data-framed] .footer { z-index: 51; background: var(--bg); }
 [data-framed] .final-cta .lede { margin-left: auto; margin-right: auto; }
+
+/* ---------- 34. Requirements list ---------------------------------------
+   how "details": a titled list of label and text rows under the steps.  */
+.reqlist { margin-top: 48px; }
+.reqlist__title { font-size: 1.05rem; margin: 0 0 12px; }
+.reqlist dl { margin: 0; border-top: var(--border-w) solid var(--border); }
+.reqlist__row {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 24px;
+  padding: 14px 0; border-bottom: var(--border-w) solid var(--border);
+}
+.reqlist dt { color: var(--fg); font-weight: 500; }
+.reqlist dd { margin: 0; color: var(--fg-muted); }
+@media (max-width: 620px) { .reqlist__row { grid-template-columns: minmax(0, 1fr); gap: 4px; } }

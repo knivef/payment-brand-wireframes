@@ -505,14 +505,25 @@ def sec_how(b):
     steps = "".join("""
       <div><div class="step__num">{n}</div><h3>{t}</h3><p class="muted">{b}</p></div>
     """.format(n=i + 1, t=e(c["title"]), b=e(c["body"])) for i, c in enumerate(s["cards"]))
+    details = ""
+    if s.get("details"):
+        # A labelled list under the steps, e.g. what each verification needs.
+        d = s["details"]
+        details = """
+    <div class="reqlist reveal">
+      <h3 class="reqlist__title">{t}</h3>
+      <dl>{rows}</dl>
+    </div>""".format(t=e(d["title"]), rows="".join(
+            '<div class="reqlist__row"><dt>{0}</dt><dd>{1}</dd></div>'.format(e(r["label"]), ph(r["text"]))
+            for r in d["items"]))
     return """
 <section class="section" id="how">
   <div class="container">
     <div class="section-head reveal"><p class="eyebrow">{eyebrow}</p><h2>{h2}</h2></div>
-    <div class="steps{stack} reveal">{steps}</div>
+    <div class="steps{stack} reveal">{steps}</div>{details}
   </div>
 </section>""".format(eyebrow=e(s.get("eyebrow", "Process")), h2=e(s["h2"]), steps=steps,
-                     stack=" steps--stack" if s.get("layout") == "stack" else "")
+                     stack=" steps--stack" if s.get("layout") == "stack" else "", details=details)
 
 
 def sec_pricing(b, price_lists):

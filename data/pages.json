@@ -1803,7 +1803,7 @@
         "logo_slot": true,
         "items": [
           {
-            "value": "$100K",
+            "value": "$100,000",
             "label": "Max single deposit"
           },
           {
@@ -1836,7 +1836,7 @@
           "visual_side": "left",
           "h2": "One IBAN for every deposit size.",
           "body": [
-            "From a first-time client funding $250 to a high-net-worth trader wiring $100K in a single transfer, AltPay handles the full range through one account. Your clients pay by bank wire, you get settled in crypto."
+            "From a first-time client funding $250 to a high-net-worth trader wiring $100,000 in a single transfer, AltPay handles the full range through one account. Your clients pay by bank wire, you get settled in crypto."
           ],
           "visual": {
             "type": "dashboard",
@@ -1922,7 +1922,7 @@
           {
             "icon": "trending-up",
             "title": "Scale",
-            "text": "Accept single deposits of up to $100K, built for high-value transactions."
+            "text": "Accept single deposits of up to $100,000, built for high-value transactions."
           },
           {
             "icon": "door-open",
@@ -2048,7 +2048,7 @@
             },
             {
               "title": "Client deposits",
-              "text": "Your client sends a SWIFT wire, from $250 up to $100K."
+              "text": "Your client sends a SWIFT wire, from $250 up to $100,000."
             },
             {
               "title": "Whitelisted processing",
@@ -2092,7 +2092,7 @@
             "title": "Collection",
             "body": "Whitelisted, pre-approved channels for client deposits, with a ticket range that covers the whole book rather than the easy half of it.",
             "points": [
-              "Deposits from $250 to $100K",
+              "Deposits from $250 to $100,000",
               "Whitelisted payment channels",
               "B2C and B2B withdrawals supported",
               "SWIFT inbound from anywhere"
@@ -2115,18 +2115,35 @@
         "h2": "Three steps",
         "cards": [
           {
-            "title": "Send the book",
-            "body": "Jurisdiction, licence position, average and peak ticket, monthly volume, and any termination history. Disclose it, it always comes out."
+            "title": "Create account",
+            "body": "Sign up with your business details."
           },
           {
-            "title": "Written terms",
-            "body": "Rate, reserve percentage and release period, and settlement timing, in writing before you sign anything."
+            "title": "Submit documents",
+            "body": "Upload the verification documents listed below for your account type."
           },
           {
-            "title": "Integrate",
-            "body": "Hosted or API. Live inside a week on a standard book."
+            "title": "Get approved",
+            "body": "Once your documents are reviewed, your account is ready to use."
           }
-        ]
+        ],
+        "details": {
+          "title": "Verification requirements",
+          "items": [
+            {
+              "label": "Fiat to crypto",
+              "text": "KYC required."
+            },
+            {
+              "label": "KYC for individuals",
+              "text": "Government-issued photo ID and proof of address."
+            },
+            {
+              "label": "KYB for businesses",
+              "text": "Invoices and incorporation certificates, or UBO details."
+            }
+          ]
+        }
       },
       "compliance": {
         "eyebrow": "Structure",
@@ -2200,8 +2217,8 @@
                 "options": [
                   "Under $100,000",
                   "$100,000 to $500,000",
-                  "$500,000 to $2m",
-                  "Over $2m"
+                  "$500,000 to $2,000,000",
+                  "Over $2,000,000"
                 ]
               }
             ],
@@ -2247,7 +2264,7 @@
           },
           {
             "q": "What is the minimum and maximum deposit?",
-            "a": "Deposits start at $250 and a single deposit can go up to $100K."
+            "a": "Deposits start at $250 and a single deposit can go up to $100,000."
           },
           {
             "q": "Which payment networks do you accept?",
