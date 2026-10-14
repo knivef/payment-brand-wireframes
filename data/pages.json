@@ -1801,7 +1801,7 @@
         "items": [
           {
             "value": "$100,000",
-            "label": "Max single deposit"
+            "label": "Maximum single deposit"
           },
           {
             "value": "$250",
