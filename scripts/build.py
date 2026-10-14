@@ -300,6 +300,105 @@ def _hero_visual(h):
     return ""
 
 
+def _flow_svg(v, vertical):
+    """One flow diagram as inline SVG: sources, a hub, destinations, dashed
+    connectors with a square at the start and a chevron at the end, and a dot
+    that travels each connector. Inbound dots run first, outbound dots follow,
+    so the diagram reads left to right (top to bottom on phones)."""
+    ins, hub, outs = v["inputs"], v["hub"], v["outputs"]
+    if vertical:
+        W, H = 360, 640
+        iw, ih = 156, 54
+        cols = [(12, 0), (192, 0), (12, 82), (192, 82)]
+        in_boxes = [(cols[i][0], 20 + cols[i][1], iw, ih) for i in range(len(ins))]
+        hb = (100, 270, 160, 66)
+        ow = 104
+        out_boxes = [(8 + i * (ow + 20), 540, ow, ih) for i in range(len(outs))]
+        gap = (cols[0][0] + iw + cols[1][0]) / 2          # centre of the gap between columns
+        def p_in(b):
+            x1, y1 = hb[0] + hb[2] / 2, hb[1]
+            if b[1] < in_boxes[2][1]:
+                # Top row: leave from the inner side, run down the gap so the
+                # line never passes behind the boxes underneath.
+                left = b[0] < gap
+                x0 = b[0] + iw if left else b[0]
+                y0 = b[1] + b[3] / 2
+                xs = x0 + 6 if left else x0 - 6
+                xg = gap - 3 if left else gap + 3
+                yb = in_boxes[2][1] + ih + 10
+                d = ("M{xs},{y0} C{xg},{y0} {xg},{y0} {xg},{y1a} L{xg},{yb} "
+                     "C{xg},{ym} {x1},{ym} {x1},{ye}").format(xs=xs, y0=y0, xg=xg, y1a=y0 + 12, yb=yb,
+                                                             ym=(yb + y1) / 2, x1=x1, ye=y1 - 8)
+                return x0, y0, x1, y1, d
+            x0, y0 = b[0] + b[2] / 2, b[1] + b[3]
+            return x0, y0, x1, y1, "M{0},{1} C{0},{2} {3},{2} {3},{4}".format(x0, y0 + 6, (y0 + y1) / 2, x1, y1 - 8)
+        def p_out(b):
+            x0, y0 = hb[0] + hb[2] / 2, hb[1] + hb[3]
+            x1, y1 = b[0] + b[2] / 2, b[1]
+            return x0, y0, x1, y1, "M{0},{1} C{0},{2} {3},{2} {3},{4}".format(x0, y0 + 6, (y0 + y1) / 2, x1, y1 - 8)
+    else:
+        W, H = 1100, 310
+        iw, ih = 168, 54
+        in_boxes = [(24, 6 + i * 76, iw, ih) for i in range(len(ins))]
+        hb = (466, 119, 168, 72)
+        out_boxes = [(908, 32 + i * 96, iw, ih) for i in range(len(outs))]
+        def p_in(b):
+            x0, y0 = b[0] + b[2], b[1] + b[3] / 2
+            x1, y1 = hb[0], hb[1] + hb[3] / 2
+            return x0, y0, x1, y1, "M{0},{1} C{2},{1} {2},{3} {4},{3}".format(x0 + 6, y0, (x0 + x1) / 2, y1, x1 - 8)
+        def p_out(b):
+            x0, y0 = hb[0] + hb[2], hb[1] + hb[3] / 2
+            x1, y1 = b[0], b[1] + b[3] / 2
+            return x0, y0, x1, y1, "M{0},{1} C{2},{1} {2},{3} {4},{3}".format(x0 + 6, y0, (x0 + x1) / 2, y1, x1 - 8)
+
+    def node(box, n, cls="flow__node"):
+        x, y, w, hgt = box
+        return ('<g class="{c}"><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="4"/>'
+                '<text x="{cx}" y="{t1}" class="flow__title">{t}</text>'
+                '<text x="{cx}" y="{t2}" class="flow__sub">{s}</text></g>').format(
+                    c=cls, x=x, y=y, w=w, h=hgt, cx=x + w / 2, t1=y + hgt / 2 - 3, t2=y + hgt / 2 + 15,
+                    t=e(n["title"]), s=e(n.get("sub", "")))
+
+    links, dots = [], []
+    dur = 2.4
+    for i, b in enumerate(in_boxes):
+        x0, y0, x1, y1, d = p_in(b)
+        links.append(d)
+        dots.append((d, i * 0.35))
+    for i, b in enumerate(out_boxes):
+        x0, y0, x1, y1, d = p_out(b)
+        links.append(d)
+        dots.append((d, dur * 0.6 + i * 0.35))
+    paths = "".join('<path class="flow__link" d="{0}"/>'.format(d) for d in links)
+    starts = "".join(
+        '<rect class="flow__end" x="{0}" y="{1}" width="6" height="6"/>'.format(
+            float(d.split()[0][1:].split(",")[0]) - 3, float(d.split()[0][1:].split(",")[1]) - 3) for d in links)
+    heads = []
+    for d in links:
+        ex, ey = map(float, d.split()[-1].split(","))
+        if vertical:
+            heads.append('<path class="flow__head" d="M{0},{1} L{2},{3} L{4},{1}"/>'.format(ex - 6, ey + 1, ex, ey + 7, ex + 6))
+        else:
+            heads.append('<path class="flow__head" d="M{0},{1} L{2},{3} L{0},{4}"/>'.format(ex + 1, ey - 6, ex + 7, ey, ey + 6))
+    moving = "".join(
+        '<circle class="flow__dot" r="3" visibility="hidden"><set attributeName="visibility" to="visible" begin="{b}s"/>'
+        '<animateMotion dur="{dur}s" begin="{b}s" repeatCount="indefinite" '
+        'path="{d}" calcMode="linear"/></circle>'.format(dur=dur, b=round(bg, 2), d=d)
+        for d, bg in dots)
+    nodes = "".join(node(b, n) for b, n in zip(in_boxes, ins)) + node(hb, hub, "flow__node flow__node--hub") + \
+        "".join(node(b, n) for b, n in zip(out_boxes, outs))
+    return ('<svg class="flow flow--{o}" viewBox="0 0 {W} {H}" role="img" aria-label="{label}">'
+            '{paths}{starts}{heads}{moving}{nodes}</svg>').format(
+                o="v" if vertical else "h", W=W, H=H, label=e(v.get("label", "")), paths=paths, starts=starts,
+                heads="".join(heads), moving=moving, nodes=nodes)
+
+
+def _flow(v):
+    """Hero flow diagram: a wide version for desktop, a tall one for phones."""
+    return """
+    <div class="hero__flow reveal">{h}{v}</div>""".format(h=_flow_svg(v, False), v=_flow_svg(v, True))
+
+
 def sec_hero(b):
     h = b["hero"]
     layout = h.get("layout", "split")
@@ -327,10 +426,11 @@ def sec_hero(b):
                      ctas=ctas, rev=_reversal(h.get("reversal")))
 
     if layout == "center":
+        flow = _flow(h["visual"]) if h.get("visual", {}).get("type") == "flow" else ""
         return """
-<header class="hero hero--center" data-stickybar-after>
-  <div class="container">{copy}</div>
-</header>""".format(copy=copy)
+<header class="hero hero--center{cls}" data-stickybar-after>
+  <div class="container">{copy}{flow}</div>
+</header>""".format(copy=copy, flow=flow, cls=" hero--flow" if flow else "")
 
     cls = "split--form" if h.get("visual", {}).get("type") == "form" else "split"
     return """

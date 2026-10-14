@@ -6,6 +6,12 @@
   "use strict";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Diagram dots are SVG animations: freeze them for reduced motion.
+  if (reduced) {
+    document.querySelectorAll("svg.flow").forEach(function (s) {
+      if (s.pauseAnimations) { s.pauseAnimations(); }
+    });
+  }
   var store = {
     get: function (k) { try { return window.localStorage.getItem(k); } catch (e) { return null; } },
     set: function (k, v) { try { window.localStorage.setItem(k, v); } catch (e) {} }

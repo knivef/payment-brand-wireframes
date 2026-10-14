@@ -1754,47 +1754,44 @@
         "cta_secondary": "How It Works",
         "cta_secondary_anchor": "how",
         "cta_secondary_style": "link",
-        "layout": "split",
+        "layout": "center",
         "visual": {
-          "type": "stack",
-          "note": "Illustrative values only. Not live data, not a quote, and not derived from the AltPay rate card.",
-          "cards": [
+          "type": "flow",
+          "label": "Client deposits by SEPA, SWIFT, ACH, Faster Payments and card flow into a dedicated AltPay IBAN and settle out as USDT or USDC",
+          "inputs": [
             {
-              "title": "Incoming Wire",
-              "rows": [
-                {
-                  "label": "IBAN",
-                  "value": "DE89 •••• 3000",
-                  "mono": true
-                },
-                {
-                  "label": "Amount",
-                  "value": "$48,250.00"
-                },
-                {
-                  "label": "Network",
-                  "value": "SWIFT"
-                },
-                {
-                  "label": "Status",
-                  "value": "Whitelisted",
-                  "status": "dot"
-                }
-              ]
+              "title": "EUR",
+              "sub": "SEPA"
             },
             {
-              "title": "Settlement",
-              "rows": [
-                {
-                  "label": "Conversion",
-                  "value": "$48,250.00 → 48,105.25 USDT"
-                },
-                {
-                  "label": "Status",
-                  "value": "Settled",
-                  "status": "check"
-                }
-              ]
+              "title": "USD",
+              "sub": "SWIFT · ACH"
+            },
+            {
+              "title": "GBP",
+              "sub": "Faster Payments"
+            },
+            {
+              "title": "Cards",
+              "sub": "Visa · Mastercard"
+            }
+          ],
+          "hub": {
+            "title": "AltPay",
+            "sub": "Dedicated IBAN"
+          },
+          "outputs": [
+            {
+              "title": "USDT",
+              "sub": "Tron"
+            },
+            {
+              "title": "USDC",
+              "sub": "Ethereum"
+            },
+            {
+              "title": "USDC",
+              "sub": "Solana"
             }
           ]
         }
