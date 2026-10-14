@@ -1749,7 +1749,7 @@
       "hero": {
         "eyebrow": "IBAN COLLECTIONS FOR FOREX",
         "h1": "Collect Client Deposits by Wire. Settle in Crypto.",
-        "sub": "AltPay gives Forex brokers, crypto businesses, and affiliate networks a dedicated IBAN to collect client deposits over SWIFT, then settles the funds to you in crypto.",
+        "sub": "AltPay gives Forex brokers, crypto businesses, and affiliate networks a dedicated IBAN to collect client deposits by bank transfer or card, then settles the funds to you in crypto.",
         "cta": "Talk to Sales →",
         "cta_secondary": "How It Works",
         "cta_secondary_anchor": "how",
@@ -1811,12 +1811,12 @@
             "label": "Minimum deposit"
           },
           {
-            "value": "SWIFT",
-            "label": "Bank network only"
+            "value": "Multi-rail",
+            "label": "Major bank networks plus Visa and Mastercard"
           },
           {
             "value": "Global",
-            "label": "Accepts payments from all SWIFT networks"
+            "label": "Accepts payments from clients worldwide"
           }
         ]
       },
@@ -1836,7 +1836,7 @@
           "visual_side": "left",
           "h2": "One IBAN for every deposit size.",
           "body": [
-            "From a first-time client funding $250 to a high-net-worth trader wiring $100,000 in a single transfer, AltPay handles the full range through one account. Your clients pay by bank wire, you get settled in crypto."
+            "From a first-time client funding $250 to a high-net-worth trader wiring $100,000 in a single transfer, AltPay handles the full range through one account. Your clients pay by bank transfer or card, you get settled in crypto."
           ],
           "visual": {
             "type": "dashboard",
@@ -1937,7 +1937,7 @@
           {
             "icon": "landmark",
             "title": "Secure",
-            "text": "Every payment runs through the established SWIFT banking network. Nothing else."
+            "text": "Every payment runs through established bank and card networks."
           }
         ]
       },
@@ -1984,7 +1984,7 @@
           {
             "pill": "Crypto Businesses and Affiliates",
             "h3": "Collect Fiat, Hold Crypto",
-            "body": "Exchanges, OTC desks, and affiliate networks can accept bank wires from customers worldwide and keep their books in crypto, without opening a new banking relationship.",
+            "body": "Exchanges, OTC desks, and affiliate networks can accept bank transfers and card payments from customers worldwide and keep their books in crypto, without opening a new banking relationship.",
             "href": "#wire-to-wallet",
             "more": "see the flow",
             "visual": {
@@ -2029,11 +2029,11 @@
         "visual_side": "left",
         "h2": "From Wire to Wallet",
         "body": [
-          "AltPay sits between your clients' banks and your crypto treasury. You get the reach of SWIFT on the way in and the speed of crypto on the way out."
+          "AltPay sits between your clients' banks and your crypto treasury. You get the reach of global bank and card networks on the way in and the speed of crypto on the way out."
         ],
         "checklist": [
           "Dedicated IBAN for your business",
-          "SWIFT-only inbound, globally",
+          "Bank transfer and card deposits, globally",
           "Settlement in stablecoins"
         ],
         "cta_secondary": "Talk to Sales",
@@ -2048,7 +2048,7 @@
             },
             {
               "title": "Client deposits",
-              "text": "Your client sends a SWIFT wire, from $250 up to $100,000."
+              "text": "Your client pays by bank transfer or card, from $250 up to $100,000."
             },
             {
               "title": "Whitelisted processing",
@@ -2095,7 +2095,7 @@
               "Deposits from $250 to $100,000",
               "Whitelisted payment channels",
               "B2C and B2B withdrawals supported",
-              "SWIFT inbound from anywhere"
+              "Bank transfer and card deposits from anywhere"
             ]
           },
           {
@@ -2248,7 +2248,7 @@
         "items": [
           {
             "q": "Who is AltPay built for?",
-            "a": "Forex and CFD brokers, crypto businesses, and affiliate networks that need to collect client deposits by bank wire and settle in crypto."
+            "a": "Forex and CFD brokers, crypto businesses, and affiliate networks that need to collect client deposits by bank transfer or card and settle in crypto."
           },
           {
             "q": "What is the minimum and maximum deposit?",
@@ -2256,7 +2256,12 @@
           },
           {
             "q": "Which payment networks do you accept?",
-            "a": "SWIFT only. We accept international payments across all SWIFT networks worldwide."
+            "a": "All the major ones.",
+            "points": [
+              "Bank transfers: SWIFT, SEPA, SEPA Instant, ACH, Fedwire, UK Faster Payments and CHAPS.",
+              "Cards: Visa and Mastercard.",
+              "Crypto settlement: USDT and USDC on Ethereum, Tron, Solana, Polygon and BNB Chain."
+            ]
           },
           {
             "q": "What does whitelisted mean?",
@@ -2264,7 +2269,7 @@
           },
           {
             "q": "How do I receive settlement?",
-            "a": "Funds are settled to your wallet in crypto. [PLACEHOLDER: confirm supported assets and networks]"
+            "a": "Funds are settled to your wallet in crypto: USDT or USDC on Ethereum, Tron, Solana, Polygon or BNB Chain."
           },
           {
             "q": "How long does onboarding take?",
