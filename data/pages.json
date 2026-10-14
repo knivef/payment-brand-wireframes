@@ -1743,7 +1743,7 @@
       ],
       "announce": {
         "text": "Onboarding window for Q4 forex books closes soon.",
-        "cta": "Get terms",
+        "cta": "Create account",
         "countdown_hours": 72
       },
       "hero": {
@@ -2044,7 +2044,7 @@
           "steps": [
             {
               "title": "Onboard",
-              "text": "Basic KYB and we issue your dedicated IBAN."
+              "text": "Create an account, submit your documents and get approved. We then issue your dedicated IBAN."
             },
             {
               "title": "Client deposits",
@@ -2108,7 +2108,7 @@
             ]
           }
         ],
-        "cta": "Get terms"
+        "cta": "Create account"
       },
       "how": {
         "eyebrow": "Onboarding",
@@ -2155,7 +2155,7 @@
           },
           {
             "title": "Checks",
-            "body": "Every business is verified at onboarding, and activity is monitored after that."
+            "body": "Every account is verified at onboarding, KYC for individuals and KYB for businesses, and activity is monitored after that."
           },
           {
             "title": "Details",
@@ -2164,22 +2164,22 @@
         ]
       },
       "apply": {
-        "eyebrow": "Get terms",
-        "h2": "Send the book, get a term sheet",
-        "lede": "One business day to written terms or a clear no.",
+        "eyebrow": "Get started",
+        "h2": "Create your account",
+        "lede": "Start with your business details. Next you submit your documents, and once you are approved we issue your dedicated IBAN.",
         "points": [
-          "Rate, reserve and settlement in writing",
-          "Fast no if the book does not fit",
-          "Disclosed termination history does not disqualify you"
+          "Create your account",
+          "Submit your documents",
+          "Get approved and receive your IBAN"
         ],
         "telegram_note": "Usually quicker.",
         "form": {
-          "title": "Request terms",
+          "title": "Create your account",
           "sub": "Two steps.",
           "block_free_email": true,
-          "submit": "Get terms",
-          "success": "Received. Terms or a clear no within one business day.",
-          "note": "Underwriting only.",
+          "submit": "Create account",
+          "success": "Received. Next step: we will send you the document checklist for your account type.",
+          "note": "Used only to set up and verify your account.",
           "steps": [
             [
               {
@@ -2293,8 +2293,8 @@
       },
       "sticky": {
         "title": "Collection for forex",
-        "sub": "Terms in writing, one day",
-        "cta": "Get terms"
+        "sub": "Dedicated IBAN, settled in crypto",
+        "cta": "Create account"
       },
       "footer": {
         "layout": "brand",
