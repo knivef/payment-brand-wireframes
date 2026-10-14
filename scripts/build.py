@@ -503,8 +503,12 @@ def sec_how(b):
     if not s:
         return ""
     steps = "".join("""
-      <div><div class="step__num">{n}</div><h3>{t}</h3><p class="muted">{b}</p></div>
-    """.format(n=i + 1, t=e(c["title"]), b=e(c["body"])) for i, c in enumerate(s["cards"]))
+      <div><div class="step__num">{n}</div><h3>{t}</h3><p class="muted">{b}{fn}</p></div>
+    """.format(n=i + 1, t=e(c["title"]), b=e(c["body"]),
+               fn=('<a class="footref" href="{h}" aria-label="{l}">{m}</a>'.format(
+                   h=e(c["footnote"]["href"]), l=e(c["footnote"].get("label", "See note")),
+                   m=e(c["footnote"].get("mark", "*"))) if c.get("footnote") else ""))
+    for i, c in enumerate(s["cards"]))
     details = ""
     if s.get("details"):
         # A labelled list under the steps, e.g. what each verification needs.
@@ -788,8 +792,11 @@ def sec_faq(b):
     if not s:
         return ""
     items = "".join(
-        '<details{o}><summary>{q}</summary><div>{a}</div></details>'.format(
-            o=" open" if i == 0 else "", q=e(x["q"]), a=ph(x["a"]))
+        '<details{id}{o}><summary>{q}</summary><div>{a}{pts}</div></details>'.format(
+            id=' id="{0}"'.format(e(x["id"])) if x.get("id") else "",
+            o=" open" if i == 0 else "", q=e(x["q"]), a=ph(x["a"]),
+            pts=('<ul class="faq__points">' + "".join("<li>{0}</li>".format(ph(t)) for t in x["points"]) + "</ul>")
+                if x.get("points") else "")
         for i, x in enumerate(s["items"]))
     if s.get("layout") == "split":
         # Narrow left column with the heading and a way out, wide right
@@ -951,7 +958,8 @@ def faq_schema(b):
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{"@type": "Question", "name": x["q"],
-                        "acceptedAnswer": {"@type": "Answer", "text": x["a"]}}
+                        "acceptedAnswer": {"@type": "Answer",
+                                           "text": " ".join([x["a"]] + x.get("points", []))}}
                        for x in s["items"]],
     }
     return '<script type="application/ld+json">{0}</script>'.format(json.dumps(data))

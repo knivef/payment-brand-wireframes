@@ -2116,34 +2116,22 @@
         "cards": [
           {
             "title": "Create account",
-            "body": "Sign up with your business details."
+            "body": "Sign up with your personal or business details."
           },
           {
             "title": "Submit documents",
-            "body": "Upload the verification documents listed below for your account type."
+            "body": "Submit the documents for your account type. No KYC is needed for crypto to fiat transactions up to $50,000.",
+            "footnote": {
+              "mark": "*",
+              "href": "#faq-kyc",
+              "label": "See the verification FAQ"
+            }
           },
           {
             "title": "Get approved",
             "body": "Once your documents are reviewed, your account is ready to use."
           }
-        ],
-        "details": {
-          "title": "Verification requirements",
-          "items": [
-            {
-              "label": "Fiat to crypto",
-              "text": "KYC required."
-            },
-            {
-              "label": "KYC for individuals",
-              "text": "Government-issued photo ID and proof of address."
-            },
-            {
-              "label": "KYB for businesses",
-              "text": "Invoices and incorporation certificates, or UBO details."
-            }
-          ]
-        }
+        ]
       },
       "compliance": {
         "eyebrow": "Structure",
@@ -2155,7 +2143,7 @@
           },
           {
             "title": "Checks",
-            "body": "Every account is verified at onboarding, KYC for individuals and KYB for businesses, and activity is monitored after that."
+            "body": "Verification depends on transaction type and size, and account activity is monitored after onboarding."
           },
           {
             "title": "Details",
@@ -2280,7 +2268,18 @@
           },
           {
             "q": "How long does onboarding take?",
-            "a": "[PLACEHOLDER: confirm onboarding timeline]"
+            "a": "Onboarding is completed in 5 to 10 business days."
+          },
+          {
+            "id": "faq-kyc",
+            "q": "What verification do I need?",
+            "a": "It depends on the transaction type and the amount.",
+            "points": [
+              "Fiat to crypto: KYC required.",
+              "*Crypto to fiat: no KYC required for transactions up to $50,000. For higher limits, KYC needs to be completed.",
+              "KYC for individuals: government-issued photo ID and proof of address.",
+              "KYB for businesses: invoices and incorporation certificates, or UBO details."
+            ]
           }
         ]
       },

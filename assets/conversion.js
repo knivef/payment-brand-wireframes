@@ -156,6 +156,14 @@
       track("faq-open", { q: (item.querySelector("summary") || {}).textContent });
     });
   });
+  // A link to an FAQ item opens it, e.g. a footnote pointing at #faq-kyc.
+  var openFromHash = function () {
+    var id = location.hash.slice(1);
+    var target = id && document.getElementById(id);
+    if (target && target.tagName === "DETAILS") { target.open = true; }
+  };
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
 
   /* ---- 10. Fee estimator --------------------------------------------------
      Reads its rates from data attributes so the markup stays the single
